@@ -22,10 +22,10 @@ function generate() {
 
 ## Constructor
   ```javascript
-  Word2Vec(vectors, callback)
+  Word2Vec(vectors, [callback])
   ```
   `vectors` - A JSON file containing valid vectors of N-dimension, loaded asynchronously.
-  `callback` - A callback function that is executed once the model has loaded.
+  `callback` (optional) - A callback function that is executed once the model has loaded.
 
 ## Properties
 
