@@ -1,14 +1,15 @@
 # ML5 Website
 
-The [ML5 website](https://itpnyu.github.io/ml5/) is built with [Docusaurus](https://docusaurus.io/).
+This website is built with [Docusaurus](https://docusaurus.io/).
 
 Docusaurus is an open-source library, built with React, to create and maintain documentation websites.
 
-All the website content and documentation lives in the master branch but website is served from `gh-pages`. 
-
 ### Contributing
 
-Almost all the content for the website can be found in markdown under the `docs/` folder at the root level of the repository.
+The website source is in the `source` branch. The site is served from `master`.
+
+Almost all the content for the website can be found in markdown under the `docs/` folder at the root level of the repository. 
+
 The naming convention we are using is the following:
 
 * Examples are named: `examples-[name of example].md`
