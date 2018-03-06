@@ -86,6 +86,11 @@ const average = wordVectors.average(['red', 'green'], 1); // Should output yello
 
   `max` - The maximum results to return. Optional. Defaults to 10.
 
+  ```javascript
+  .getRandomWord()
+  ```
+  > Find a random word in the loaded model. Returns a string.
+
 ## Static Methods
 
   ```javascript
