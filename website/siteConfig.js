@@ -11,6 +11,7 @@ const siteConfig = {
     { page: 'experiments', label: 'Experiments' },
     { doc: 'glossary-statistics', label: 'Learn' },
     { href: 'https://github.com/ml5js/ml5-library', label: 'Code' },
+    { search: true },
   ],
   /* path to images for header/footer */
   headerIcon: '',
@@ -35,6 +36,10 @@ const siteConfig = {
   ],
   // You may provide arbitrary config keys to be used as needed by your template.
   repoUrl: 'https://github.com/ITPNYU/ml5',
+  algolia: {
+    apiKey: "my-search-only-api-key-1234",
+    indexName: "my-index-name"
+  },
 };
 
 module.exports = siteConfig;
