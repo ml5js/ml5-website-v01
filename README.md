@@ -22,10 +22,11 @@ Clone this repo and
 ```
 git clone https://github.com/ml5js/ml5js.github.io.git
 cd ml5js.github.io.git
+cd website/
 npm install
 ```
 
-And then start the development server:
+And then start the development server from inside the `website/` directory:
 
 ```
 npm run start
@@ -33,7 +34,7 @@ npm run start
 
 This wil create a server that will reload whenever there are changes in the website source code.
 
-To build the website run:
+To build the website run this script from the `website/` directory:
 
 ```bash
 npm run build
