@@ -37,8 +37,8 @@ const siteConfig = {
   // You may provide arbitrary config keys to be used as needed by your template.
   repoUrl: 'https://github.com/ITPNYU/ml5',
   algolia: {
-    apiKey: "my-search-only-api-key-1234",
-    indexName: "my-index-name"
+    apiKey: '4e9582fa59998b865a9fd98ae8d8a9cc',
+    indexName: 'ml5js',
   },
 };
 
