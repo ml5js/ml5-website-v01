@@ -9,20 +9,23 @@ Word2vec is a group of related models that are used to produce word embeddings<s
 
 ```javascript
 // Create the classifier
-const wordVectors = new ml5.Word2Vec('data/wordvecs10000.json');
+const wordVectors = new ml5.Word2Vec('data/wordvecs10000.json', generate);
 
-// Find the closest word to 'rainbow'
-const nearest = wordVectors.nearest('rainbow', 1);
+function generate() {
+  // Find the closest word to 'rainbow'
+  const nearest = wordVectors.nearest('rainbow', 1);
 
-// Find the average of two words
-const average = wordVectors.average(['red', 'green'], 1); // Should output yellow
+  // Find the average of two words
+  const average = wordVectors.average(['red', 'green'], 1); // Should output yellow
+}
 ```
 
 ## Constructor
   ```javascript
-  Word2Vec(vectors)
+  Word2Vec(vectors, [callback])
   ```
-  `vectors` - A JSON file containing valid vectors of N-dimension.
+  `vectors` - A JSON file containing valid vectors of N-dimension, loaded asynchronously.
+  `callback` (optional) - A callback function that is executed once the model has loaded.
 
 ## Properties
 
@@ -85,6 +88,11 @@ const average = wordVectors.average(['red', 'green'], 1); // Should output yello
   `input` - The input vector string.
 
   `max` - The maximum results to return. Optional. Defaults to 10.
+
+  ```javascript
+  .getRandomWord()
+  ```
+  > Find a random word in the loaded model. Returns a string.
 
 ## Static Methods
 

@@ -10,7 +10,8 @@ const siteConfig = {
     { doc: 'simple-image-classification-example', label: 'Examples' },
     { page: 'experiments', label: 'Experiments' },
     { doc: 'glossary-statistics', label: 'Learn' },
-    { href: 'https://github.com/ITPNYU/ml5', label: 'Code' },
+    { href: 'https://github.com/ml5js/ml5-library', label: 'Code' },
+    { search: true },
   ],
   /* path to images for header/footer */
   headerIcon: '',
@@ -35,6 +36,10 @@ const siteConfig = {
   ],
   // You may provide arbitrary config keys to be used as needed by your template.
   repoUrl: 'https://github.com/ITPNYU/ml5',
+  algolia: {
+    apiKey: '4e9582fa59998b865a9fd98ae8d8a9cc',
+    indexName: 'ml5js',
+  },
 };
 
 module.exports = siteConfig;

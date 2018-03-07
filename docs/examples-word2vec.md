@@ -56,10 +56,12 @@ let wordVecs;
 
 let wordVectors;
 
+function preload() {
+  wordVectors = new ml5.Word2Vec('data/wordvecs10000.json');
+}
+
 function setup() {
   createCanvas(100, 100);
-  wordVectors = new ml5.Word2Vec('data/wordvecs10000.json');
-
   let loadHide = select("#loadHide");
   loadHide.hide();
 
