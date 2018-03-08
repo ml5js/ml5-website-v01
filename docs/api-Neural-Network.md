@@ -90,4 +90,4 @@ knn.predict(video, callback);
 
 ## Source
 
-[/src/NeuralNetwork/index.js](https://github.com/cvalenzuela/ml5/blob/master/src/NeuralNetwork/index.js)
+[/src/NeuralNetwork/index.js](https://github.com/ml5js/ml5-library/blob/master/src/NeuralNetwork/index.js)
