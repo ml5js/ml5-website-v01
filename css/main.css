@@ -71,7 +71,7 @@ article p img, article iframe {
 }
 
 a {
-  color: #f7394f;
+  color: #000000;
   text-decoration: none;
 }
 
@@ -117,7 +117,7 @@ blockquote {
 h1, h2, h3, h4 {
   font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif;
   font-weight: 300;
-  color: #f7394f;
+  color: #000000;
 }
 
 h4 {
@@ -131,7 +131,7 @@ header h2 {
 
 .homeContainer {
   background: #fff;
-  color: #f7394f;
+  color: #000000;
   text-align: center;
 }
 
@@ -235,7 +235,7 @@ header h2 {
   text-align: left;
 }
 .container .wrapper h2 {
-  color: #f7394f;
+  color: #000000;
   font-size: 22px;
   line-height: 1em;
   margin-top: 20px;
@@ -249,13 +249,13 @@ header h2 {
   padding: 10px 0;
 }
 .container .wrapper h3 {
-  color: #f7394f;
+  color: #000000;
   font-size: 18px;
   margin-top: 10px;
   padding: 10px 0;
 }
 .container .wrapper h4 {
-  color: #f7394f;
+  color: #000000;
   font-size: 16px;
   font-weight: 300;
   margin: 0;
@@ -342,7 +342,7 @@ header h2 {
   padding-top: 1em;
 }
 .mainContainer .wrapper .post .docPagination {
-  background: #f7394f;
+  background: #000000;
   bottom: 0px;
   left: 0px;
   position: absolute;
@@ -515,7 +515,7 @@ header h2 {
 }
 .fixedHeaderContainer {
   box-sizing: border-box;
-  background: #f7394f;
+  background: #000000;
   color: #fff;
   min-height: 50px;
   padding: 9px 0;
@@ -599,9 +599,9 @@ header h2 {
 }
 .button {
   margin: 4px;
-  border: 1px solid #f7394f;
+  border: 1px solid #000000;
   border-radius: 3px;
-  color: #f7394f;
+  color: #000000;
   display: inline-block;
   font-size: 14px;
   font-weight: 400;
@@ -612,7 +612,7 @@ header h2 {
   transition: background 0.3s, color 0.3s;
 }
 .button:hover {
-  background: #f7394f;
+  background: #000000;
   color: #fff;
 }
 
@@ -669,19 +669,19 @@ input[type="search"] {
   right: 0 !important;
 }
 .navSearchWrapper .aa-dropdown-menu .algolia-docsearch-suggestion--category-header {
-  background: #f7394f;
+  background: #000000;
   color: white;
   font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif;
   font-weight: 400;
   font-size: 14px;
 }
 .navSearchWrapper .aa-dropdown-menu .algolia-docsearch-suggestion--category-header .algolia-docsearch-suggestion--highlight {
-  background-color: #f7394f;
+  background-color: #000000;
   color: #fff;
 }
 .navSearchWrapper .aa-dropdown-menu .algolia-docsearch-suggestion--title .algolia-docsearch-suggestion--highlight,
 .navSearchWrapper .aa-dropdown-menu .algolia-docsearch-suggestion--subcategory-column .algolia-docsearch-suggestion--highlight {
-  color: #f7394f;
+  color: #000000;
 }
 .navSearchWrapper .aa-dropdown-menu .algolia-docsearch-suggestion__secondary,
 .navSearchWrapper .aa-dropdown-menu .algolia-docsearch-suggestion--subcategory-column {
@@ -728,10 +728,10 @@ input::placeholder {
 
 code {
   padding: 2px 0;
-  background-color: rgba(247, 57, 79, 0.07);
+  background-color: rgba(0, 0, 0, 0.07);
   /* box-shadow acts as padding around inline code snippets
    * while not adding any extra spacing between words. */
-  box-shadow: 2px 0 rgba(247, 57, 79, 0.07), -2px 0 rgba(247, 57, 79, 0.07);
+  box-shadow: 2px 0 rgba(0, 0, 0, 0.07), -2px 0 rgba(0, 0, 0, 0.07);
   color: inherit;
   border-radius: .3em;
   font-family: "SFMono-Regular",source-code-pro,Menlo,Monaco,Consolas,"Roboto Mono","Droid Sans Mono","Liberation Mono",Consolas,"Courier New",Courier,monospace;
@@ -743,7 +743,7 @@ pre code {
   display:block;
   margin: 20px 0;
   padding:0.5em;
-  border-left: 4px solid #f7394f;
+  border-left: 4px solid #000000;
   font-family: "SFMono-Regular",source-code-pro,Menlo,Monaco,Consolas,"Roboto Mono","Droid Sans Mono","Liberation Mono",Consolas,"Courier New",Courier,monospace;
   font-size: 13px;
   overflow-x:auto;
@@ -795,7 +795,6 @@ pre code {
 .imageAlignSide .blockImage {
   max-width: 500px;
   flex: 0 1 500px;
-  margin-right: 40px;
 }
 @media only screen and (min-device-width: 360px) and (max-device-width: 735px) {
   .imageAlignSide .blockImage {
@@ -820,6 +819,12 @@ pre code {
 .imageAlignTop.alignCenter .blockImage {
   margin-left: auto;
   margin-right: auto;
+}
+.imageAlignRight .blockImage {
+  margin-left: 40px;
+}
+.imageAlignLeft .blockImage {
+  margin-right: 40px;
 }
 .container .gridBlock .blockContent p {
   padding: 0;
@@ -977,7 +982,7 @@ pre code {
   margin-top: 50px;
   width: 100%;
   padding: 0;
-  background: #000000;
+  background: #071682;
   color: #fff;
 }
 .navigationSlider .slidingNav.slidingNavActive ul {
@@ -990,7 +995,7 @@ pre code {
   margin: 0;
 }
 .navigationSlider .slidingNav ul li a {
-  color: #f7394f;
+  color: #000000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1005,7 +1010,7 @@ pre code {
 }
 .navigationSlider .slidingNav ul li a:focus,
 .navigationSlider .slidingNav ul li a:hover {
-  background: #f7394f;
+  background: #000000;
 }
 
 .languages-icon {
@@ -1025,7 +1030,7 @@ pre code {
 }
 ul#languages-dropdown-items {
   display: flex;
-  background-color: #f7394f;
+  background-color: #000000;
   flex-direction: column;
   min-width: 120px;
   pointer-events: all;
@@ -1107,7 +1112,7 @@ ul#languages li {
     width: 100%;
   }
   .reactNavSearchWrapper input#search_input_react:focus, .reactNavSearchWrapper input#search_input_react:active {
-    background-color: #f7394f;
+    background-color: #000000;
     color: #fff;
   }
   .reactNavSearchWrapper .algolia-docsearch-suggestion--subcategory-inline {
@@ -1139,7 +1144,7 @@ ul#languages li {
 
   ul#languages-dropdown-items {
     display: flex;
-    background-color: #f7394f;
+    background-color: #000000;
     flex-direction: row;
   }
 }
@@ -1195,6 +1200,12 @@ ul#languages li {
   }
   .navigationSlider .slidingNav ul li.navItemActive a {
     color: #fff;
+  }
+}
+
+@media only screen and (max-device-width: 735px) {
+  .navigationSlider .slidingNav ul {
+    overflow-x: auto;
   }
 }
 
@@ -1370,10 +1381,10 @@ nav.toc .toggleNav .navGroup h3 i:not(:empty) {
   transition: color 0.2s;
 }
 nav.toc .toggleNav .navGroup h3:hover {
-  color: #f7394f;
+  color: #000000;
 }
 nav.toc .toggleNav .navGroup h3:hover i:not(:empty) {
-  color: #f7394f;
+  color: #000000;
 }
 nav.toc .toggleNav .navGroup.navGroupActive {
   background: #e0e0e0;
@@ -1385,7 +1396,7 @@ nav.toc .toggleNav .navGroup.navGroupActive ul {
   padding-top: 10px;
 }
 nav.toc .toggleNav .navGroup.navGroupActive h3 {
-  background: #f7394f;
+  background: #000000;
   color: #fff;
 }
 nav.toc .toggleNav ul {
@@ -1408,10 +1419,10 @@ nav.toc .toggleNav ul li a {
   transition: color 0.3s;
 }
 nav.toc .toggleNav ul li a:hover, nav.toc .toggleNav ul li a:focus {
-  color: #f7394f;
+  color: #000000;
 }
 nav.toc .toggleNav ul li a.navItemActive {
-  color: #f7394f;
+  color: #000000;
 }
 .docsSliderActive nav.toc .navBreadcrumb {
   background: #c6c6c6;
@@ -1630,7 +1641,7 @@ h6:hover .header-link {
   padding-bottom: 80px;
 }
 .productShowcaseSection h2 {
-  color: #f7394f;
+  color: #000000;
   font-size: 30px;
   line-height: 1em;
   margin-top: 20px;
@@ -1674,7 +1685,7 @@ h6:hover .header-link {
   margin: 0 auto;
 }
 .showcaseSection .prose h1 {
-  color: #f7394f;
+  color: #000000;
   font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif;
   text-align: center;
   padding: 1.4em 0 0.4em;
@@ -1811,153 +1822,180 @@ footer .copyright {
 
 /* your custom css */
 
-@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
+@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {}
+
+@media only screen and (min-width: 1024px) {}
+
+@media only screen and (max-width: 1023px) {}
+
+@media only screen and (min-width: 1400px) {}
+
+@media only screen and (min-width: 1500px) {}
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-@media only screen and (min-width: 1024px) {
+.fixedHeaderContainer {
+    background: #ffffff;
+    box-shadow: 0 2px 2px 0 rgba(145, 145, 145, 0.062), 0 6px 4px 0 rgba(235, 235, 235, 0.096);
 }
 
-@media only screen and (max-width: 1023px) {
+.fixedHeaderContainer header img {
+    height: 200%;
+    margin: 3rem 0px 0px 0px;
 }
 
-@media only screen and (min-width: 1400px) {
+.navigationSlider {
+    padding: 1.5rem 0px;
 }
 
-@media only screen and (min-width: 1500px) {
+input#search_input_react {
+    border-radius: 0px;
+    background-color: rgba(210, 210, 210, 0.4);
+    color: black !important;
 }
 
-*{
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+input#search_input_react::placeholder {
+    color: rgb(56, 56, 56);
+    opacity: 1;
 }
 
-.navigationSlider .slidingNav ul li a{
-  color: rgb(255, 255, 255);
-  font-weight: 600;
+.navigationSlider .slidingNav ul li a {
+    color: rgb(87, 87, 87);
+    font-weight: 300;
 }
 
-.navigationSlider .slidingNav ul li a:hover{
-  color: #f7394f;
-  background: rgba(0, 0, 0, 0.86);
+.navigationSlider .slidingNav ul li a:hover {
+    color: #000000;
+    background: white;
 }
 
 .homeContainer {
-  text-align: left;
+    text-align: left;
+    padding: 1rem 0px 0px 0px;
 }
 
-.promoSection .promoRow .pluginRowBlock{
-  justify-content: left;
+.promoSection .promoRow .pluginRowBlock {
+    justify-content: left;
 }
 
-.projectTitle{
-  font-size: 400%;
-  font-weight: bold;
+.projectTitle {
+    font-size: 400%;
+    font-weight: bold;
 }
 
 .projectTitle span {
-  color: black;
+    color: black;
 }
 
-.projectTitle > small{
-  color: black;
-  font-size: 30%;
-  max-width: 250px
-}
-
-.productShowcaseSection h2 {
-  background: #f7394f;
-  color: white;
-  display: inline-block;
-  font-size: 20px;
-  padding: 5px 10px;
-  font-weight: bold;
+.projectTitle>small {
+    color: rgb(38, 41, 40);
+    font-size: 90%;
+    max-width: 950px;
+    margin: 0.7em 0 1em;
 }
 
 .homeContainer .homeWrapper {
-  padding: 6em 5em;
+    padding: 6em 5em;
 }
 
 .productShowcaseSection p {
-  max-width: 600px;
+    max-width: 600px;
+    margin-top: 5rem;
 }
 
 .productShowcaseSection.paddingBottom {
-  padding-bottom: 0px;
+    padding-bottom: 0px;
 }
 
 .container.paddingTop {
-  padding-top: 20px;
+    padding-top: 20px;
 }
 
 .gridBlock .fourByGridBlock {
-  padding: 10px 120px;
+    padding: 10px 120px;
 }
 
-.mainContainer{
-  background: none;
+.mainContainer {
+    background: none;
 }
 
-#experiments .gridBlock{
-  margin: 20px 0px 0px 0px;
+#experiments .gridBlock {
+    margin: 20px 0px 0px 0px;
 }
 
-footer .copyright{
-  max-width: 300px;
-  text-align: center;
-  margin: 0 auto;
-  font-size: 12px;
-  line-height: 14px;
+footer .copyright {
+    max-width: 300px;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 12px;
+    line-height: 14px;
 }
 
-footer .fbOpenSource{
-  text-align: center;
+footer .fbOpenSource {
+    text-align: center;
 }
 
-footer.nav-footer{
-  background: #1c1a27;
-  text-align: center;
+footer.nav-footer {
+    background: #1c1a27;
+    text-align: center;
 }
 
-footer .sitemap a{
-  color: rgba(255, 255, 255, 0.86);
-  width: 100%;
+footer .sitemap a {
+    color: rgba(255, 255, 255, 0.86);
+    width: 100%;
 }
 
 footer .sitemap h5 {
-  font-weight: bold;
+    font-weight: bold;
 }
 
-footer iframe{
-  margin: 20px 0px 0px 0px;
+footer iframe {
+    margin: 20px 0px 0px 0px;
 }
 
 #experiments img {
-  max-width: 400px;
-  margin-top: 10px;
+    max-width: 400px;
+    margin-top: 10px;
 }
 
 .experiment {
-  max-width: 500px;
+    max-width: 500px;
+}
+
+.navPusher {
+    padding-top: 100px;
+}
+
+nav.toc .toggleNav .navGroup.navGroupActive h3 {
+    background: #4568DC;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #B06AB3, #4568DC);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #B06AB3, #4568DC);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 /* Begin simple grid layout  */
 
 .flex-grid {
-  display: flex;
-  justify-content: left;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
 }
 
 .flex-col {
-  flex: 1;
-  min-width: 400px;
-  padding: 14px;
+    flex: 1;
+    min-width: 400px;
+    padding: 14px;
 }
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-  .flex-grid {
-    display: block;
-  }
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .flex-grid {
+        display: block;
+    }
 }
 
 /* End simple grid layout  */

@@ -1,13 +1,20 @@
-/*
-===
-LSTM Interactive Example
-===
-*/
+/* ===
+ML5 Example
+04_LSTM_Interactive
+Interactive LSTM Generator example with p5.js
+This uses a pre-trained model on a corpus of Hemingway
+=== */
+
+// Create the LSTM Generator passing it the model directory
+const lstm = new ml5.LSTMGenerator('assets/models/hemingway/', modelReady);
 
 let textInput;
 let tempSlider;
 let lengthSlider;
-let lstm;
+
+function modelReady() {
+  select('#status').html('Model Loaded');
+}
 
 function setup() {
   noCanvas();
@@ -21,13 +28,11 @@ function setup() {
   textInput.input(generate);
   lengthSlider.input(generate);
   tempSlider.input(generate);
-
-  // Create the LSTM Generator
-  // Point it to a directory of model files
-  lstm = new ml5.LSTMGenerator('assets/models/hemingway/');
 }
 
 function generate() {
+  // Update the status log
+  select('#status').html('Generating...');
 
   // Update the length and temperature span elements
   select('#length').html(lengthSlider.value());
@@ -52,6 +57,7 @@ function generate() {
 
     // Update the DOM elements with typed and generated text
     function gotData(result) {
+      select('#status').html('Ready!');
       select('#original').html(original);
       select('#prediction').html(result.generated);
     }

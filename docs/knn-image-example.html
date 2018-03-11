@@ -1,32 +1,52 @@
-<html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>KNN Image Classification · ML5.js</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta property="og:title" content="KNN Image Classification · ML5.js"/><meta property="og:type" content="website"/><meta property="og:url" content="ml5js.github.io/index.html"/><meta property="og:description" content="Train and classify frames from a live webcam stream using the [KNN Image Classifier](/docs/imagenet.html). Built with [p5.js](https://p5js.org/)."/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css"/><script type="text/javascript" src="https://rawgit.com/ITPNYU/ml5/master/dist/ml5.min.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.min.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/addons/p5.dom.min.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><h2 class="headerTitle">ML5.js</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li><a href="/docs/getting-started.html" target="_self">API</a></li><li><a href="/docs/datasets.html" target="_self">Datasets</a></li><li><a href="/docs/simple-image-classification-example.html" target="_self">Examples</a></li><li><a href="/en/experiments.html" target="_self">Experiments</a></li><li><a href="/docs/glossary-statistics.html" target="_self">Learn</a></li><li><a href="https://github.com/ITPNYU/ml5" target="_self">Code</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Examples</span></h2></div><div class="navGroups"><div class="navGroup navGroupActive"><h3>Documentation</h3><ul><li class="navListItem"><a class="navItem" href="/docs/getting-started.html">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/imagenet.html">ImageNet</a></li><li class="navListItem"><a class="navItem" href="/docs/knnImage.html">KNN Image Classifier</a></li><li class="navListItem"><a class="navItem" href="/docs/lstm.html">LSTM</a></li><li class="navListItem"><a class="navItem" href="/docs/neural-network.html">Neural Network</a></li><li class="navListItem"><a class="navItem" href="/docs/transform-net.html">Transform Net</a></li><li class="navListItem"><a class="navItem" href="/docs/word2vec.html">Word2Vec</a></li></ul></div><div class="navGroup navGroupActive"><h3>Examples</h3><ul><li class="navListItem"><a class="navItem" href="/docs/simple-image-classification-example.html">Simple Image Classification</a></li><li class="navListItem"><a class="navItem" href="/docs/video-classification-example.html">Video Classification</a></li><li class="navListItem navListItemActive"><a class="navItem navItemActive" href="/docs/knn-image-example.html">KNN Image Classification</a></li><li class="navListItem"><a class="navItem" href="/docs/lstm-simple-example.html">Simple LSTM</a></li><li class="navListItem"><a class="navItem" href="/docs/lstm-interactive-example.html">Interactive LSTM</a></li><li class="navListItem"><a class="navItem" href="/docs/neural-network-example.html">Neural Network</a></li><li class="navListItem"><a class="navItem" href="/docs/transform-net-example.html">Fast Style Transfer</a></li><li class="navListItem"><a class="navItem" href="/docs/fast-style-transfer-webcam-example.html">Fast Style Transfer with Webcam</a></li><li class="navListItem"><a class="navItem" href="/docs/word2vec-example.html">Word2Vec</a></li></ul></div><div class="navGroup navGroupActive"><h3>Datasets</h3><ul><li class="navListItem"><a class="navItem" href="/docs/datasets.html">Datasets</a></li></ul></div><div class="navGroup navGroupActive"><h3>Training Models</h3><ul><li class="navListItem"><a class="navItem" href="/docs/training-setup.html">Python Setup</a></li><li class="navListItem"><a class="navItem" href="/docs/training-lstm.html">Training a LSTM</a></li></ul></div></div></section></div><script>
+<html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>KNN Image Classification · ml5js</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta property="og:title" content="KNN Image Classification · ml5js"/><meta property="og:type" content="website"/><meta property="og:url" content="https://cvalenzuela.github.io/ml5js.github.io/index.html"/><meta property="og:description" content="This examples allows you to train and classify frames from a live webcam stream into two categories. You can also find the same example without p5.js [here](https://github.com/ml5js/ml5-examples)"/><link rel="shortcut icon" href="/ml5js.github.io/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><script type="text/javascript" src="/scripts/ml5.min.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.min.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/addons/p5.dom.min.js"></script><link rel="stylesheet" href="/ml5js.github.io/css/main.css"/></head><body class="sideNavVisible"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/ml5js.github.io/"><img class="logo" src="/ml5js.github.io/img/ml5.png"/></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li><a href="/ml5js.github.io/docs/getting-started.html" target="_self">API</a></li><li><a href="/ml5js.github.io/docs/datasets.html" target="_self">Datasets</a></li><li><a href="/ml5js.github.io/docs/simple-image-classification-example.html" target="_self">Examples</a></li><li><a href="/ml5js.github.io/en/experiments.html" target="_self">Experiments</a></li><li><a href="/ml5js.github.io/docs/glossary-statistics.html" target="_self">Learn</a></li><li><a href="https://github.com/ml5js/ml5-library" target="_self">Code</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Examples</span></h2></div><div class="navGroups"><div class="navGroup navGroupActive"><h3>Documentation</h3><ul><li class="navListItem"><a class="navItem" href="/ml5js.github.io/docs/getting-started.html">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/ml5js.github.io/docs/imagenet.html">ImageNet</a></li><li class="navListItem"><a class="navItem" href="/ml5js.github.io/docs/knnImage.html">KNN Image Classifier</a></li><li class="navListItem"><a class="navItem" href="/ml5js.github.io/docs/lstm.html">LSTM</a></li><li class="navListItem"><a class="navItem" href="/ml5js.github.io/docs/neural-network.html">Neural Network</a></li><li class="navListItem"><a class="navItem" href="/ml5js.github.io/docs/transform-net.html">Transform Net</a></li><li class="navListItem"><a class="navItem" href="/ml5js.github.io/docs/word2vec.html">Word2Vec</a></li></ul></div><div class="navGroup navGroupActive"><h3>Examples</h3><ul><li class="navListItem"><a class="navItem" href="/ml5js.github.io/docs/simple-image-classification-example.html">Simple Image Classification</a></li><li class="navListItem"><a class="navItem" href="/ml5js.github.io/docs/video-classification-example.html">Video Classification</a></li><li class="navListItem navListItemActive"><a class="navItem navItemActive" href="/ml5js.github.io/docs/knn-image-example.html">KNN Image Classification</a></li><li class="navListItem"><a class="navItem" href="/ml5js.github.io/docs/lstm-simple-example.html">Simple LSTM</a></li><li class="navListItem"><a class="navItem" href="/ml5js.github.io/docs/lstm-interactive-example.html">Interactive LSTM</a></li><li class="navListItem"><a class="navItem" href="/ml5js.github.io/docs/fast-style-image-example.html">Fast Style Transfer</a></li><li class="navListItem"><a class="navItem" href="/ml5js.github.io/docs/fast-style-webcam-example.html">Fast Style Transfer with Webcam</a></li><li class="navListItem"><a class="navItem" href="/ml5js.github.io/docs/word2vec-example.html">Word2Vec</a></li></ul></div><div class="navGroup navGroupActive"><h3>Datasets</h3><ul><li class="navListItem"><a class="navItem" href="/ml5js.github.io/docs/datasets.html">Datasets</a></li></ul></div><div class="navGroup navGroupActive"><h3>Training Models</h3><ul><li class="navListItem"><a class="navItem" href="/ml5js.github.io/docs/training-setup.html">Python Setup</a></li><li class="navListItem"><a class="navItem" href="/ml5js.github.io/docs/training-lstm.html">Training a LSTM</a></li></ul></div></div></section></div><script>
           var toggler = document.getElementById('navToggler');
           var nav = document.getElementById('docsNav');
           toggler.onclick = function() {
             nav.classList.toggle('docsSliderActive');
           };
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1>KNN Image Classification</h1></header><article><div><span><p>Train and classify frames from a live webcam stream using the <a href="/docs/imagenet.html">KNN Image Classifier</a>. Built with <a href="https://p5js.org/">p5.js</a>.</p>
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1>KNN Image Classification</h1></header><article><div><span><p>This examples allows you to train and classify frames from a live webcam stream into two categories. You can also find the same example without p5.js <a href="https://github.com/ml5js/ml5-examples">here</a></p>
 <p><em>Please enable your webcam</em></p>
+<p>Instructions:</p>
+<ol>
+<li>Train the model on one set of images using the 'Train A' button. Try with 15 images.</li>
+<li>Add something distinctive to your webcam scene and train the model on another set of images using the 'Train B' button.</li>
+<li>Click 'Start guessing!' and switch between the two scenes you trained the model on!</li>
+</ol>
 <h2><a class="anchor" aria-hidden="true" name="demo"></a><a href="#demo" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Demo</h2>
+<style>
+  .example button {
+    margin: 4px;
+    padding: 8px;
+  }
+  .example video{
+    width: 300;
+    height: 300;
+  }
+  .example p{
+    display: inline;
+    font-size: 14px;
+  }
+  .example h6{
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+</style>
 <div class="example">
-  <style>
-    button {
-      margin: 4px;
-      padding: 8px;
-    }
-  </style>
-  <div id="canvasContainer"></div>
-<p><span id="loading">Loading the model...</span></p>
+  <div id="videoContainer"></div>
+  <h6 id="loading">Loading the model...</h6>
   <p>
     <button id="buttonA">Train A</button>
     <button id="resetA">Reset A</button>
     <p><span id="exampleA">0</span> Examples in A</p>
-    <p>Confidence in A is: <span id="confidenceA">0</span></p>
+    <p>| Confidence in A is: <span id="confidenceA">0</span></p>
     <br><button id="buttonB">Train B</button>
     <button id="resetB">Reset B</button>
     <p><span id="exampleB">0</span> Examples in B</p>
-    <p>Confidence in B is: <span id="confidenceB">0</span></p>
-    <br> Training on: <span id="training"></span>
+    <p>| Confidence in B is: <span id="confidenceB">0</span></p>
   </p>
+  <br/>
+  <h6>Training on: <span id="training"></span></h6>
+  <br/>
   <p>
     <button id="buttonPredict">Start guessing!</button><br>
     My guess is category: <span id="result">...</span>.
@@ -37,49 +57,42 @@
 <pre><code class="hljs css javascript"><span class="hljs-keyword">let</span> knn;
 <span class="hljs-keyword">let</span> video;
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">preload</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-comment">// Initialize the KNN method.</span>
-  knn = <span class="hljs-keyword">new</span> ml5.KNNImageClassifier(modelLoaded, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>);
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setup</span>(<span class="hljs-params"></span>) </span>{
+  noCanvas();
+  video = createCapture(VIDEO).parent(<span class="hljs-string">'videoContainer'</span>);
+  <span class="hljs-comment">// Create a KNN Image Classifier</span>
+  knn = <span class="hljs-keyword">new</span> ml5.KNNImageClassifier(<span class="hljs-number">2</span>, <span class="hljs-number">1</span>, modelLoaded, video.elt);
+  createButtons();
 }
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setup</span>(<span class="hljs-params"></span>) </span>{
-  createCanvas(<span class="hljs-number">320</span>, <span class="hljs-number">240</span>).parent(<span class="hljs-string">'canvasContainer'</span>);
-  video = createCapture(VIDEO);
-  background(<span class="hljs-number">0</span>);
-  video.size(<span class="hljs-number">227</span>, <span class="hljs-number">227</span>);
-  video.hide();
-
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createButtons</span>(<span class="hljs-params"></span>) </span>{
   <span class="hljs-comment">// Train buttons</span>
   buttonA = select(<span class="hljs-string">'#buttonA'</span>);
-  buttonA.mousePressed(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  buttonA.mousePressed(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
     train(<span class="hljs-number">1</span>);
   });
 
   buttonB = select(<span class="hljs-string">'#buttonB'</span>);
-  buttonB.mousePressed(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  buttonB.mousePressed(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
     train(<span class="hljs-number">2</span>);
   });
 
   <span class="hljs-comment">// Reset buttons</span>
   resetBtnA = select(<span class="hljs-string">'#resetA'</span>);
-  resetBtnA.mousePressed(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  resetBtnA.mousePressed(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
     clearClass(<span class="hljs-number">1</span>);
     updateExampleCounts();
   });
 
   resetBtnB = select(<span class="hljs-string">'#resetB'</span>);
-  resetBtnB.mousePressed(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  resetBtnB.mousePressed(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
     clearClass(<span class="hljs-number">2</span>);
     updateExampleCounts();
   });
 
+  <span class="hljs-comment">// Predict Button</span>
   buttonPredict = select(<span class="hljs-string">'#buttonPredict'</span>);
   buttonPredict.mousePressed(predict);
-}
-
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">draw</span>(<span class="hljs-params"></span>) </span>{
-  background(<span class="hljs-number">0</span>);
-  image(video, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, width, height);
 }
 
 <span class="hljs-comment">// A function to be called when the model has been loaded</span>
@@ -96,13 +109,13 @@
     msg = <span class="hljs-string">'B'</span>;
   }
   select(<span class="hljs-string">'#training'</span>).html(msg);
-  knn.addImage(video.elt, category);
+  knn.addImageFromVideo(category);
   updateExampleCounts();
 }
 
 <span class="hljs-comment">// Predict the current frame.</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">predict</span>(<span class="hljs-params"></span>) </span>{
-  knn.predict(video.elt, gotResults);
+  knn.predictFromVideo(gotResults);
 }
 
 <span class="hljs-comment">// Show the results</span>
@@ -120,7 +133,9 @@
   select(<span class="hljs-string">'#confidenceA'</span>).html(results.confidences[<span class="hljs-number">1</span>]);
   select(<span class="hljs-string">'#confidenceB'</span>).html(results.confidences[<span class="hljs-number">2</span>]);
 
-  setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> predict(), <span class="hljs-number">50</span>);
+  setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+    predict();
+  }, <span class="hljs-number">50</span>);
 }
 
 <span class="hljs-comment">// Clear the data in one class</span>
@@ -134,7 +149,12 @@
   select(<span class="hljs-string">'#exampleA'</span>).html(counts[<span class="hljs-number">1</span>]);
   select(<span class="hljs-string">'#exampleB'</span>).html(counts[<span class="hljs-number">2</span>]);
 }
-
 </code></pre>
-<h2><a class="anchor" aria-hidden="true" name="source-https-githubcom-itpnyu-ml5-tree-master-examples-knnimage"></a><a href="#source-https-githubcom-itpnyu-ml5-tree-master-examples-knnimage" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://github.com/ITPNYU/ml5/tree/master/examples/KNNImage">Source</a></h2>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="video-classification-example.html">← Video Classification</a><a class="docs-next button" href="lstm-simple-example.html">Simple LSTM →</a></div></div></div></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Docs</h5><a href="/docs/getting-started.html">Getting Started</a><a href="/docs/imagenet.html">API Reference</a><a href="/docs/training-models.html">Training Models</a></div><div><h5>Learning</h5><a href="/docs/tutorials.html">Tutorials</a><a href="/docs/glossary-statistics.html">Glossary</a><a href="/docs/resources.html">Resources</a></div><div><h5>Contribute</h5><a href="/experiments.html">Experiments</a><a href="https://github.com/ITPNYU/ml5">Contributing Guide</a><a class="github-button" href="https://github.com/ITPNYU/ml5" data-icon="octicon-star" data-count-href="https://github.com/ITPNYU/ml5" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://itp.nyu.edu" target="_blank" class="fbOpenSource"><img src="/img/itp_logo.png" alt="Facebook Open Source" width="60" height="45"/></a><section class="copyright">This project is currently being maintained at NYU ITP by a community of teachers, residents and students.</section></footer></div></body></html>
+<h2><a class="anchor" aria-hidden="true" name="source-https-githubcom-ml5js-ml5-examples-tree-master-p5js-02-knnimage"></a><a href="#source-https-githubcom-ml5js-ml5-examples-tree-master-p5js-02-knnimage" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://github.com/ml5js/ml5-examples/tree/master/p5js/02_KNNImage">Source</a></h2>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="video-classification-example.html">← Video Classification</a><a class="docs-next button" href="lstm-simple-example.html">Simple LSTM →</a></div></div></div></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Docs</h5><a href="/ml5js.github.io/docs/getting-started.html">Getting Started</a><a href="/ml5js.github.io/docs/imagenet.html">API Reference</a><a href="/ml5js.github.io/docs/training-models.html">Training Models</a></div><div><h5>Learning</h5><a href="/ml5js.github.io/docs/tutorials.html">Tutorials</a><a href="/ml5js.github.io/docs/glossary-statistics.html">Glossary</a><a href="/ml5js.github.io/docs/resources.html">Resources</a></div><div><h5>Contribute</h5><a href="/ml5js.github.io/experiments.html">Experiments</a><a href="https://github.com/cvalenzuela//ml5js.github.io">Contributing Guide</a><a class="github-button" href="https://github.com/cvalenzuela//ml5js.github.io" data-icon="octicon-star" data-count-href="https://github.com/cvalenzuela//ml5js.github.io" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://itp.nyu.edu" target="_blank" class="fbOpenSource"><img src="/ml5js.github.io/img/itp_logo.png" alt="Facebook Open Source" width="60" height="45"/></a><section class="copyright">This project is currently being maintained at NYU ITP by a community of teachers, residents and students.</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+              var search = docsearch({
+                apiKey: '4e9582fa59998b865a9fd98ae8d8a9cc',
+                indexName: 'ml5js',
+                inputSelector: '#search_input_react'
+              });
+            </script></body></html>
