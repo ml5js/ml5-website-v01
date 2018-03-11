@@ -3,34 +3,53 @@ id: knn-image-example
 title: KNN Image Classification
 ---
 
-Train and classify frames from a live webcam stream using the [KNN Image Classifier](api-Imagenet.md). Built with [p5.js](https://p5js.org/).
+This examples allows you to train and classify frames from a live webcam stream into two categories. You can also find the same example without p5.js [here](https://github.com/ml5js/ml5-examples)
 
 *Please enable your webcam*
 
+Instructions: 
+  1. Train the model on one set of images using the 'Train A' button. Try with 15 images.
+  2. Add something distinctive to your webcam scene and train the model on another set of images using the 'Train B' button.
+  3. Click 'Start guessing!' and switch between the two scenes you trained the model on!
+
 ## Demo
 
-<div class="example">
-  <style>
-    button {
-      margin: 4px;
-      padding: 8px;
-    }
-  </style>
-  <div id="canvasContainer"></div>
+<style>
+  .example button {
+    margin: 4px;
+    padding: 8px;
+  }
+  .example video{
+    width: 300;
+    height: 300;
+  }
+  .example p{
+    display: inline;
+    font-size: 14px;
+  }
+  .example h6{
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+</style>
 
-  <span id="loading">Loading the model...</span>
+<div class="example">
+  <div id="videoContainer"></div>
+  <h6 id="loading">Loading the model...</h6>
   
   <p>
     <button id="buttonA">Train A</button>
     <button id="resetA">Reset A</button>
     <p><span id="exampleA">0</span> Examples in A</p>
-    <p>Confidence in A is: <span id="confidenceA">0</span></p>
+    <p>| Confidence in A is: <span id="confidenceA">0</span></p>
     <br><button id="buttonB">Train B</button>
     <button id="resetB">Reset B</button>
     <p><span id="exampleB">0</span> Examples in B</p>
-    <p>Confidence in B is: <span id="confidenceB">0</span></p>
-    <br> Training on: <span id="training"></span>
+    <p>| Confidence in B is: <span id="confidenceB">0</span></p>
   </p>
+  <br/>
+  <h6>Training on: <span id="training"></span></h6>
+  <br/>
   <p>
     <button id="buttonPredict">Start guessing!</button><br>
     My guess is category: <span id="result">...</span>.
@@ -45,49 +64,42 @@ Train and classify frames from a live webcam stream using the [KNN Image Classif
 let knn;
 let video;
 
-function preload() {
-  // Initialize the KNN method.
-  knn = new ml5.KNNImageClassifier(modelLoaded, 2, 1);
+function setup() {
+  noCanvas();
+  video = createCapture(VIDEO).parent('videoContainer');
+  // Create a KNN Image Classifier
+  knn = new ml5.KNNImageClassifier(2, 1, modelLoaded, video.elt);
+  createButtons();
 }
 
-function setup() {
-  createCanvas(320, 240).parent('canvasContainer');
-  video = createCapture(VIDEO);
-  background(0);
-  video.size(227, 227);
-  video.hide();
-
+function createButtons() {
   // Train buttons
   buttonA = select('#buttonA');
-  buttonA.mousePressed(() => {
+  buttonA.mousePressed(function() {
     train(1);
   });
 
   buttonB = select('#buttonB');
-  buttonB.mousePressed(() => {
+  buttonB.mousePressed(function() {
     train(2);
   });
 
   // Reset buttons
   resetBtnA = select('#resetA');
-  resetBtnA.mousePressed(() => {
+  resetBtnA.mousePressed(function() {
     clearClass(1);
     updateExampleCounts();
   });
 
   resetBtnB = select('#resetB');
-  resetBtnB.mousePressed(() => {
+  resetBtnB.mousePressed(function() {
     clearClass(2);
     updateExampleCounts();
   });
 
+  // Predict Button
   buttonPredict = select('#buttonPredict');
   buttonPredict.mousePressed(predict);
-}
-
-function draw() {
-  background(0);
-  image(video, 0, 0, width, height);
 }
 
 // A function to be called when the model has been loaded
@@ -104,13 +116,13 @@ function train(category) {
     msg = 'B';
   }
   select('#training').html(msg);
-  knn.addImage(video.elt, category);
+  knn.addImageFromVideo(category);
   updateExampleCounts();
 }
 
 // Predict the current frame.
 function predict() {
-  knn.predict(video.elt, gotResults);
+  knn.predictFromVideo(gotResults);
 }
 
 // Show the results
@@ -128,7 +140,9 @@ function gotResults(results) {
   select('#confidenceA').html(results.confidences[1]);
   select('#confidenceB').html(results.confidences[2]);
 
-  setTimeout(() => predict(), 50);
+  setTimeout(function(){
+    predict();
+  }, 50);
 }
 
 // Clear the data in one class
@@ -142,8 +156,7 @@ function updateExampleCounts() {
   select('#exampleA').html(counts[1]);
   select('#exampleB').html(counts[2]);
 }
-
 ```
 
-## [Source](https://github.com/ITPNYU/ml5/tree/master/examples/KNNImage)
+## [Source](https://github.com/ml5js/ml5-examples/tree/master/p5js/02_KNNImage)
 
