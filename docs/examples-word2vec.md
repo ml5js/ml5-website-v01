@@ -18,7 +18,8 @@ A demostration of possible vector operations with words using the [Word2Vec](api
       -webkit-outline-radius: 10px;
     }
   </style>
-  <div id="loadHide">
+  <div>
+  <div>
     <div class="row">
       <p>
         <input type="text" value="rainbow" id="nearword"></input>
@@ -37,9 +38,9 @@ A demostration of possible vector operations with words using the [Word2Vec](api
     </div>
     <div class="row">
       <p>
-        <input type="text" value="king" id="isto1"></input> is to
-        <input type="text" value="queen" id="isto2"></input> as
-        <input type="text" value="man" id="isto3"></input>
+        <input type="text" value="pizza" id="isto1"></input> is to
+        <input type="text" value="humans" id="isto2"></input> as
+        <input type="text" value="fish" id="isto3"></input>
         <button id="submit3" class="btn btn-primary">is to ...</button>
       </p>
       <p id="results3"></p>
