@@ -14,7 +14,6 @@
       "knn-image-example",
       "lstm-simple-example",
       "lstm-interactive-example",
-      "neural-network-example",
       "transform-net-example",
       "fast-style-transfer-webcam-example",
       "word2vec-example"
