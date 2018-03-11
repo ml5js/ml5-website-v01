@@ -1,5 +1,5 @@
 ---
-id: fast-style-transfer-webcam-example
+id: fast-style-webcam-example
 title: Fast Style Transfer with Webcam
 ---
 

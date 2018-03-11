@@ -3,7 +3,7 @@ id: lstm-interactive-example
 title: Interactive LSTM
 ---
 
-An interactive LSTM text generation example using a model trained on a corpus of [Ernest Hemingway](https://en.wikipedia.org/wiki/Ernest_Hemingway).
+An interactive LSTM text generation example using a model trained on a corpus of [Ernest Hemingway](https://en.wikipedia.org/wiki/Ernest_Hemingway) using ML5.js and [p5.js](https://p5js.org/). You can train your own images following [this tutorial](#). You can also find the same example without p5.js [here](https://github.com/ml5js/ml5-examples)
 
 In this demo you ask the LSTM: "Starting with the seed text, predict what text might come next based on the pre-trained Ernest Hemingway model." Changing `length` changes the number of characters in the resulting predicted text. Higher `length` values can take many minutes to compute and use a lot of CPU. The `temperature` controls the randomness of the output. A `temperature` of 0 will be relatively random but might not even look like English, while a `temperature` of 1.0 will probably be correct English but will also be very close to the original Hemingway, perhaps even straight quotations.
 

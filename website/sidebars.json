@@ -14,8 +14,8 @@
       "knn-image-example",
       "lstm-simple-example",
       "lstm-interactive-example",
-      "transform-net-example",
-      "fast-style-transfer-webcam-example",
+      "fast-style-image-example",
+      "fast-style-webcam-example",
       "word2vec-example"
     ],
     "Datasets": [
