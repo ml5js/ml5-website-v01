@@ -1,9 +1,11 @@
 ---
-id: transform-net
-title: Transform Net
+id: style-transfer
+title: Style Transfer
 ---
 
-This class allows you to perform the Fast Neural Style Transfer algorithm on any given image. You need to provide a valid pre-trained and ported model. 
+Fast Style Transfer is a machine learning technique that allows to transfer the style of one image into another one. This is a two step process, first you need to train a model on one particular style and then you can apply this style to another image. In this example we are using two pre-trained models.
+
+You can train your own images following [this tutorial](#).
 
 Based on [this demo](https://github.com/PAIR-code/deeplearnjs/tree/0608feadbd897bca6ec7abf3340515fe5f2de1c2/demos/fast-style-transfer)
 and [fast-style-transfer-deeplearnjs](https://github.com/reiinakano/fast-style-transfer-deeplearnjs) by reiinakano.
@@ -13,17 +15,17 @@ The original Tensorflow version of model can be found [here](https://github.com/
 ### Example
 
 ```javascript
-// Create a new Fast Style Transfer (fst) instance
-const fst = new ml5.TransformNet('data/myModel/');
+// Create a new Style Transfer Instance
+const style = new ml5.StyleTransfer('data/myModel/');
 
 // Grab a <img> element and generate a new image.
 const img = document.getElementById('input');
-let outputImgData = fst.predict(img);
+let outputImgData = style.transfer(img);
 ```
 
 ## Constructor
   ```javascript
-  TransformNet(model, callback)
+  StyleTransfer(model, callback)
   ```
   `model` - A valid Fast Style Transfer model that has been ported to deeplearn.js
   `callback` - A function to execute once the model is loaded.
@@ -63,9 +65,9 @@ let outputImgData = fst.predict(img);
 ## Methods
 
   ```javascript
-  .predict(img)
+  .transfer(img)
   ```
-  > Infer through TransformNet, assumes variables have been loaded. Returns an Array3D containing pixels of the output img.
+  > Run the style transformation on the given image, assumes variables have been loaded. Returns an HTML img element.
 
   `img` -  HTMLImageElement of input img
 
@@ -78,4 +80,4 @@ let outputImgData = fst.predict(img);
 
 ## Source
 
-[/src/Lstm/index.js](https://github.com/ITPNYU/ml5/tree/master/src/TransformNet)
+[/src/StyleTransfer/index.js](https://github.com/ml5js/ml5-library/tree/master/src/StyleTransfer)

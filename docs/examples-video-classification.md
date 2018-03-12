@@ -3,14 +3,20 @@ id: video-classification-example
 title: Video Classification
 ---
 
-Classify a live webcam stream using the [KNN Image Classifier](api-Imagenet.md). Built using [p5.js](https://p5js.org/).
+A live webcam stream image classifier example using ML5.js and [p5.js](https://p5js.org/). You can also find the same example without p5.js [here](https://github.com/ml5js/ml5-examples)
 
 *Please enable your webcam*
 
 ## Demo
 
 <div class="example">
-  <div id="canvasContainer"></div>
+  <style>
+    .example video{
+      width: 400;
+      height: 400;
+    }
+  </style>
+  <div id="videoContainer"></div>
   <p>My guess is a <span id="result">...</span>.
   <br/>My confidence is <span id="probability">...</span>.
   </p>
@@ -21,42 +27,28 @@ Classify a live webcam stream using the [KNN Image Classifier](api-Imagenet.md).
 ## Code
 
 ```javascript
-let imagenet;
+// Initialize the ImageNet method with the MobileNet model.
+const classifier = new ml5.ImageNet('MobileNet');
 let video;
 
-function preload() {
-  // Initialize the ImageNet method with the MobileNet model.
-  imagenet = new ml5.ImageNet('MobileNet');
-}
-
 function setup() {
-  createCanvas(320, 240).parent('canvasContainer');
-  video = createCapture(VIDEO);
-  background(0);
-  video.attribute('width', 127);
-  video.attribute('height', 127);
-  video.hide();
-  guess();
+  noCanvas();
+  // Load the camera and call guess() once it has loaded.
+  video = createCapture(VIDEO, guess).parent('videoContainer');
 }
 
+// Get a prediction for the current video frame
 function guess() {
-  // Get a prediction for that image
-  imagenet.predict(video.elt, 10, gotResult);
-}
-
-function draw() {
-  background(0);
-  image(video, 0, 0, width, height);
+  classifier.predict(video.elt, 10, gotResult);
 }
 
 function gotResult(results) {
   // The results are in an array ordered by probability.
   select('#result').html(results[0].label);
   select('#probability').html(nf(results[0].probability, 0, 2));
-  setTimeout(guess, 250);
+  setTimeout(guess, 500);
 }
-
 ```
 
-## [Source](https://github.com/ITPNYU/ml5/tree/master/examples/imagenetCamera)
+## [Source](https://github.com/ml5js/ml5-examples/tree/master/p5js/01_ImageNet_Camera)
 

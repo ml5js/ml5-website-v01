@@ -3,7 +3,7 @@ id: simple-image-classification-example
 title: Simple Image Classification
 ---
 
-A simple image classification example using the [KNN Image Classifier](api-Imagenet.md). Built using [p5.js](https://p5js.org/).
+A simple image classification example using ML5.js and [p5.js](https://p5js.org/). You can also find the same example without p5.js [here](https://github.com/ml5js/ml5-examples).
 
 ## Demo
 
@@ -16,26 +16,22 @@ A simple image classification example using the [KNN Image Classifier](api-Image
 
 ## Code
 ```javascript
-let imagenet;
+// Initialize the ImageNet method with the MobileNet model.
+const classifier = new ml5.ImageNet('MobileNet');
+
 let img;
 
-function preload() {
-  // Initialize the ImageNet method with the MobileNet model.
-  imagenet = new ml5.ImageNet('MobileNet');
-}
-
 function setup() {
-  img = createImg('/docs/assets/img/kitten.jpg', imageReady);
+  noCanvas();
+  // Load the image
+  img = createImg('assets/img/kitten.jpg', imageReady);
+  img.hide();
 }
 
+// When the image has been loaded,
+// get a prediction for that image
 function imageReady() {
-  // The image should be 227x227
-  img.attribute('width', 227);
-  img.attribute('height', 227);
-  img.hide();
-
-  // Get a prediction for that image
-  imagenet.predict(img.elt, 10, gotResult);
+  classifier.predict(img.elt, 10, gotResult);
 }
 
 // When we get the results
@@ -46,4 +42,4 @@ function gotResult(results) {
 }
 ```
 
-## [Source](https://github.com/ITPNYU/ml5/tree/master/examples/imagenet)
+## [Source](https://github.com/ml5js/ml5-examples/tree/master/p5js/00_ImageNet_Simple)
