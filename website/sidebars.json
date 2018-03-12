@@ -6,7 +6,7 @@
       "knnImage",
       "lstm",
       "neural-network",
-      "transform-net",
+      "style-transfer",
       "word2vec"],
     "Examples": [
       "simple-image-classification-example",
@@ -14,8 +14,8 @@
       "knn-image-example",
       "lstm-simple-example",
       "lstm-interactive-example",
-      "fast-style-image-example",
-      "fast-style-webcam-example",
+      "style-transfer-image-example",
+      "style-transfer-webcam-example",
       "word2vec-example"
     ],
     "Datasets": [
