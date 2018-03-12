@@ -1,5 +1,5 @@
 ---
-id: fast-style-image-example
+id: style-transfer-image-example
 title: Fast Style Transfer
 ---
 
@@ -16,55 +16,60 @@ This example is using ML5.js and [p5.js](https://p5js.org/). You can also find t
     #example img {
       width: 250px;
       height: 250px;
+      display: inline;
     }
   </style>
+
+  <p id="statusMsg">Loading Models...</p>
+
+  <button id="transferBtn">Transfer!</button>
+  <p>Input Image:</p>
+
+  <img src="assets/img/patagonia.jpg" alt="input img" id="inputImg">
+
+  <div id="styleA">
+    <p>Style A: <a href="https://en.wikipedia.org/wiki/The_Great_Wave_off_Kanagawa">The Great Wave off Kanagawa, 1829 - Katsushika Hokusai</a></p>
+    <img src="assets/img/wave.jpg" alt="style one">
+  </div>
+
+  <div id="styleB">
+    <p>Style B: <a href="https://en.wikipedia.org/wiki/The_Great_Wave_off_Kanagawa">Udnie (Young American Girl, The Dance), 1913 - Francis Picabia</a></p>
+    <img src="assets/img/udnie.jpg" alt="style two">
+  </div>
+
+  <script src="assets/scripts/example-fast-style-image.js"></script>
 </div>
 
-<script src="assets/scripts/example-fast-style-image.js"></script>
+
 
 ## Code
 
 ```javascript
-
 let inputImg;
-let resultImg1;
-let resultImg2;
 let statusMsg;
 let transferBtn;
 
 // Create two Fast Style methods with different pre-trained models
-const fs1 = new ml5.FastStyle('models/wave', modelLoaded);
-const fs2 = new ml5.FastStyle('models/udnie', modelLoaded);
+const style1 = new ml5.StyleTransfer('assets/models/wave', modelLoaded);
+const style2 = new ml5.StyleTransfer('assets/models/udnie', modelLoaded);
 
 function setup() {
   noCanvas();
   // Status Msg
-  statusMsg = createP('Loading Models...');
-  
+  statusMsg = select('#statusMsg');
+
+  // Get the input image
+  inputImg = select('#inputImg');
+
   // Transfer Button
-  transferBtn = createButton('Transfer!');
+  transferBtn = select('#transferBtn')
   transferBtn.mousePressed(transferImages);
-
-  // Input Image
-  createP('Input Image:');
-  inputImg = createImg('img/patagonia.jpg');
-
-  // Style A
-  createP('Style A: The Great Wave off Kanagawa, 1829 - Katsushika Hokusai');
-  createImg('img/wave.jpg');
-  resultImg1 = createImg('');
-
-  // Style B
-  createP('Style B:Udnie (Young American Girl, The Dance), 1913 - Francis Picabia');
-  createImg('img/udnie.jpg');
-  resultImg2 = createImg('');
-  
 }
 
 // A function to be called when the models have loaded
 function modelLoaded() {
   // Check if both models are loaded
-  if(fs1.ready && fs2.ready){
+  if(style1.ready && style2.ready){
     statusMsg.html('Ready!')
   }
 }
@@ -73,14 +78,15 @@ function modelLoaded() {
 function transferImages() {
   statusMsg.html('Applying Style Transfer...!');
 
-  var styleA = fs1.transfer(inputImg.elt);
-  resultImg1.elt.src = styleA.src;
+  var styleA = style1.transfer(inputImg.elt);
+  createImg(styleA.src).parent('styleA');
 
-  var styleB = fs2.transfer(inputImg.elt);
-  resultImg2.elt.src = styleB.src;
+  var styleB = style2.transfer(inputImg.elt);
+  createImg(styleB.src).parent('styleB');
 
   statusMsg.html('Done!');
 }
+
 ```
 
 ## [Source](https://github.com/ITPNYU/ml5/tree/master/examples/fast_style_transfer)

@@ -1,5 +1,5 @@
 ---
-id: fast-style-webcam-example
+id: style-transfer-webcam-example
 title: Fast Style Transfer with Webcam
 ---
 
@@ -63,7 +63,7 @@ function setup() {
   resultImg.hide();
   video.size(200, 200);
   video.hide();
-  fastStyle = new ml5.FastStyle('assets/models/udnie', modelLoaded);
+  fastStyle = new ml5.StyleTransfer('assets/models/udnie', modelLoaded);
 }
 
 function draw(){
@@ -97,6 +97,7 @@ function predict() {
     setTimeout(() => predict(), 500);
   }
 }
+
 
 ```
 
