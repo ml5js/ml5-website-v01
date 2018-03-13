@@ -3,7 +3,9 @@ id: knnImage
 title: KNN Image Classifier
 ---
 
-This class allows you train the last layer of the [SqueezeNet](https://github.com/PAIR-code/deeplearnjs/tree/master/models/squeezenet) model to recognize custom images. Based on [deeplearn.js KNN image classifier model](https://github.com/PAIR-code/deeplearnjs/tree/master/models/knn_image_classifier).
+This class allows you to train and classify images in to a set of different categories. 
+
+Based on [deeplearn.js KNN image classifier model](https://github.com/PAIR-code/deeplearnjs/tree/master/models/knn_image_classifier).
 
 ### Example
 
@@ -16,18 +18,20 @@ knn.addImage(imageOne, '1');
 knn.addImage(imageTwo, '2');
 
 // Make a prediction. Will return either 1 or 2
-knn.predict(video, callback);
+knn.predictFromImage(video, callback);
 ```
 
 ## Constructor
   ```javascript
-  KNNImageClassifier(callback, ?numClasses, ?knnKValue)
+  KNNImageClassifier(callback, ?numClasses, ?knnKValue, ?video)
   ```
   `callback` - A function to run once the model has been loaded.
 
-  `numClasses` - Max number of classes. Optional, defaults to 15.
+  `numClasses` - The number of classes to be able to detect. Optional, defaults to 15.
   
-  `knnKValue` - Starting K value. Optional, defaults to 5.
+  `knnKValue` - The number of nearest neighbors to look at when predicting. Optional, defaults to 5.
+
+  `video` - A HTMLVideoElement.
 
 ## Properties
 
@@ -69,7 +73,7 @@ knn.predict(video, callback);
 ## Methods
 
   ```javascript
-  .addImage(image, index)
+  .addImage(image, index, callback)
   ```
   > Trains the model on a given image and index value.
 
@@ -77,16 +81,33 @@ knn.predict(video, callback);
 
   `index` - An integer associated with the image.
 
+  `callback` - A callback to be executed once the image is added.
 
   ```javascript
-  .predict(image, callback)
+  .addImageFromVideo(index, callback)
   ```
-  > Predicts to which of the training classes does the input image corresponds to. Returns ...
+  > Trains the model the current frame if a video is passed when constructing the instance
+
+  `index` - An integer associated with the video frame.
+
+  `callback` - A callback to be executed once the image is added.
+
+  ```javascript
+  .predictFromImage(image, callback)
+  ```
+  > Predicts to which of the training classes does the input image corresponds to. Returns an Object.
 
   `image` -  An image element containing valid pixels.
 
   `callback` - A function to be called once the model has made the prediction.
 
+
+  ```javascript
+  .predictFromVideo(callback)
+  ```
+  > If a video is passed when constructing the instance, predicts to which of the training classes does the current frame corresponds to. Returns an Object.
+
+  `callback` - A function to be called once the model has made the prediction.
 
   ```javascript
   .getClassExampleCount()

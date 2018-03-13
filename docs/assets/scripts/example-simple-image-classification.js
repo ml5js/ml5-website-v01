@@ -1,29 +1,25 @@
-/*
-===
-Simple Image classification
-===
-*/
+/* ===
+ML5 Example
+00_ImageNet_Simple
+Simple Image Classification using p5.js
+=== */
 
-let imagenet;
+// Initialize the ImageNet method with the MobileNet model.
+const classifier = new ml5.ImageNet('MobileNet');
+
 let img;
 
-function preload() {
-  // Initialize the imageNet method with the Squeeznet model.
-  imagenet = new ml5.ImageNet('MobileNet');
-}
-
 function setup() {
+  noCanvas();
+  // Load the image
   img = createImg('assets/img/kitten.jpg', imageReady);
+  img.hide();
 }
 
+// When the image has been loaded,
+// get a prediction for that image
 function imageReady() {
-  // The image should be 227x227
-  img.attribute('width', 227);
-  img.attribute('height', 227);
-  img.hide();
-
-  // Get a prediction for that image
-  imagenet.predict(img.elt, 10, gotResult);
+  classifier.predict(img.elt, 10, gotResult);
 }
 
 // When we get the results

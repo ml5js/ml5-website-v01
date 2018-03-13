@@ -1,40 +1,27 @@
-/*
-===
-Video Classification
-===
-*/
+/* ===
+ML5 Example
+01_ImageNet_Camera
+Video Camera Classification using p5.js
+=== */
 
-let imagenet;
+// Initialize the ImageNet method with the MobileNet model.
+const classifier = new ml5.ImageNet('MobileNet');
 let video;
 
-function preload() {
-  // Initialize the imageNet method with the Squeeznet model.
-  imagenet = new ml5.ImageNet('MobileNet');
-}
-
 function setup() {
-  createCanvas(320, 240).parent('canvasContainer');
-  video = createCapture(VIDEO);
-  background(0);
-  video.attribute('width', 127);
-  video.attribute('height', 127);
-  video.hide();
-  guess();
+  noCanvas();
+  // Load the camera and call guess() once it has loaded.
+  video = createCapture(VIDEO, guess).parent('videoContainer');
 }
 
+// Get a prediction for the current video frame
 function guess() {
-  // Get a prediction for that image
-  imagenet.predict(video.elt, 10, gotResult);
-}
-
-function draw() {
-  background(0);
-  image(video, 0, 0, width, height);
+  classifier.predict(video.elt, 10, gotResult);
 }
 
 function gotResult(results) {
   // The results are in an array ordered by probability.
   select('#result').html(results[0].label);
   select('#probability').html(nf(results[0].probability, 0, 2));
-  setTimeout(guess, 250);
+  setTimeout(guess, 500);
 }

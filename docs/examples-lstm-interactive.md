@@ -3,16 +3,23 @@ id: lstm-interactive-example
 title: Interactive LSTM
 ---
 
-An interactive LSTM text generation example using a model trained on a corpus of [Ernest Hemingway](https://en.wikipedia.org/wiki/Ernest_Hemingway). Built with [p5.js](https://p5js.org/).
+An interactive LSTM text generation example using a model trained on a corpus of [Ernest Hemingway](https://en.wikipedia.org/wiki/Ernest_Hemingway) using ML5.js and [p5.js](https://p5js.org/). 
+
+In this demo you ask the LSTM: "Starting with the seed text, predict what text might come next based on the pre-trained Ernest Hemingway model." Changing `length` changes the number of characters in the resulting predicted text. Higher `length` values can take many minutes to compute and use a lot of CPU. The `temperature` controls the randomness of the output. A `temperature` of 0 will be relatively random but might not even look like English, while a `temperature` of 1.0 will probably be correct English but will also be very close to the original Hemingway, perhaps even straight quotations.
+
+You can train your own models following [this tutorial](#).
+
+You can also find the same example without p5.js [here](https://github.com/ml5js/ml5-examples)
 
 ## Demo
 
 <div class="example">
-  <textarea id="textInput" style="width: 400px; height: 100px;" placeholder="Type something here..."></textarea>
+  <textarea id="textInput" style="width: 300px; height: 50px;" placeholder="type here"></textarea>
   <br/> length:
   <input id="lenSlider" type="range" min="1" max="100" value="20"> <span id="length">20</span>
   <br/> temperature:
   <input id="tempSlider" type="range" min="0" max="1" step="0.01"><span id="temperature">0.5</span>
+  <p id="status">Loading Model</p>
   <p id="result">
     <span id="original"></span><span id="prediction"></span>
   </p>
@@ -22,11 +29,31 @@ An interactive LSTM text generation example using a model trained on a corpus of
 
 ## Code
 
+```html
+<div class="example">
+  <textarea id="textInput" style="width: 300px; height: 50px;" placeholder="type here"></textarea>
+  <br/> length:
+  <input id="lenSlider" type="range" min="1" max="100" value="20"> <span id="length">20</span>
+  <br/> temperature:
+  <input id="tempSlider" type="range" min="0" max="1" step="0.01"><span id="temperature">0.5</span>
+  <p id="status">Loading Model</p>
+  <p id="result">
+    <span id="original"></span><span id="prediction"></span>
+  </p>
+</div>
+```
+
 ```javascript
+// Create the LSTM Generator passing it the model directory
+const lstm = new ml5.LSTMGenerator('assets/models/hemingway/', modelReady);
+
 let textInput;
 let tempSlider;
 let lengthSlider;
-let lstm;
+
+function modelReady() {
+  select('#status').html('Model Loaded');
+}
 
 function setup() {
   noCanvas();
@@ -40,13 +67,11 @@ function setup() {
   textInput.input(generate);
   lengthSlider.input(generate);
   tempSlider.input(generate);
-
-  // Create the LSTM Generator
-  // Point it to a directory of model files
-  lstm = new ml5.LSTMGenerator('models/hemingway/');
 }
 
 function generate() {
+  // Update the status log
+  select('#status').html('Generating...');
 
   // Update the length and temperature span elements
   select('#length').html(lengthSlider.value());
@@ -71,6 +96,7 @@ function generate() {
 
     // Update the DOM elements with typed and generated text
     function gotData(result) {
+      select('#status').html('Ready!');
       select('#original').html(original);
       select('#prediction').html(result.generated);
     }
@@ -83,5 +109,5 @@ function generate() {
 
 ```
 
-## [Source](https://github.com/ITPNYU/ml5/tree/master/examples/lstm_interactive)
+## [Source](https://github.com/ml5js/ml5-examples/tree/master/p5js/04_LSTM_Interactive)
 

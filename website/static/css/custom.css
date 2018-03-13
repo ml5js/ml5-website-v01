@@ -1,152 +1,179 @@
 /* your custom css */
 
-@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
+@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {}
+
+@media only screen and (min-width: 1024px) {}
+
+@media only screen and (max-width: 1023px) {}
+
+@media only screen and (min-width: 1400px) {}
+
+@media only screen and (min-width: 1500px) {}
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-@media only screen and (min-width: 1024px) {
+.fixedHeaderContainer {
+    background: #ffffff;
+    box-shadow: 0 2px 2px 0 rgba(145, 145, 145, 0.062), 0 6px 4px 0 rgba(235, 235, 235, 0.096);
 }
 
-@media only screen and (max-width: 1023px) {
+.fixedHeaderContainer header img {
+    height: 200%;
+    margin: 3rem 0px 0px 0px;
 }
 
-@media only screen and (min-width: 1400px) {
+.navigationSlider {
+    padding: 1.5rem 0px;
 }
 
-@media only screen and (min-width: 1500px) {
+input#search_input_react {
+    border-radius: 0px;
+    background-color: rgba(210, 210, 210, 0.4);
+    color: black !important;
 }
 
-*{
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+input#search_input_react::placeholder {
+    color: rgb(56, 56, 56);
+    opacity: 1;
 }
 
-.navigationSlider .slidingNav ul li a{
-  color: rgb(255, 255, 255);
-  font-weight: 600;
+.navigationSlider .slidingNav ul li a {
+    color: rgb(87, 87, 87);
+    font-weight: 300;
 }
 
-.navigationSlider .slidingNav ul li a:hover{
-  color: #f7394f;
-  background: rgba(0, 0, 0, 0.86);
+.navigationSlider .slidingNav ul li a:hover {
+    color: #000000;
+    background: white;
 }
 
 .homeContainer {
-  text-align: left;
+    text-align: left;
+    padding: 1rem 0px 0px 0px;
 }
 
-.promoSection .promoRow .pluginRowBlock{
-  justify-content: left;
+.promoSection .promoRow .pluginRowBlock {
+    justify-content: left;
 }
 
-.projectTitle{
-  font-size: 400%;
-  font-weight: bold;
+.projectTitle {
+    font-size: 400%;
+    font-weight: bold;
 }
 
 .projectTitle span {
-  color: black;
+    color: black;
 }
 
-.projectTitle > small{
-  color: black;
-  font-size: 30%;
-  max-width: 250px
-}
-
-.productShowcaseSection h2 {
-  background: #f7394f;
-  color: white;
-  display: inline-block;
-  font-size: 20px;
-  padding: 5px 10px;
-  font-weight: bold;
+.projectTitle>small {
+    color: rgb(38, 41, 40);
+    font-size: 90%;
+    max-width: 950px;
+    margin: 0.7em 0 1em;
 }
 
 .homeContainer .homeWrapper {
-  padding: 6em 5em;
+    padding: 6em 5em;
 }
 
 .productShowcaseSection p {
-  max-width: 600px;
+    max-width: 600px;
+    margin-top: 5rem;
 }
 
 .productShowcaseSection.paddingBottom {
-  padding-bottom: 0px;
+    padding-bottom: 0px;
 }
 
 .container.paddingTop {
-  padding-top: 20px;
+    padding-top: 20px;
 }
 
 .gridBlock .fourByGridBlock {
-  padding: 10px 120px;
+    padding: 10px 120px;
 }
 
-.mainContainer{
-  background: none;
+.mainContainer {
+    background: none;
 }
 
-#experiments .gridBlock{
-  margin: 20px 0px 0px 0px;
+#experiments .gridBlock {
+    margin: 20px 0px 0px 0px;
 }
 
-footer .copyright{
-  max-width: 300px;
-  text-align: center;
-  margin: 0 auto;
-  font-size: 12px;
-  line-height: 14px;
+footer .copyright {
+    max-width: 300px;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 12px;
+    line-height: 14px;
 }
 
-footer .fbOpenSource{
-  text-align: center;
+footer .fbOpenSource {
+    text-align: center;
 }
 
-footer.nav-footer{
-  background: #1c1a27;
-  text-align: center;
+footer.nav-footer {
+    background: #1c1a27;
+    text-align: center;
 }
 
-footer .sitemap a{
-  color: rgba(255, 255, 255, 0.86);
-  width: 100%;
+footer .sitemap a {
+    color: rgba(255, 255, 255, 0.86);
+    width: 100%;
 }
 
 footer .sitemap h5 {
-  font-weight: bold;
+    font-weight: bold;
 }
 
-footer iframe{
-  margin: 20px 0px 0px 0px;
+footer iframe {
+    margin: 20px 0px 0px 0px;
 }
 
 #experiments img {
-  max-width: 400px;
-  margin-top: 10px;
+    max-width: 400px;
+    margin-top: 10px;
 }
 
 .experiment {
-  max-width: 500px;
+    max-width: 500px;
+}
+
+.navPusher {
+    padding-top: 100px;
+}
+
+nav.toc .toggleNav .navGroup.navGroupActive h3 {
+    background: #4568DC;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #B06AB3, #4568DC);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #B06AB3, #4568DC);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 /* Begin simple grid layout  */
 
 .flex-grid {
-  display: flex;
-  justify-content: left;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
 }
 
 .flex-col {
-  flex: 1;
-  min-width: 400px;
-  padding: 14px;
+    flex: 1;
+    min-width: 400px;
+    padding: 14px;
 }
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-  .flex-grid {
-    display: block;
-  }
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .flex-grid {
+        display: block;
+    }
 }
 
 /* End simple grid layout  */
