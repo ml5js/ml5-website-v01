@@ -1,6 +1,6 @@
 ---
 id: simple-image-classification-example
-title: Simple Image Classification
+title: Image Classification
 ---
 
 A simple image classification example using ML5.js and [p5.js](https://p5js.org/). You can also find the same example without p5.js [here](https://github.com/ml5js/ml5-examples).
@@ -12,12 +12,12 @@ A simple image classification example using ML5.js and [p5.js](https://p5js.org/
   <p>I guess this is a <span id="result">...</span>. My confidence is <span id="probability">...</span></p>
 </div>
 
-<script src="assets/scripts/example-simple-image-classification.js"></script>
+<script src="assets/scripts/example-image-classification.js"></script>
 
 ## Code
 ```javascript
-// Initialize the ImageNet method with the MobileNet model.
-const classifier = new ml5.ImageNet('MobileNet');
+// Initialize the ImageClassifier with the MobileNet model.
+const classifier = new ml5.ImageClassifier('MobileNet');
 
 let img;
 

@@ -1,6 +1,6 @@
 ---
 id: lstm-interactive-example
-title: Interactive LSTM
+title: LSTM Interactive
 ---
 
 An interactive LSTM text generation example using a model trained on a corpus of [Ernest Hemingway](https://en.wikipedia.org/wiki/Ernest_Hemingway) using ML5.js and [p5.js](https://p5js.org/). 

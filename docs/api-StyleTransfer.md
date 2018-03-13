@@ -3,14 +3,14 @@ id: style-transfer
 title: Style Transfer
 ---
 
-Fast Style Transfer is a machine learning technique that allows to transfer the style of one image into another one. This is a two step process, first you need to train a model on one particular style and then you can apply this style to another image. In this example we are using two pre-trained models.
+Style Transfer is a machine learning technique that allows to transfer the style of one image into another one. This is a two step process, first you need to train a model on one particular style and then you can apply this style to another image.
 
 You can train your own images following [this tutorial](#).
 
 Based on [this demo](https://github.com/PAIR-code/deeplearnjs/tree/0608feadbd897bca6ec7abf3340515fe5f2de1c2/demos/fast-style-transfer)
 and [fast-style-transfer-deeplearnjs](https://github.com/reiinakano/fast-style-transfer-deeplearnjs) by reiinakano.
 
-The original Tensorflow version of model can be found [here](https://github.com/lengstrom/fast-style-transfer).
+The original Tensorflow model can be found [here](https://github.com/lengstrom/fast-style-transfer).
 
 ### Example
 
