@@ -3,7 +3,9 @@ id: knnImage
 title: KNN Image Classifier
 ---
 
-This class allows you to train and classify images in to a set of different categories. 
+This class allows you to train and classify images in to a set of custom categories. 
+
+It uses a pre-trained image classifier model, the same used in the [`ImageClassifier`](/imageclassifier.md) method, but allows to add new sets of images that can later be searched for visual similarity.
 
 Based on [deeplearn.js KNN image classifier model](https://github.com/PAIR-code/deeplearnjs/tree/master/models/knn_image_classifier).
 
@@ -108,6 +110,21 @@ knn.predictFromImage(video, callback);
   > If a video is passed when constructing the instance, predicts to which of the training classes does the current frame corresponds to. Returns an Object.
 
   `callback` - A function to be called once the model has made the prediction.
+
+  ```javascript
+  .save(?name)
+  ```
+  > Save the current trained model to a json file that can later be loaded.
+
+  `name` - The name of the file to save. Optional, defaults to the current time 
+
+  ```javascript
+  .load(file)
+  ```
+  > Loads a pre-trained KNNImageClassifier model that has been saved with the .save() method.
+
+  `file` - The path of the file to load. 
+
 
   ```javascript
   .getClassExampleCount()

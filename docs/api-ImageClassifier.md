@@ -1,15 +1,15 @@
 ---
-id: imagenet
-title: ImageNet
+id: imageclassifier
+title: Image Classifier
 ---
 
-You can use neural networks to recognize the content of images. ImageNet is a class to classify an image using a given model.
+You can use neural networks to recognize the content of images. The ImageClassifier is a class to classify an image using a pre-trained model.
 
 ### Example
 
 ```javascript
 // Create the classifier
-const classifier = new ml5.ImageNet('SqueezeNet');
+const classifier = new ml5.ImageClassifier('SqueezeNet');
 // Make a prediction
 let prediction = classifier.predict(img, function(result){
   console.log(result) 
@@ -18,7 +18,7 @@ let prediction = classifier.predict(img, function(result){
 
 ## Constructor
   ```javascript
-  ImageNet(model)
+  ImageClassifier(model)
   ```
   `model` - A String value for a valid deeplearn.js model for image recognition. [`SqueezeNet`](https://github.com/PAIR-code/deeplearnjs/tree/master/models/squeezenet) and [`MobileNet`](https://github.com/PAIR-code/deeplearnjs/tree/master/models/mobilenet) models are available.
 
@@ -48,11 +48,13 @@ let prediction = classifier.predict(img, function(result){
 ## Methods
 
   ```javascript
-  .predict(image, callback)
+  .predict(image, num, callback)
   ```
   > Given an image, returns an array of objects containing categories and probabilities.
 
   `image` -  An image element containing valid pixels.
+
+  `num` -  The number of results to return.
 
   `callback` - A function to run once the model has made the prediction.
 
@@ -67,4 +69,4 @@ let prediction = classifier.predict(img, function(result){
 
 ## Source
 
-[/src/ImageNet/index.js](https://github.com/ml5js/ml5-library/blob/master/src/ImageNet/index.js)
+[/src/ImageNet/index.js](https://github.com/ml5js/ml5-library/blob/master/src/ImageClassifier/index.js)

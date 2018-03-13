@@ -2,17 +2,16 @@
   "docs": {
     "Documentation": [
       "getting-started",
-      "imagenet",
+      "imageclassifier",
       "knnImage",
       "lstm",
-      "neural-network",
       "style-transfer",
       "word2vec"],
     "Examples": [
       "simple-image-classification-example",
       "video-classification-example",
       "knn-image-example",
-      "lstm-simple-example",
+      "lstm-example",
       "lstm-interactive-example",
       "style-transfer-image-example",
       "style-transfer-webcam-example",
