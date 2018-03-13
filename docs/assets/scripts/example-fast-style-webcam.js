@@ -21,7 +21,7 @@ function setup() {
   resultImg.hide();
   video.size(200, 200);
   video.hide();
-  fastStyle = new ml5.FastStyle('assets/models/udnie', modelLoaded);
+  fastStyle = new ml5.StyleTransfer('assets/models/udnie', modelLoaded);
 }
 
 function draw(){
