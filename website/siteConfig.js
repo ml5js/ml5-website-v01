@@ -10,7 +10,7 @@ const siteConfig = {
     { doc: 'simple-image-classification-example', label: 'Examples' },
     { page: 'experiments', label: 'Experiments' },
     { doc: 'glossary-statistics', label: 'Learn' },
-    { href: 'https://github.com/ml5js/ml5-library', label: 'Code' },
+    { href: 'https://github.com/ml5js', label: 'Code' },
     { search: true },
   ],
   /* path to images for header/footer */
