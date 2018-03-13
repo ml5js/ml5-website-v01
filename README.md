@@ -1,4 +1,4 @@
-# ML5 Website
+# ml5 Website
 
 This website is built with [Docusaurus](https://docusaurus.io/).
 

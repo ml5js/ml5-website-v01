@@ -40,7 +40,7 @@ class Help extends React.Component {
         content: 'Recomposing images in the style of other images',
         image: siteConfig.baseUrl + "img/style_transfer.gif",
         title: 'Fast Style Transfer',
-        link: "https://yining1023.github.io/fast_style_transfer_in_ML5/",
+        link: "https://yining1023.github.io/fast_style_transfer_in_ml5/",
       },
     ];
 
@@ -63,7 +63,7 @@ class Help extends React.Component {
             <header className="postHeader">
               <h1>Experiments</h1>
             </header>
-            <p>A collection of experiments and demos built with ML5.js.</p>
+            <p>A collection of experiments and demos built with ml5.js.</p>
             <div className="flex-grid">
               {demoList}
             </div>

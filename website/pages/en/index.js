@@ -114,7 +114,7 @@ const Why = props => (
   <div
     className="productShowcaseSection paddingBottom"
     style={{textAlign: 'center'}}>
-    <MarkdownBlock>The main idea of this project is to further reduce the barriers between lower level machine learning and creative coding in JavaScript. ML5 provides two main functionalities:</MarkdownBlock>
+    <MarkdownBlock>The main idea of this project is to further reduce the barriers between lower level machine learning and creative coding in JavaScript. ml5 provides two main functionalities:</MarkdownBlock>
   </div>
 );
 

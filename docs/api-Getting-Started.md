@@ -15,7 +15,7 @@ Download the [latest version](https://github.com/ITPNYU/ml5) of ml5.js and save 
   <html>
     <head>
       <meta charset=utf-8>
-      <title>Intro to ML5.js</title>
+      <title>Intro to ml5.js</title>
     </head>
     <body>
       <script src="ml5.min.js"></script>
