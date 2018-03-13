@@ -40,7 +40,7 @@ class Help extends React.Component {
         content: 'Recomposing images in the style of other images',
         image: siteConfig.baseUrl + "img/style_transfer.gif",
         title: 'Fast Style Transfer',
-        link: "https://yining1023.github.io/fast_style_transfer_in_ml5/",
+        link: "https://yining1023.github.io/fast_style_transfer_in_ML5/",
       },
     ];
 
