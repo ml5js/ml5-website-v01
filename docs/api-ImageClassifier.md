@@ -5,6 +5,9 @@ title: Image Classifier
 
 You can use neural networks to recognize the content of images. The ImageClassifier is a class to classify an image using a pre-trained model.
 
+It should be noted that the available pre-trained models noted below were trained on a database of approximately 15 million images ([ImageNet](http://www.image-net.org/)). The ml5 library accesses
+these model from the cloud. What the algorithm labels an image is entirely dependent on that training data -- what is included, excluded, and how those images are labeled (or mislabeled).
+
 ### Example
 
 ```javascript
@@ -12,7 +15,7 @@ You can use neural networks to recognize the content of images. The ImageClassif
 const classifier = new ml5.ImageClassifier('SqueezeNet');
 // Make a prediction
 let prediction = classifier.predict(img, function(result){
-  console.log(result) 
+  console.log(result)
 });
 ```
 
@@ -43,7 +46,7 @@ let prediction = classifier.predict(img, function(result){
   ```javascript
   .squeezeNet
   ```
-  > The [original SqueezNet model](https://github.com/PAIR-code/deeplearnjs/tree/master/models/squeezenet) from deeplearn.js 
+  > The [original SqueezNet model](https://github.com/PAIR-code/deeplearnjs/tree/master/models/squeezenet) from deeplearn.js
 
 ## Methods
 
