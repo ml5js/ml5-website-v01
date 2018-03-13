@@ -3,7 +3,7 @@ id: knnImage
 title: KNN Image Classifier
 ---
 
-This class allows you to train and classify images in to a set of custom categories. 
+This class allows you to train and classify images in to a set of custom categories.
 
 It uses a pre-trained image classifier model, the same used in the [`ImageClassifier`](/imageclassifier.md) method, but allows to add new sets of images that can later be searched for visual similarity.
 
@@ -15,11 +15,11 @@ Based on [deeplearn.js KNN image classifier model](https://github.com/PAIR-code/
 // Create the classifier
 const knn = new ml5.KNNImageClassifier(callback);
 
-// Add two image and Index associate with that image
-knn.addImage(imageOne, '1');
-knn.addImage(imageTwo, '2');
+// Add two image and a label associated with that image
+knn.addImage(imageOne, 'apple');
+knn.addImage(imageTwo, 'orange');
 
-// Make a prediction. Will return either 1 or 2
+// Make a prediction. Will return either apple or orange
 knn.predictFromImage(video, callback);
 ```
 
@@ -30,7 +30,7 @@ knn.predictFromImage(video, callback);
   `callback` - A function to run once the model has been loaded.
 
   `numClasses` - The number of classes to be able to detect. Optional, defaults to 15.
-  
+
   `knnKValue` - The number of nearest neighbors to look at when predicting. Optional, defaults to 5.
 
   `video` - A HTMLVideoElement.
@@ -81,7 +81,7 @@ knn.predictFromImage(video, callback);
 
   `image` -  An image element containing valid pixels.
 
-  `index` - An integer associated with the image.
+  `label` - A label (aka category or class) associated with the image.
 
   `callback` - A callback to be executed once the image is added.
 
@@ -90,7 +90,7 @@ knn.predictFromImage(video, callback);
   ```
   > Trains the model the current frame if a video is passed when constructing the instance
 
-  `index` - An integer associated with the video frame.
+  `label` - A label (aka category or class) associated with the video frame.
 
   `callback` - A callback to be executed once the image is added.
 
@@ -114,29 +114,29 @@ knn.predictFromImage(video, callback);
   ```javascript
   .save(?name)
   ```
-  > Save the current trained model to a json file that can later be loaded.
+  > Save the current trained model to a json file that can later be loaded. Where it downloads is dependant on browser preferences.
 
-  `name` - The name of the file to save. Optional, defaults to the current time 
+  `name` - The name of the file to save. Optional, defaults to the current time
 
   ```javascript
   .load(file)
   ```
   > Loads a pre-trained KNNImageClassifier model that has been saved with the .save() method.
 
-  `file` - The path of the file to load. 
+  `file` - The path of the file to load.
 
 
   ```javascript
   .getClassExampleCount()
   ```
-  > Get the amount of trained examples for every index.
+  > Get the amount of trained examples for a label.
 
   ```javascript
-  .clearClass(index)
+  .clearClass(label)
   ```
-  > Clears a class associated with an index.
+  > Clears a class associated with an label.
 
-  `index` - The class index to clear.
+  `label` - The class label to clear.
 
 ## Static Methods
 

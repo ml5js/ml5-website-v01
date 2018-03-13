@@ -34,7 +34,7 @@ This will train your model and save the model, **in the globals `./models` folde
 
 ### 2) Run!
 
-To work with the model in ML5, you'll just need to point to the new folder in your sketch:
+To work with the model in ml5, you'll just need to point to the new folder in your sketch:
 
 ```javascript
 var lstm = new ml5.LSTMGenerator('./models/your_new_model');
