@@ -1,6 +1,6 @@
 ---
-id: lstm-simple-example
-title: Simple LSTM
+id: lstm-example
+title: LSTM
 ---
 
 A simple LSTM text generation example using a pre-trained model on a corpus of [Ernest Hemingway](https://en.wikipedia.org/wiki/Ernest_Hemingway) using ML5.js and [p5.js](https://p5js.org/). 
@@ -22,7 +22,7 @@ You can also find the same example without p5.js [here](https://github.com/ml5js
   <p id="result"></p>
 </div>
 
-<script src="assets/scripts/example-lstm-simple.js"></script>
+<script src="assets/scripts/example-lstm.js"></script>
 
 ## Code
 

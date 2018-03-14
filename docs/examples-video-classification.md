@@ -28,7 +28,7 @@ A live webcam stream image classifier example using ML5.js and [p5.js](https://p
 
 ```javascript
 // Initialize the ImageNet method with the MobileNet model.
-const classifier = new ml5.ImageNet('MobileNet');
+const classifier = new ml5.ImageClassifier('MobileNet');
 let video;
 
 function setup() {

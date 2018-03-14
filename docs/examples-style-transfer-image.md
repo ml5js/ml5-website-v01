@@ -1,6 +1,6 @@
 ---
 id: style-transfer-image-example
-title: Fast Style Transfer
+title: Style Transfer
 ---
 
 Fast Style Transfer is a machine learning technique that allows to transfer the style of one image into another one. This is a two step process, first you need to train a model on one particular style and then you can apply this style to another image. In this example we are using two pre-trained models.
@@ -37,7 +37,7 @@ This example is using ML5.js and [p5.js](https://p5js.org/). You can also find t
     <img src="assets/img/udnie.jpg" alt="style two">
   </div>
 
-  <script src="assets/scripts/example-fast-style-image.js"></script>
+  <script src="assets/scripts/example-style-transfer-image.js"></script>
 </div>
 
 

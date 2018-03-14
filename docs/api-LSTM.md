@@ -19,7 +19,7 @@ const options = {
 }
 
 // Create the LSTM using a pretrained model.
-const lstm = new ml5.LSTM('./data/hemingway/');
+const lstm = new ml5.LSTMGenerator('./data/hemingway/');
 
 // Generete content
 lstm.generate(options, function(output){
@@ -29,10 +29,11 @@ lstm.generate(options, function(output){
 
 ## Constructor
   ```javascript
-  LSTMGenerator(model)
+  LSTMGenerator(model, callback)
   ```
   `model` - A valid LSTM model that has been ported.
 
+  `callback` - A callback to be executed once the model has loaded.
 ## Properties
 
   ```javascript
