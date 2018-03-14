@@ -3,7 +3,7 @@ id: simple-image-classification-example
 title: Image Classification
 ---
 
-A simple image classification example using ML5.js and [p5.js](https://p5js.org/). You can also find the same example without p5.js [here](https://github.com/ml5js/ml5-examples).
+A simple image classification example using ml5.js and [p5.js](https://p5js.org/). You can also find the same example without p5.js [here](https://github.com/ml5js/ml5-examples).
 
 ## Demo
 
