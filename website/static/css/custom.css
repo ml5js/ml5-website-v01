@@ -28,7 +28,7 @@
 .hero {
   display: flex;
   width: 100vw;
-  height: 600px;
+  height: 650px;
 }
 
 .flexDiv{
@@ -53,32 +53,17 @@ input#search_input_react::placeholder {
 }
 
 img#imgHome {
-    width: 550px;
+    width: 650px;
     height: auto;
     border-top-right-radius: 46px;
-    box-shadow: 4px 9px 20px 3px #afafaf;
 }
 
-#codeHome {
-    background: #181a1b;
-    width: 530px;
-    height: 135px;
-    position: absolute;
-    padding: 23px;
-    margin: 15vw 34vw 0 8vw;
-    border-top-right-radius: 46px;
-}
 
 img#codeTemp {
-    width: 628px !important;
+    width: 28vw !important;
     height: auto;
 }
 
-p#predictionP {
-    font-weight: 500;
-    margin-top: 75px;
-    font-style: italic;
-}
 
 .navigationSlider .slidingNav ul li a {
     color: rgb(87, 87, 87);

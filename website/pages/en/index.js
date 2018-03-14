@@ -87,13 +87,9 @@ class HomeSplash extends React.Component {
             <Button href={docUrl('simple-image-classification-example.html', language)}>Examples</Button>
           </PromoSection>
         </Flex1>
-        <Flex1 style={{padding:" 3% 0 0 4%"}}>
-          <div id="codeHome">
-          <img src="img/code.png" id="codeTemp" />
+        <Flex1 style={{padding:" 1.5% 0 0 4%"}}>
 
-          </div>
-          <img src="img/bird.jpg" id="imgHome" />
-          <p id="predictionP">I guess this is a robin, American robin, Turdus migratorius. My confidence is 0.99</p>
+          <img src="img/bird_code.jpg" id="imgHome" />
 
         </Flex1>
       </div>
