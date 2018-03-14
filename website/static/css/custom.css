@@ -25,6 +25,16 @@
     margin: 3rem 0px 0px 0px;
 }
 
+.hero {
+  display: flex;
+  width: 100vw;
+  height: 600px;
+}
+
+.flexDiv{
+  flex:1;
+}
+
 .navigationSlider {
     padding: 1.5rem 0px;
 }
@@ -40,6 +50,34 @@ input#search_input_react {
 input#search_input_react::placeholder {
     color: rgb(56, 56, 56);
     opacity: 1;
+}
+
+img#imgHome {
+    width: 550px;
+    height: auto;
+    border-top-right-radius: 46px;
+    box-shadow: 4px 9px 20px 3px #afafaf;
+}
+
+#codeHome {
+    background: #181a1b;
+    width: 530px;
+    height: 135px;
+    position: absolute;
+    padding: 23px;
+    margin: 15vw 34vw 0 8vw;
+    border-top-right-radius: 46px;
+}
+
+img#codeTemp {
+    width: 628px !important;
+    height: auto;
+}
+
+p#predictionP {
+    font-weight: 500;
+    margin-top: 75px;
+    font-style: italic;
 }
 
 .navigationSlider .slidingNav ul li a {
@@ -88,9 +126,10 @@ input#search_input_react::placeholder {
 }
 .productShowcaseSection p {
   max-width: 100vw;
+  height: 300px;
   margin-top: 0rem;
   font-size: 31px;
-  padding: 5% 20% 5% 20%;
+  padding: 14% 20% 5% 20%;
   background: black;
   color: white;
 }
@@ -100,8 +139,13 @@ input#search_input_react::placeholder {
 }
 
 .container.paddingTop {
-    padding-top: 20px;
-    background: #efc62f;
+    padding: 180px 0 180px 0;
+    background: #f2f4ee;
+}
+
+.homeBlock h2 {
+    font-size: 33px !important;
+    font-family: Arial;
 }
 
 .gridBlock .fourByGridBlock {
@@ -206,6 +250,10 @@ nav.toc .toggleNav ul li a {
     margin: 2px 10px 5px;
     padding: 6px 3px 4px;
     transition: color 0.3s;
+}
+
+img#targetImage {
+    width: 50%;
 }
 
 .hljs {

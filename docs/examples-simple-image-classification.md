@@ -8,7 +8,7 @@ A simple image classification example using ML5.js and [p5.js](https://p5js.org/
 ## Demo
 
 <div class="example">
-  <img src="assets/img/kitten.jpg" id="targetImage"/>
+  <img src="assets/img/bird.jpg" id="targetImage"/>
   <p>I guess this is a <span id="result">...</span>. My confidence is <span id="probability">...</span></p>
 </div>
 
@@ -24,7 +24,7 @@ let img;
 function setup() {
   noCanvas();
   // Load the image
-  img = createImg('assets/img/kitten.jpg', imageReady);
+  img = createImg('assets/img/bird.jpg', imageReady);
   img.hide();
 }
 
