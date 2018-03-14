@@ -63,7 +63,7 @@ class Help extends React.Component {
             <header className="postHeader">
               <h1>Experiments</h1>
             </header>
-            <p>A collection of experiments and demos built with ML5.js.</p>
+            <p>A collection of experiments and demos built with ml5.js.</p>
             <div className="flex-grid">
               {demoList}
             </div>

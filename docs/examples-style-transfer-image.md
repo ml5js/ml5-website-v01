@@ -7,7 +7,7 @@ Fast Style Transfer is a machine learning technique that allows to transfer the 
 
 You can train your own images following [this tutorial](#). 
 
-This example is using ML5.js and [p5.js](https://p5js.org/). You can also find the same example without p5.js [here](https://github.com/ml5js/ml5-examples)
+This example is using ml5.js and [p5.js](https://p5js.org/). You can also find the same example without p5.js [here](https://github.com/ml5js/ml5-examples)
 
 ## Demo
 
