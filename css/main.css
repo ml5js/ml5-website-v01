@@ -1847,20 +1847,45 @@ footer .copyright {
     margin: 3rem 0px 0px 0px;
 }
 
+.hero {
+  display: flex;
+  width: 100vw;
+  height: 650px;
+}
+
+.flexDiv{
+  flex:1;
+}
+
 .navigationSlider {
     padding: 1.5rem 0px;
 }
 
 input#search_input_react {
     border-radius: 0px;
-    background-color: rgba(210, 210, 210, 0.4);
+    background-color: white;
     color: black !important;
+    border-bottom: 1px dotted;
+    height: 28px;
 }
 
 input#search_input_react::placeholder {
     color: rgb(56, 56, 56);
     opacity: 1;
 }
+
+img#imgHome {
+    width: 650px;
+    height: auto;
+    border-top-right-radius: 46px;
+}
+
+
+img#codeTemp {
+    width: 28vw !important;
+    height: auto;
+}
+
 
 .navigationSlider .slidingNav ul li a {
     color: rgb(87, 87, 87);
@@ -1870,6 +1895,7 @@ input#search_input_react::placeholder {
 .navigationSlider .slidingNav ul li a:hover {
     color: #000000;
     background: white;
+    border-bottom: 1px solid;
 }
 
 .homeContainer {
@@ -1893,7 +1919,7 @@ input#search_input_react::placeholder {
 .projectTitle>small {
     color: rgb(38, 41, 40);
     font-size: 90%;
-    max-width: 950px;
+    max-width: 39vw;
     margin: 0.7em 0 1em;
 }
 
@@ -1901,9 +1927,18 @@ input#search_input_react::placeholder {
     padding: 6em 5em;
 }
 
+.productShowcaseSection {
+    padding: 0 0px 0;
+    text-align: center;
+}
 .productShowcaseSection p {
-    max-width: 600px;
-    margin-top: 5rem;
+  max-width: 100vw;
+  height: 300px;
+  margin-top: 0rem;
+  font-size: 31px;
+  padding: 14% 20% 5% 20%;
+  background: black;
+  color: white;
 }
 
 .productShowcaseSection.paddingBottom {
@@ -1911,7 +1946,13 @@ input#search_input_react::placeholder {
 }
 
 .container.paddingTop {
-    padding-top: 20px;
+    padding: 180px 0 180px 0;
+    background: #f2f4ee;
+}
+
+.homeBlock h2 {
+    font-size: 33px !important;
+    font-family: Arial;
 }
 
 .gridBlock .fourByGridBlock {
@@ -1920,6 +1961,28 @@ input#search_input_react::placeholder {
 
 .mainContainer {
     background: none;
+}
+
+.mainContainer .wrapper .post .postHeader h1 {
+    font-size: 250%;
+    font-weight: bold;
+    font-family: Arial;
+    letter-spacing: -1px;
+}
+
+.mainContainer .wrapper .post h1 {
+    margin-top: 0px;
+}
+
+.mainContainer .wrapper a, .inner .projectIntro a {
+    text-decoration: none;
+}
+.mainContainer .wrapper a, .inner .projectIntro a:hover {
+  border: none;
+}
+.mainContainer .wrapper p, .blockElement p, .mainContainer .wrapper ul li, .mainContainer .wrapper ol li {
+  line-height: 1.7;
+  max-width: 50rem;
 }
 
 #experiments .gridBlock {
@@ -1939,8 +2002,9 @@ footer .fbOpenSource {
 }
 
 footer.nav-footer {
-    background: #1c1a27;
-    text-align: center;
+  background: #000000;
+  text-align: center;
+  border-top: 1px solid white;
 }
 
 footer .sitemap a {
@@ -1969,15 +2033,52 @@ footer iframe {
     padding-top: 100px;
 }
 
+nav.toc .toggleNav .navGroup.navGroupActive {
+    background: #fff;
+    color: #393939;
+    width: 118%;
+}
 nav.toc .toggleNav .navGroup.navGroupActive h3 {
-    background: #4568DC;
+    background: #000;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #B06AB3, #4568DC);
+    /* background: -webkit-linear-gradient(to right, #B06AB3, #4568DC); */
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #B06AB3, #4568DC);
+    /* background: linear-gradient(to right, #B06AB3, #4568DC); */
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+nav.toc .toggleNav ul li a {
+    border: none;
+    color: #393939;
+    display: inline-block;
+    font-size: 16px;
+    letter-spacing: 0.1px;
+    line-height: 1.8em;
+    margin: 2px 10px 5px;
+    padding: 6px 3px 4px;
+    transition: color 0.3s;
+}
+
+img#targetImage {
+    width: 50%;
+}
+
+.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 2.5em 3em;
+    color: #abb2bf;
+    border: none;
+    font-size: 18px;
+    background: #171a1b;
+}
+
+blockquote {
+    padding: 3px 30px 15px 15px;
+    margin: 20px 0;
+    background-color: rgba(251, 199, 82, 0.14);
+    border-left: none;
+}
 /* Begin simple grid layout  */
 
 .flex-grid {

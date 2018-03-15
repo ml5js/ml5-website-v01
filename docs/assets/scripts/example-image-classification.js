@@ -12,7 +12,7 @@ let img;
 function setup() {
   noCanvas();
   // Load the image
-  img = createImg('assets/img/kitten.jpg', imageReady);
+  img = createImg('assets/img/bird.jpg', imageReady);
   img.hide();
 }
 
