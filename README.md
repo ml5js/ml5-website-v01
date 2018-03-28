@@ -16,6 +16,8 @@ The naming convention we are using is the following:
 * API Reference files are named: `api-[Class].md`
 * Glossary: `glossary-[type].md`
 
+When you add a new page, remember to add the page id to the respective category in the website/sidebars.json file.
+
 If you wish to help develop the website, first you'll need to install the necessary dependencies for Docusaurus.
 
 Clone this repo and
