@@ -9,6 +9,7 @@
       "word2vec"],
     "Examples": [
       "simple-image-classification-example",
+      "multiple-image-classification-example",
       "video-classification-example",
       "knn-image-example",
       "lstm-example",
@@ -18,7 +19,8 @@
       "word2vec-example"
     ],
     "Datasets": [
-      "datasets"
+      "datasets",
+      "making-datasets"
     ],
     "Training Models": [
       "training-setup",
