@@ -11,11 +11,11 @@ So you want to make your own dataset! Here are some things to think about during
 
 ### Where does data come from?
 
-Data can be scraped from all over the internet, or from a specific site (like reddit, Twitter, or Flickr). It can be manually created by yourself, or by third-party data creation services (such as Crowdflower). It can be data you already have. And of course, much of the world's data comes from corporations. 
+Data can be scraped from all over the internet, or from a specific site (like reddit, Twitter, or Flickr). It can be manually created by yourself, or by third-party data creation services (such as Crowdflower). It can be data you already have. It can be accessed using an API, or it can be generated. And of course, much of the world's data comes from companies. 
 
 ### Where do labels/tags come from? 
 
-If the data is scraped from somewhere, the label is often the keyword used to search for the data (i.e. 'building' or 'tree'). The location of the data is also sometimes its label (i.e. the subreddit name if scraping from a site like reddit). Data can be manually labeled, or labeled using a third-party data tagging service. It can be labels you already have connected to your data. And of course, many labels and tags come from internal corporate taxonomies.
+If the data is scraped from somewhere, the label is often the keyword used to search for the data (i.e. 'building' or 'tree'). The location of the data is also sometimes its label (i.e. the subreddit name if scraping from a site like reddit). Data can be manually labeled, or labeled using a third-party data tagging service. It can be labels you already have connected to your data. And of course, many labels and tags come from existing taxonomies.
 
 ## Data collection
 
@@ -36,7 +36,7 @@ The converse of this is collecting too much data. Is it really necessary to your
 
 ### Tagging and crowdsourcing
 
-Many datasets are created by making small tasks on a crowdsourcing website (such as Crowdflower or Mechanical Turk) and asking people to do these tasks. One example is uploading a set of images, and asking people to tag what is in the image.
+Many datasets are created by making small tasks on a crowdsourcing website (such as Crowdflower or Mechanical Turk) and asking people to do these tasks. Crowdsourcing websites makes it easier to do large amounts of tasks that are hard for computers, but easy for humans - for example, identifying an object in an image, or the emotion that a piece of text evokes. 
 
 Not all crowdsourcing sites are equal in terms of responsible data collection. When creating a job, pay attention to whether the site allows for feedback from the contributors (people doing your tasks), and whether the site encourages you to pay a fair price (and more than minimum wage) for your jobs.
 
@@ -46,14 +46,14 @@ If you're creating a dataset in this way, remember that you wouldn't have a data
 
 ### Images
 
-Images often need to be resized to all be the same dimensions. Sometimes, they will need to be converted to black-and-white images. It depends on the neural net or algorithm you are using, so check the documentation to know for sure. One tool often used to process images programmatically is [OpenCV](http://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_tutorials.html).  
+Images often need to be resized to all be the same dimensions. Sometimes, they will need to be converted to black-and-white images. It depends on the neural net architecture you are using, so check the documentation to know for sure. One tool often used to process images programmatically is [OpenCV](http://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_tutorials.html).  
 
 ### Text
 
-There are many great resources online for gathering text datasets, such as Project Gutenberg, a collection of over fifty thousand free books with appropriate copyrights. Text that is scraped from other sources - such as a website, or your own data from a chat log - likely needs to be cleaned and processed. Processing can include tokenizing (splitting
+There are many great resources online for gathering text datasets, such as [Project Gutenberg](https://www.gutenberg.org/), a collection of over fifty thousand free books with appropriate copyrights. Text that is scraped from other sources - such as a website, or your own data from a chat log - likely needs to be cleaned and processed. Processing can include tokenizing (splitting
 text into words or sentences), removing punctuation, filtering out stopwords (words that you might not care about/don't want to process), and normalizing (such as making sure all the words have the same capitalization).
 
-[Natural.js](https://github.com/NaturalNode/natural) and [rita.js](https://rednoise.org/rita/) are good libraries to do these things in JavaScript. 
+For more resources on dealing with text data, check out Dan Shiffman's [A2Z course!](http://shiffman.net/a2z/intro/)
 
 ### Music
 
@@ -63,7 +63,11 @@ Music is different from other mediums because it can be represented in many ways
 
 ### Training, test, and validation datasets
 
-Once you have your dataset, you generally want to split it into training, test, and (if you're really on top of it!) validation datasets. There is no hard and fast rule for how to split this, but one suggestion is to take all of your data and put about 80% into your training dataset, and 15-16% into test set, and the remaining 4-5% into your validation set.
+Once you have your dataset, you generally want to split it into training, test, and validation datasets. 
+
+Training datasets are used to train the model. Validation datasets are used to change the parameters of the model, and test datasets are used to test the final performance of the model. Over time, we'll add more resources here to further explain these concepts. For now, you just need to know that you need to split your data into these sets.
+
+There is no hard and fast rule for how to split this, but one suggestion is to take all of your data and put about 80% into your training dataset, and 15-16% into test set, and the remaining 4-5% into your validation set.
 
 It is always important to have a lot of training data. If you don't have too much, you may want to put closer to 90% into your training dataset.
 
