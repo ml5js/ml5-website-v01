@@ -89,7 +89,6 @@ class HomeSplash extends React.Component {
         </Flex1>
         <Flex1 style={{padding:" 1.5% 0 0 4%"}}>
 
-          <img src="img/bird_code.jpg" id="imgHome" />
 
         </Flex1>
       </div>
