@@ -9,6 +9,7 @@
       "word2vec"],
     "Examples": [
       "simple-image-classification-example",
+      "multiple-image-classification-example",
       "video-classification-example",
       "knn-image-example",
       "lstm-example",
