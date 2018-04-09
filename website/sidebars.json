@@ -18,7 +18,8 @@
       "word2vec-example"
     ],
     "Datasets": [
-      "datasets"
+      "datasets",
+      "making-datasets"
     ],
     "Training Models": [
       "training-setup",
