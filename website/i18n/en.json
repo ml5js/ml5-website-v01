@@ -14,6 +14,7 @@
     "word2vec": "Word2Vec",
     "making-datasets": "Making Your Own Datasets",
     "datasets": "Datasets",
+    "multiple-image-classification-example": "Multiple Image Classification",
     "simple-image-classification-example": "Image Classification",
     "knn-image-example": "KNN Image Classification",
     "lstm-interactive-example": "LSTM Interactive",
