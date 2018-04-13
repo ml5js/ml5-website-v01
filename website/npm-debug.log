@@ -1,0 +1,26 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/alejandromatamala/.nvm/versions/node/v6.11.3/bin/node',
+1 verbose cli   '/Users/alejandromatamala/.nvm/versions/node/v6.11.3/bin/npm',
+1 verbose cli   'run',
+1 verbose cli   'star' ]
+2 info using npm@3.10.10
+3 info using node@v6.11.3
+4 verbose stack Error: missing script: star
+4 verbose stack     at run (/Users/alejandromatamala/.nvm/versions/node/v6.11.3/lib/node_modules/npm/lib/run-script.js:151:19)
+4 verbose stack     at /Users/alejandromatamala/.nvm/versions/node/v6.11.3/lib/node_modules/npm/lib/run-script.js:61:5
+4 verbose stack     at /Users/alejandromatamala/.nvm/versions/node/v6.11.3/lib/node_modules/npm/node_modules/read-package-json/read-json.js:356:5
+4 verbose stack     at checkBinReferences_ (/Users/alejandromatamala/.nvm/versions/node/v6.11.3/lib/node_modules/npm/node_modules/read-package-json/read-json.js:320:45)
+4 verbose stack     at final (/Users/alejandromatamala/.nvm/versions/node/v6.11.3/lib/node_modules/npm/node_modules/read-package-json/read-json.js:354:3)
+4 verbose stack     at then (/Users/alejandromatamala/.nvm/versions/node/v6.11.3/lib/node_modules/npm/node_modules/read-package-json/read-json.js:124:5)
+4 verbose stack     at ReadFileContext.<anonymous> (/Users/alejandromatamala/.nvm/versions/node/v6.11.3/lib/node_modules/npm/node_modules/read-package-json/read-json.js:295:20)
+4 verbose stack     at ReadFileContext.callback (/Users/alejandromatamala/.nvm/versions/node/v6.11.3/lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js:78:16)
+4 verbose stack     at FSReqWrap.readFileAfterOpen [as oncomplete] (fs.js:367:13)
+5 verbose cwd /Users/alejandromatamala/Desktop/Projects/01.Coding_Projects/32.ML5_Website.io/website
+6 error Darwin 16.7.0
+7 error argv "/Users/alejandromatamala/.nvm/versions/node/v6.11.3/bin/node" "/Users/alejandromatamala/.nvm/versions/node/v6.11.3/bin/npm" "run" "star"
+8 error node v6.11.3
+9 error npm  v3.10.10
+10 error missing script: star
+11 error If you need help, you may report this error at:
+11 error     <https://github.com/npm/npm/issues>
+12 verbose exit [ 1, true ]

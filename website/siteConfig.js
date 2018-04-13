@@ -41,6 +41,7 @@ const siteConfig = {
     apiKey: '4e9582fa59998b865a9fd98ae8d8a9cc',
     indexName: 'ml5js',
   },
+  ogImage: 'img/bird_code.jpg'
 };
 
 module.exports = siteConfig;
