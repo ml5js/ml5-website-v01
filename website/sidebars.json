@@ -6,7 +6,8 @@
       "knnImage",
       "lstm",
       "style-transfer",
-      "word2vec"],
+      "word2vec",
+      "crepe"],
     "Examples": [
       "simple-image-classification-example",
       "multiple-image-classification-example",
