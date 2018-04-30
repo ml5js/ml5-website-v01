@@ -25,17 +25,16 @@ a multiple of 16000 Hz."
 ### Example
 
 ```javascript
-// Create an audio capture (this creates a video element and returns a stream)
-const videoElement = createCapture(AUDIO, stream => {
-  // Eliminates feedback from mic
-  videoElement.volume(0);
-  // Initialize a new Crepe instance with the stream
-  crepe = new ml5.Crepe(getAudioContext(), stream); 
-});
-
-// This should be in your main function
-let results = crepe.getResults();
-console.log(results);
+function setup() {
+  // Creates a MediaStream instance from the computer microphone
+  audioStream = new p5.AudioIn(function(err){
+    console.error(err);
+  });
+  // Starts the stream and passes it to the new Crepe instance
+  audioStream.start(function(){
+    crepe = new ml5.Crepe(getAudioContext(), audioStream.stream);     
+  });
+}
 ```
 
 ## Constructor
