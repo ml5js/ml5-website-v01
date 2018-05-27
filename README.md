@@ -22,8 +22,8 @@ If you wish to help develop the website, first you'll need to install the necess
 
 Clone this repo and
 ```
-git clone https://github.com/ml5js/ml5js.github.io.git
-cd ml5js.github.io.git
+git clone https://github.com/ml5js/ml5-website.git
+cd ml5-website
 cd website/
 npm install
 ```
