@@ -22,7 +22,7 @@ class Help extends React.Component {
         content: "Simple example based on Google's Teachable Machines Project",
         image: siteConfig.baseUrl + "img/teachable.gif",
         title: 'Teachable Machines',
-        link: "https://ml5js.github.io/demos/teachableMachine/",
+        link: "https://ml5js.org/demos/teachableMachine/",
       },
       {
         content: 'An experimental web text editor that runs a LSTM model while you write to suggest new lines',
