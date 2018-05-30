@@ -15,22 +15,107 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  background: #fff;
+  font-family: Menlo;
+  color: #4A90E2;
+}
+
+h1,h2,h3,h4,h5 {
+  font-family: Menlo;
+  color: #4A90E2;
+}
+
+a {
+    color: #4A90E2;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+a:hover {
+  color: #DBECFF;
+}
+
+.flex {
+  display: flex;
+}
+.example {
+  width: 100vw;
+  height: 620px;
+}
+
+.f1 {
+  flex: 1;
+}
+
+.f1.getStartedSection {
+  padding: 6em 0em 6em 13em;
+}
+
+.f1.p30.center.dropExample {
+    padding: 6em 6em 6em 1em;
+}
+.mt40{
+  margin-top: 40px;
+}
+.mb40 {
+  margin-bottom: 40px;
+}
+
+.br {
+  border-right: 3px solid #4A90E2;
+}
+.subtitle h1{
+  font-size: 41px;
+  line-height: 1.1;
+  font-weight: 600;
+  width: 90%;
+}
+.w60 {
+  width: 60%;
+}
+.bluelight{
+  background: #DBECFF;
+  background-image: url(/img/dot.png);
+}
+.navPusher {
+    padding-top: 130px;
+}
+
+nav.toc .toggleNav ul li a:hover, nav.toc .toggleNav ul li a:focus {
+    color: #abc8e8;
+}
+.container .wrapper h2 {
+  color: #4A90E2;
+}
+
+nav.toc .toggleNav ul li a.navItemActive {
+    color: #abc8e8;
+}
+
 .fixedHeaderContainer {
     background: #ffffff;
-    box-shadow: 0 2px 2px 0 rgba(145, 145, 145, 0.062), 0 6px 4px 0 rgba(235, 235, 235, 0.096);
+    /* box-shadow: 0 2px 2px 0 rgba(145, 145, 145, 0.062), 0 6px 4px 0 rgba(235, 235, 235, 0.096); */
 }
 
 .fixedHeaderContainer header img {
-    height: 200%;
+    height: 105%;
     margin: 3rem 0px 0px 0px;
+}
+
+.mainContainer:not(.blogContainer) .wrapper .post, .blogContainer .posts, .blogContainer .lonePost {
+    padding: 40px 60PX;
 }
 
 .hero {
   display: flex;
   width: 100vw;
-  height: 650px;
+  height: 450px;
 }
 
+.p5{
+  padding: 5em;
+}
 .flexDiv{
   flex:1;
 }
@@ -66,14 +151,15 @@ img#codeTemp {
 
 
 .navigationSlider .slidingNav ul li a {
-    color: rgb(87, 87, 87);
-    font-weight: 300;
+  color: #4990e2;
+  font-weight: 300;
+  font-family: Menlo;
+  text-decoration: none;
 }
 
 .navigationSlider .slidingNav ul li a:hover {
-    color: #000000;
-    background: white;
-    border-bottom: 1px solid;
+  color: #abc8e8;
+  background: white;
 }
 
 .homeContainer {
@@ -85,6 +171,12 @@ img#codeTemp {
     justify-content: left;
 }
 
+.container .wrapper h3 {
+    color: #4990e2;
+    font-size: 18px;
+    margin-top: 10px;
+    padding: 10px 0;
+}
 .projectTitle {
     font-size: 400%;
     font-weight: bold;
@@ -125,12 +217,66 @@ img#codeTemp {
 
 .container.paddingTop {
     padding: 180px 0 180px 0;
-    background: #f2f4ee;
+    background: #DBECFF;
 }
+
+.center{
+  text-align: center;
+}
+
+.codeContainer{
+  background: #4A90E2;
+  width: 100%;
+  height: 570px;
+  color: white;
+  padding-top: 10px;
+}
+
+.codeContainer h1 {
+  color: white;
+  font-size: 30px;
+  padding: 35px 0;
+
+}
+
+button.btn-blue {
+    background: #4990e2;
+    border: none;
+    padding: 14px 50px;
+    font-family: Menlo;
+    color: white;
+    font-size: 15px;
+}
+
+.codeBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #4A90E2;
+  width: 100vw;
+}
+
+.codeExample {
+  background: white;
+  width: 67vw;
+  height: 40vh;
+  padding: 30px;
+  color: #4A90E2;
+}
+
+
+.ExamplesLinkBlock {
+  background: white;
+}
+
+.ExamplesLinkBlock a {
+  font-size: 40px;
+}
+
 
 .homeBlock h2 {
     font-size: 33px !important;
-    font-family: Arial;
+    font-family: Menlo;
 }
 
 .gridBlock .fourByGridBlock {
@@ -144,7 +290,6 @@ img#codeTemp {
 .mainContainer .wrapper .post .postHeader h1 {
     font-size: 250%;
     font-weight: bold;
-    font-family: Arial;
     letter-spacing: -1px;
 }
 
@@ -180,10 +325,18 @@ footer .fbOpenSource {
 }
 
 footer.nav-footer {
-  background: #000000;
+  background: #4890e2;
   text-align: center;
   border-top: 1px solid white;
+  box-shadow: none;
+  padding-top: 80px;
 }
+
+.texts {
+    background: #dcecff;
+    padding: 6em;
+}
+
 
 footer .sitemap a {
     color: rgba(255, 255, 255, 0.86);
@@ -207,9 +360,6 @@ footer iframe {
     max-width: 500px;
 }
 
-.navPusher {
-    padding-top: 100px;
-}
 
 nav.toc .toggleNav .navGroup.navGroupActive {
     background: #fff;
@@ -217,7 +367,7 @@ nav.toc .toggleNav .navGroup.navGroupActive {
     width: 118%;
 }
 nav.toc .toggleNav .navGroup.navGroupActive h3 {
-    background: #000;
+    background: #4A90E2;
     /* fallback for old browsers */
     /* background: -webkit-linear-gradient(to right, #B06AB3, #4568DC); */
     /* Chrome 10-25, Safari 5.1-6 */
@@ -227,7 +377,8 @@ nav.toc .toggleNav .navGroup.navGroupActive h3 {
 
 nav.toc .toggleNav ul li a {
     border: none;
-    color: #393939;
+    color: #4A90E2;
+    text-decoration: none;
     display: inline-block;
     font-size: 16px;
     letter-spacing: 0.1px;
@@ -244,11 +395,22 @@ img#targetImage {
 .hljs {
     display: block;
     overflow-x: auto;
-    padding: 2.5em 3em;
+    padding: 1.5em 2em;
     color: #abb2bf;
     border: none;
-    font-size: 18px;
-    background: #171a1b;
+    font-size: 14px;
+    background: #ffffff;
+    border: 19px solid #DBECFF;
+}
+
+code {
+    padding: 3px 8px;
+    background-color: rgb(73, 144, 226);
+    box-shadow: none;
+    color: white;
+    border-radius: .3em;
+    font-family: "SFMono-Regular",source-code-pro,Menlo,Monaco,Consolas,"Roboto Mono","Droid Sans Mono","Liberation Mono",Consolas,"Courier New",Courier,monospace;
+    word-break: break-word;
 }
 
 blockquote {
@@ -270,6 +432,11 @@ blockquote {
     min-width: 400px;
     padding: 14px;
 }
+
+li.navSearchWrapper.reactNavSearchWrapper {
+    display: none;
+}
+
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
     .flex-grid {

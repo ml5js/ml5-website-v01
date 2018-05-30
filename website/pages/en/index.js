@@ -79,19 +79,8 @@ class HomeSplash extends React.Component {
   render() {
     let language = this.props.language || '';
     return (
-      <div className="hero">
-        <Flex1 style={{padding:"10% 0 0 5%;"}}>
-          <ProjectTitle />
-          <PromoSection>
-            <Button href={docUrl('getting-started.html', language)}>Getting Started</Button>
-            <Button href={docUrl('simple-image-classification-example.html', language)}>Examples</Button>
-          </PromoSection>
-        </Flex1>
-        <Flex1 style={{padding:" 1.5% 0 0 4%"}}>
+      <div className="hero bluelight">
 
-          <img src="img/bird_code.jpg" id="imgHome" />
-
-        </Flex1>
       </div>
     );
   }
@@ -113,7 +102,7 @@ const Features = props => (
       {
         content: 'Providing a simple and friendly interface to work with GPU accelerated machine learning in JavaScript.',
         imageAlign: 'top',
-        title: 'A wrapper around [deeplearn.js](https://deeplearnjs.org/)',
+        title: 'A wrapper around [Tensorflow.js](https://js.tensorflow.org/)',
       },
       {
         content: 'A set of ready-to-use machine learning utilities.',
@@ -125,13 +114,68 @@ const Features = props => (
 );
 
 const Why = props => (
-  <div
-    className="productShowcaseSection paddingBottom"
-    style={{textAlign: 'center'}}>
-    <MarkdownBlock>The main idea of this project is to further reduce the barriers between lower level machine learning and creative coding in JavaScript. ml5 provides two main functionalities:</MarkdownBlock>
+  <div className="flex example ">
+    <div className="f1 p5 subtitle getStartedSection"> 
+      <h1> Friendly Machine Learning For The Web. </h1>
+      <p className="mt40">The main idea of this project is to further reduce the barriers between lower level machine learning and creative outputs using JavaScript</p>
+      <p className="mt40">
+The main idea of this project is to further reduce the barriers between lower level machine learning and creative outputs using JavaScript      </p>
+      <button className="btn-blue mt40"href="#"> Get Started </button> 
+    </div>
+    <div className="f1 p5 p30 center dropExample"> 
+    <img className="w60" src="/img/bird_blue.png" /> 
+    <p className="mt40"> This is a bird blabla </p>
+    </div>
+
   </div>
 );
 
+const Texts = props => (
+  <div className="flex texts ">
+    <div className="f1 p5 subtitle br "> 
+      <h1 className='mb40'>A wrapper around Tensorflow.js</h1>
+      <p>
+        Providing a simple and friendly interface to work with GPU accelerated machine learning in JavaScript.      
+      </p>  
+  
+    </div>
+    <div className="f1 p5 subtitle"> 
+      <h1 className='mb40'>Custom methods</h1>
+      <p>
+        A set of ready-to-use machine learning utilities. 
+        A set of ready-to-use machine learning utilities. Can we add more text in this parragraph?A set of ready-to-use machine learning utilities. Can we add more text in this parragraph?
+      </p>  
+    </div>
+
+  </div>
+);
+
+
+const Code = props => (
+  <div className="codeContainer">
+    <h1 className="center">
+      Easy as: 
+    </h1>
+    <div className="codeBox">
+      <div className="codeExample"> 
+        <p>
+        // Create the classifier 
+
+        // Make a prediction
+    
+        </p>
+      </div>
+    </div>
+
+  </div>
+);
+
+const Examples = props => (
+  <div className="ExamplesLinkBlock p5">
+  <a href="#" > See the examples ⟶</a>
+
+  </div>
+);
 
 class Index extends React.Component {
   render() {
@@ -139,12 +183,13 @@ class Index extends React.Component {
 
     return (
       <div>
-        <HomeSplash language={language} />
+        <HomeSplash  />
 
         <div className="mainContainer">
           <Why />
-          <Features />
-
+          <Code />
+          <Texts />
+          <Examples />
         </div>
       </div>
     );
