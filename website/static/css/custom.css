@@ -49,8 +49,8 @@ a:hover {
   display: flex;
 }
 .example {
-  width: 100vw;
-  height: 620px;
+  width: 100%;
+  height: auto;
 }
 
 .f1 {
@@ -66,6 +66,9 @@ a:hover {
 }
 .mt40{
   margin-top: 40px;
+}
+.mb20 {
+  margin-bottom: 20px;
 }
 .mb40 {
   margin-bottom: 40px;
@@ -156,6 +159,11 @@ img#imgHome {
 img#codeTemp {
     width: 28vw !important;
     height: auto;
+}
+
+.ExamplesLinkBlock {
+    background: white;
+    padding: 11em;
 }
 
 
@@ -265,9 +273,17 @@ button.btn-blue {
   width: 100vw;
 }
 
+p.code {
+  font-size: 25px;
+}
+
+p.code.bold {
+  font-weight: 800;
+}
+
 .codeExample {
   background: white;
-  width: 67vw;
+  width: 65vw;
   height: 40vh;
   padding: 30px;
   color: #4A90E2;
@@ -451,6 +467,107 @@ li.navSearchWrapper.reactNavSearchWrapper {
     .flex-grid {
         display: block;
     }
+
+}
+
+@media (max-width: 400px){
+  .logo {
+    display: block;
+  }
+  .navPusher {
+    padding-top: 0px;
+  }
+  .flex {
+    flex-direction: column;
+  }
+
+  .f1.getStartedSection {
+    padding: 3em;
+  }
+
+  .f1.p30.center.dropExample {
+    padding: 3em;
+  }
+
+  .exampleBlock {
+    width: 100vw;
+    height: auto;
+  }
+
+  .br {
+    border-right: none;
+  }
+  .texts {
+    background: #dcecff;
+    padding: 0em;
+  }
+
+  .subtitle h1 {
+    font-size: 28px;
+  }
+
+  .ExamplesLinkBlock.p5 {
+    line-height: 3.1em;
+    padding: 3em;
+  }
+
+  .f1.p5.subtitle.br {
+    padding: 3em;
+  }
+
+  .f1.p5.subtitle {
+    padding: 3em;
+  }
+
+  img.w60.bird {
+      width: 100%;
+  }
+
+  footer.nav-footer {
+    background: #4890e2;
+    text-align: left;
+    border-top: 1px solid white;
+    box-shadow: none;
+    padding: 3em;
+  }
+  .fixedHeaderContainer header img {
+    height: 84%;
+    margin: 0;
+  }
+  .navigationSlider .slidingNav ul {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: nowrap;
+    list-style: none;
+    margin-top: 50px;
+    width: 100%;
+    padding: 0;
+    background: #ffffff;
+    color: #4990e2;
+    font-size: 11px;
+  }
+
+  .mainContainer:not(.blogContainer) .wrapper .post, .blogContainer .posts, .blogContainer .lonePost {
+    padding: 7em 1em;
+  }
+
+  .mainContainer .wrapper .post .postHeader h1 {
+    font-size: 190%;
+    font-weight: bold;
+    letter-spacing: -1px;
+  }
+
+  .hljs {
+    display: block;
+    overflow-x: auto;
+    width: 84%;
+    padding: 1.5em 2em;
+    color: #abb2bf;
+    border: none;
+    font-size: 14px;
+    background: #ffffff;
+    border: 19px solid #DBECFF;
+  }
 }
 
 /* End simple grid layout  */

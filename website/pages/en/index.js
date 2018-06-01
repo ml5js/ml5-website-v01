@@ -9,6 +9,7 @@ const MarkdownBlock = CompLibrary.MarkdownBlock; /* Used to read markdown */
 const Container = CompLibrary.Container;
 const GridBlock = CompLibrary.GridBlock;
 const siteConfig = require(process.cwd() + '/siteConfig.js');
+const Highlight = require('react-highlight');
 
 function imgUrl(img) {
   return siteConfig.baseUrl + 'img/' + img;
@@ -86,6 +87,102 @@ class HomeSplash extends React.Component {
   }
 }
 
+class Why extends React.Component {
+  render() {
+    return (
+      <div className="flex exampleBlock ">
+        <div className="f1 p5 subtitle getStartedSection">
+          <h1> Friendly Machine Learning For The Web. </h1>
+          <p className="mt40">The main idea of this project is to further reduce the barriers between lower level machine learning and creative outputs using JavaScript</p>
+          <p className="mt40">
+            The main idea of this project is to further reduce the barriers between lower level machine learning and creative outputs using JavaScript
+           </p>
+          <button className="btn-blue mt40"href="#"> Get Started </button>
+        </div>
+        <div className="f1 p5 p30 center dropExample">
+          <img className="w60 bird" src="/img/bird_blue.png" />
+
+          <p className="mt40"> This is a bird blabla </p>
+        </div>
+      </div>
+    );
+  }
+}
+
+class Code extends React.Component {
+  render() {
+    return (
+      <div className="codeContainer">
+        <h1 className="center">
+          Start With:
+        </h1>
+        <div className="codeBox">
+          <div className="codeExample">
+            <p className="code bold">
+              // Create the classifier
+            </p>
+            <p className="code mb20">
+              const classifier = new ml5.ImageClassifier('SqueezeNet');
+            </p>
+            <p className="code bold">
+            // Make a prediction
+            </p>
+            <p className="code">
+            ```js
+              let prediction = classifier.predict(img, function(result){});
+            ```
+
+            </p>
+            <p className="code">
+              console.log(result)
+            </p>
+            <p className="code mb20">
+              });
+            </p>
+          </div>
+        </div>
+
+      </div>
+    );
+  }
+}
+
+class Texts extends React.Component {
+  render() {
+    return (
+      <div className="flex texts ">
+        <div className="f1 p5 subtitle br ">
+          <h1 className='mb40'>A wrapper around Tensorflow.js</h1>
+          <p>
+            Providing a simple and friendly interface to work with GPU accelerated machine learning in JavaScript.
+          </p>
+
+        </div>
+        <div className="f1 p5 subtitle">
+          <h1 className='mb40'>Custom methods</h1>
+          <p>
+            A set of ready-to-use machine learning utilities.
+            A set of ready-to-use machine learning utilities. Can we add more text in this parragraph?A set of ready-to-use machine learning utilities. Can we add more text in this parragraph?
+          </p>
+        </div>
+      </div>
+    );
+  }
+}
+
+
+class Examples extends React.Component {
+  render() {
+    return (
+      <div className="ExamplesLinkBlock p5">
+        <a href="#" > See the examples ⟶</a>
+      </div>
+    );
+  }
+}
+
+
+
 const Block = props => (
   <Container
     padding={['bottom', 'top']}
@@ -113,69 +210,9 @@ const Features = props => (
   </Block>
 );
 
-const Why = props => (
-  <div className="flex example ">
-    <div className="f1 p5 subtitle getStartedSection"> 
-      <h1> Friendly Machine Learning For The Web. </h1>
-      <p className="mt40">The main idea of this project is to further reduce the barriers between lower level machine learning and creative outputs using JavaScript</p>
-      <p className="mt40">
-The main idea of this project is to further reduce the barriers between lower level machine learning and creative outputs using JavaScript      </p>
-      <button className="btn-blue mt40"href="#"> Get Started </button> 
-    </div>
-    <div className="f1 p5 p30 center dropExample"> 
-    <img className="w60" src="/img/bird_blue.png" /> 
-    <p className="mt40"> This is a bird blabla </p>
-    </div>
-
-  </div>
-);
-
-const Texts = props => (
-  <div className="flex texts ">
-    <div className="f1 p5 subtitle br "> 
-      <h1 className='mb40'>A wrapper around Tensorflow.js</h1>
-      <p>
-        Providing a simple and friendly interface to work with GPU accelerated machine learning in JavaScript.      
-      </p>  
-  
-    </div>
-    <div className="f1 p5 subtitle"> 
-      <h1 className='mb40'>Custom methods</h1>
-      <p>
-        A set of ready-to-use machine learning utilities. 
-        A set of ready-to-use machine learning utilities. Can we add more text in this parragraph?A set of ready-to-use machine learning utilities. Can we add more text in this parragraph?
-      </p>  
-    </div>
-
-  </div>
-);
 
 
-const Code = props => (
-  <div className="codeContainer">
-    <h1 className="center">
-      Easy as: 
-    </h1>
-    <div className="codeBox">
-      <div className="codeExample"> 
-        <p>
-        // Create the classifier 
 
-        // Make a prediction
-    
-        </p>
-      </div>
-    </div>
-
-  </div>
-);
-
-const Examples = props => (
-  <div className="ExamplesLinkBlock p5">
-  <a href="#" > See the examples ⟶</a>
-
-  </div>
-);
 
 class Index extends React.Component {
   render() {
@@ -183,14 +220,11 @@ class Index extends React.Component {
 
     return (
       <div>
-        <HomeSplash  />
-
-        <div className="mainContainer">
-          <Why />
-          <Code />
-          <Texts />
-          <Examples />
-        </div>
+         <HomeSplash  />
+         <Why  />
+         <Code />
+         <Texts  />
+         <Examples  />
       </div>
     );
   }
