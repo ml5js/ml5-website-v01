@@ -92,10 +92,17 @@ class Why extends React.Component {
     return (
       <div className="flex exampleBlock ">
         <div className="f1 p5 subtitle getStartedSection">
-          <h1> Friendly Machine Learning For The Web. </h1>
-          <p className="mt40">The main idea of this project is to further reduce the barriers between lower level machine learning and creative outputs using JavaScript</p>
+          <h1> Friendly Machine Learning for the Web. </h1>
           <p className="mt40">
-            The main idea of this project is to further reduce the barriers between lower level machine learning and creative outputs using JavaScript
+            ml5 aims to make machine learning accessible to a broad audience of artists,
+            creative coders, and students. Using TensorFlow.js as a foundation, ml5.js
+            provides access to machine learning algorithms and models in the browser
+            with no other external dependencies.
+          </p>
+          <p className="mt40">
+            The library is supported by code examples, tutorials, and sample datasets with an emphasis on ethics.
+            Bias in data, stereotypical harms, and responsible crowdsourcing are part of the documentation
+            around data collection.
            </p>
           <button className="btn-blue mt40"href="#"> Get Started </button>
         </div>
@@ -114,7 +121,7 @@ class Code extends React.Component {
     return (
       <div className="codeContainer">
         <h1 className="center">
-          Start With:
+          Simple classification with a pre-trained model:
         </h1>
         <div className="codeBox">
           <div className="codeExample">
@@ -122,22 +129,22 @@ class Code extends React.Component {
               // Create the classifier
             </p>
             <p className="code mb20">
-              const classifier = new ml5.ImageClassifier('SqueezeNet');
+            const classifier = new ml5.ImageClassifier('MobileNet');
             </p>
             <p className="code bold">
             // Make a prediction
             </p>
-            <p className="code">
-            ```js
-              let prediction = classifier.predict(img, function(result){});
-            ```
-
+            <p className="code mb20">
+            let prediction = classifier.predict(img, gotResults);
             </p>
             <p className="code">
-              console.log(result)
+            function gotResults(results) &#123;
+            </p>
+            <p className="code">
+            &nbsp;&nbsp;console.log(results);
             </p>
             <p className="code mb20">
-              });
+            &#125;
             </p>
           </div>
         </div>
@@ -152,17 +159,21 @@ class Texts extends React.Component {
     return (
       <div className="flex texts ">
         <div className="f1 p5 subtitle br ">
-          <h1 className='mb40'>A wrapper around Tensorflow.js</h1>
+          <h1 className='mb40'>A Wrapper Around TensorFlow.js</h1>
           <p>
-            Providing a simple and friendly interface to work with GPU accelerated machine learning in JavaScript.
+            ml5 is a friendly high level interface to TensorFlow.js that handles
+            the GPU accelerated mathematical operations and memory management
+            required for machine learning algorithms.
           </p>
 
         </div>
         <div className="f1 p5 subtitle">
-          <h1 className='mb40'>Custom methods</h1>
+          <h1 className='mb40'>Models and Training</h1>
           <p>
-            A set of ready-to-use machine learning utilities.
-            A set of ready-to-use machine learning utilities. Can we add more text in this parragraph?A set of ready-to-use machine learning utilities. Can we add more text in this parragraph?
+          ml5 provides immediate access to pre-trained models for detecting human poses, generating text,
+          styling an image with another, composing music, pitch detection, and common English language word
+          relationships. In addition ml5 provides an API for training new models based on pre-trained ones
+          and with custom user data from scratch.
           </p>
         </div>
       </div>
