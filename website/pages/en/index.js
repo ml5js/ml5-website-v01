@@ -92,10 +92,10 @@ class Why extends React.Component {
     return (
       <div className="flex exampleBlock ">
         <div className="f1 p5 subtitle getStartedSection">
-          <h1> Friendly Machine Learning for the Web. </h1>
+          <h1> 🎉 💻 Friendly Machine Learning for the Web. </h1>
           <p className="mt40">
             ml5 aims to make machine learning accessible to a broad audience of artists,
-            creative coders, and students. Using TensorFlow.js as a foundation, ml5.js
+            creative coders, and students. Using <code>TensorFlow.js</code> as a foundation,ml5.js
             provides access to machine learning algorithms and models in the browser
             with no other external dependencies.
           </p>
@@ -160,7 +160,7 @@ class Texts extends React.Component {
       <div className="flex texts ">
         <div className="f1 p5 subtitle br ">
           <h1 className='mb40'>A Wrapper Around TensorFlow.js</h1>
-          <p>
+          <p className="description">
             ml5 is a friendly high level interface to TensorFlow.js that handles
             the GPU accelerated mathematical operations and memory management
             required for machine learning algorithms.
@@ -169,10 +169,12 @@ class Texts extends React.Component {
         </div>
         <div className="f1 p5 subtitle">
           <h1 className='mb40'>Models and Training</h1>
-          <p>
+          <p className="description mb40">
           ml5 provides immediate access to pre-trained models for detecting human poses, generating text,
           styling an image with another, composing music, pitch detection, and common English language word
-          relationships. In addition ml5 provides an API for training new models based on pre-trained ones
+          relationships. </p>
+          <p className="description" >
+            In addition ml5 provides an API for training new models based on pre-trained ones
           and with custom user data from scratch.
           </p>
         </div>
@@ -186,7 +188,8 @@ class Examples extends React.Component {
   render() {
     return (
       <div className="ExamplesLinkBlock p5">
-        <a href="#" > See the examples ⟶</a>
+        <button className="btn-blue mt40"href="#"> 🌟 See Examples 🌟 </button>
+
       </div>
     );
   }
@@ -231,7 +234,6 @@ class Index extends React.Component {
 
     return (
       <div>
-         <HomeSplash  />
          <Why  />
          <Code />
          <Texts  />

@@ -27,7 +27,7 @@
 body {
   background: #fff;
   font-family: Menlo;
-  color: #4A90E2;
+  color: #000;
 }
 
 h1,h2,h3,h4,h5 {
@@ -37,12 +37,11 @@ h1,h2,h3,h4,h5 {
 
 a {
     color: #4A90E2;
-    text-decoration: underline;
     font-weight: bold;
 }
 
 a:hover {
-  color: #DBECFF;
+    color: #469bfd;
 }
 
 .flex {
@@ -78,10 +77,14 @@ a:hover {
   border-right: 3px solid #4A90E2;
 }
 .subtitle h1{
-  font-size: 41px;
-  line-height: 1.1;
+  font-size: 2.7em;
+  line-height: 1.2;
   font-weight: 600;
   width: 90%;
+}
+p.description {
+    width: 85%;
+    font-size: 1.1em;
 }
 .w60 {
   width: 60%;
@@ -162,8 +165,9 @@ img#codeTemp {
 }
 
 .ExamplesLinkBlock {
-    background: white;
+    background: #dcecff;
     padding: 11em;
+    text-align: center;
 }
 
 
@@ -241,10 +245,16 @@ img#codeTemp {
   text-align: center;
 }
 
+
+.exampleBlock {
+    background: #f2f8ff;
+}
+
 .codeContainer{
   background: #4A90E2;
+  background-image: url(/img/dot.png);
   width: 100%;
-  height: 570px;
+  height: 40em;
   color: white;
   padding-top: 10px;
 }
@@ -252,8 +262,7 @@ img#codeTemp {
 .codeContainer h1 {
   color: white;
   font-size: 30px;
-  padding: 35px 0;
-
+  padding: 1.8em;
 }
 
 button.btn-blue {
@@ -263,6 +272,9 @@ button.btn-blue {
     font-family: Menlo;
     color: white;
     font-size: 15px;
+    border: .2rem solid #0a3f7d;
+    border-top: 0;
+    border-left: 0;
 }
 
 .codeBox {
@@ -270,6 +282,7 @@ button.btn-blue {
   justify-content: center;
   align-items: center;
   background: #4A90E2;
+  background-image: url(/img/dot.png);
   width: 100vw;
 }
 
@@ -279,20 +292,17 @@ p.code {
 
 p.code.bold {
   font-weight: 800;
+  color: #7f7f7f;
 }
 
 .codeExample {
   background: white;
   width: 65vw;
-  height: 40vh;
-  padding: 30px;
+  height: auto;
+  padding: 5em 2em 3em 3em;
   color: #4A90E2;
 }
 
-
-.ExamplesLinkBlock {
-  background: white;
-}
 
 .ExamplesLinkBlock a {
   font-size: 40px;
@@ -358,7 +368,7 @@ footer.nav-footer {
 }
 
 .texts {
-    background: #dcecff;
+    background: #fff;
     padding: 6em;
 }
 
@@ -498,7 +508,7 @@ li.navSearchWrapper.reactNavSearchWrapper {
     border-right: none;
   }
   .texts {
-    background: #dcecff;
+    background: #fff;
     padding: 0em;
   }
 
@@ -515,8 +525,20 @@ li.navSearchWrapper.reactNavSearchWrapper {
     padding: 3em;
   }
 
+  .ExamplesLinkBlock a {
+    font-size: 1.3em;
+}
+
+  .codeContainer h1 {
+    font-size: 1.5em;
+    padding: 1em;
+    line-height: 1.2;
+}
+
   .f1.p5.subtitle {
     padding: 3em;
+    margin-top: 5em;
+
   }
 
   img.w60.bird {
@@ -555,6 +577,10 @@ li.navSearchWrapper.reactNavSearchWrapper {
     font-size: 190%;
     font-weight: bold;
     letter-spacing: -1px;
+  }
+
+  p.code {
+    font-size: 12px;
   }
 
   .hljs {
