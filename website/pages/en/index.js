@@ -94,15 +94,12 @@ class Why extends React.Component {
         <div className="f1 p5 subtitle getStartedSection">
           <h1> 🎉 💻 Friendly Machine Learning for the Web. </h1>
           <p className="mt40">
-            ml5 aims to make machine learning accessible to a broad audience of artists,
-            creative coders, and students. Using <code>TensorFlow.js</code> as a foundation,ml5.js
-            provides access to machine learning algorithms and models in the browser
-            with no other external dependencies.
+          ml5.js aims to make machine learning accessible to a broad audience of artists, creative coders, and students. The library provides access to machine learning algorithms and models in the browser, building on top of <code>TensorFlow.js</code> with no other external dependencies.
           </p>
           <p className="mt40">
-            The library is supported by code examples, tutorials, and sample datasets with an emphasis on ethics.
+            The library is supported by code examples, tutorials, and sample datasets with an emphasis on ethical computing.
             Bias in data, stereotypical harms, and responsible crowdsourcing are part of the documentation
-            around data collection.
+            around data collection and usage.
            </p>
           <button className="btn-blue mt40"href="#"> Get Started </button>
         </div>
@@ -161,21 +158,18 @@ class Texts extends React.Component {
         <div className="f1 p5 subtitle br ">
           <h1 className='mb40'>A Wrapper Around TensorFlow.js</h1>
           <p className="description">
-            ml5 is a friendly high level interface to TensorFlow.js that handles
-            the GPU accelerated mathematical operations and memory management
-            required for machine learning algorithms.
+          ml5.js is a friendly high level interface to TensorFlow.js, a library for handling GPU-accelerated mathematical operations and memory management for machine learning algorithms.
           </p>
 
         </div>
         <div className="f1 p5 subtitle">
           <h1 className='mb40'>Models and Training</h1>
           <p className="description mb40">
-          ml5 provides immediate access to pre-trained models for detecting human poses, generating text,
+          ml5.js provides immediate access in the browser to pre-trained models for detecting human poses, generating text,
           styling an image with another, composing music, pitch detection, and common English language word
           relationships. </p>
           <p className="description" >
-            In addition ml5 provides an API for training new models based on pre-trained ones
-          and with custom user data from scratch.
+          Additionally, ml5.js provides an API for training new models based on pre-trained ones as well as training from custom user data from scratch.
           </p>
         </div>
       </div>
