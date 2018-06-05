@@ -218,7 +218,18 @@ const Features = props => (
   </Block>
 );
 
-
+class Iframe extends React.Component {
+  render() {
+    return(
+      <div>
+        <iframe src="https://yining1023.github.io/ml5_image_classification_dragdrop/"
+          height="500"
+          width="100%"
+        />
+      </div>
+    )
+  }
+};
 
 
 
@@ -228,10 +239,11 @@ class Index extends React.Component {
 
     return (
       <div>
-         <Why  />
-         <Code />
-         <Texts  />
-         <Examples  />
+        <Why  />
+        <Iframe />
+        <Code />
+        <Texts  />
+        <Examples  />
       </div>
     );
   }
