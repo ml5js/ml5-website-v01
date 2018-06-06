@@ -201,7 +201,7 @@ img#codeTemp {
 
 
 .navigationSlider .slidingNav ul li a {
-  color: #1abcfe;
+  color: #a255ff;
   font-weight: 300;
   font-family: Apercu;
   text-decoration: none;
@@ -279,6 +279,7 @@ img#codeTemp {
 .exampleBlock {
     background: #FFF;
     background-image: url(/img/dot.png);
+    height: 750px;
 }
 
 .codeContainer{
