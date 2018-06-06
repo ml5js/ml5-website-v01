@@ -91,12 +91,12 @@ class Why extends React.Component {
   render() {
     return (
       <div className="flex exampleBlock ">
-        <div className="f1 p5 subtitle getStartedSection">
-          <h1> 🎉 💻 Friendly Machine Learning for the Web. </h1>
-          <p className="mt40">
+        <div className="f1 p5 pl8 subtitle getStartedSection">
+          <h1> Friendly Machine Learning for the Web. </h1>
+          <p className="mt40 pa">
           ml5.js aims to make machine learning accessible to a broad audience of artists, creative coders, and students. The library provides access to machine learning algorithms and models in the browser, building on top of <code>TensorFlow.js</code> with no other external dependencies.
           </p>
-          <p className="mt40">
+          <p className="mt40 pa">
             The library is supported by code examples, tutorials, and sample datasets with an emphasis on ethical computing.
             Bias in data, stereotypical harms, and responsible crowdsourcing are part of the documentation
             around data collection and usage.
@@ -104,9 +104,7 @@ class Why extends React.Component {
           <button className="btn-blue mt40"href="#"> Get Started </button>
         </div>
         <div className="f1 p5 p30 center dropExample">
-          <img className="w60 bird" src="/img/bird_blue.png" />
-
-          <p className="mt40"> This is a bird blabla </p>
+        <Iframe />
         </div>
       </div>
     );
@@ -156,14 +154,14 @@ class Texts extends React.Component {
     return (
       <div className="flex texts ">
         <div className="f1 p5 subtitle br ">
-          <h1 className='mb40'>A Wrapper Around TensorFlow.js</h1>
+          <h1 className='mb40 tt'>A Wrapper Around TensorFlow.js</h1>
           <p className="description">
           ml5.js is a friendly high level interface to TensorFlow.js, a library for handling GPU-accelerated mathematical operations and memory management for machine learning algorithms.
           </p>
 
         </div>
         <div className="f1 p5 subtitle">
-          <h1 className='mb40'>Models and Training</h1>
+          <h1 className='mb40 tt'>Models and Training</h1>
           <p className="description mb40">
           ml5.js provides immediate access in the browser to pre-trained models for detecting human poses, generating text,
           styling an image with another, composing music, pitch detection, and common English language word
@@ -182,7 +180,7 @@ class Examples extends React.Component {
   render() {
     return (
       <div className="ExamplesLinkBlock p5">
-        <button className="btn-blue mt40"href="#"> 🌟 See Examples 🌟 </button>
+        <button className="btn-blue mt40 ex"href="#"> 🌟 See Examples 🌟 </button>
 
       </div>
     );
@@ -240,7 +238,6 @@ class Index extends React.Component {
     return (
       <div>
         <Why  />
-        <Iframe />
         <Code />
         <Texts  />
         <Examples  />

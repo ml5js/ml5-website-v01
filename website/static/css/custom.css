@@ -1,12 +1,22 @@
 /* your custom css */
 
 @font-face {
-  font-family: 'Menlo';
+  font-family: 'Apercu';
   font-style: normal;
   src:
-    local('Menlo'),
-    local('Menlo Regular'),
-    url('/fonts/Menlo.otf') format('opentype');
+    local('Apercu'),
+    local('Apercu Pro Regular'),
+    url('/fonts/ApercuRegular') format('truetype');
+
+}
+
+@font-face {
+  font-family: 'Apercu Bold';
+  font-style: bold;
+  src:
+    local('Apercu Pro Regular'),
+    url('/fonts/ApercuBold') format('truetype');
+
 }
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {}
@@ -25,13 +35,13 @@
 }
 
 body {
-  background: #fff;
-  font-family: Menlo;
-  color: #000;
+    background: #fff;
+    font-family: Apercu;
+    color: #000;
 }
 
 h1,h2,h3,h4,h5 {
-  font-family: Menlo;
+  font-family: Apercu;
   color: #4A90E2;
 }
 
@@ -44,6 +54,10 @@ a:hover {
     color: #469bfd;
 }
 
+.navigationSlider .slidingNav ul li a:focus, .navigationSlider .slidingNav ul li a:hover, .navigationSlider .slidingNav ul li a:active {
+  background: none;
+  border-bottom: 4px solid #a257ff !important;
+}
 .flex {
   display: flex;
 }
@@ -51,13 +65,19 @@ a:hover {
   width: 100%;
   height: auto;
 }
-
+.pa {
+    font-size: 1.2em;
+}
 .f1 {
   flex: 1;
 }
 
-.f1.getStartedSection {
-  padding: 6em 0em 6em 13em;
+.f1.p5.subtitle.getStartedSection h1 {
+  color: #a256ff;
+}
+
+.f1.p5.subtitle.getStartedSection p {
+    color: #a256ff;
 }
 
 .f1.p30.center.dropExample {
@@ -74,14 +94,18 @@ a:hover {
 }
 
 .br {
-  border-right: 3px solid #4A90E2;
+  border-right: 3px solid #a255ff;
 }
-.subtitle h1{
-  font-size: 2.7em;
-  line-height: 1.2;
-  font-weight: 600;
-  width: 90%;
+
+.subtitle h1 {
+    font-size: 3.4em;
+    line-height: 1.2;
+    font-weight: 600;
+    width: 92%;
+    font-family: Apercu;
+    color: #a256ff;
 }
+
 p.description {
     width: 85%;
     font-size: 1.1em;
@@ -94,7 +118,7 @@ p.description {
   background-image: url(/img/dot.png);
 }
 .navPusher {
-    padding-top: 130px;
+    padding-top: 80px;
 }
 
 nav.toc .toggleNav ul li a:hover, nav.toc .toggleNav ul li a:focus {
@@ -131,6 +155,10 @@ nav.toc .toggleNav ul li a.navItemActive {
 .p5{
   padding: 5em;
 }
+
+.pl8 {
+  padding-left: 8em;
+}
 .flexDiv{
   flex:1;
 }
@@ -165,17 +193,19 @@ img#codeTemp {
 }
 
 .ExamplesLinkBlock {
-    background: #dcecff;
+    background: #0bcf81;
+    background-image: url(/img/dot.png);
     padding: 11em;
     text-align: center;
 }
 
 
 .navigationSlider .slidingNav ul li a {
-  color: #4990e2;
+  color: #1abcfe;
   font-weight: 300;
-  font-family: Menlo;
+  font-family: Apercu;
   text-decoration: none;
+  font-size: 1.2em;
 }
 
 .navigationSlider .slidingNav ul li a:hover {
@@ -247,60 +277,74 @@ img#codeTemp {
 
 
 .exampleBlock {
-    background: #f2f8ff;
+    background: #FFF;
+    background-image: url(/img/dot.png);
 }
 
 .codeContainer{
-  background: #4A90E2;
-  background-image: url(/img/dot.png);
+  background: #a258ff;
+  /* background-image: url(/img/dot.png); */
   width: 100%;
-  height: 40em;
+  height: 50em;
   color: white;
   padding-top: 10px;
 }
 
 .codeContainer h1 {
   color: white;
-  font-size: 30px;
-  padding: 1.8em;
+  font-size: 42px;
+  margin-top: 2.5em;
+  font-weight: 900;
 }
 
 button.btn-blue {
-    background: #4990e2;
+    background: #0bcf82;
+    border-radius: 25px;
     border: none;
-    padding: 14px 50px;
+    padding: 1.3em 3em;
     font-family: Menlo;
     color: white;
     font-size: 15px;
-    border: .2rem solid #0a3f7d;
+    border: .2rem solid #ffffff;
+    border-top: 0;
+    border-left: 0;
+}
+
+button.btn-blue.mt40.ex {
+    font-size: 2em;
+    background: #ffffff;
+    color: #a257ff;
+    /* border: .2rem solid #000000; */
+    border: .2rem solid #000000;
     border-top: 0;
     border-left: 0;
 }
 
 .codeBox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #4A90E2;
-  background-image: url(/img/dot.png);
-  width: 100vw;
+    display: flex;
+    justify-content: center;
+    margin-top: 7em;
+    background: #a258ff;
+    width: 100vw;
+    height: 650px;
 }
 
 p.code {
-  font-size: 25px;
+    font-size: 25px;
+    color: #000000;
 }
 
 p.code.bold {
   font-weight: 800;
-  color: #7f7f7f;
+  color: #a257ff;
 }
 
 .codeExample {
-  background: white;
-  width: 65vw;
-  height: auto;
-  padding: 5em 2em 3em 3em;
-  color: #4A90E2;
+    background: white;
+    width: 55vw;
+    border-radius: 24px;
+    height: 18em;
+    padding: 5em 2em 4em 3em;
 }
 
 
@@ -360,7 +404,7 @@ footer .fbOpenSource {
 }
 
 footer.nav-footer {
-  background: #4890e2;
+  background: #000000;
   text-align: center;
   border-top: 1px solid white;
   box-shadow: none;
@@ -379,7 +423,7 @@ footer .sitemap a {
 }
 
 footer .sitemap h5 {
-    font-weight: bold;
+    color: #1abcfe;
 }
 
 footer iframe {
@@ -440,7 +484,7 @@ img#targetImage {
 
 code {
     padding: 3px 8px;
-    background-color: rgb(73, 144, 226);
+    background-color: #a257ff;
     box-shadow: none;
     color: white;
     border-radius: .3em;
@@ -525,6 +569,10 @@ li.navSearchWrapper.reactNavSearchWrapper {
     padding: 3em;
   }
 
+
+
+
+
   .ExamplesLinkBlock a {
     font-size: 1.3em;
 }
@@ -568,6 +616,8 @@ li.navSearchWrapper.reactNavSearchWrapper {
     color: #4990e2;
     font-size: 11px;
   }
+
+
 
   .mainContainer:not(.blogContainer) .wrapper .post, .blogContainer .posts, .blogContainer .lonePost {
     padding: 7em 1em;
