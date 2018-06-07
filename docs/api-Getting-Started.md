@@ -53,7 +53,7 @@ Make a new `index.html` and paste in the below code. Make sure the first `<scrip
     // When we get the results
     function gotResult(results) {
       // The results are in an array ordered by probability.
-      document.getElementById('result').innerText = results[0].label;
+      document.getElementById('result').innerText = results[0].className;
       document.getElementById('probability').innerText = results[0].probability.toPrecision(2);
     }
     </script>
