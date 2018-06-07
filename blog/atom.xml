@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>ml5js.github.io/blog</id>
+    <id>ml5js.org/blog</id>
     <title>ml5js Blog</title>
     <updated>2016-03-11T06:00:00Z</updated>
     <generator>Feed for Node.js</generator>
-    <link rel="alternate" href="ml5js.github.io/blog"/>
+    <link rel="alternate" href="ml5js.org/blog"/>
     <subtitle>The best place to stay up-to-date with the latest ml5js news and events.</subtitle>
-    <logo>ml5js.github.io/img/ml5.png</logo>
+    <logo>ml5js.org/img/ml5.png</logo>
     <entry>
         <title type="html"><![CDATA[Blog Title]]></title>
-        <id>ml5js.github.io/blog/2016/03/11/blog-post.html</id>
-        <link href="ml5js.github.io/blog/2016/03/11/blog-post.html">
+        <id>ml5js.org/blog/2016/03/11/blog-post.html</id>
+        <link href="ml5js.org/blog/2016/03/11/blog-post.html">
         </link>
         <updated>2016-03-11T06:00:00Z</updated>
         <summary type="html"><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus elementum massa eget nulla aliquet sagittis. Proin odio tortor, vulputate ut odio in, ultrices ultricies augue. Cras ornare ultrices lorem malesuada iaculis. Etiam sit amet libero tempor, pulvinar mauris sed, sollicitudin sapien.</p>
