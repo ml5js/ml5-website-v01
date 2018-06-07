@@ -35,8 +35,6 @@ class Button extends React.Component {
   }
 }
 
-
-
 Button.defaultProps = {
   target: '_self',
 };
@@ -101,7 +99,7 @@ class Why extends React.Component {
             Bias in data, stereotypical harms, and responsible crowdsourcing are part of the documentation
             around data collection and usage.
            </p>
-          <button className="btn-blue mt40"href="#"> Get Started </button>
+          <button className="btn-blue mt40"> <a href="/docs/getting-started.html"> Get Started </a></button>
         </div>
         <div className="f1 p5 p30 center dropExample">
         <Iframe />
@@ -180,7 +178,7 @@ class Examples extends React.Component {
   render() {
     return (
       <div className="ExamplesLinkBlock p5">
-        <button className="btn-blue mt40 ex"href="#"> 🌟 See Examples 🌟 </button>
+        <button className="btn-blue mt40 ex "> <a href="/docs/simple-image-classification-example.html"> 🌟 See Examples 🌟 </a> </button>
 
       </div>
     );

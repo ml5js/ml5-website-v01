@@ -6,7 +6,7 @@
   src:
     local('Apercu'),
     local('Apercu Pro Regular'),
-    url('/fonts/ApercuRegular') format('truetype');
+    url('/css/fonts/ApercuRegular.ttf') format('truetype');
 
 }
 
@@ -15,7 +15,7 @@
   font-style: bold;
   src:
     local('Apercu Pro Regular'),
-    url('/fonts/ApercuBold') format('truetype');
+    url('/css/fonts/ApercuBold.ttf') format('truetype');
 
 }
 
@@ -38,6 +38,7 @@ body {
     background: #fff;
     font-family: Apercu;
     color: #000;
+    overflow-x: hidden;
 }
 
 h1,h2,h3,h4,h5 {
@@ -91,6 +92,10 @@ a:hover {
 }
 .mb40 {
   margin-bottom: 40px;
+}
+
+.mt40 a {
+    color:white;
 }
 
 .br {
@@ -319,6 +324,10 @@ button.btn-blue.mt40.ex {
     border: .2rem solid #000000;
     border-top: 0;
     border-left: 0;
+}
+
+button.btn-blue.mt40.ex a {
+    color: #a257ff;
 }
 
 .codeBox {
