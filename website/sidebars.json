@@ -9,7 +9,8 @@
       "word2vec",
       "crepe"],
     "Examples": [
-      "simple-image-classification-example",
+      "quick-start",
+      "image-classification-example",
       "multiple-image-classification-example",
       "video-classification-example",
       "knn-image-example",

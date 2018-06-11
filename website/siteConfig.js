@@ -7,7 +7,7 @@ const siteConfig = {
   headerLinks: [
     { doc: 'getting-started', label: 'API' },
     { doc: 'datasets', label: 'Datasets' },
-    { doc: 'simple-image-classification-example', label: 'Examples' },
+    { doc: 'quick-start', label: 'Examples' },
     { page: 'experiments', label: 'Experiments' },
     { doc: 'glossary-statistics', label: 'Learn' },
     { href: 'https://github.com/ml5js', label: 'Code' },
