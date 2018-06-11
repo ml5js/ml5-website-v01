@@ -5,7 +5,7 @@ const siteConfig = {
   baseUrl: '/',
   projectName: 'ml5js.org',
   headerLinks: [
-    { doc: 'getting-started', label: 'API' },
+    { doc: 'getting-started', label: 'Reference' },
     { doc: 'quick-start', label: 'Examples' },
     { doc: 'datasets', label: 'Datasets' },
     { page: 'experiments', label: 'Experiments' },

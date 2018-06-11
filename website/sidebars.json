@@ -2,12 +2,13 @@
   "docs": {
     "Documentation": [
       "getting-started",
-      "imageclassifier",
-      "knnImage",
+      "ImageClassifier",
+      "FeatureExtractor",
       "lstm",
       "style-transfer",
       "word2vec",
-      "crepe"],
+      "crepe"
+    ],
     "Examples": [
       "quick-start",
       "image-classification-example",

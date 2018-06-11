@@ -1,6 +1,7 @@
 ---
 id: quick-start
-title: Quick Start
+title: Examples Quick Start
+sidebar_label: Quick Start
 ---
 
 Here you will find a collection of interactive examples using ml5.js. The examples are meant to serve as an introduction to the library and machine learning concepts.
