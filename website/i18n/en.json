@@ -7,7 +7,7 @@
     "crepe": "Crepe Pitch Detection",
     "getting-started": "Getting Started",
     "Getting Started": "Getting Started",
-    "imageclassifier": "Image Classifier",
+    "imageclassifier": "ImageClassifier()",
     "knnImage": "KNN Image Classifier",
     "lstm": "LSTM",
     "neural-network": "Neural Network",

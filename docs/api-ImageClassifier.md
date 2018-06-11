@@ -1,6 +1,6 @@
 ---
 id: imageclassifier
-title: Image Classifier
+title: ImageClassifier()
 ---
 
 You can use neural networks to recognize the content of images. The ImageClassifier is a class to classify an image using a pre-trained model.

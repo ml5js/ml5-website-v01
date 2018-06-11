@@ -10,7 +10,7 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "docusaurus": "1.0.7",
+    "docusaurus": "1.2.0",
     "react-highlight": "^0.12.0"
   }
 }
