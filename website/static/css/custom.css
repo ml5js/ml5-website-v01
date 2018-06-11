@@ -661,3 +661,14 @@ li.navSearchWrapper.reactNavSearchWrapper {
 }
 
 /* End simple grid layout  */
+
+.navigationSlider .slidingNav ul li a:focus, .navigationSlider .slidingNav ul li a:hover, .navigationSlider .slidingNav ul li.siteNavItemActive a, .navigationSlider .slidingNav ul li.siteNavGroupActive a {
+    background: #ffffff;
+    color: #a255ff;
+}
+
+nav.toc .toggleNav .navGroup.navGroupActive h3 {
+    background: #4A90E2;
+    color: white;
+    padding-left: 1rem;
+}
