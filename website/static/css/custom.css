@@ -485,10 +485,10 @@ img#targetImage {
     display: block;
     overflow-x: auto;
     padding: 1.5em 2em;
-    color: #abb2bf;
+    /* color: #abb2bf; */
     border: none;
     font-size: 14px;
-    background: #ffffff;
+    /* background: #ffffff; */
     border: 19px solid #DBECFF;
 }
 

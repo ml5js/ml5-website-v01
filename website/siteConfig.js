@@ -6,8 +6,8 @@ const siteConfig = {
   projectName: 'ml5js.org',
   headerLinks: [
     { doc: 'getting-started', label: 'API' },
-    { doc: 'datasets', label: 'Datasets' },
     { doc: 'quick-start', label: 'Examples' },
+    { doc: 'datasets', label: 'Datasets' },
     { page: 'experiments', label: 'Experiments' },
     { doc: 'glossary-statistics', label: 'Learn' },
     { href: 'https://github.com/ml5js', label: 'Code' },
@@ -28,7 +28,7 @@ const siteConfig = {
   organizationName: 'ml5js', // or set an env variable ORGANIZATION_NAME
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks
-    theme: 'atom-one-dark',
+    theme: 'atom-one-light',
   },
   scripts: [
     '/scripts/ml5.min.js',
