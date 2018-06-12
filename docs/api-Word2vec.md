@@ -1,31 +1,32 @@
 ---
-id: word2vec
-title: Word2Vec
+id: Word2vec
+title: word2vec()
 ---
 
-Word2vec is a group of related models that are used to produce word embeddings<sup>[1](https://en.wikipedia.org/wiki/Word2vec)</sup>. This class allows you to perform vector operations on a given set of input vectors. You can use the pre-trained word models or you can train your own vector models following [this tutorial](#).
+Word2vec is a group of related models that are used to produce [word embeddings](https://en.wikipedia.org/wiki/Word2vec)</sup>. This method allows you to perform vector operations on a given set of input vectors. 
+
+You can use the word models [we provide](https://github.com/ml5js/ml5-examples/tree/master/p5js/Word2Vec/data), trained on a corpus of common english words, or you can train your own vector models following [this tutorial](https://github.com/ml5js/ml5-data-and-training/tree/master/training). More of this soon!
 
 ### Example
 
 ```javascript
-// Create the classifier
-const wordVectors = new ml5.Word2Vec('data/wordvecs10000.json', generate);
-
-function generate() {
-  // Find the closest word to 'rainbow'
-  const nearest = wordVectors.nearest('rainbow', 1);
-
-  // Find the average of two words
-  const average = wordVectors.average(['red', 'green'], 1); // Should output yellow
-}
+// Create a new word2vec method
+const wordVectors = ml5.word2vec('data/wordvecs.json');
+// Find the closest word to 'rainbow'
+const nearest = wordVectors.nearest('rainbow', 1);
+// Find the average of two words
+const average = wordVectors.average(['red', 'green'], 1); // Should output yellow
 ```
+
+[Here](https://github.com/ml5js/ml5-examples/blob/master/p5js/Word2Vec/sketch.js) is a complete example.
 
 ## Constructor
   ```javascript
-  Word2Vec(vectors, [callback])
+  Word2Vec(vectors, ?callback)
   ```
-  `vectors` - A JSON file containing valid vectors of N-dimension, loaded asynchronously.
-  `callback` (optional) - A callback function that is executed once the model has loaded.
+### Parameters 
+  - `vectors` - A string to the path of the JSON model.
+  - `callback` - Optional. A callback function that is called once the model has loaded.
 
 ## Properties
 
@@ -39,77 +40,50 @@ function generate() {
   ```
   > The model being used.
 
-  ```javascript
-  .modelSize
-  ```
-  > The size of the model being used.
-
-  ```javascript
-  .math
-  ```
-  > The environment Math element.
-
 ## Methods
 
   ```javascript
-  .add(inputs, max)
+  .add(inputs, ?max)
   ```
   > Add a series of vectors. Returns the closest vector of that sum.
 
   `inputs` - An array of strings containing the inputs to be added
 
-  `max` - The maximum results to return. Optional. Defaults to 1.
-
+  `max` - Optional. The maximum results to return. Defaults to 1.
 
   ```javascript
-  .subtract(inputs, max)
+  .subtract(inputs, ?max)
   ```
   > Subtract a series of vectors. Returns the closest vector of that sum.
 
   `inputs` - An array of strings containing the inputs to be subtracted.
 
-  `max` - The maximum results to return. Optional. Defaults to 1.
+  `max` - Optional. The maximum results to return. Defaults to 1.
 
 
   ```javascript
-  .average(inputs, max)
+  .average(inputs, ?max)
   ```
   > Average a series of vectors. Returns the closest vector of that average.
 
   `inputs` - An array of strings containing the inputs to be averaged.
 
-  `max` - The maximum results to return. Optional. Defaults to 1.
+  `max` - Optional. The maximum results to return. Defaults to 1.
 
   ```javascript
-  .nearest(input, max)
+  .nearest(input, ?max)
   ```
   > Find the nearest vector. Returns `max` array of values.
 
   `input` - The input vector string.
 
-  `max` - The maximum results to return. Optional. Defaults to 10.
+  `max` - Optional. The maximum results to return. Defaults to 10.
 
   ```javascript
   .getRandomWord()
   ```
-  > Find a random word in the loaded model. Returns a string.
-
-## Static Methods
-
-  ```javascript
-  addOrSubtract(model)
-  ```
-  > Utility method to add or subtract vectors.
-
-  `model` - The model used.
-
-  ```javascript
-  nearest(model)
-  ```
-  > Finds the n-closest neighbors of a vector.
-
-  `model` - The model used.
+  > Find a random vector in the loaded model. Returns a string.
 
 ## Source
 
-[/src/Word2vec/index.js](https://github.com/ITPNYU/ml5/blob/master/src/Word2vec/index.js)
+[/src/Word2vec/](https://github.com/ml5js/ml5-library/tree/master/src/Word2vec)

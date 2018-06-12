@@ -64,7 +64,7 @@ Let's add something more to classify an image
       const probability = document.getElementById('probability');
 
       // Initialize the Image Classifier method with Mobilenet
-      const classifier = new ml5.ImageClassifier('Mobilenet');
+      const classifier = ml5.imageClassifier('Mobilenet');
 
       // Make a prediction with the selected image
       // This will return an array with a default of 10 options with their probabilities

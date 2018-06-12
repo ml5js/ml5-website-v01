@@ -1,17 +1,17 @@
 ---
 id: FeatureExtractor
-title: FeatureExtractor()
+title: featureExtractor()
 ---
 
 You can use neural networks to recognize the content of images. Most of the times you will be using a model trained on a large data set for this. But you can also use part of a pre-trained model that has already learned some [features]() about the data set and 'retrain' or 'reuse' it for a new custom task. This is known as [Transfer Learning]().
 
 This class allows you to extract features from pre-trained models and retrain them with new types of data.
 
-### Example
+## Example
 
 ```javascript
 // Extract the already learned features from Mobilenet
-const featureExtractor = new ml5.FeatureExtractor('Mobilenet');
+const featureExtractor = ml5.featureExtractor('Mobilenet');
 
 // Create a new classifier using those features
 const classifier = featureExtractor.asClassifier(video);
@@ -28,19 +28,23 @@ classifier.predict(document.getElementById('dogB'), function(results) {
 });
 ```
 
-## Constructor
+[Here](https://github.com/ml5js/ml5-examples/blob/master/p5js/FeatureExtractor_Image_Regression/sketch.js) is a complete example to create a custom regression.
+
+[Here](https://github.com/ml5js/ml5-examples/blob/master/p5js/FeatureExtractor_Image_Classification/sketch.js) is a complete example to create a custom classifier.
+
+## Syntax
   ```javascript
-  new ml5.FeatureExtractor(model, ?callback)
+  ml5.featureExtractor(model, ?callback)
   ```
 
   ```javascript
-  new ml5.FeatureExtractor(model, ?options, ?callback)
+  ml5.featureExtractor(model, ?options, ?callback)
   ```
-  `model` - The model from which extract the learned features. Case-insensitive
+### Parameters
+  - `model` - The model from which extract the learned features. Case-insensitive
+  - `callback` - Optional. A function to be executed once the model has been loaded.
+  - `options` - Optional. An object containing custom options. For the Mobilenet model these are the custom options you can reset:
 
-  `callback` - Optional. A function to be executed once the model has been loaded.
-
-  `options` - Optional. An object containing custom options. For the Mobilenet model these are the custom options you can reset:
   ```javascript
   {   
     version: 1,
@@ -53,16 +57,16 @@ classifier.predict(document.getElementById('dogB'), function(results) {
     batchSize: 0.4, 
   }
   ```
-## Mobilenet Features
+### Mobilenet Features
 --- 
 
 The following are the Properties and Methods when Mobilenet is selected as the model from which to extract the Features:
 
 ```javascript
-new ml5.FeatureExtractor('Mobilenet')
+ml5.featureExtractor('Mobilenet')
 ```
 
-## Properties
+### Properties
 
   ```javascript
   .modelLoaded
@@ -85,10 +89,10 @@ new ml5.FeatureExtractor('Mobilenet')
   > Boolean value to check if the model is predicting.
 
 
-## Methods
+### Methods
 
   ```javascript
-  .asClassifier(video, callback)
+  .classifier(video, callback)
   ```
   > Use the features of Mobilenet as a classifier
 
@@ -97,7 +101,7 @@ new ml5.FeatureExtractor('Mobilenet')
   `callback` - A function to be called once the video is ready.
 
   ```javascript
-  .asRegressor(video, callback)
+  .regression(video, callback)
   ```
   > Use the features of Mobilenet as a regressor
 
@@ -133,18 +137,21 @@ new ml5.FeatureExtractor('Mobilenet')
   ```javascript
   .classify(input, ?callback)
   ```
-  > Classifies an an image based on a new retrained model. `.asClassifier()` needs to be used with this.
+  > Classifies an an image based on a new retrained model. `.classification()` needs to be used with this.
 
   `input` - An HTML image or video element or a p5 image or video element. If not input is provided, the video element provided in the method-type will be used.
 
   `callback` - A function to be called once the input has been classified.
 
   ```javascript
-  .predict(file)
+  .predict(?callback)
   ```
-  > Predicts a continues values based on a new retrained model. `.asRegressor()` needs to be used with this. 
+  ```javascript
+  .predict(input, ?callback)
+  ```
+  > Predicts a continues values based on a new retrained model. `.regression()` needs to be used with this. 
 
-  `input` - An HTML image or video element or a p5 image or video element. If not input is provided, the video element provided in the method-type will be used.
+  `input` - An HTML image or video element or a p5 image or video element. If not input is provided, the video element provided when creating the regression will be used.
 
   `callback` - A function to be called once the input has been predicted.
 

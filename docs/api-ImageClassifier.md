@@ -1,39 +1,41 @@
 ---
 id: ImageClassifier
-title: ImageClassifier()
+title: imageClassifier()
 ---
 
-You can use neural networks to recognize the content of images. The ImageClassifier() is a method to classify an image using a pre-trained model.
+You can use neural networks to recognize the content of images. The `ImageClassifier()` is a method to classify an image using a pre-trained model.
 
 It should be noted that the available pre-trained models noted below were trained on a database of approximately 15 million images ([ImageNet](http://www.image-net.org/)). The ml5 library accesses
 these model from the cloud. What the algorithm labels an image is entirely dependent on that training data -- what is included, excluded, and how those images are labeled (or mislabeled).
 
-### Example
+## Example
 
 ```javascript
 // Initialize the Image Classifier method with Mobilenet
-const classifier = new ml5.ImageClassifier('Mobilenet');
-// // Make a prediction with a selected image
+const classifier = ml5.imageClassifier('Mobilenet');
+// Make a prediction with a selected image
 classifier.predict(document.getElementById('image'), function(results) {
   console.log(results);
 });
 ```
 
-## Constructor
+[Here](https://github.com/ml5js/ml5-examples/blob/master/p5js/ImageClassification/sketch.js) is a complete example.
+
+## Syntax
   ```javascript
-  new ml5.ImageClassifier(model)
+  ml5.imageClassifier(model)
   ```
 
   ```javascript
-  new ml5.ImageClassifier(model, ?callback)
+  ml5.imageClassifier(model, ?callback)
   ```
 
   ```javascript
-  new ml5.ImageClassifier(model, ?options, ?callback)
+  ml5.imageClassifier(model, ?options, ?callback)
   ```
 
   ```javascript
-  new ml5.ImageClassifier(model, ?video, ?options, ?callback)
+  ml5.imageClassifier(model, ?video, ?options, ?callback)
   ```
 
 ### Parameters
@@ -89,4 +91,4 @@ classifier.predict(document.getElementById('image'), function(results) {
 
 ## Source
 
-[/src/ImageClassifier](https://github.com/ml5js/ml5-library/blob/master/src/ImageClassifier/index.js)
+[/src/ImageClassifier](https://github.com/ml5js/ml5-library/blob/master/src/ImageClassifier/)

@@ -4,10 +4,12 @@
       "getting-started",
       "ImageClassifier",
       "FeatureExtractor",
-      "lstm",
-      "style-transfer",
-      "word2vec",
-      "crepe"
+      "LSTMGenerator",
+      "PitchDetection",
+      "PoseNet",
+      "StyleTransfer",
+      "Word2vec",
+      "YOLO"
     ],
     "Examples": [
       "quick-start",
