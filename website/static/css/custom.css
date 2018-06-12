@@ -342,12 +342,24 @@ nav.toc .toggleNav .navGroup.navGroupActive h3 {
 
 p.code.bold {
   font-weight: 800;
-  color: #a257ff;
+  color: #aaa;
 }
 
 p.code {
   font-size: 25px;
   color: #000000;
+}
+
+.codehl {
+  color: #1abcfe;
+}
+
+.codehl2 {
+  color: #0bcf82;
+}
+
+.codehl3 {
+  color: #a257ff;
 }
 
 .mb40 {

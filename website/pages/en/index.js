@@ -97,7 +97,7 @@ class Why extends React.Component {
             The library is supported by code examples, tutorials, and sample datasets with an emphasis on ethical computing.
             Bias in data, stereotypical harms, and responsible crowdsourcing are part of the documentation
             around data collection and usage.
-           </p>
+          </p>
           <button className="btn-blue mt40"> <a href="/docs/getting-started.html"> Get Started </a></button>
         </div>
         <div className="f1 p5 p30 center dropExample">
@@ -121,19 +121,19 @@ class Code extends React.Component {
               // Create the classifier
             </p>
             <p className="code mb20">
-            const classifier = new ml5.ImageClassifier('MobileNet');
+            <span className="codehl">const</span> classifier = ml5.<span className="codehl3">imageClassifier</span>(<span className="codehl2">'MobileNet'</span>);
             </p>
             <p className="code bold">
             // Make a prediction
             </p>
             <p className="code mb20">
-            let prediction = classifier.predict(img, gotResults);
+            <span className="codehl">let</span> prediction = classifier.<span className="codehl3">predict</span>(img, gotResults);
             </p>
             <p className="code">
-            function gotResults(results) &#123;
+            <span className="codehl">function</span> <span className="codehl3">gotResults</span>(results) &#123;
             </p>
             <p className="code">
-            &nbsp;&nbsp;console.log(results);
+            &nbsp;&nbsp;console.<span className="codehl3">log</span>(results);
             </p>
             <p className="code mb20">
             &#125;
