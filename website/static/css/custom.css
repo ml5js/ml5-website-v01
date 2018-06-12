@@ -147,9 +147,9 @@ nav.toc .toggleNav ul li a.navItemActive {
     margin: 3rem 0px 0px 0px;
 }
 
-.mainContainer:not(.blogContainer) .wrapper .post, .blogContainer .posts, .blogContainer .lonePost {
+/* .mainContainer:not(.blogContainer) .wrapper .post, .blogContainer .posts, .blogContainer .lonePost {
     padding: 40px 60PX;
-}
+} */
 
 .hero {
   display: flex;
@@ -671,4 +671,8 @@ nav.toc .toggleNav .navGroup.navGroupActive h3 {
     background: #4A90E2;
     color: white;
     padding-left: 1rem;
+}
+
+.wrapper{
+    max-width: 1200px;
 }
