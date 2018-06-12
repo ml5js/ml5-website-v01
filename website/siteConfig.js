@@ -3,7 +3,7 @@ const siteConfig = {
   tagline: 'Friendly Machine Learning For The Web.',
   url: 'ml5js.org',
   baseUrl: '/',
-  projectName: 'ml5js.org',
+  projectName: 'ml5js.github.io',
   headerLinks: [
     { doc: 'getting-started', label: 'Reference' },
     { doc: 'quick-start', label: 'Examples' },
