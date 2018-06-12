@@ -218,7 +218,7 @@ class Iframe extends React.Component {
     return(
       <div>
         <iframe src="https://ml5js.github.io/ml5-homepage-demo/"
-          height="900"
+          height="650"
           width="100%"
         />
       </div>

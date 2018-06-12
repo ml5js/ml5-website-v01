@@ -69,10 +69,6 @@ a:hover {
     color: #a256ff;
 }
 
-.f1.getStartedSection {
-  padding: 3em;
-}
-
 .br {
   border-right: 3px solid #a255ff;
 }
@@ -142,13 +138,16 @@ img#imgHome {
   padding: 11em;
   text-align: center;
 }
+.navigationSlider .slidingNav ul li {
+  max-width: 250px;
+}
 
 .navigationSlider .slidingNav ul li a {
-color: #a255ff;
-font-weight: 300;
-font-family: Apercu;
-text-decoration: none;
-font-size: 1.2em;
+  color: #a255ff;
+  font-weight: 300;
+  font-family: Apercu;
+  text-decoration: none;
+  font-size: 1.2em;
 }
 
 .navigationSlider .slidingNav ul li a:hover {
@@ -177,6 +176,10 @@ button.btn-blue {
   border: .2rem solid #ffffff;
   border-top: 0;
   border-left: 0;
+}
+
+button.btn-blue a {
+  color: white;
 }
 
 button.btn-blue.mt40.ex {
@@ -289,4 +292,128 @@ nav.toc .toggleNav .navGroup.navGroupActive h3 {
   background: #4A90E2;
   color: white;
   padding-left: 1rem;
+}
+
+.exampleBlock {
+  background: #FFF;
+  background-image: url(/img/dot.png);
+}
+
+.flex {
+  display: flex;
+}
+
+.f1 {
+  flex: 1;
+}
+
+.pl8 {
+  padding-left: 8em;
+}
+
+.navigationSlider .slidingNav ul {
+  flex-wrap: wrap;
+}
+
+.mt40 {
+  margin-top: 40px;
+}
+
+.wrapper {
+  margin: 0px auto;
+  max-width: 1100px !important;
+  padding: 0 20px;
+}
+
+.codeContainer h1 {
+  color: white;
+  font-size: 42px;
+  margin-top: 2.5em;
+  font-weight: 900;
+}
+
+.codeExample {
+  background: white;
+  /* width: 55vw; */
+  border-radius: 24px;
+  height: 18em;
+  padding: 5em 2em 4em 3em;
+}
+
+p.code.bold {
+  font-weight: 800;
+  color: #a257ff;
+}
+
+p.code {
+  font-size: 25px;
+  color: #000000;
+}
+
+.mb40 {
+  margin-bottom: 40px;
+}
+
+.texts {
+  background: #fff;
+  padding: 1em;
+}
+
+.fixedHeaderContainer header {
+  margin: 1.5rem 0;
+}
+
+@media only screen and (max-width: 800px) and (min-width: 500px){
+  .flex {
+    flex-direction: column;
+  }
+  .p5 {
+    padding: 3em;
+  }
+  .subtitle h1 {
+    font-size: 3em;
+  }
+  .codeContainer h1 {
+    font-size: 20px;
+  }
+  .mb20 {
+    margin-bottom: 10px;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .flex {
+    flex-direction: row;
+  }
+  .p5 {
+    padding: 5em;
+  }
+  .codeContainer h1 {
+    font-size: 42px;
+  }
+  .mb20 {
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .flex {
+    flex-direction: column;
+  }
+  button.btn-blue.mt40.ex {
+    font-size: 0.8em;
+  }
+
+  .p5 {
+    padding: 2.5em;
+  }
+  .subtitle h1 {
+    font-size: 3em;
+  }
+  .codeContainer h1 {
+    font-size: 20px;
+  }
+  .mb20 {
+    margin-bottom: 0px;
+  }
 }
