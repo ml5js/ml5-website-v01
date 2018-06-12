@@ -102,7 +102,7 @@ nav.toc .toggleNav ul li a:hover, nav.toc .toggleNav ul li a:focus {
   color: #abc8e8;
 }
 .container .wrapper h2 {
-color: #4A90E2;
+  color: #4A90E2;
 }
 
 nav.toc .toggleNav ul li a.navItemActive {
@@ -373,6 +373,14 @@ p.code {
 
 .fixedHeaderContainer header {
   margin: 1.5rem 0;
+}
+
+.container .wrapper h3 {
+  color: #4A90E2;
+}
+
+nav.toc .toggleNav .navGroup.navGroupActive h3 {
+  line-height: 2em;
 }
 
 @media only screen and (max-width: 800px) and (min-width: 500px){
