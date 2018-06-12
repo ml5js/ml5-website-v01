@@ -383,6 +383,26 @@ nav.toc .toggleNav .navGroup.navGroupActive h3 {
   line-height: 2em;
 }
 
+.flex-grid {
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+
+.flex-col {
+  flex: 1;
+  min-width: 400px;
+  padding: 14px;
+}
+
+.experiment {
+  max-width: 500px;
+}
+
+.docMainWrapper {
+  margin: 30px auto;
+}
+
 @media only screen and (max-width: 800px) and (min-width: 500px){
   .flex {
     flex-direction: column;
