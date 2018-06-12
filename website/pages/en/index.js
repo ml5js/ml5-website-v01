@@ -9,7 +9,6 @@ const MarkdownBlock = CompLibrary.MarkdownBlock; /* Used to read markdown */
 const Container = CompLibrary.Container;
 const GridBlock = CompLibrary.GridBlock;
 const siteConfig = require(process.cwd() + '/siteConfig.js');
-const Highlight = require('react-highlight');
 
 function imgUrl(img) {
   return siteConfig.baseUrl + 'img/' + img;

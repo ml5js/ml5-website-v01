@@ -3,7 +3,7 @@
   "localized-strings": {
     "next": "Next",
     "previous": "Previous",
-    "tagline": "Friendly Machine Learning For The Web.",
+    "tagline": "A website for testing",
     "crepe": "Crepe Pitch Detection",
     "FeatureExtractor": "FeatureExtractor()",
     "getting-started": "Getting Started",
@@ -43,7 +43,20 @@
     "Training Models": "Training Models",
     "Glossary": "Glossary",
     "Tutorials": "Tutorials",
-    "Resources": "Resources"
+    "Resources": "Resources",
+    "doc1": "Latin-ish",
+    "Example Page": "Example Page",
+    "doc2": "document number 2",
+    "doc3": "This is document number 3",
+    "doc4": "Other Document",
+    "doc5": "Fifth Document",
+    "Docs": "Docs",
+    "API": "API",
+    "Help": "Help",
+    "Blog": "Blog",
+    "Docusaurus": "Docusaurus",
+    "First Category": "First Category",
+    "Second Category": "Second Category"
   },
   "pages-strings": {
     "Help Translate|recruit community translators for your project": "Help Translate",
