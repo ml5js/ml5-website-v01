@@ -1,12 +1,12 @@
 // Create the LSTM Generator passing it the model directory
-const lstm = ml5.LSTMGenerator('assets/models/nietschze/', modelReady);
+const lstm = ml5.LSTMGenerator('assets/models/hemingway', modelReady);
 
 let textInput;
 let tempSlider;
 let lengthSlider;
 
 function modelReady() {
-  select('#status').html('Model Loaded');
+  document.getElementById('status').innerHTML = 'Model Loaded';
 }
 
 function setup() {
@@ -52,7 +52,7 @@ function generate() {
     function gotData(result) {
       select('#status').html('Ready!');
       select('#original').html(original);
-      select('#prediction').html(result);
+      select('#prediction').html(result.generated);
     }
   } else {
     // Clear everything

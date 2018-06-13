@@ -3,7 +3,7 @@ id: lstm-example
 title: Text Generation with LSTM
 ---
 
-In this demo you ask the LSTM: "Starting with the seed text, predict what text might come next based on the pre-trained [Friedrich Nietschze](https://en.wikipedia.org/wiki/Friedrich_Nietzsche) model." Changing `length` changes the number of characters in the resulting predicted text. Higher `length` values can take many minutes to compute and use a lot of CPU. The `temperature` controls the randomness of the output. A `temperature` of 0 will be relatively random but might not even look like English, while a `temperature` of 1.0 will probably be correct English but will also be very close to the original Hemingway, perhaps even straight quotations.
+In this demo you ask the LSTM: "Starting with the seed text, predict what text might come next based on the pre-trained [Ernest Hemingway](https://en.wikipedia.org/wiki/Ernest_Hemingway) model." Changing `length` changes the number of characters in the resulting predicted text. Higher `length` values can take many minutes to compute and use a lot of CPU. The `temperature` controls the randomness of the output. A `temperature` of 0 will be relatively random but might not even look like English, while a `temperature` of 1.0 will probably be correct English but will also be very close to the original Hemingway, perhaps even straight quotations.
 
 This example is built with p5.js.
 
@@ -26,7 +26,7 @@ You can train your own models following [this tutorial](https://github.com/ml5js
 
 ```javascript
 // Create the LSTM Generator passing it the model directory
-const lstm = ml5.LSTMGenerator('models/nietschze/', modelReady);
+const lstm = ml5.LSTMGenerator('models/hemingway/', modelReady);
 
 let textInput;
 let lengthSlider;
@@ -86,7 +86,7 @@ function generate() {
     function gotData(result) {
       // Update the status log
       select('#status').html('Ready!');
-      select('#result').html(txt + result);
+      select('#result').html(txt + result.generated);
     }
   }
 }
