@@ -2,21 +2,27 @@
   "docs": {
     "Documentation": [
       "getting-started",
-      "imageclassifier",
-      "knnImage",
-      "lstm",
-      "style-transfer",
-      "word2vec",
-      "crepe"],
+      "ImageClassifier",
+      "FeatureExtractor",
+      "LSTMGenerator",
+      "PitchDetection",
+      "PoseNet",
+      "StyleTransfer",
+      "Word2vec",
+      "YOLO"
+    ],
     "Examples": [
-      "simple-image-classification-example",
-      "multiple-image-classification-example",
+      "quick-start",
+      "image-classification-example",
       "video-classification-example",
-      "knn-image-example",
+      "custom-classifier",
+      "custom-regression",
       "lstm-example",
       "lstm-interactive-example",
       "style-transfer-image-example",
       "style-transfer-webcam-example",
+      "posenet-webcam",
+      "yolo-webcam",
       "word2vec-example"
     ],
     "Datasets": [

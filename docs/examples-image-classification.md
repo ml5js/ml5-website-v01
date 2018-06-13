@@ -1,45 +1,52 @@
 ---
-id: simple-image-classification-example
+id: image-classification-example
 title: Image Classification
 ---
 
-A simple image classification example using ml5.js and [p5.js](https://p5js.org/). You can also find the same example without p5.js [here](https://github.com/ml5js/ml5-examples).
+Image classification example using [Mobilenet](https://github.com/tensorflow/tfjs-models/tree/master/mobilenet). Mobilenet is a machine learning model trained to recognize the content of certain images.
+
+This example is built with p5.js. You can also find the same example without p5.js [here](https://github.com/ml5js/ml5-examples/tree/master/javascript/ImageClassification).
 
 ## Demo
 
 <div class="example">
-  <img src="assets/img/bird.jpg" id="targetImage"/>
-  <p>I guess this is a <span id="result">...</span>. My confidence is <span id="probability">...</span></p>
+  <img src="assets/img/bird.jpg" id="targetImage" width=400/>
+  <p>The MobileNet model labeled this as <span id="result">...</span> with a confidence of  <span id="probability">...</span></p>
 </div>
 
 <script src="assets/scripts/example-image-classification.js"></script>
 
 ## Code
-```javascript
-// Initialize the ImageClassifier with the MobileNet model.
-const classifier = new ml5.ImageClassifier('MobileNet');
 
+```javascript
+// Initialize the Image Classifier method with Mobilenet
+const classifier = ml5.imageClassifier('Mobilenet');
+
+// A variable to hold the image we want to classify
 let img;
 
 function setup() {
   noCanvas();
   // Load the image
-  img = createImg('assets/img/bird.jpg', imageReady);
-  img.hide();
+  img = createImg('images/bird.jpg', imageReady);
+  img.size(400, 400);
 }
 
 // When the image has been loaded,
 // get a prediction for that image
 function imageReady() {
-  classifier.predict(img.elt, 10, gotResult);
+  classifier.predict(img, gotResult);
+  // You can also specify the amount of classes you want
+  // classifier.predict(img, 10, gotResult);
 }
 
-// When we get the results
+// A function to run when we get the results
 function gotResult(results) {
   // The results are in an array ordered by probability.
-  select('#result').html(results[0].label);
+  select('#result').html(results[0].className);
   select('#probability').html(nf(results[0].probability, 0, 2));
 }
+
 ```
 
-## [Source](https://github.com/ml5js/ml5-examples/tree/master/p5js/00_ImageNet_Simple)
+## [Source](https://github.com/ml5js/ml5-examples/tree/master/p5js/ImageClassification)

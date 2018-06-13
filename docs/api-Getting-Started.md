@@ -4,83 +4,82 @@ title: Getting Started
 sidebar_label: Getting Started
 ---
 
-ml5.js is heavily inspired by the [Processing](https://processing.org/) and [p5.js](https://p5js.org/) libraries. Its primary goal is to make machine learning accessible to beginners, artists, designers, and educators through a simple and concise interface.
+ml5.js aims to make machine learning accessible to a broad audience of artists, creative coders, and students. The library provides access to machine learning algorithms and models in the browser, building on top of [TensorFlow.js](https://js.tensorflow.org/) with no other external dependencies.
+
+The library is supported by code examples, tutorials, and sample datasets with an emphasis on ethical computing. Bias in data, stereotypical harms, and responsible crowdsourcing are part of the documentation around data collection and usage.
+
+ml5.js is heavily inspired by [Processing](https://processing.org/) and [p5.js](https://p5js.org/).
 
 ## Setup
 
-Download the [latest version](https://github.com/ITPNYU/ml5) of ml5.js and save the following HTML file to your computer:
+Download the [latest version](https://unpkg.com/ml5) of ml5.js and save the following HTML file to your computer:
 
 ```html
 <!DOCTYPE html>
   <html>
     <head>
-      <meta charset=utf-8>
-      <title>Intro to ml5.js</title>
+      <title>Getting Started with ml5.js</title>
+      <script src="https://unpkg.com/ml5"></script>
     </head>
+
     <body>
-      <script src="ml5.min.js"></script>
       <script>
+
         // Your code will go here
+
       </script>
     </body>
   </html>
 ```
 
-That's all!
+That's all! 💥
 
-## Creating a simple image recognition example
+## Creating a simple image classification example
 
-Make a new `index.html` and paste in the below code. Make sure the first `<script>` tag is pointing to a copy of [ml5.min.js](https://github.com/ITPNYU/ml5/tree/master/dist).
+Let's add something more to classify an image
 
 ```html
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset=utf-8>
-    <title>Simple ml5.js Example</title>
-    <script src="ml5.min.js"></script>
-    <script>
-    // Initialize the imaImageClassifier method with the pre-trained SqueezeNet model.
-    const classifier = new ml5.ImageClassifier('SqueezeNet');
+    <head>
+      <title>Getting Started with ml5.js</title>
+      <script src="https://unpkg.com/ml5"></script>
+    </head>
 
-    function onImageReady() {
-      // Get the image element from the page
-      let img = document.getElementById('image');
-      // Get a prediction for that image
-      classifier.predict(img, 10, gotResult);
-    }
-
-    // When we get the results
-    function gotResult(results) {
-      // The results are in an array ordered by probability.
-      document.getElementById('result').innerText = results[0].className;
-      document.getElementById('probability').innerText = results[0].probability.toPrecision(2);
-    }
-    </script>
-  </head>
   <body>
-    <!--
-    This is the image we want to use.
-    We can change the src later in code.
-    We set crossOrigin to anonymous because imgur
-    will respect that and send CORS headers.
-    Not needed if you're loading an image from your own domain.
-    -->
-    <h1>Simple Image Classification Example</h1>
-    <img onload="onImageReady()" id="image" src="https://i.imgur.com/wxrLX68.jpg" crossOrigin="anonymous" >
+    <h1>Image classification using Mobilenet</h1>
+    <p>The MobileNet model labeled this as 
+    <span id="result">...</span> with a confidence of
+    <span id="probability">...</span></p>
+    <img src="https://ml5js.org/docs/assets/img/bird.jpg" 
+     crossorigin="anonymous" id="image" width="400">
 
-    <p>
-      I guess this is a <span id="result">...</span>.
-      My confidence is <span id="probability">...</span>
-    </p>
+    <script>
+      // The image we want to classify
+      const image = document.getElementById('image');
+      // The result tag in the HTML
+      const result = document.getElementById('result');
+      // The probability tag in the HTML
+      const probability = document.getElementById('probability');
+
+      // Initialize the Image Classifier method with Mobilenet
+      const classifier = ml5.imageClassifier('Mobilenet');
+
+      // Make a prediction with the selected image
+      // This will return an array with a default of 10 options with their probabilities
+      classifier.predict(image, function(results) {
+        result.innerText = results[0].className;
+        probability.innerText = results[0].probability.toFixed(4);
+      });
+    
+    </script>
   </body>
 </html>
 ```
 
 Open it in a web browser and after a couple seconds of you should see something like this:
 
-<img src="assets/img/getting-started.png">
+<img src="assets/img/quickstart.png">
 
-This demo needs only ml5.js to run. When the HTML is parsed by the browser, it loads the `<img>` tag, at which point it gets an image from Imgur using a cross-origin request. When the image is loaded, `onImageReady()` is called and asks ImageClassifier for its best prediction as to what the image is, along with its confidence level. Then it prints the result to the specified DOM elements.
-
-It should be noted that this example uses a pre-trained model ([SqueezeNet](https://arxiv.org/abs/1602.07360)) that was trained on a database of approximately 15 million images ([ImageNet](http://www.image-net.org/)). The ml5 library accesses the model from the cloud. What the algorithm labels an image is entirely dependent on that training data -- what is included, excluded, and how those images are labeled (or mislabeled).
+💥🤖

@@ -6,7 +6,7 @@ This uses a pre-trained model on a corpus of Hemingway
 === */
 
 // Create the LSTM Generator passing it the model directory
-const lstm = new ml5.LSTMGenerator('assets/models/hemingway/', modelReady);
+const lstm = ml5.LSTMGenerator('assets/models/nietschze/', modelReady);
 
 let textInput;
 let lengthSlider;
@@ -33,8 +33,8 @@ function setup() {
 
   // Update the slider values
   function updateSliders() {
-    select('#length').html(lengthSlider.value())
-    select('#temperature').html(tempSlider.value())
+    select('#length').html(lengthSlider.value());
+    select('#temperature').html(tempSlider.value());
   }
 }
 
@@ -66,7 +66,7 @@ function generate() {
     function gotData(result) {
       // Update the status log
       select('#status').html('Ready!');
-      select('#result').html(txt + result.generated);
+      select('#result').html(txt + result);
     }
   }
 }

@@ -1,20 +1,18 @@
 ---
 id: lstm-example
-title: LSTM
+title: Text Generation with LSTM
 ---
 
-A simple LSTM text generation example using a pre-trained model on a corpus of [Ernest Hemingway](https://en.wikipedia.org/wiki/Ernest_Hemingway) using ml5.js and [p5.js](https://p5js.org/). 
+In this demo you ask the LSTM: "Starting with the seed text, predict what text might come next based on the pre-trained [Friedrich Nietschze](https://en.wikipedia.org/wiki/Friedrich_Nietzsche) model." Changing `length` changes the number of characters in the resulting predicted text. Higher `length` values can take many minutes to compute and use a lot of CPU. The `temperature` controls the randomness of the output. A `temperature` of 0 will be relatively random but might not even look like English, while a `temperature` of 1.0 will probably be correct English but will also be very close to the original Hemingway, perhaps even straight quotations.
 
-In this demo you ask the LSTM: "Starting with the seed text, predict what text might come next based on the pre-trained Ernest Hemingway model." Changing `length` changes the number of characters in the resulting predicted text. Higher `length` values can take many minutes to compute and use a lot of CPU. The `temperature` controls the randomness of the output. A `temperature` of 0 will be relatively random but might not even look like English, while a `temperature` of 1.0 will probably be correct English but will also be very close to the original Hemingway, perhaps even straight quotations.
+This example is built with p5.js.
 
-You can train your own models following [this tutorial](#). 
-
-You can also find the same example without p5.js [here](https://github.com/ml5js/ml5-examples)
+You can train your own models following [this tutorial](https://github.com/ml5js/ml5-data-and-training/tree/master/training/lstm). More on this soon!
 
 ## Demo
 
 <div class="example">
-  <p>seed text: <input id="textInput" value="She was sitting next to" /></p> 
+  <p>seed text: <input id="textInput" value="The meaning of life is" /></p> 
   <p>length: <input id="lenSlider" type="range" min="10" max="500" value="100"> <span id="length">100</span></p>
   <p>temperature:<input id="tempSlider" type="range" min="0" max="1" step="0.01"><span id="temperature">0.5</span></p>
   <p id="status">Loading Model</p>
@@ -26,18 +24,9 @@ You can also find the same example without p5.js [here](https://github.com/ml5js
 
 ## Code
 
-```html
-  <p>seed text: <input id="textInput" value="She was sitting next to" /></p> 
-  <p>length: <input id="lenSlider" type="range" min="10" max="500" value="100"> <span id="length">100</span></p>
-  <p>temperature:<input id="tempSlider" type="range" min="0" max="1" step="0.01"><span id="temperature">0.5</span></p>
-  <p id="status">Loading Model</p>
-  <button id="generate">generate</button>
-  <p id="result"></p>
-```
-
 ```javascript
 // Create the LSTM Generator passing it the model directory
-const lstm = new ml5.LSTMGenerator('assets/models/hemingway/', modelReady);
+const lstm = ml5.LSTMGenerator('models/nietschze/', modelReady);
 
 let textInput;
 let lengthSlider;
@@ -64,8 +53,8 @@ function setup() {
 
   // Update the slider values
   function updateSliders() {
-    select('#length').html(lengthSlider.value())
-    select('#temperature').html(tempSlider.value())
+    select('#length').html(lengthSlider.value());
+    select('#temperature').html(tempSlider.value());
   }
 }
 
@@ -97,11 +86,11 @@ function generate() {
     function gotData(result) {
       // Update the status log
       select('#status').html('Ready!');
-      select('#result').html(txt + result.generated);
+      select('#result').html(txt + result);
     }
   }
 }
 ```
 
-## [Source](https://github.com/ml5js/ml5-examples/tree/master/p5js/03_LSTM_Simple)
+## [Source](https://github.com/ml5js/ml5-examples/tree/master/p5js/LSTM_Text)
 

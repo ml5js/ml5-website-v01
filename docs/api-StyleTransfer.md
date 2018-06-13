@@ -1,34 +1,39 @@
 ---
-id: style-transfer
-title: Style Transfer
+id: StyleTransfer
+title: styleTransfer()
 ---
 
 Style Transfer is a machine learning technique that allows to transfer the style of one image into another one. This is a two step process, first you need to train a model on one particular style and then you can apply this style to another image.
 
-You can train your own images following [this tutorial](#).
+You can train your own images following [this tutorial](https://github.com/ml5js/ml5-data-and-training/tree/master/training). More on this soon!
 
-Based on [this demo](https://github.com/PAIR-code/deeplearnjs/tree/0608feadbd897bca6ec7abf3340515fe5f2de1c2/demos/fast-style-transfer)
-and [fast-style-transfer-deeplearnjs](https://github.com/reiinakano/fast-style-transfer-deeplearnjs) by reiinakano.
-
-The original Tensorflow model can be found [here](https://github.com/lengstrom/fast-style-transfer).
-
-### Example
+## Example
 
 ```javascript
 // Create a new Style Transfer Instance
-const style = new ml5.StyleTransfer('data/myModel/');
+const style = ml5.styleTransfer('data/myModel/');
 
-// Grab a <img> element and generate a new image.
-const img = document.getElementById('input');
-let outputImgData = style.transfer(img);
+// Grab a img element and generate a new image. 
+style.transfer(document.getElementById('img'), function(resultImg) {
+  img.src = resultImg.src;
+});
 ```
 
-## Constructor
+[Here](https://github.com/ml5js/ml5-examples/blob/master/p5js/StyleTransfer_Image/sketch.js) is a complete example.
+
+## Syntax
   ```javascript
-  StyleTransfer(model, callback)
+  ml5.styleTransfer(model, ?callback)
   ```
-  `model` - A valid Fast Style Transfer model that has been ported to deeplearn.js
-  `callback` - A function to execute once the model is loaded.
+  ```javascript
+  ml5.styleTransfer(model, ?video, ?callback)
+  ```
+
+### Parameters
+
+  - `model` - The path to Style Transfer model.
+  - `video` - Optional. A HTML video element or a p5 video element.
+  - `callback` - Optional. A function to be called once the model is loaded.
 
 ## Properties
 
@@ -37,47 +42,18 @@ let outputImgData = style.transfer(img);
   ```
   > Boolean value that specifies if the model has loaded.
 
-  ```javascript
-  .variableDictionary
-  ```
-  > 
-
-  ```javascript
-  .timesScalar
-  ```
-  > 
-
-  ```javascript
-  .plusScalar
-  ```
-  > 
-
-  ```javascript
-  .epsilonScalar
-  ```
-  > 
-
-  ```javascript
-  .math
-  ```
-  > The environment Math element.
-
 ## Methods
 
   ```javascript
-  .transfer(img)
+  .transfer(?callback)
   ```
-  > Run the style transformation on the given image, assumes variables have been loaded. Returns an HTML img element.
-
-  `img` -  HTMLImageElement of input img
-
   ```javascript
-  .loadCheckpoints(path)
+  .transfer(input, ?callback)
   ```
-  > Loads the corresponding checkpoints of the model. This method is run when constructing the class.
+  > Apply style transfer to an input. Returns an HTML img element.
 
-  `path` - Model path
+  `input` -  A HTML video or image element or a p5 image or video element. If no input is provided, the default is to use the video element given in the constructor.
 
 ## Source
 
-[/src/StyleTransfer/index.js](https://github.com/ml5js/ml5-library/tree/master/src/StyleTransfer)
+[/src/StyleTransfer/](https://github.com/ml5js/ml5-library/tree/master/src/StyleTransfer)

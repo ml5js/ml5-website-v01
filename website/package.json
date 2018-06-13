@@ -8,9 +8,10 @@
     "version": "docusaurus-version",
     "rename-version": "docusaurus-rename-version"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "docusaurus": "1.2.0"
+  },
   "dependencies": {
-    "docusaurus": "1.0.7",
-    "react-highlight": "^0.12.0"
+    "react-highlight": "0.12.0"
   }
 }

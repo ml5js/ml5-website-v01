@@ -1,75 +1,94 @@
 ---
-id: imageclassifier
-title: Image Classifier
+id: ImageClassifier
+title: imageClassifier()
 ---
 
-You can use neural networks to recognize the content of images. The ImageClassifier is a class to classify an image using a pre-trained model.
+You can use neural networks to recognize the content of images. The `ImageClassifier()` is a method to classify an image using a pre-trained model.
 
 It should be noted that the available pre-trained models noted below were trained on a database of approximately 15 million images ([ImageNet](http://www.image-net.org/)). The ml5 library accesses
 these model from the cloud. What the algorithm labels an image is entirely dependent on that training data -- what is included, excluded, and how those images are labeled (or mislabeled).
 
-### Example
+## Example
 
 ```javascript
-// Create the classifier
-const classifier = new ml5.ImageClassifier('SqueezeNet');
-// Make a prediction
-let prediction = classifier.predict(img, function(result){
-  console.log(result)
+// Initialize the Image Classifier method with Mobilenet
+const classifier = ml5.imageClassifier('Mobilenet');
+// Make a prediction with a selected image
+classifier.predict(document.getElementById('image'), function(results) {
+  console.log(results);
 });
 ```
 
-## Constructor
-  ```javascript
-  ImageClassifier(model)
-  ```
-  `model` - A String value for a valid deeplearn.js model for image recognition. [`SqueezeNet`](https://github.com/PAIR-code/deeplearnjs/tree/master/models/squeezenet) and [`MobileNet`](https://github.com/PAIR-code/deeplearnjs/tree/master/models/mobilenet) models are available.
+[Here](https://github.com/ml5js/ml5-examples/blob/master/p5js/ImageClassification/sketch.js) is a complete example.
 
+## Syntax
+  ```javascript
+  ml5.imageClassifier(model)
+  ```
+
+  ```javascript
+  ml5.imageClassifier(model, ?callback)
+  ```
+
+  ```javascript
+  ml5.imageClassifier(model, ?options, ?callback)
+  ```
+
+  ```javascript
+  ml5.imageClassifier(model, ?video, ?options, ?callback)
+  ```
+
+### Parameters
+
+  - `model` - A String value of a valid model. Only [MobileNet](https://github.com/tensorflow/tfjs-models/tree/master/mobilenet) is available for now. Case insensitive.
+  - `callback` - Optional. A function to run once the model has been loaded.
+  - `options` - Optional. An object describing a model accuracy and performance. For Mobilenet this are: `{ version: 1,
+    alpha: 1.0, topk: 3, }`
+  - `video` - Optional. A HTML video element or a p5 video element.
 
 ## Properties
 
   ```javascript
-  .model
+  .modelName
   ```
   > The name of the model used.
 
   ```javascript
-  .ready
+  .modelLoaded
   ```
-  > Boolean value that specifies if the model has loaded.
+  > Boolean to check if the model has loaded
 
   ```javascript
-  .math
+  .model
   ```
-  > The environment Math element.
-
-  ```javascript
-  .squeezeNet
-  ```
-  > The [original SqueezNet model](https://github.com/PAIR-code/deeplearnjs/tree/master/models/squeezenet) from deeplearn.js
+  > The model architecture
 
 ## Methods
 
   ```javascript
-  .predict(image, num, callback)
+  .predict(input, ?callback)
   ```
-  > Given an image, returns an array of objects containing categories and probabilities.
 
-  `image` -  An image element containing valid pixels.
+  ```javascript
+  .predict(input, ?numberOfClasses ,?callback)
+  ```
 
-  `num` -  The number of results to return.
+  ```javascript
+  .predict(?callback)
+  ```
+
+  ```javascript
+  .predict(?numberOfClasses ,?callback)
+  ```
+
+  > Given an image or video, returns an array of objects containing class names and probabilities.
+
+  `input` -  A HTML video or image element or a p5 image or video element. If no input is provided, the default is to use the video given in the constructor.
+
+  `numberOfClasses` -  The number of results to return.
 
   `callback` - A function to run once the model has made the prediction.
 
-## Static Methods
-
-  ```javascript
-  loadModel(model)
-  ```
-  > Loads a deeplearn.js model.
-
-  `model` - The model to load.
-
 ## Source
 
-[/src/ImageNet/index.js](https://github.com/ml5js/ml5-library/blob/master/src/ImageClassifier/index.js)
+[/src/ImageClassifier](https://github.com/ml5js/ml5-library/blob/master/src/ImageClassifier/)
