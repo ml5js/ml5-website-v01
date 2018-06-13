@@ -29,7 +29,7 @@ You can train your own models following [this tutorial](https://github.com/ml5js
 
 ```javascript
 // Create the LSTM Generator passing it the model directory
-const lstm = ml5.LSTMGenerator('models/nietschze/', modelReady);
+const lstm = ml5.LSTMGenerator('models/hemingway/', modelReady);
 
 let textInput;
 let lengthSlider;
