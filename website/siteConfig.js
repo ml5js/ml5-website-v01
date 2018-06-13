@@ -56,7 +56,7 @@ const siteConfig = {
   cleanUrl: true,
   /* On page navigation for the current documentation page */
   onPageNav: 'separate',
-  cname: 'ml5js.org'
+  cname: 'ml5js.org',
   /* Open Graph and Twitter card images */
   ogImage: 'img/og.png',
   twitterImage: 'img/og.png',
