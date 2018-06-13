@@ -6,4 +6,4 @@ Docusaurus is an open-source library, built with React, to create and maintain d
 
 ## Contributing
 
-See [Contributing](Contributing.md)
+See [Contributing](CONTRIBUTING.md)
