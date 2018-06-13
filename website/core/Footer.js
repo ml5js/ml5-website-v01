@@ -25,10 +25,10 @@ class Footer extends React.Component {
             <a href={this.docUrl('getting-started.html')}>
               Getting Started
             </a>
-            <a href={this.docUrl('imagenet.html')}>
+            <a href={this.docUrl('ImageClassifier.html')}>
               API Reference
             </a>
-            <a href={this.docUrl('training-models.html')}>
+            <a href={this.docUrl('training-setup.html')}>
               Training Models
             </a>
           </div>
@@ -37,7 +37,7 @@ class Footer extends React.Component {
             <a href={this.docUrl('tutorials.html')}>
               Tutorials
             </a>
-            <a href={this.docUrl('glossary-statistics.html')}>
+            <a href={this.docUrl('glossary-machine-learning.html')}>
               Glossary
             </a>
             <a href={this.docUrl('resources.html')}>
@@ -49,7 +49,7 @@ class Footer extends React.Component {
             <a href={this.pageUrl('experiments.html')}>
             Experiments
             </a>
-            <a href={this.props.config.repoUrl}>Contributing Guide</a>
+            <a href='https://github.com/ml5js/ml5-library/blob/master/CONTRIBUTING.md'>Contributing</a>
             <a
               className="github-button"
               href={this.props.config.repoUrl}
