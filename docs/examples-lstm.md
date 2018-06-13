@@ -86,7 +86,7 @@ function generate() {
     function gotData(result) {
       // Update the status log
       select('#status').html('Ready!');
-      select('#result').html(txt + result);
+      select('#result').html(txt + result.generated);
     }
   }
 }
