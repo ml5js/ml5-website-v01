@@ -3,7 +3,7 @@ id: lstm-example
 title: Text Generation with LSTM
 ---
 
-In this demo you ask the LSTM: "Starting with the seed text, predict what text might come next based on the pre-trained [Friedrich Nietschze](https://en.wikipedia.org/wiki/Friedrich_Nietzsche) model." Changing `length` changes the number of characters in the resulting predicted text. Higher `length` values can take many minutes to compute and use a lot of CPU. The `temperature` controls the randomness of the output. A `temperature` of 0 will be relatively random but might not even look like English, while a `temperature` of 1.0 will probably be correct English but will also be very close to the original Hemingway, perhaps even straight quotations.
+In this demo you ask the LSTM: "Starting with the seed text, predict what text might come next based on the pre-trained [Ernest Hemingway](https://en.wikipedia.org/wiki/Ernest_Hemingway) model." Changing `length` changes the number of characters in the resulting predicted text. Higher `length` values can take many minutes to compute and use a lot of CPU. The `temperature` controls the randomness of the output. A `temperature` of 0 will be relatively random but might not even look like English, while a `temperature` of 1.0 will probably be correct English but will also be very close to the original Hemingway, perhaps even straight quotations.
 
 This example is built with p5.js.
 
