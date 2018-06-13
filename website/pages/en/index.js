@@ -180,7 +180,7 @@ class Examples extends React.Component {
     return (
       <div className="ExamplesLinkBlock p5">
         <button className="btn-blue mt40 ex">
-          <a href="/docs/simple-image-classification-example.html"> 🌟 See Examples 🌟 </a> 
+          <a href="/docs/quick-start"> 🌟 See Examples 🌟 </a> 
         </button>
       </div>
     );
