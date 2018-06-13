@@ -1,17 +1,10 @@
-/*
-===
-Fast Style Transfer Simple Example
-===
-*/
-
-
 let inputImg;
 let statusMsg;
 let transferBtn;
 
-// Create two Fast Style methods with different pre-trained models
-const style1 = new ml5.StyleTransfer('assets/models/wave', modelLoaded);
-const style2 = new ml5.StyleTransfer('assets/models/udnie', modelLoaded);
+// Create two Style methods with different pre-trained models
+const style1 = ml5.styleTransfer('assets/models/wave', modelLoaded);
+const style2 = ml5.styleTransfer('assets/models/udnie', modelLoaded);
 
 function setup() {
   noCanvas();
@@ -38,11 +31,13 @@ function modelLoaded() {
 function transferImages() {
   statusMsg.html('Applying Style Transfer...!');
 
-  var styleA = style1.transfer(inputImg.elt);
-  createImg(styleA.src).parent('styleA');
+  style1.transfer(inputImg, function(result) {
+    createImg(result.src).parent('styleA');
+  });
 
-  var styleB = style2.transfer(inputImg.elt);
-  createImg(styleB.src).parent('styleB');
+  style2.transfer(inputImg, function(result) {
+    createImg(result.src).parent('styleB');
+  });
 
   statusMsg.html('Done!');
 }
