@@ -1,12 +1,5 @@
-/* ===
-ML5 Example
-03_LSTM_Simple
-Simple LSTM Generator example with p5.js
-This uses a pre-trained model on a corpus of Hemingway
-=== */
-
 // Create the LSTM Generator passing it the model directory
-const lstm = ml5.LSTMGenerator('assets/models/nietschze/', modelReady);
+const lstm = ml5.LSTMGenerator('assets/models/hemingway/', modelReady);
 
 let textInput;
 let lengthSlider;
@@ -14,7 +7,7 @@ let tempSlider;
 let button;
 
 function modelReady() {
-  select('#status').html('Model Loaded');
+  document.getElementById('status').innerHTML = 'Model Loaded';
 }
 
 function setup() {
@@ -66,7 +59,7 @@ function generate() {
     function gotData(result) {
       // Update the status log
       select('#status').html('Ready!');
-      select('#result').html(txt + result);
+      select('#result').html(txt + result.generated);
     }
   }
 }
