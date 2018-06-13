@@ -3,12 +3,14 @@ id: image-classification-example
 title: Image Classification
 ---
 
-Image classification example using [Mobilenet](https://ai.googleblog.com/2017/06/mobilenets-open-source-models-for.html). Mobilenet is a machine learning model trained to recognize the content of certain images.
+Image classification example using [Mobilenet](https://github.com/tensorflow/tfjs-models/tree/master/mobilenet). Mobilenet is a machine learning model trained to recognize the content of certain images.
+
+This example is built with p5.js. You can also find the same example without p5.js [here](https://github.com/ml5js/ml5-examples/tree/master/javascript/ImageClassification).
 
 ## Demo
 
 <div class="example">
-  <img src="assets/img/bird.jpg" id="targetImage"/>
+  <img src="assets/img/bird.jpg" id="targetImage" width=400/>
   <p>The MobileNet model labeled this as <span id="result">...</span> with a confidence of  <span id="probability">...</span></p>
 </div>
 
@@ -16,11 +18,9 @@ Image classification example using [Mobilenet](https://ai.googleblog.com/2017/06
 
 ## Code
 
-This example is built with p5.js. You can also find the same example without it [here](https://github.com/ml5js/ml5-examples/tree/master/javascript/ImageClassification).
-
 ```javascript
 // Initialize the Image Classifier method with Mobilenet
-const classifier = new ml5.ImageClassifier('Mobilenet');
+const classifier = ml5.imageClassifier('Mobilenet');
 
 // A variable to hold the image we want to classify
 let img;
@@ -46,6 +46,7 @@ function gotResult(results) {
   select('#result').html(results[0].className);
   select('#probability').html(nf(results[0].probability, 0, 2));
 }
+
 ```
 
 ## [Source](https://github.com/ml5js/ml5-examples/tree/master/p5js/ImageClassification)

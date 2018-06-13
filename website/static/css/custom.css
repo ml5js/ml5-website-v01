@@ -40,6 +40,7 @@
 
 body {
   font-family: Apercu;
+  overflow-x: hidden;
 }
 
 h1,h2,h3,h4,h5 {
@@ -58,7 +59,6 @@ a:hover {
 
 .navigationSlider .slidingNav ul li a:focus, .navigationSlider .slidingNav ul li a:hover, .navigationSlider .slidingNav ul li a:active {
   background: none;
-  border-bottom: 4px solid #a257ff !important;
 }
 
 .f1.p5.subtitle.getStartedSection h1 {
@@ -116,8 +116,8 @@ nav.toc .toggleNav ul li a.navItemActive {
 input#search_input_react {
   border-radius: 0px;
   background-color: white;
-  color: black !important;
-  border-bottom: 1px dotted;
+  color: #cacaca !important;
+  border-bottom: 1px solid;
   height: 28px;
 }
 
@@ -143,11 +143,14 @@ img#imgHome {
 }
 
 .navigationSlider .slidingNav ul li a {
-  color: #a255ff;
+  color: #746b7f;
   font-weight: 300;
   font-family: Apercu;
+  height: 7vw;
+  max-height: 30px;
   text-decoration: none;
-  font-size: 1.2em;
+  font-size: 1em;
+  padding: 0px 7px;
 }
 
 .navigationSlider .slidingNav ul li a:hover {
@@ -201,8 +204,6 @@ button.btn-blue.mt40.ex a {
   justify-content: center;
   margin-top: 7em;
   background: #a258ff;
-  width: 100vw;
-  height: 650px;
 }
 
 p.code {
@@ -277,7 +278,11 @@ code {
 
 .navigationSlider .slidingNav ul li a:focus, .navigationSlider .slidingNav ul li a:hover, .navigationSlider .slidingNav ul li.siteNavItemActive a, .navigationSlider .slidingNav ul li.siteNavGroupActive a {
   background: #ffffff;
-  color: #a255ff;
+  color: #746b7f;
+}
+
+ .navigationSlider .slidingNav ul li a:hover {
+  color: #a257ff;
 }
 
 nav.toc .toggleNav .navGroup.navGroupActive h3 {
@@ -327,8 +332,10 @@ nav.toc .toggleNav .navGroup.navGroupActive h3 {
 .codeExample {
   background: white;
   /* width: 55vw; */
+  font-family: Courier, monospace;
+  font-weight: 500;
   border-radius: 24px;
-  height: 18em;
+  /* height: 18em; */
   padding: 5em 2em 4em 3em;
 }
 
@@ -338,7 +345,7 @@ p.code.bold {
 }
 
 p.code {
-  font-size: 25px;
+  font-size: 1.5vw;
   color: #000000;
 }
 
@@ -364,7 +371,7 @@ p.code {
 }
 
 .fixedHeaderContainer header {
-  margin: 1.5rem 0;
+  /* margin: 1.5rem 0; */
 }
 
 .container .wrapper h3 {
@@ -372,7 +379,7 @@ p.code {
 }
 
 nav.toc .toggleNav .navGroup.navGroupActive h3 {
-  line-height: 2em;
+  line-height: 1.7em;
 }
 
 .flex-grid {
@@ -392,7 +399,7 @@ nav.toc .toggleNav .navGroup.navGroupActive h3 {
 }
 
 .docMainWrapper {
-  margin: 30px auto;
+  /* margin: 30px auto; */
 }
 
 @media only screen and (max-width: 800px) and (min-width: 500px){
@@ -453,5 +460,22 @@ nav.toc .toggleNav .navGroup.navGroupActive h3 {
 @media only screen and (min-width: 736px) {
   .onPageNav {
     flex: 0 0 140px;
+    top: 140px;
   }
+}
+
+@media only screen and (max-width: 735px){
+  .reactNavSearchWrapper input#search_input_react{
+    background-color: rgb(255, 255, 255);
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  p.code {
+    font-size: 3vw;
+  }
+}
+
+.getStartedSection a{
+  color: white;
 }

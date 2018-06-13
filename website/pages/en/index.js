@@ -78,7 +78,6 @@ class HomeSplash extends React.Component {
     let language = this.props.language || '';
     return (
       <div className="hero bluelight">
-
       </div>
     );
   }
@@ -91,14 +90,14 @@ class Why extends React.Component {
         <div className="f1 p5 pl8 subtitle getStartedSection">
           <h1> Friendly Machine Learning for the Web. </h1>
           <p className="mt40 pa">
-          ml5.js aims to make machine learning accessible to a broad audience of artists, creative coders, and students. The library provides access to machine learning algorithms and models in the browser, building on top of <code>TensorFlow.js</code> with no other external dependencies.
+          ml5.js aims to make machine learning accessible to a broad audience of artists, creative coders, and students. The library provides access to machine learning algorithms and models in the browser, building on top of <code> <a href="https://js.tensorflow.org/">TensorFlow.js</a></code> with no other external dependencies.
           </p>
           <p className="mt40 pa">
-            The library is supported by code examples, tutorials, and sample datasets with an emphasis on ethical computing.
+            The library is supported by code examples, tutorials, and sample data sets with an emphasis on ethical computing.
             Bias in data, stereotypical harms, and responsible crowdsourcing are part of the documentation
             around data collection and usage.
           </p>
-          <button className="btn-blue mt40"> <a href="/docs/getting-started.html"> Get Started </a></button>
+          <a href="/docs/getting-started.html"><button className="btn-blue mt40">Get Started</button></a>
         </div>
         <div className="f1 p5 p30 center dropExample">
         <Iframe />
@@ -118,7 +117,7 @@ class Code extends React.Component {
         <div className="codeBox">
           <div className="codeExample">
             <p className="code bold">
-              // Create the classifier
+              // Create the classifier with MobileNet
             </p>
             <p className="code mb20">
             <span className="codehl">const</span> classifier = ml5.<span className="codehl3">imageClassifier</span>(<span className="codehl2">'MobileNet'</span>);
@@ -128,6 +127,9 @@ class Code extends React.Component {
             </p>
             <p className="code mb20">
             <span className="codehl">let</span> prediction = classifier.<span className="codehl3">predict</span>(img, gotResults);
+            </p>
+            <p className="code bold">
+            // Log the results
             </p>
             <p className="code">
             <span className="codehl">function</span> <span className="codehl3">gotResults</span>(results) &#123;
@@ -177,8 +179,9 @@ class Examples extends React.Component {
   render() {
     return (
       <div className="ExamplesLinkBlock p5">
-        <button className="btn-blue mt40 ex "> <a href="/docs/simple-image-classification-example.html"> 🌟 See Examples 🌟 </a> </button>
-
+        <button className="btn-blue mt40 ex">
+          <a href="/docs/simple-image-classification-example.html"> 🌟 See Examples 🌟 </a> 
+        </button>
       </div>
     );
   }
@@ -226,12 +229,9 @@ class Iframe extends React.Component {
   }
 };
 
-
-
 class Index extends React.Component {
   render() {
     let language = this.props.language || '';
-
     return (
       <div>
         <Why  />

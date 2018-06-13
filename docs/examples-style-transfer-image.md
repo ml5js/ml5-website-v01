@@ -3,11 +3,11 @@ id: style-transfer-image-example
 title: Style Transfer
 ---
 
-Fast Style Transfer is a machine learning technique that allows to transfer the style of one image into another one. This is a two step process, first you need to train a model on one particular style and then you can apply this style to another image. In this example we are using two pre-trained models.
+Style Transfer is a machine learning technique that allows to transfer the style of one image into another one. This is a two step process, first you need to train a model on one particular style and then you can apply this style to another image. In this example we are using two pre-trained models.
 
-You can train your own images following [this tutorial](#). 
+You can train your own images following [this tutorial](https://github.com/ml5js/ml5-data-and-training/tree/master/training). 
 
-This example is using ml5.js and [p5.js](https://p5js.org/). You can also find the same example without p5.js [here](https://github.com/ml5js/ml5-examples)
+This example is using [p5.js](https://p5js.org/). 
 
 ## Demo
 
@@ -33,7 +33,7 @@ This example is using ml5.js and [p5.js](https://p5js.org/). You can also find t
   </div>
 
   <div id="styleB">
-    <p>Style B: <a href="https://en.wikipedia.org/wiki/The_Great_Wave_off_Kanagawa">Udnie (Young American Girl, The Dance), 1913 - Francis Picabia</a></p>
+    <p>Style B: <a href="https://en.wikipedia.org/wiki/File:Francis_Picabia,_1913,_Udnie_(Young_American_Girl,_The_Dance),_oil_on_canvas,_290_x_300_cm,_Mus%C3%A9e_National_d%E2%80%99Art_Moderne,_Centre_Georges_Pompidou,_Paris..jpg">Udnie (Young American Girl, The Dance), 1913 - Francis Picabia</a></p>
     <img src="assets/img/udnie.jpg" alt="style two">
   </div>
 
@@ -49,9 +49,9 @@ let inputImg;
 let statusMsg;
 let transferBtn;
 
-// Create two Fast Style methods with different pre-trained models
-const style1 = new ml5.StyleTransfer('assets/models/wave', modelLoaded);
-const style2 = new ml5.StyleTransfer('assets/models/udnie', modelLoaded);
+// Create two Style methods with different pre-trained models
+const style1 = ml5.styleTransfer('models/wave', modelLoaded);
+const style2 = ml5.styleTransfer('models/udnie', modelLoaded);
 
 function setup() {
   noCanvas();
@@ -78,15 +78,16 @@ function modelLoaded() {
 function transferImages() {
   statusMsg.html('Applying Style Transfer...!');
 
-  var styleA = style1.transfer(inputImg.elt);
-  createImg(styleA.src).parent('styleA');
+  style1.transfer(inputImg, function(result) {
+    createImg(result.src).parent('styleA');
+  });
 
-  var styleB = style2.transfer(inputImg.elt);
-  createImg(styleB.src).parent('styleB');
+  style2.transfer(inputImg, function(result) {
+    createImg(result.src).parent('styleB');
+  });
 
   statusMsg.html('Done!');
 }
-
 ```
 
 ## [Source](https://github.com/ITPNYU/ml5/tree/master/examples/fast_style_transfer)
