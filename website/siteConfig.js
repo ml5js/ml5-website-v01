@@ -25,7 +25,9 @@ const siteConfig = {
     primaryColor: '#a255ff',
     secondaryColor: '#ffffff',
   },
-
+  twitter: 'true',
+  twitterUsername: 'ml5js',
+  twitterImage: 'img/og.png',
   /* custom fonts for website */
   /*fonts: {
     myFont: [
@@ -51,13 +53,13 @@ const siteConfig = {
     'https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.min.js',
     'https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/addons/p5.dom.min.js',
   ],
-
+  cleanUrl: true,
   /* On page navigation for the current documentation page */
   onPageNav: 'separate',
-
+  cname: 'ml5js.org',
   /* Open Graph and Twitter card images */
-  ogImage: 'img/og.jpg',
-  twitterImage: 'img/og.jpg',
+  ogImage: 'img/og.png',
+  twitterImage: 'img/og.png',
   algolia: {
     apiKey: '4e9582fa59998b865a9fd98ae8d8a9cc',
     indexName: 'ml5js',
