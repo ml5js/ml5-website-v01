@@ -10,7 +10,7 @@ const siteConfig = {
     { doc: 'quick-start', label: 'Examples' },
     { doc: 'datasets', label: 'Datasets' },
     { page: 'experiments', label: 'Experiments' },
-    { doc: 'glossary-statistics', label: 'Learn' },
+    { doc: 'glossary-machine-learning', label: 'Learn' },
     { href: 'https://github.com/ml5js', label: 'Code' },
     { search: true },
   ],
