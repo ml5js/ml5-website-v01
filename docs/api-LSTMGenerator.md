@@ -5,7 +5,7 @@ title: LSTMGenerator()
 
 [LSTMs](https://colah.github.io/posts/2015-08-Understanding-LSTMs/) (Long Short Term Memory networks) are a type of Neural Network architecture useful for working with series of data where the order of the series matters. This class allows you run a pre-trained model through inference mode and generate new content. 
 
-You can train your own models [using this tutorial](https://github.com/ml5js/ml5-data-and-training/tree/master/training/lstm) or used [this set of pretrained models](https://github.com/ml5js/ml5-data-and-training/tree/master/models/lstm). More on this soon! 
+You can train your own models [using this tutorial](/docs/training-lstm) or used [this set of pretrained models](https://github.com/ml5js/ml5-data-and-training/tree/master/models/lstm). More on this soon! 
 
 ## Example
 
