@@ -11,4 +11,4 @@ Data is a very important part of machine learning because it defines the kind of
 
 > Keep in mind that machine learning can only be used to memorize patterns that are present in your training data. You can only recognize what you've seen before. Using machine learning trained on past data to predict the future is making the assumption that the future will behave like the past. That often isn't the case. _[(Source)](https://www.manning.com/books/deep-learning-with-python)_
 
-You can find some sample data bases in the [ml5-data-and-training](https://github.com/ml5js/ml5-data-and-training/tree/master/datasets) Github repository. They have been collected, cleaned, and in most cases labeled.
+You can also find some sample data bases in the [ml5-data-and-training](https://github.com/ml5js/ml5-data-and-training/tree/master/datasets) Github repository. They have been collected, cleaned, and in most cases labeled.
