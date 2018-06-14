@@ -1,6 +1,6 @@
 ---
 id: training-setup
-title: Python Setup
+title: Setting up
 ---
 
 You can port models trained in python into [deeplearn.js]() and [ml5.js]()
