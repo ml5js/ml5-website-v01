@@ -18,7 +18,6 @@
     "data-preparing-your-own-data": "Preparing your own data",
     "data-types-of-datasets": "Types of Data",
     "data-collection": "Data Collection",
-    "making-datasets": "Making Your Own Datasets",
     "data-overview": "Overview",
     "custom-classifier": "Classifier with Feature Extractor",
     "custom-regression": "Regression with Feature Extractor",
@@ -41,7 +40,7 @@
     "training-introduction": "Introduction",
     "training-lstm": "Training a LSTM",
     "training-pix2pix": "Introduction",
-    "training-setup": "Python Setup",
+    "training-setup": "Setting up",
     "training-styletransfer": "Introduction",
     "tutorials": "Tutorials",
     "Reference": "Reference",
@@ -54,8 +53,7 @@
     "Documentation": "Documentation",
     "Glossary": "Glossary",
     "Tutorials": "Tutorials",
-    "Resources": "Resources",
-    "training-introductions": "Introduction"
+    "Resources": "Resources"
   },
   "pages-strings": {
     "Help Translate|recruit community translators for your project": "Help Translate",
