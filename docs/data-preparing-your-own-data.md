@@ -3,15 +3,12 @@ id: data-preparing-your-own-data
 title: Preparing your own data
 ---
 
+## Training, test, and validation datasets
 
+Once you have your dataset, you generally want to split it into training, test, and validation datasets. 
 
-Sample ml5 datasets will be provided for easy use with the examples. They have been collected, cleaned, and in most cases labeled. They can be found in the [ml5-data-and-training](https://github.com/ml5js/ml5-data-and-training/tree/master/datasets) github repository.
+Training datasets are used to train the model. Validation datasets are used to change the parameters of the model, and test datasets are used to test the final performance of the model. Over time, we'll add more resources here to further explain these concepts. For now, you just need to know that you need to split your data into these sets.
 
-## Other common machine learning datasets
+There is no hard and fast rule for how to split this, but one suggestion is to take all of your data and put about 80% into your training dataset, and 15-16% into test set, and the remaining 4-5% into your validation set.
 
-These datasets are often used in machine learning examples. While most are pre-processed, they may be formatted differently from the ml5 datasets.
-
-* [Boston House Prices](https://www.kaggle.com/vikrishnan/boston-house-prices)
-* [20 Newsgroups Dataset](https://www.kaggle.com/crawford/20-newsgroups)
-* [Iris Dataset](http://archive.ics.uci.edu/ml/datasets/Iris)
-* [Handwritten Digits](http://archive.ics.uci.edu/ml/datasets/Optical+Recognition+of+Handwritten+Digits)
+It is always important to have a lot of training data. If you don't have too much, you may want to put closer to 90% into your training dataset.
