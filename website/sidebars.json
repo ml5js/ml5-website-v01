@@ -25,13 +25,19 @@
       "yolo-webcam",
       "word2vec-example"
     ],
-    "Datasets": [
-      "datasets",
-      "making-datasets"
+    "Data": [
+      "data-overview",
+      "data-collection",
+      "data-types-of-datasets",
+      "data-preparing-your-own-data",
+      "data-creating-your-own-data"
     ],
-    "Training Models": [
+    "Training": [
+      "training-introduction",
       "training-setup",
-      "training-lstm"
+      "training-lstm",
+      "training-styletransfer",
+      "training-pix2pix"
     ]
   },
   "learn": {
