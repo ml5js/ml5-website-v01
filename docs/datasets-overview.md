@@ -3,8 +3,6 @@ id: data-overview
 title: Overview
 ---
 
-## Datasets and models.
-
 Sample ml5 datasets will be provided for easy use with the examples. They have been collected, cleaned, and in most cases labeled. They can be found in the [ml5-data-and-training](https://github.com/ml5js/ml5-data-and-training/tree/master/datasets) github repository.
 
 ## Other common machine learning datasets

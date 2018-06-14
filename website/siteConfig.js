@@ -9,7 +9,7 @@ const siteConfig = {
     { doc: 'getting-started', label: 'Reference' },
     { doc: 'quick-start', label: 'Examples' },
     { doc: 'data-overview', label: 'Data' },
-    { doc: 'data-overview', label: 'Training' },
+    { doc: 'training-introduction', label: 'Training' },
     { page: 'experiments', label: 'Experiments' },
     { doc: 'glossary-machine-learning', label: 'Learn' },
     { href: 'https://github.com/ml5js', label: 'Code' },

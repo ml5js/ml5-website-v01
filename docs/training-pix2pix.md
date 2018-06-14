@@ -1,5 +1,5 @@
 ---
-id: training-introductions
+id: training-pix2pix
 title: Introduction
 ---
 

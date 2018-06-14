@@ -1,5 +1,5 @@
 ---
-id: data-creating-your-data
+id: data-creating-your-own-data
 title: Creating your data
 ---
 
