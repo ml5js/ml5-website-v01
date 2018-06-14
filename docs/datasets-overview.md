@@ -3,13 +3,12 @@ id: data-overview
 title: Overview
 ---
 
-Sample ml5 datasets will be provided for easy use with the examples. They have been collected, cleaned, and in most cases labeled. They can be found in the [ml5-data-and-training](https://github.com/ml5js/ml5-data-and-training/tree/master/datasets) github repository.
+This section is devoted to data, data-sets and data collection.📋 📜 📄  
 
-## Other common machine learning datasets
+What is a data set? How can data be collected? What kind of things should you consider when working and collecting data? We will try to answers some of this questions here.
 
-These datasets are often used in machine learning examples. While most are pre-processed, they may be formatted differently from the ml5 datasets.
+Data is a very important part of machine learning because it defines the kind of results you will get. As [François Chollet](https://twitter.com/fchollet), the author of [Keras](https://keras.io/), a very popular framework to do machine learning in python describes:
 
-* [Boston House Prices](https://www.kaggle.com/vikrishnan/boston-house-prices)
-* [20 Newsgroups Dataset](https://www.kaggle.com/crawford/20-newsgroups)
-* [Iris Dataset](http://archive.ics.uci.edu/ml/datasets/Iris)
-* [Handwritten Digits](http://archive.ics.uci.edu/ml/datasets/Optical+Recognition+of+Handwritten+Digits)
+> Keep in mind that machine learning can only be used to memorize patterns that are present in your training data. You can only recognize what you've seen before. Using machine learning trained on past data to predict the future is making the assumption that the future will behave like the past. That often isn't the case. _[(Source)](https://www.manning.com/books/deep-learning-with-python)_
+
+You can find some sample data bases in the [ml5-data-and-training](https://github.com/ml5js/ml5-data-and-training/tree/master/datasets) Github repository. They have been collected, cleaned, and in most cases labeled.
