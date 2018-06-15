@@ -11,4 +11,4 @@ Training datasets are used to train the model. Validation datasets are used to c
 
 There is no hard and fast rule for how to split this, but one suggestion is to take all of your data and put about 80% into your training dataset, and 15-16% into test set, and the remaining 4-5% into your validation set.
 
-It is always important to have a lot of training data. If you don't have too much, you may want to put closer to 90% into your training dataset.
+There are not hard and fast rules, but typically a model will perform better if you have a lot of training data. If you are working with a small dataset, you can optionally increase the percentage  that goes into your training dataset.
