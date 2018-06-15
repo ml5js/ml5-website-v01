@@ -3,10 +3,10 @@ id: ImageClassifier
 title: imageClassifier()
 ---
 
-You can use neural networks to recognize the content of images. The `ImageClassifier()` is a method to classify an image using a pre-trained model.
+You can use neural networks to recognize the content of images. `ml5.imageClassifier()` is a method to create an object that classifies an image using a pre-trained model.
 
-It should be noted that the available pre-trained models noted below were trained on a database of approximately 15 million images ([ImageNet](http://www.image-net.org/)). The ml5 library accesses
-these model from the cloud. What the algorithm labels an image is entirely dependent on that training data -- what is included, excluded, and how those images are labeled (or mislabeled).
+It should be noted that the pre-trained model provided by the example below was trained on a database of approximately 15 million images ([ImageNet](http://www.image-net.org/)). The ml5 library accesses
+this model from the cloud. What the algorithm labels an image is entirely dependent on that training data -- what is included, excluded, and how those images are labeled (or mislabeled).
 
 ## Example
 
@@ -19,7 +19,7 @@ classifier.predict(document.getElementById('image'), function(results) {
 });
 ```
 
-[Here](https://github.com/ml5js/ml5-examples/blob/master/p5js/ImageClassification/sketch.js) is a complete example.
+[Here](https://github.com/ml5js/ml5-examples/blob/master/p5js/ImageClassification/sketch.js) is a complete example with the [p5.js](https://p5js.org/) library for loading and displaying the image.
 
 ## Syntax
   ```javascript
@@ -42,7 +42,7 @@ classifier.predict(document.getElementById('image'), function(results) {
 
   - `model` - A String value of a valid model. Only [MobileNet](https://github.com/tensorflow/tfjs-models/tree/master/MobileNet) is available for now. Case insensitive.
   - `callback` - Optional. A function to run once the model has been loaded.
-  - `options` - Optional. An object describing a model accuracy and performance. For MobileNet this are: `{ version: 1,
+  - `options` - Optional. An object describing a model accuracy and performance. For MobileNet the defaults are: `{ version: 1,
     alpha: 1.0, topk: 3, }`
   - `video` - Optional. A HTML video element or a p5 video element.
 
