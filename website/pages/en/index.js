@@ -90,7 +90,7 @@ class Why extends React.Component {
         <div className="f1 p5 pl8 subtitle getStartedSection">
           <h1> Friendly Machine Learning for the Web. </h1>
           <p className="mt40 pa">
-          ml5.js aims to make machine learning accessible to a broad audience of artists, creative coders, and students. The library provides access to machine learning algorithms and models in the browser, building on top of <code> <a href="https://js.tensorflow.org/">TensorFlow.js</a></code> with no other external dependencies.
+          ml5.js aims to make machine learning approachable for a broad audience of artists, creative coders, and students. The library provides access to machine learning algorithms and models in the browser, building on top of <code> <a href="https://js.tensorflow.org/">TensorFlow.js</a></code> with no other external dependencies.
           </p>
           <p className="mt40 pa">
             The library is supported by code examples, tutorials, and sample data sets with an emphasis on ethical computing.
