@@ -29,7 +29,7 @@ Variance measures spread, but has the disadvantage of having the units of x squa
 ![](http://chart.apis.google.com/chart?cht=tx&chl=\sigma_x=\sqrt{\textrm{var}(x)}=\sqrt{\frac{1}{n-1}\sum_{i=1}^n(x_i-\bar{x})^2})
 
 ## Covariance
-Often, we wish to get an idea of whether a change in one variable also means that another variable changes. Imagine we have a sample of n data sets where the variables x and y have been measured. The _covariance_ between the two is then:
+Often, we wish to get an idea of whether a change in one variable also means that another variable changes. Imagine we have a sample of n datasets where the variables x and y have been measured. The _covariance_ between the two is then:
 
 ![](http://chart.apis.google.com/chart?cht=tx&chl=\textrm{cov}(x,y)=\frac{1}{n-1}\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y}))
 

@@ -3,8 +3,8 @@ id: glossary-machine-learning
 title: Machine Learning
 ---
 
-## The data set
-The provided sample is our data set, which consists of a number of _data points_. Each data point will contain information expressed through a number of attributes. Each attribute has a _data type_. The most common data types are numbers (_numerical data_) and text strings (_nominal data_). A subset of nominal data is _categorical_, i.e. from a finite set of options, such as "yes/no", month, etc. Categorical data are sometimes known as _factors_.
+## The dataset
+The provided sample is our dataset, which consists of a number of _data points_. Each data point will contain information expressed through a number of attributes. Each attribute has a _data type_. The most common data types are numbers (_numerical data_) and text strings (_nominal data_). A subset of nominal data is _categorical_, i.e. from a finite set of options, such as "yes/no", month, etc. Categorical data are sometimes known as _factors_.
 
 ## Features
 A feature is an attribute that is used in the machine learning analysis of the problem. This could be the raw features, but may also be quantities extracted by some kind of pre-processing of the data. Extracting appropriate features is known as _feature engineering_. Feature engineering traditionally requires some kind of _domain knowledge_. One of the strengths of deep learning is, that it essentially does the feature engineering for you: The model itself learns appropriate features from the raw data.
@@ -16,7 +16,7 @@ A _mathematical model_ is an abstraction trying to describe some part of reality
 A _machine learning algorithm_ is a "recipe" that uses the data to make a model of a given type. A model is usually described by a number of _parameters_. For instance, a linear model y=ax+b has the slope a and the intercept b as parameters. The algorithm seeks out values of the parameters that are the best in some sense.
 
 ## Supervised learning
-Supervised learning is a class of algorithms, where we already know the attribute we wish to predict for the sample data set. For instance, we may have a large number of pictures of cats and dogs, where the animal in each photo as already been identified. Such an attribute is known as a _label_.
+Supervised learning is a class of algorithms, where we already know the attribute we wish to predict for the sample dataset. For instance, we may have a large number of pictures of cats and dogs, where the animal in each photo as already been identified. Such an attribute is known as a _label_.
 
 The two most important subcategories of supervised learning is:
 
@@ -27,10 +27,10 @@ Supervised learning, where the label is categorical. Like in the cat/dog example
 Supervised learning, where the label is numerical. _Simple linear regression_ is an example.
 
 ## Unsupervised learning
-Unsupervised learning is the process of searching for _structure_ in a data set. This often involves _clustering_, i.e. dividing the data set into groups that are similar in some respect. k-means clustering is the most famous example.
+Unsupervised learning is the process of searching for _structure_ in a dataset. This often involves _clustering_, i.e. dividing the dataset into groups that are similar in some respect. k-means clustering is the most famous example.
 
-## Subdividing the data set
-To be able to validate a model learned by a supervised training algorithm, the data set is traditionally divided into two sets (at random) before doing the training: The _training set_ and the _test_ set. The idea is, that we must not use the test set in our model building. That way, we can see how it performs on a "new" data set - the test set. A typical split is 80% for the training set and 20% for the test set, but there's no hard and fast rules.
+## Subdividing the dataset
+To be able to validate a model learned by a supervised training algorithm, the dataset is traditionally divided into two sets (at random) before doing the training: The _training set_ and the _test_ set. The idea is, that we must not use the test set in our model building. That way, we can see how it performs on a "new" dataset - the test set. A typical split is 80% for the training set and 20% for the test set, but there's no hard and fast rules.
 
 ### Training set
 This is the set for which the actual training algorithm is performed. So the model is made using only the data in the training set.
