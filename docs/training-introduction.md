@@ -5,7 +5,7 @@ title: Introduction
 
 Once you have collected a dataset you can train your own model from scratch (ml5 examples coming soon) or [retrain](https://ml5js.org/docs/FeatureExtractor) a pre-trained model. 
 
-# Transfer Learning with Custom Images
+## Transfer Learning with Custom Images
 
 An effective technique for working with custom datasets is referred to as “transfer learning.” In this case, instead of training a machine learning model from scratch with a dataset, a pre-trained model is used as the starting point for training with new data. Working with the TensorFlow.js team, researchers and artists from Google Creative Lab developed a project called “Teachable Machine” that demonstrates this process. With a webcam, someone can interactively and in real-time train a machine learning model to classify input from a video camera.  
 
@@ -51,5 +51,5 @@ function gotResult(labels) {
 A use case of this is to train an interactive system to recognize custom images. Alejandro Matamala created one of the first projects at ITP with this approach in [PongML](https://github.com/matamalaortiz/Pong-ML). In his project, someone trains a machine learning model in realtime to recognize and then play the game according to person’s specific poses.
 
 
-# Training a Classifier from Scratch
+## Training a Classifier from Scratch
 * Coming soon!
