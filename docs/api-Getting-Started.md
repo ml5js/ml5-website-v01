@@ -12,7 +12,7 @@ ml5.js is heavily inspired by [Processing](https://processing.org/) and [p5.js](
 
 ## Setup
 
-Download the [latest version](https://unpkg.com/ml5) of ml5.js and save the following HTML file to your computer:
+Reference the [latest version](https://unpkg.com/ml5) of ml5.js using a script tag in an HTML file as below:
 
 ```html
 <!DOCTYPE html>
@@ -36,7 +36,7 @@ That's all! 💥
 
 ## Creating a simple image classification example
 
-Let's add something more to classify an image
+Let's add something more to classify an image using the pre-trained MobileNet model.
 
 ```html
 <!DOCTYPE html>
@@ -49,10 +49,10 @@ Let's add something more to classify an image
 
   <body>
     <h1>Image classification using Mobilenet</h1>
-    <p>The MobileNet model labeled this as 
+    <p>The MobileNet model labeled this as
     <span id="result">...</span> with a confidence of
     <span id="probability">...</span></p>
-    <img src="https://ml5js.org/docs/assets/img/bird.jpg" 
+    <img src="https://ml5js.org/docs/assets/img/bird.jpg"
      crossorigin="anonymous" id="image" width="400">
 
     <script>
@@ -72,13 +72,13 @@ Let's add something more to classify an image
         result.innerText = results[0].className;
         probability.innerText = results[0].probability.toFixed(4);
       });
-    
+
     </script>
   </body>
 </html>
 ```
 
-Open it in a web browser and after a couple seconds of you should see something like this:
+Open it in a web browser and you should see something like this (note it may take a few seconds for the model to load!):
 
 <img src="assets/img/quickstart.png">
 
