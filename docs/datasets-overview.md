@@ -3,9 +3,9 @@ id: data-overview
 title: Overview
 ---
 
-This section is devoted to data, data-sets and data collection.📋 📜 📄  
+This section is devoted to data, datasets and data collection.📋 📜 📄  
 
-What is a data set? How can data be collected? What kind of things should you consider when working and collecting data? We will try to answers some of this questions here.
+What is a dataset? How can data be collected? What kind of things should you consider when working and collecting data? We will try to answers some of this questions here.
 
 Data is a very important part of machine learning because it defines the kind of results you will get. As [François Chollet](https://twitter.com/fchollet), the author of [Keras](https://keras.io/), a very popular framework to do machine learning in python describes:
 
