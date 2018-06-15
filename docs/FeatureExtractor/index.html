@@ -24,8 +24,8 @@
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1>featureExtractor()</h1></header><article><div><span><p>You can use neural networks to recognize the content of images. Most of the times you will be using a model trained on a large dataset for this. But you can also use part of a pre-trained model that has already learned some <a href="">features</a> about the dataset and 'retrain' or 'reuse' it for a new custom task. This is known as <a href="">Transfer Learning</a>.</p>
 <p>This class allows you to extract features from pre-trained models and retrain them with new types of data.</p>
 <h2><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h2>
-<pre><code class="hljs css languages- javascript"><span class="hljs-comment">// Extract the already learned features from Mobilenet</span>
-<span class="hljs-keyword">const</span> featureExtractor = ml5.featureExtractor(<span class="hljs-string">'Mobilenet'</span>);
+<pre><code class="hljs css languages- javascript"><span class="hljs-comment">// Extract the already learned features from MobileNet</span>
+<span class="hljs-keyword">const</span> featureExtractor = ml5.featureExtractor(<span class="hljs-string">'MobileNet'</span>);
 
 <span class="hljs-comment">// Create a new classifier using those features</span>
 <span class="hljs-keyword">const</span> classifier = featureExtractor.asClassifier(video);
@@ -52,7 +52,7 @@ classifier.predict(<span class="hljs-built_in">document</span>.getElementById(<s
 <ul>
 <li><code>model</code> - The model from which extract the learned features. Case-insensitive</li>
 <li><code>callback</code> - Optional. A function to be executed once the model has been loaded.</li>
-<li><code>options</code> - Optional. An object containing custom options. For the Mobilenet model these are the custom options you can reset:</li>
+<li><code>options</code> - Optional. An object containing custom options. For the MobileNet model these are the custom options you can reset:</li>
 </ul>
 <pre><code class="hljs css languages- javascript">{   
   <span class="hljs-attr">version</span>: <span class="hljs-number">1</span>,
@@ -65,10 +65,10 @@ classifier.predict(<span class="hljs-built_in">document</span>.getElementById(<s
   <span class="hljs-attr">batchSize</span>: <span class="hljs-number">0.4</span>, 
 }
 </code></pre>
-<h3><a class="anchor" aria-hidden="true" id="mobilenet-features"></a><a href="#mobilenet-features" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Mobilenet Features</h3>
+<h3><a class="anchor" aria-hidden="true" id="mobilenet-features"></a><a href="#mobilenet-features" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>MobileNet Features</h3>
 <hr>
-<p>The following are the Properties and Methods when Mobilenet is selected as the model from which to extract the Features:</p>
-<pre><code class="hljs css languages- javascript">ml5.featureExtractor(<span class="hljs-string">'Mobilenet'</span>)
+<p>The following are the Properties and Methods when MobileNet is selected as the model from which to extract the Features:</p>
+<pre><code class="hljs css languages- javascript">ml5.featureExtractor(<span class="hljs-string">'MobileNet'</span>)
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="properties"></a><a href="#properties" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Properties</h3>
 <pre><code class="hljs css languages- javascript">.modelLoaded
@@ -95,14 +95,14 @@ classifier.predict(<span class="hljs-built_in">document</span>.getElementById(<s
 <pre><code class="hljs css languages- javascript">.classifier(video, callback)
 </code></pre>
 <blockquote>
-<p>Use the features of Mobilenet as a classifier</p>
+<p>Use the features of MobileNet as a classifier</p>
 </blockquote>
 <p><code>video</code> - An HTML video element or a p5.js video element.</p>
 <p><code>callback</code> - A function to be called once the video is ready.</p>
 <pre><code class="hljs css languages- javascript">.regression(video, callback)
 </code></pre>
 <blockquote>
-<p>Use the features of Mobilenet as a regressor</p>
+<p>Use the features of MobileNet as a regressor</p>
 </blockquote>
 <p><code>video</code> - An HTML video element or a p5.js video element.</p>
 <p><code>callback</code> - A function to be called once the video is ready.</p>
@@ -142,7 +142,7 @@ classifier.predict(<span class="hljs-built_in">document</span>.getElementById(<s
 <p><code>callback</code> - A function to be called once the input has been predicted.</p>
 <h2><a class="anchor" aria-hidden="true" id="source"></a><a href="#source" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Source</h2>
 <p><a href="https://github.com/ml5js/ml5-library/tree/master/src/FeatureExtractor">src/FeatureExtractor</a></p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="ImageClassifier">← imageClassifier()</a><a class="docs-next button" href="LSTMGenerator">LSTMGenerator() →</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#example">Example</a></li><li><a href="#syntax">Syntax</a><ul class="toc-headings"><li><a href="#parameters">Parameters</a></li><li><a href="#mobilenet-features">Mobilenet Features</a></li><li><a href="#properties">Properties</a></li><li><a href="#methods">Methods</a></li></ul></li><li><a href="#source">Source</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Docs</h5><a href="/docs/getting-started.html">Getting Started</a><a href="/docs/ImageClassifier.html">API Reference</a><a href="/docs/training-setup.html">Training Models</a></div><div><h5>Learning</h5><a href="/docs/tutorials.html">Tutorials</a><a href="/docs/glossary-machine-learning.html">Glossary</a><a href="/docs/resources.html">Resources</a></div><div><h5>Contribute</h5><a href="/experiments.html">Experiments</a><a href="https://github.com/ml5js/ml5-library/blob/master/CONTRIBUTING.md">Contributing</a><a class="github-button" href="https://github.com/ml5js/ml5-library" data-icon="octicon-star" data-count-href="https://github.com/ml5js/ml5-library" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://itp.nyu.edu" target="_blank" class="fbOpenSource"><img src="/img/itp_logo.png" alt="Facebook Open Source" width="60" height="45"/></a><section class="copyright">This project is currently being maintained at NYU ITP by a community of teachers, residents and students.</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="ImageClassifier">← imageClassifier()</a><a class="docs-next button" href="LSTMGenerator">LSTMGenerator() →</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#example">Example</a></li><li><a href="#syntax">Syntax</a><ul class="toc-headings"><li><a href="#parameters">Parameters</a></li><li><a href="#mobilenet-features">MobileNet Features</a></li><li><a href="#properties">Properties</a></li><li><a href="#methods">Methods</a></li></ul></li><li><a href="#source">Source</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Docs</h5><a href="/docs/getting-started.html">Getting Started</a><a href="/docs/ImageClassifier.html">API Reference</a><a href="/docs/training-setup.html">Training Models</a></div><div><h5>Learning</h5><a href="/docs/tutorials.html">Tutorials</a><a href="/docs/glossary-machine-learning.html">Glossary</a><a href="/docs/resources.html">Resources</a></div><div><h5>Contribute</h5><a href="/experiments.html">Experiments</a><a href="https://github.com/ml5js/ml5-library/blob/master/CONTRIBUTING.md">Contributing</a><a class="github-button" href="https://github.com/ml5js/ml5-library" data-icon="octicon-star" data-count-href="https://github.com/ml5js/ml5-library" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://itp.nyu.edu" target="_blank" class="fbOpenSource"><img src="/img/itp_logo.png" alt="Facebook Open Source" width="60" height="45"/></a><section class="copyright">This project is currently being maintained at NYU ITP by a community of teachers, residents and students.</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
               var search = docsearch({
                 
                 apiKey: '4e9582fa59998b865a9fd98ae8d8a9cc',

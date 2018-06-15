@@ -86,8 +86,8 @@
   video = createCapture(VIDEO);
   <span class="hljs-comment">// Append it to the videoContainer DOM element</span>
   video.parent(<span class="hljs-string">'videoContainer'</span>);
-  <span class="hljs-comment">// Extract the already learned features from Mobilenet</span>
-  featureExtractor = ml5.featureExtractor(<span class="hljs-string">'Mobilenet'</span>, modelReady);
+  <span class="hljs-comment">// Extract the already learned features from MobileNet</span>
+  featureExtractor = ml5.featureExtractor(<span class="hljs-string">'MobileNet'</span>, modelReady);
   <span class="hljs-comment">// Create a new classifier using those features and give the video we want to use</span>
   classifier = featureExtractor.classification(video);
   <span class="hljs-comment">// Create the UI buttons</span>
@@ -96,7 +96,7 @@
 
 <span class="hljs-comment">// A function to be called when the model has been loaded</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">modelReady</span>(<span class="hljs-params"></span>) </span>{
-  select(<span class="hljs-string">'#loading'</span>).html(<span class="hljs-string">'Base Model (Mobilenet) loaded!'</span>);
+  select(<span class="hljs-string">'#loading'</span>).html(<span class="hljs-string">'Base Model (MobileNet) loaded!'</span>);
 }
 
 <span class="hljs-comment">// Add the current frame from the video to the classifier</span>

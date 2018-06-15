@@ -87,8 +87,8 @@
   video = createCapture(VIDEO);
   <span class="hljs-comment">// Append it to the videoContainer DOM element</span>
   video.hide();
-  <span class="hljs-comment">// Extract the features from Mobilenet</span>
-  featureExtractor = ml5.featureExtractor(<span class="hljs-string">'Mobilenet'</span>, modelReady);
+  <span class="hljs-comment">// Extract the features from MobileNet</span>
+  featureExtractor = ml5.featureExtractor(<span class="hljs-string">'MobileNet'</span>, modelReady);
   <span class="hljs-comment">// Create a new regressor using those features and give the video we want to use</span>
   regressor = featureExtractor.regression(video);
   <span class="hljs-comment">// Create the UI buttons</span>

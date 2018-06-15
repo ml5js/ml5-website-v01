@@ -25,7 +25,7 @@
 <p>The library is supported by code examples, tutorials, and sample datasets with an emphasis on ethical computing. Bias in data, stereotypical harms, and responsible crowdsourcing are part of the documentation around data collection and usage.</p>
 <p>ml5.js is heavily inspired by <a href="https://processing.org/">Processing</a> and <a href="https://p5js.org/">p5.js</a>.</p>
 <h2><a class="anchor" aria-hidden="true" id="setup"></a><a href="#setup" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Setup</h2>
-<p>Download the <a href="https://unpkg.com/ml5">latest version</a> of ml5.js and save the following HTML file to your computer:</p>
+<p>Reference the <a href="https://unpkg.com/ml5">latest version</a> of ml5.js using a script tag in an HTML file as below:</p>
 <pre><code class="hljs css languages- html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
@@ -44,7 +44,7 @@
 </code></pre>
 <p>That's all! 💥</p>
 <h2><a class="anchor" aria-hidden="true" id="creating-a-simple-image-classification-example"></a><a href="#creating-a-simple-image-classification-example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating a simple image classification example</h2>
-<p>Let's add something more to classify an image</p>
+<p>Let's add something more to classify an image using the pre-trained MobileNet model.</p>
 <pre><code class="hljs css languages- html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
@@ -54,11 +54,11 @@
     <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
 
   <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Image classification using Mobilenet<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>The MobileNet model labeled this as 
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Image classification using MobileNet<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>The MobileNet model labeled this as
     <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"result"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> with a confidence of
     <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"probability"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://ml5js.org/docs/assets/img/bird.jpg"</span> 
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://ml5js.org/docs/assets/img/bird.jpg"</span>
      <span class="hljs-attr">crossorigin</span>=<span class="hljs-string">"anonymous"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"image"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"400"</span>&gt;</span>
 
     <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
@@ -69,8 +69,8 @@
       <span class="hljs-comment">// The probability tag in the HTML</span>
       <span class="hljs-keyword">const</span> probability = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'probability'</span>);
 
-      <span class="hljs-comment">// Initialize the Image Classifier method with Mobilenet</span>
-      <span class="hljs-keyword">const</span> classifier = ml5.imageClassifier(<span class="hljs-string">'Mobilenet'</span>);
+      <span class="hljs-comment">// Initialize the Image Classifier method with MobileNet</span>
+      <span class="hljs-keyword">const</span> classifier = ml5.imageClassifier(<span class="hljs-string">'MobileNet'</span>);
 
       <span class="hljs-comment">// Make a prediction with the selected image</span>
       <span class="hljs-comment">// This will return an array with a default of 10 options with their probabilities</span>
@@ -78,12 +78,12 @@
         result.innerText = results[<span class="hljs-number">0</span>].className;
         probability.innerText = results[<span class="hljs-number">0</span>].probability.toFixed(<span class="hljs-number">4</span>);
       });
-    
+
     </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </code></pre>
-<p>Open it in a web browser and after a couple seconds of you should see something like this:</p>
+<p>Open it in a web browser and you should see something like this (note it may take a few seconds for the model to load!):</p>
 <p><img src="assets/img/quickstart.png"></p>
 <p>💥🤖</p>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-next button" href="ImageClassifier">imageClassifier() →</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#setup">Setup</a></li><li><a href="#creating-a-simple-image-classification-example">Creating a simple image classification example</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Docs</h5><a href="/docs/getting-started.html">Getting Started</a><a href="/docs/ImageClassifier.html">API Reference</a><a href="/docs/training-setup.html">Training Models</a></div><div><h5>Learning</h5><a href="/docs/tutorials.html">Tutorials</a><a href="/docs/glossary-machine-learning.html">Glossary</a><a href="/docs/resources.html">Resources</a></div><div><h5>Contribute</h5><a href="/experiments.html">Experiments</a><a href="https://github.com/ml5js/ml5-library/blob/master/CONTRIBUTING.md">Contributing</a><a class="github-button" href="https://github.com/ml5js/ml5-library" data-icon="octicon-star" data-count-href="https://github.com/ml5js/ml5-library" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://itp.nyu.edu" target="_blank" class="fbOpenSource"><img src="/img/itp_logo.png" alt="Facebook Open Source" width="60" height="45"/></a><section class="copyright">This project is currently being maintained at NYU ITP by a community of teachers, residents and students.</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
