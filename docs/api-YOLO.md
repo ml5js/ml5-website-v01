@@ -45,7 +45,7 @@ yolo.detect(document.getElementById('img'), function(results){
 ### Parameters
 
   - `video` - Optional. A HTML video element or a p5 video element.
-  - `options` - Optional. An object describing a model accuracy and performance. For Mobilenet this are: `{ filterBoxesThreshold: 0.01,
+  - `options` - Optional. An object describing a model accuracy and performance. For MobileNet this are: `{ filterBoxesThreshold: 0.01,
   IOUThreshold: 0.4,
   classProbThreshold: 0.4
   }`

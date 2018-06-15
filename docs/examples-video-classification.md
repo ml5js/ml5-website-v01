@@ -4,7 +4,7 @@ title: Video Classification
 ---
 
 
-Webcam Image Classification using Mobilenet and p5.js.
+Webcam Image Classification using MobileNet and p5.js.
 
 You can also find the same example without p5.js [here](https://github.com/ml5js/ml5-examples/tree/master/javascript/ImageClassification_Video)
 
@@ -31,8 +31,8 @@ function setup() {
   noCanvas();
   // Create a camera input
   video = createCapture(VIDEO);
-  // Initialize the Image Classifier method with Mobilenet and the video as the second argument
-  classifier = ml5.imageClassifier('Mobilenet', video);
+  // Initialize the Image Classifier method with MobileNet and the video as the second argument
+  classifier = ml5.imageClassifier('MobileNet', video);
   // Call the classifyFrame function to start classifying the video
   classifyVideo();
 }

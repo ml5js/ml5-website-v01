@@ -10,8 +10,8 @@ This class allows you to extract features from pre-trained models and retrain th
 ## Example
 
 ```javascript
-// Extract the already learned features from Mobilenet
-const featureExtractor = ml5.featureExtractor('Mobilenet');
+// Extract the already learned features from MobileNet
+const featureExtractor = ml5.featureExtractor('MobileNet');
 
 // Create a new classifier using those features
 const classifier = featureExtractor.asClassifier(video);
@@ -43,7 +43,7 @@ classifier.predict(document.getElementById('dogB'), function(results) {
 ### Parameters
   - `model` - The model from which extract the learned features. Case-insensitive
   - `callback` - Optional. A function to be executed once the model has been loaded.
-  - `options` - Optional. An object containing custom options. For the Mobilenet model these are the custom options you can reset:
+  - `options` - Optional. An object containing custom options. For the MobileNet model these are the custom options you can reset:
 
   ```javascript
   {   
@@ -57,13 +57,13 @@ classifier.predict(document.getElementById('dogB'), function(results) {
     batchSize: 0.4, 
   }
   ```
-### Mobilenet Features
+### MobileNet Features
 --- 
 
-The following are the Properties and Methods when Mobilenet is selected as the model from which to extract the Features:
+The following are the Properties and Methods when MobileNet is selected as the model from which to extract the Features:
 
 ```javascript
-ml5.featureExtractor('Mobilenet')
+ml5.featureExtractor('MobileNet')
 ```
 
 ### Properties
@@ -94,7 +94,7 @@ ml5.featureExtractor('Mobilenet')
   ```javascript
   .classifier(video, callback)
   ```
-  > Use the features of Mobilenet as a classifier
+  > Use the features of MobileNet as a classifier
 
   `video` - An HTML video element or a p5.js video element.
 
@@ -103,7 +103,7 @@ ml5.featureExtractor('Mobilenet')
   ```javascript
   .regression(video, callback)
   ```
-  > Use the features of Mobilenet as a regressor
+  > Use the features of MobileNet as a regressor
 
   `video` - An HTML video element or a p5.js video element.
 
