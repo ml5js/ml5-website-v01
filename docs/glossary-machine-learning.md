@@ -4,7 +4,7 @@ title: Machine Learning
 ---
 
 ## The data set
-The accessible sample is our data set, which consists of a number of _data points_. Each data point will contain information expressed through a number of attributes. Each attribute has a _data type_. The most common data types are numbers (_numerical data_) and text strings (_nominal data_). A subset of nominal data is _categorical_, i.e. from a finite set of options, such as "yes/no", month, etc. Categorical data are sometimes known as _factors_.
+The provided sample is our data set, which consists of a number of _data points_. Each data point will contain information expressed through a number of attributes. Each attribute has a _data type_. The most common data types are numbers (_numerical data_) and text strings (_nominal data_). A subset of nominal data is _categorical_, i.e. from a finite set of options, such as "yes/no", month, etc. Categorical data are sometimes known as _factors_.
 
 ## Features
 A feature is an attribute that is used in the machine learning analysis of the problem. This could be the raw features, but may also be quantities extracted by some kind of pre-processing of the data. Extracting appropriate features is known as _feature engineering_. Feature engineering traditionally requires some kind of _domain knowledge_. One of the strengths of deep learning is, that it essentially does the feature engineering for you: The model itself learns appropriate features from the raw data.
