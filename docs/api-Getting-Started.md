@@ -48,7 +48,7 @@ Let's add something more to classify an image using the pre-trained MobileNet mo
     </head>
 
   <body>
-    <h1>Image classification using Mobilenet</h1>
+    <h1>Image classification using MobileNet</h1>
     <p>The MobileNet model labeled this as
     <span id="result">...</span> with a confidence of
     <span id="probability">...</span></p>
@@ -63,8 +63,8 @@ Let's add something more to classify an image using the pre-trained MobileNet mo
       // The probability tag in the HTML
       const probability = document.getElementById('probability');
 
-      // Initialize the Image Classifier method with Mobilenet
-      const classifier = ml5.imageClassifier('Mobilenet');
+      // Initialize the Image Classifier method with MobileNet
+      const classifier = ml5.imageClassifier('MobileNet');
 
       // Make a prediction with the selected image
       // This will return an array with a default of 10 options with their probabilities

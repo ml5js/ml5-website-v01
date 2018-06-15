@@ -11,8 +11,8 @@ these model from the cloud. What the algorithm labels an image is entirely depen
 ## Example
 
 ```javascript
-// Initialize the Image Classifier method with Mobilenet
-const classifier = ml5.imageClassifier('Mobilenet');
+// Initialize the Image Classifier method with MobileNet
+const classifier = ml5.imageClassifier('MobileNet');
 // Make a prediction with a selected image
 classifier.predict(document.getElementById('image'), function(results) {
   console.log(results);
@@ -40,9 +40,9 @@ classifier.predict(document.getElementById('image'), function(results) {
 
 ### Parameters
 
-  - `model` - A String value of a valid model. Only [MobileNet](https://github.com/tensorflow/tfjs-models/tree/master/mobilenet) is available for now. Case insensitive.
+  - `model` - A String value of a valid model. Only [MobileNet](https://github.com/tensorflow/tfjs-models/tree/master/MobileNet) is available for now. Case insensitive.
   - `callback` - Optional. A function to run once the model has been loaded.
-  - `options` - Optional. An object describing a model accuracy and performance. For Mobilenet this are: `{ version: 1,
+  - `options` - Optional. An object describing a model accuracy and performance. For MobileNet this are: `{ version: 1,
     alpha: 1.0, topk: 3, }`
   - `video` - Optional. A HTML video element or a p5 video element.
 

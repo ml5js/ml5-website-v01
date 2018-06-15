@@ -80,8 +80,8 @@ function setup() {
   video = createCapture(VIDEO);
   // Append it to the videoContainer DOM element
   video.hide();
-  // Extract the features from Mobilenet
-  featureExtractor = ml5.featureExtractor('Mobilenet', modelReady);
+  // Extract the features from MobileNet
+  featureExtractor = ml5.featureExtractor('MobileNet', modelReady);
   // Create a new regressor using those features and give the video we want to use
   regressor = featureExtractor.regression(video);
   // Create the UI buttons
