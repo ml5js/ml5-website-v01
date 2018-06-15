@@ -3,9 +3,9 @@ id: training-setup
 title: Setting up
 ---
 
-ml5js is built on top of [tensorflow.js](https://js.tensorflow.org/) a Javascript framework for training and deploying ML models in the browser and on Node.js . 
+ml5js is built on top of [TensorFlow.js](https://js.tensorflow.org/) a Javascript framework for training and deploying ML models in the browser and on Node.js . 
 
-Some of the training tutorials you will find in this section will be using Tensorflow.js to train models and some others will be using original version of [Tensorflow](https://www.tensorflow.org/) written in Python.
+Some of the training tutorials you will find in this section will be using TensorFlow.js to train models and some others will be using original version of [Tensorflow](https://www.tensorflow.org/) written in Python.
 
 ## Initial Settings
 
