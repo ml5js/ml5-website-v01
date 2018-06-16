@@ -29,8 +29,8 @@ We can tell the classifier about images that with our own labels.
 classifier.addImage(puffinImage1, 'Puffin');
 classifier.addImage(puffinImage2, 'Puffin');
 classifier.addImage(puffinImage3, 'Puffin');
-classifier.addImage(snowLeopardImage1, ‘Snow Leopard’);
-classifier.addImage(snowLeopardImage2, ‘Snow Leopard’);
+classifier.addImage(snowLeopardImage1, 'Snow Leopard');
+classifier.addImage(snowLeopardImage2, 'Snow Leopard');
 ```
 
 Finally we can train a new model based on the features on the images we added.
@@ -45,7 +45,7 @@ And classify a new unknown image.
 classifier.classify(someImage, gotResult);
 
 function gotResult(labels) {
-  console.log(label);
+  console.log(labels);
 }
 ```
 A use case of this is to train an interactive system to recognize custom images. Alejandro Matamala created one of the first projects at ITP with this approach in [PongML](https://github.com/matamalaortiz/Pong-ML). In his project, someone trains a machine learning model in realtime to recognize and then play the game according to person’s specific poses.
