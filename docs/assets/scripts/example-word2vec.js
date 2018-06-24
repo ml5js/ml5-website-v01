@@ -1,5 +1,5 @@
 
-const word2Vec = ml5.word2vec('assets/data/wordvecs/wordvecs10000.json', modelLoaded);
+const word2Vec = ml5.word2vec('assets/models/wordvecs/wordvecs10000.json', modelLoaded);
 let modelReady = false;
 
 function setup() {
