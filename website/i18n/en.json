@@ -25,6 +25,7 @@
     "image-classification-example": "Image Classification",
     "lstm-interactive-example": "Interactive Text Generation LSTM",
     "lstm-example": "Text Generation with LSTM",
+    "pitch-detection-example": "Pitch Detection",
     "posenet-webcam": "PoseNet with Webcam",
     "quick-start": "Examples Quick Start",
     "Quick Start": "Quick Start",

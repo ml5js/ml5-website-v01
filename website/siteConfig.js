@@ -50,9 +50,10 @@ const siteConfig = {
 
   // Add custom scripts here that would be placed in <script> tags
   scripts: [
+    '/scripts/p5.min.js',
+    '/scripts/p5.dom.min.js',
+    '/scripts/p5.sound.min.js',
     '/scripts/ml5.min.js',
-    'https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.min.js',
-    'https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/addons/p5.dom.min.js',
   ],
   cleanUrl: true,
   /* On page navigation for the current documentation page */
