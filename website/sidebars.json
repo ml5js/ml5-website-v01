@@ -1,0 +1,56 @@
+{
+  "docs": {
+    "Documentation": [
+      "getting-started",
+      "ImageClassifier",
+      "FeatureExtractor",
+      "LSTMGenerator",
+      "PitchDetection",
+      "PoseNet",
+      "StyleTransfer",
+      "Word2vec",
+      "YOLO"
+    ],
+    "Examples": [
+      "quick-start",
+      "image-classification-example",
+      "video-classification-example",
+      "custom-classifier",
+      "custom-regression",
+      "lstm-example",
+      "lstm-interactive-example",
+      "style-transfer-image-example",
+      "style-transfer-webcam-example",
+      "posenet-webcam",
+      "yolo-webcam",
+      "word2vec-example"
+    ],
+    "Data": [
+      "data-overview",
+      "data-collection",
+      "data-types-of-datasets",
+      "data-preparing-your-own-data",
+      "data-creating-your-own-data"
+    ],
+    "Training": [
+      "training-introduction",
+      "training-setup",
+      "training-lstm",
+      "training-styletransfer",
+      "training-pix2pix"
+    ]
+  },
+  "learn": {
+    "Glossary": [
+      "glossary-statistics",
+      "glossary-mathematics",
+      "glossary-machine-learning"
+    ],
+    "Tutorials": [
+      "tutorials"
+    ],
+    "Resources": [
+      "resources"
+    ]
+  }
+}
