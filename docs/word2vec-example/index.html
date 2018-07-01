@@ -1,0 +1,141 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Word2Vec · ml5js</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Word2vec is a group of related models that are used to produce [word embeddings](https://en.wikipedia.org/wiki/Word2vec)&lt;/sup&gt;. This method allows you to perform vector operations on a given set of input vectors. "/><meta property="og:title" content="Word2Vec · ml5js"/><meta property="og:type" content="website"/><meta property="og:url" content="ml5js.org/index.html"/><meta property="og:description" content="Word2vec is a group of related models that are used to produce [word embeddings](https://en.wikipedia.org/wiki/Word2vec)&lt;/sup&gt;. This method allows you to perform vector operations on a given set of input vectors. "/><meta property="og:image" content="ml5js.org/img/og.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="ml5js.org/img/og.png"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css"/><script type="text/javascript" src="/scripts/p5.min.js"></script><script type="text/javascript" src="/scripts/p5.dom.min.js"></script><script type="text/javascript" src="/scripts/p5.sound.min.js"></script><script type="text/javascript" src="/scripts/ml5.min.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible doc separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/ml5.png" alt="ml5js"/></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/getting-started" target="_self">Reference</a></li><li class="siteNavGroupActive"><a href="/docs/quick-start" target="_self">Examples</a></li><li class="siteNavGroupActive"><a href="/docs/data-overview" target="_self">Data</a></li><li class="siteNavGroupActive"><a href="/docs/training-introduction" target="_self">Training</a></li><li class=""><a href="/en/experiments" target="_self">Experiments</a></li><li class=""><a href="/docs/glossary-machine-learning" target="_self">Learn</a></li><li class=""><a href="https://github.com/ml5js" target="_self">Code</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Examples</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup navGroupActive"><h3>Documentation</h3><ul><li class="navListItem"><a class="navItem" href="/docs/getting-started">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/ImageClassifier">imageClassifier()</a></li><li class="navListItem"><a class="navItem" href="/docs/FeatureExtractor">featureExtractor()</a></li><li class="navListItem"><a class="navItem" href="/docs/LSTMGenerator">LSTMGenerator()</a></li><li class="navListItem"><a class="navItem" href="/docs/PitchDetection">pitchDetection()</a></li><li class="navListItem"><a class="navItem" href="/docs/PoseNet">poseNet()</a></li><li class="navListItem"><a class="navItem" href="/docs/StyleTransfer">styleTransfer()</a></li><li class="navListItem"><a class="navItem" href="/docs/Word2vec">word2vec()</a></li><li class="navListItem"><a class="navItem" href="/docs/YOLO">YOLO()</a></li></ul></div><div class="navGroup navGroupActive"><h3>Examples</h3><ul><li class="navListItem"><a class="navItem" href="/docs/quick-start">Quick Start</a></li><li class="navListItem"><a class="navItem" href="/docs/image-classification-example">Image Classification</a></li><li class="navListItem"><a class="navItem" href="/docs/video-classification-example">Video Classification</a></li><li class="navListItem"><a class="navItem" href="/docs/custom-classifier">Classifier with Feature Extractor</a></li><li class="navListItem"><a class="navItem" href="/docs/custom-regression">Regression with Feature Extractor</a></li><li class="navListItem"><a class="navItem" href="/docs/lstm-example">Text Generation with LSTM</a></li><li class="navListItem"><a class="navItem" href="/docs/lstm-interactive-example">Interactive Text Generation LSTM</a></li><li class="navListItem"><a class="navItem" href="/docs/style-transfer-image-example">Style Transfer</a></li><li class="navListItem"><a class="navItem" href="/docs/style-transfer-webcam-example">Style Transfer with Webcam</a></li><li class="navListItem"><a class="navItem" href="/docs/posenet-webcam">PoseNet with Webcam</a></li><li class="navListItem"><a class="navItem" href="/docs/yolo-webcam">YOLO with Webcam</a></li><li class="navListItem navListItemActive"><a class="navItem navItemActive" href="/docs/word2vec-example">Word2Vec</a></li></ul></div><div class="navGroup navGroupActive"><h3>Data</h3><ul><li class="navListItem"><a class="navItem" href="/docs/data-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/data-collection">Data Collection</a></li><li class="navListItem"><a class="navItem" href="/docs/data-types-of-datasets">Types of Data</a></li><li class="navListItem"><a class="navItem" href="/docs/data-preparing-your-own-data">Preparing your own data</a></li><li class="navListItem"><a class="navItem" href="/docs/data-creating-your-own-data">Creating your data</a></li></ul></div><div class="navGroup navGroupActive"><h3>Training</h3><ul><li class="navListItem"><a class="navItem" href="/docs/training-introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/training-setup">Setting up</a></li><li class="navListItem"><a class="navItem" href="/docs/training-lstm">Training a LSTM</a></li><li class="navListItem"><a class="navItem" href="/docs/training-styletransfer">Training Style Transfer</a></li><li class="navListItem"><a class="navItem" href="/docs/training-pix2pix">Training Pix2Pix</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1>Word2Vec</h1></header><article><div><span><p>Word2vec is a group of related models that are used to produce <a href="https://en.wikipedia.org/wiki/Word2vec">word embeddings</a></sup>. This method allows you to perform vector operations on a given set of input vectors.</p>
+<p>You can use the word models <a href="https://github.com/ml5js/ml5-examples/tree/master/p5js/Word2Vec/data">we provide</a>, trained on a corpus of english words (watch out for bias data!), or you can train your own vector models following <a href="https://github.com/ml5js/ml5-data-and-training/tree/master/training">this tutorial</a>. More of this soon!</p>
+<h2><a class="anchor" aria-hidden="true" id="demo"></a><a href="#demo" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Demo</h2>
+<div class="example">
+  <style>
+    .row {
+      margin-top: 10px;
+      padding: 20px;
+      outline: 2px solid #ccc;
+      outline-offset: -10px;
+      -moz-outline-radius: 10px;
+      -webkit-outline-radius: 10px;
+    }
+  </style>
+  <div>
+  <div>
+    <div class="row">
+      <p>
+        <input type="text" value="rainbow" id="nearword"></input>
+        <button id="submit" class="btn btn-primary">is similar to ...</button>
+      </p>
+      <p id="results"></p>
+    </div>
+    <div class="row">
+      <p>
+        Between
+        <input type="text" value="rainbow" id="between1"></input> and
+        <input type="text" value="kitten" id="between2"></input>
+        <button id="submit2" class="btn btn-primary">is ...</button>
+      </p>
+      <p id="results2"></p>
+    </div>
+    <div class="row">
+      <p>
+        <input type="text" value="pizza" id="isto1"></input> is to
+        <input type="text" value="humans" id="isto2"></input> as
+        <input type="text" value="fish" id="isto3"></input>
+        <button id="submit3" class="btn btn-primary">is to ...</button>
+      </p>
+      <p id="results3"></p>
+    </div>
+  </div>
+  <script src="assets/scripts/example-word2vec.js"></script>
+</div>
+<h2><a class="anchor" aria-hidden="true" id="code"></a><a href="#code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Code</h2>
+<pre><code class="hljs css languages- javascript"><span class="hljs-comment">// Create the Word2Vec methods</span>
+<span class="hljs-keyword">const</span> word2Vec = ml5.word2vec(<span class="hljs-string">'data/wordvecs10000.json'</span>, modelLoaded);
+<span class="hljs-keyword">let</span> modelReady = <span class="hljs-literal">false</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setup</span>(<span class="hljs-params"></span>) </span>{
+  noLoop();
+  noCanvas();
+
+  <span class="hljs-keyword">let</span> nearWordInput = select(<span class="hljs-string">'#nearword'</span>);
+  <span class="hljs-keyword">let</span> nearButton = select(<span class="hljs-string">'#submit'</span>);
+  <span class="hljs-keyword">let</span> nearResults = select(<span class="hljs-string">'#results'</span>);
+
+  <span class="hljs-keyword">let</span> betweenWordInput1 = select(<span class="hljs-string">"#between1"</span>);
+  <span class="hljs-keyword">let</span> betweenWordInput2 = select(<span class="hljs-string">"#between2"</span>);
+  <span class="hljs-keyword">let</span> betweenButton = select(<span class="hljs-string">"#submit2"</span>);
+  <span class="hljs-keyword">let</span> betweenResults = select(<span class="hljs-string">"#results2"</span>);
+
+  <span class="hljs-keyword">let</span> addInput1 = select(<span class="hljs-string">"#isto1"</span>);
+  <span class="hljs-keyword">let</span> addInput2 = select(<span class="hljs-string">"#isto2"</span>);
+  <span class="hljs-keyword">let</span> addInput3 = select(<span class="hljs-string">"#isto3"</span>);
+  <span class="hljs-keyword">let</span> addButton = select(<span class="hljs-string">"#submit3"</span>);
+  <span class="hljs-keyword">let</span> addResults = select(<span class="hljs-string">"#results3"</span>);
+
+  nearButton.mousePressed(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    <span class="hljs-keyword">let</span> word = nearWordInput.value();
+    nearResults.html(findNearest(word, <span class="hljs-number">10</span>));
+  });
+
+  betweenButton.mousePressed(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    <span class="hljs-keyword">let</span> word1 = betweenWordInput1.value();
+    <span class="hljs-keyword">let</span> word2 = betweenWordInput2.value();
+    <span class="hljs-keyword">let</span> average = word2Vec.average([word1, word2], <span class="hljs-number">1</span>);
+    betweenResults.html(average[<span class="hljs-number">0</span>].word);
+  });
+
+  addButton.mousePressed(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    <span class="hljs-keyword">let</span> is1 = addInput1.value();
+    <span class="hljs-keyword">let</span> to1 = addInput2.value();
+    <span class="hljs-keyword">let</span> is2 = addInput3.value();
+    <span class="hljs-keyword">let</span> difference = word2Vec.subtract([to1, is1]);
+    <span class="hljs-keyword">let</span> to2 = word2Vec.add([is2, difference[<span class="hljs-number">0</span>].word]);
+    addResults.html(to2[<span class="hljs-number">0</span>].word);
+  });
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">modelLoaded</span> (<span class="hljs-params"></span>) </span>{
+  modelReady = <span class="hljs-literal">true</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">findNearest</span>(<span class="hljs-params">word, n=<span class="hljs-number">10</span></span>) </span>{
+  <span class="hljs-keyword">if</span>(modelReady){
+    <span class="hljs-keyword">let</span> nearest = word2Vec.nearest(word, n);
+    <span class="hljs-keyword">if</span> (!nearest) {
+      <span class="hljs-keyword">return</span> <span class="hljs-string">'No word vector found'</span>;
+    }
+    <span class="hljs-keyword">let</span> output = <span class="hljs-string">''</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; nearest.length; i++) {
+      output += nearest[i].word + <span class="hljs-string">'&lt;br/&gt;'</span>;
+    }
+    <span class="hljs-keyword">return</span> output;
+  } 
+  <span class="hljs-keyword">return</span> <span class="hljs-string">'Model has not loaded yet!'</span>;
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="source-https-githubcom-ml5js-ml5-examples-tree-master-p5js-word2vec"></a><a href="#source-https-githubcom-ml5js-ml5-examples-tree-master-p5js-word2vec" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://github.com/ml5js/ml5-examples/tree/master/p5js/Word2Vec">Source</a></h2>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="yolo-webcam">← YOLO with Webcam</a><a class="docs-next button" href="data-overview">Overview →</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#demo">Demo</a></li><li><a href="#code">Code</a></li><li><a href="#source-https-githubcom-ml5js-ml5-examples-tree-master-p5js-word2vec">Source</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Docs</h5><a href="/docs/getting-started.html">Getting Started</a><a href="/docs/ImageClassifier.html">API Reference</a><a href="/docs/training-setup.html">Training Models</a></div><div><h5>Learning</h5><a href="/docs/tutorials.html">Tutorials</a><a href="/docs/glossary-machine-learning.html">Glossary</a><a href="/docs/resources.html">Resources</a></div><div><h5>Contribute</h5><a href="/experiments.html">Experiments</a><a href="https://github.com/ml5js/ml5-library/blob/master/CONTRIBUTING.md">Contributing</a><a class="github-button" href="https://github.com/ml5js/ml5-library" data-icon="octicon-star" data-count-href="https://github.com/ml5js/ml5-library" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://itp.nyu.edu" target="_blank" class="fbOpenSource"><img src="/img/itp_logo.png" alt="Facebook Open Source" width="60" height="45"/></a><section class="copyright">This project is currently being maintained at NYU ITP by a community of teachers, residents and students.</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+              var search = docsearch({
+                
+                apiKey: '4e9582fa59998b865a9fd98ae8d8a9cc',
+                indexName: 'ml5js',
+                inputSelector: '#search_input_react'
+              });
+            </script></body></html>
