@@ -5,11 +5,11 @@ title: Training a LSTM
 
 This short tutorial will go over how to train a custom LSTM on your own dataset and then use the results in ml5.js [LSTMGenerator()](/docs/LSTMGenerator) method. For this, you will need a dataset of text you would like to use. Take a look at some of the ones we are using [here](https://github.com/ml5js/ml5-data-and-training/tree/master/training/lstm/data).
 
-The code for this tutorial is based on [Sherjil Ozair](https://github.com/sherjilozair/char-rnn-tensorflow) version of [Andrej Karpathy's](https://karpathy.github.io/) [char-rnn code](https://github.com/karpathy/char-rnn).
+The code for this tutorial is based on [Sherjil Ozair's](https://github.com/sherjilozair/char-rnn-tensorflow) version of [Andrej Karpathy's](https://karpathy.github.io/) [char-rnn code](https://github.com/karpathy/char-rnn).
 
 ## Requirements
 
-Please setup the require python environment. [More detailed instructions here](/docs/training-setup)
+Please setup the required python environment. [More detailed instructions here](/docs/training-setup)
 
 ## 1) Get the code
 
@@ -19,16 +19,15 @@ Start by [downloading](https://github.com/ml5js/ml5-data-and-training/archive/ma
 git clone https://github.com/ml5js/ml5-data-and-training.git
 ```
 
-Once download change directory into the lstm training code:
+Once downloaded, change directory into the lstm training code:
 
 ```bash
-cd training/lstm
+cd models/lstm
 ```
 
 ## 2) Train
 
 Inside the `training/lstm/data` folder, create a new folder with the name of your data. Inside that folder there should be just one file called `input.txt`
-
 
 (A quick tip to concatenate many small disparate `.txt` files into one large training file: `ls *.txt | xargs -L 1 cat >> input.txt`)
 
@@ -48,7 +47,7 @@ This will train your model and save the model, **in the globals `./models` folde
 
 ## 3) Use!
 
-To use model in ml5, you'll just need to point to the new folder in your sketch:
+To use the model in ml5, you'll just need to point to the new folder in your sketch:
 
 ```javascript
 const lstm = ml5.LSTMGenerator('./models/your_new_model');
@@ -98,4 +97,3 @@ $ tensorboard --logdir=./logs/
 ```
 
 Then open a browser to [http://localhost:6006](http://localhost:6006) or the correct IP/Port specified.
-
