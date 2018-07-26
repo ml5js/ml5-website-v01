@@ -48,7 +48,7 @@ class Help extends React.Component {
 
     for (let demo of demos) {
       demoList.push(
-      <Container className="experiment flex-col">
+      <Container className="experiment flex-col" key={demo.title}>
         <a href={demo.link}><h2>{demo.title}</h2></a>
         <p>{demo.content}</p>
         <a href={demo.link}><img src={demo.image} alt={demo.title}/></a>
