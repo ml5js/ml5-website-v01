@@ -49,10 +49,10 @@ function generate() {
     lstm.generate(data, gotData);
 
     // Update the DOM elements with typed and generated text
-    function gotData(result) {
+    function gotData(err, result) {
       select('#status').html('Ready!');
       select('#original').html(original);
-      select('#prediction').html(result.generated);
+      select('#prediction').html(result);
     }
   } else {
     // Clear everything
