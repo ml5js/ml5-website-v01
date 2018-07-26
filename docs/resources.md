@@ -3,7 +3,7 @@ id: resources
 title: Resources
 ---
 
-Resources
+# Resources
 
 If you would like to submit a resource to this page, you can do so by [editing resources.md on github](https://github.com/ml5js/ml5-website/blob/source/docs/resources.md).
 
