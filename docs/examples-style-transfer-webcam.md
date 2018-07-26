@@ -43,11 +43,11 @@ This example is using [p5.js](https://p5js.org/).
 ```javascript
 let style;
 let video;
-let isTransfering = false;
+let isTransferring = false;
 let resultImg;
 
 function setup() {
-  createCanvas(300, 300);
+  createCanvas(320, 240).parent('canvasContainer');
 
   video = createCapture(VIDEO);
   video.hide();
@@ -66,10 +66,10 @@ function setup() {
 
 function draw(){
   // Switch between showing the raw camera or the style
-  if (isTransfering) {
-    image(resultImg, 0, 0, 300, 300);
+  if (isTransferring) {
+    image(resultImg, 0, 0, 320, 240);
   } else {
-    image(video, 0, 0, 300, 300);
+    image(video, 0, 0, 320, 240);
   }
 }
 
@@ -80,24 +80,23 @@ function modelLoaded() {
 
 // Start and stop the transfer process
 function startStop() {
-  if (isTransfering) {
+  if (isTransferring) {
     select('#startStop').html('Start');
   } else {
     select('#startStop').html('Stop');
     // Make a transfer using the video
     style.transfer(gotResult); 
   }
-  isTransfering = !isTransfering;
+  isTransferring = !isTransferring;
 }
 
 // When we get the results, update the result image src
-function gotResult(img) {
+function gotResult(err, img) {
   resultImg.attribute('src', img.src);
-  if (isTransfering) {
+  if (isTransferring) {
     style.transfer(gotResult); 
   }
 }
-
 ```
 
 ## [Source](https://github.com/ITPNYU/ml5/tree/master/examples/fast_style_transfer_mirror)

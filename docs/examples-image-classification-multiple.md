@@ -61,14 +61,8 @@ mv data.json ../assets/data.json
 
 ## Code
 ```javascript
-/* ===
-ML5 Example
-ImageNet_Multiple
-Multiple Image Classification using p5.js
-=== */
-
-// Initialize the ImageNet method with the MobileNet model.
-const classifier = new ml5.ImageClassifier('MobileNet');
+// Initialize the Image Classifier method using MobileNet
+const classifier = ml5.imageClassifier('MobileNet', modelReady);
 
 let img;
 let currentIndex = 0;
@@ -77,25 +71,8 @@ let display = true;
 let displayTime = 750;
 let predictions = [];
 
-function appendImages() {
-  for (i = 0; i < data.images.length; i++) {
-    imgPath = data.images[i];
-    allImages.push(getImagePath(imgPath));
-  }
-}
-
 function preload() {
-  data = loadJSON('/assets/data.json');
-}
-
-function getImagePath(imgPath) {
-  fullPath = 'images/dataset/';
-  fullPath = fullPath + imgPath;
-  return fullPath
-}
-
-function drawNextImage() {
-  img.attribute('src', allImages[currentIndex], imageReady);
+  data = loadJSON('assets/data.json');
 }
 
 function setup() {
@@ -104,11 +81,25 @@ function setup() {
   img = createImg(allImages[0], imageReady);
 }
 
+function modelReady() {
+  select('#status').html('Model Loaded');
+}
+
+function appendImages() {
+  for (i = 0; i < data.images.length; i++) {
+    imgPath = data.images[i];
+    allImages.push('images/dataset/' + imgPath);
+  }
+}
+
+function drawNextImage() {
+  img.attribute('src', allImages[currentIndex], imageReady);
+}
 
 // When the image has been loaded,
 // get a prediction for that image
 function imageReady() {
-  classifier.predict(img.elt, 10, gotResult);
+  classifier.predict(img, gotResult);
 }
 
 function savePredictions() {
@@ -128,16 +119,16 @@ function removeImage() {
 }
 
 // When we get the results
-function gotResult(results) {
+function gotResult(err, results) {
   information = {
     "name": allImages[currentIndex],
     "result": results,
   }
   predictions.push(information);
-
+  console.log(results);
   if (display) {
     // The results are in an array ordered by probability.
-    select('#result').html(results[0].label);
+    select('#result').html(results[0].className);
     select('#probability').html(nf(results[0].probability, 0, 2));
     // Can be changed with the displayTime variable.
     setTimeout(removeImage, displayTime);

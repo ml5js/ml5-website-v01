@@ -83,7 +83,7 @@ function setup() {
   // Create a new classifier using those features and give the video we want to use
   classifier = featureExtractor.classification(video, videoReady);
   // Create the UI buttons
-  createButtons();
+  setupButtons();
 }
 
 // A function to be called when the model has been loaded
@@ -103,7 +103,7 @@ function classify() {
 }
 
 // A util function to create UI buttons
-function createButtons() {
+function setupButtons() {
   // When the Cat button is pressed, add the current frame
   // from the video with a label of "cat" to the classifier
   buttonA = select('#catButton');
@@ -140,6 +140,9 @@ function createButtons() {
 
 // Show the results
 function gotResults(err, result) {
+  if (err) {
+    console.error(err);
+  }
   select('#result').html(result);
   classify();
 }

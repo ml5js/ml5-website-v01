@@ -18,7 +18,7 @@ This example is built with p5.js.
     padding: 3px 7px;
   }
   </style>
-  <p id="status">Wait for the model to load. Loading Model...</p>
+  <p id="status">Loading Model...</p>
   <button id='start'>Start</button>
   <div id="canvasContainer"></div>
   <script src="assets/scripts/example-yolo-webcam.js"></script>
@@ -63,7 +63,7 @@ function startDetecting() {
 }
 
 function detect() {
-  yolo.detect(function(results){
+  yolo.detect(function(err, results){
     objects = results;
     detect();
   });

@@ -48,6 +48,9 @@ function imageReady() {
 
 // A function to run when we get any errors and the results
 function gotResult(err, results) {
+  if (err) {
+    console.error(err);
+  }
   // The results are in an array ordered by probability.
   select('#result').html(results[0].className);
   select('#probability').html(nf(results[0].probability, 0, 2));

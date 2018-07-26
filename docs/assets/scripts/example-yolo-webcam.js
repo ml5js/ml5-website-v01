@@ -4,7 +4,7 @@ let isDetecting = false;
 let objects = [];
 
 function setup() {
-  createCanvas(640, 480).parent('canvasContainer');
+  createCanvas(320, 240).parent('canvasContainer');
   video = createCapture(VIDEO);
 
   // Create a YOLO method
@@ -25,7 +25,7 @@ function setup() {
 }
 
 function draw() {
-  image(video, 0, 0, 640, 480);
+  image(video, 0, 0, 320, 240);
   if (isDetecting) {
     for (let i = 0; i < objects.length; i++) {
       noStroke();
@@ -45,7 +45,7 @@ function startDetecting() {
 
 function detect() {
   if (isDetecting) {
-    yolo.detect(function(results){
+    yolo.detect(function(err, results){
       objects = results;
       detect();
     });
