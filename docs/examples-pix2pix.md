@@ -84,7 +84,7 @@ function setup() {
   pixelDensity(1);
 
   // Create a pix2pix method with a pre-trained model
-  pix2pix = ml5.pix2pix('assets/models/pix2pix/edges2pikachu_AtoB.pict', modelLoaded);
+  pix2pix = ml5.pix2pix('https://rawgit.com/ml5js/pix2pix_models/master/edges2pikachu_AtoB.pict', modelLoaded);
 }
 
 // Draw on the canvas when mouse is pressed
