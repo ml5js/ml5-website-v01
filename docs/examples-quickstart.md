@@ -12,12 +12,12 @@ You can find the source for all of the examples with [p5.js](https://p5js.org/) 
 
 All examples are self-contained and can be run independently. Libraries are loaded through a Content Delivery Network (CDN) and certain examples (indicated in code comments) download a machine learning model from a "cloud" url.
 
-If you need to run the examples offline you can download [the p5.js library](https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.min.js) and [ml5 library](https://unpkg.com/ml).
+If you need to run the examples offline you can download [the p5.js library](https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.min.js) and [ml5 library](https://unpkg.com/ml5@0.1.1/dist/ml5.min.js).
 
 The url for the ml5.js library to copy into an index.html file is:
 
 ```html
-<script src="https://unpkg.com/ml5" type="text/javascript"></script>
+<script src="https://unpkg.com/ml5@0.1.1/dist/ml5.min.js" type="text/javascript"></script>
 ```
 
 😉

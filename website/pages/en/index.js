@@ -120,7 +120,7 @@ class Code extends React.Component {
               // Create the classifier with MobileNet
             </p>
             <p className="code mb20">
-            <span className="codehl">const</span> classifier = ml5.<span className="codehl3">imageClassifier</span>(<span className="codehl2">'MobileNet'</span>);
+            <span className="codehl">const</span> classifier = ml5.<span className="codehl3">imageClassifier</span>(<span className="codehl2">'MobileNet'</span>, onModelReady);
             </p>
             <p className="code bold">
             // Make a prediction
@@ -132,7 +132,7 @@ class Code extends React.Component {
             // Log the results
             </p>
             <p className="code">
-            <span className="codehl">function</span> <span className="codehl3">gotResults</span>(results) &#123;
+            <span className="codehl">function</span> <span className="codehl3">gotResults</span>(err, results) &#123;
             </p>
             <p className="code">
             &nbsp;&nbsp;console.<span className="codehl3">log</span>(results);

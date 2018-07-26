@@ -12,12 +12,17 @@ PoseNet can be used to estimate either a single pose or multiple poses, meaning 
 ```javascript
 const video = document.getElementById('video');
 
-// Create a new poseNet method with a single detection
-const poseNet = ml5.poseNet(video, 'single', gotPoses);
-// Make a prediction with a selected image
-function gotPoses(results) {
-  poses = results;
+// Create a new poseNet method
+const poseNet = ml5.poseNet(video, modelLoaded);
+
+// When the model is loaded
+function modelLoaded() {
+  console.log('Model Loaded!');
 }
+// Listen to new 'pose' events
+poseNet.on('pose', function (results) {
+  poses = results;
+});
 ```
 
 [Here](https://github.com/ml5js/ml5-examples/blob/master/p5js/PoseNet/sketch.js) is a complete example.
@@ -40,7 +45,7 @@ function gotPoses(results) {
 
   - `video` - Optional. A HTML video element or a p5 video element.
   - `type` - Optional. A String value to run 'single' or 'multiple' estimation.
-  - `callback` - Optional. A function to run once the model has been loaded.
+  - `callback` - Optional. A function to run once the model has been loaded. If no callback is provided, it will return a promise that will be resolved once the model has loaded.
   - `options` - Optional. An object describing a model accuracy and performance. The available parameters are:
    ```
    { 
@@ -55,7 +60,7 @@ function gotPoses(results) {
     multiplier: 0.75,
   }
   ```
-  For more information about these options please refer to the [original repo](https://github.com/tensorflow/tfjs-models/tree/master/posenet)
+  For more information about these options please refer to the [original PoseNet code](https://github.com/tensorflow/tfjs-models/tree/master/posenet)
 
 
 ## Properties
@@ -65,36 +70,28 @@ function gotPoses(results) {
   ```
   > The type of detection. 'single' or 'multiple'
 
-
 ## Methods
 
   ```javascript
-  .singlePose(input, ?callback)
+  .singlePose(?input)
   ```
 
   ```javascript
-  .singlePose(?callback)
+  .multiPose(?input)
   ```
 
-  > Given an image or video, returns an array of objects containing pose estimations using single detection
+  > Given an image or video, returns an array of objects containing pose estimations using single or multi-pose detection
 
   `input` -  A HTML video or image element or a p5 image or video element. If no input is provided, the default is to use the video given in the constructor.
 
-  `callback` - A function to run once the model has made the prediction.
+## Event Listeners
 
   ```javascript
-  .multiPose(input, ?callback)
+  .on('pose', function(results){ 
+    console.log(results);
+  })
   ```
-
-  ```javascript
-  .multiPose(?callback)
-  ```
-
-  > Given an image or video, returns an array of objects containing pose estimations using multi pose detection
-
-  `input` -  A HTML video or image element or a p5 image or video element. If no input is provided, the default is to use the video given in the constructor.
-
-  `callback` - A function to run once the model has made the prediction.
+  > Triggers every time there's a new pose detected. If you create a new poseNet method with a video element, this Event Listener will be called continuously over the video frames. Returns an array of objects containing pose estimations using single detection
 
 ## Source
 

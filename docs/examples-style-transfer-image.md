@@ -45,13 +45,22 @@ This example is using [p5.js](https://p5js.org/).
 ## Code
 
 ```javascript
+// Copyright (c) 2018 ml5
+// 
+// This software is released under the MIT License.
+// https://opensource.org/licenses/MIT
+
+/* ===
+ml5 Example
+Style Transfer Image Example using p5.js
+This uses a pre-trained model of The Great Wave off Kanagawa and Udnie (Young American Girl, The Dance)
+=== */
+
 let inputImg;
 let statusMsg;
 let transferBtn;
-
-// Create two Style methods with different pre-trained models
-const style1 = ml5.styleTransfer('models/wave', modelLoaded);
-const style2 = ml5.styleTransfer('models/udnie', modelLoaded);
+let style1;
+let style2;
 
 function setup() {
   noCanvas();
@@ -64,6 +73,10 @@ function setup() {
   // Transfer Button
   transferBtn = select('#transferBtn')
   transferBtn.mousePressed(transferImages);
+
+  // Create two Style methods with different pre-trained models
+  style1 = ml5.styleTransfer('models/wave', modelLoaded);
+  style2 = ml5.styleTransfer('models/udnie', modelLoaded);
 }
 
 // A function to be called when the models have loaded
@@ -77,12 +90,12 @@ function modelLoaded() {
 // Apply the transfer to both images!
 function transferImages() {
   statusMsg.html('Applying Style Transfer...!');
-
-  style1.transfer(inputImg, function(result) {
+  
+  style1.transfer(inputImg, function(err, result) {
     createImg(result.src).parent('styleA');
   });
 
-  style2.transfer(inputImg, function(result) {
+  style2.transfer(inputImg, function(err, result) {
     createImg(result.src).parent('styleB');
   });
 

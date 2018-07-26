@@ -14,11 +14,18 @@ ml5.js implements a special version of YOLO called Tiny YOLO based on [this](htt
 ## Example
 
 ```javascript
+const video = document.getElementById('video');
+
 // Create a YOLO method
-const yolo = ml5.YOLO();
+const yolo = ml5.YOLO(video, modelLoaded);
+
+// When the model is loaded
+function modelLoaded() {
+  console.log('Model Loaded!');
+}
 
 // Detect objects in the video element
-yolo.detect(document.getElementById('img'), function(results){
+yolo.detect(function(err, results){
   console.log(results) // Will output bounding boxes of detected objects
 });
 ```
@@ -49,7 +56,7 @@ yolo.detect(document.getElementById('img'), function(results){
   IOUThreshold: 0.4,
   classProbThreshold: 0.4
   }`
-  - `callback` - Optional. A function to run once the model has been loaded.
+  - `callback` - Optional. A function to run once the model has been loaded. If no callback is provided, it will return a promise that will be resolved once the model has loaded.
 
 ## Properties
 
@@ -77,7 +84,7 @@ yolo.detect(document.getElementById('img'), function(results){
 
   `input` -  A HTML video or image element or a p5 image or video element. If no input is provided, the default is to use the video given in the constructor.
 
-  `callback` - A function to run once the model has made the prediction.
+  `callback` - A function to run once the model has made the prediction. If no callback is provided, it will return a promise that will be resolved once the model has made a prediction.
 
 ## Source
 

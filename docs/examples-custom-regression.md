@@ -30,7 +30,7 @@ This example uses the feature extraction method over the MobileNet model to crea
 
 <div class="example">
   <div id="videoContainer"></div>
-  <h6 id="loading">Loading base model...</h6>
+  <h6><span id="modelStatus">Loading base model...</span> | <span id="videoStatus">Loading video...</span></h6>
   <h5>Instructions</h5>
   <p>1. With the slider on the middle and your face over the red square, click the 'Add Sample' button. Try adding around 15 images.</p>
   <br>
@@ -43,9 +43,10 @@ This example uses the feature extraction method over the MobileNet model to crea
   <p>4. Click 'Start predicting!' and move your face left and right!</p>
   <br>
   <br>
-
   
-  <input type="range" name="slider" id="slider" min="0.01" max="1.0" step="0.01" value="0.5">
+  <p>
+    <input type="range" name="slider" id="slider" min="0.01" max="1.0" step="0.01" value="0.5">
+  </p>
   <br>
   <p>
     <button id="addSample">Add Sample</button>
@@ -70,7 +71,6 @@ let regressor;
 let video;
 let loss;
 let slider;
-let addSample;
 let samples = 0;
 let positionX = 140;
 
@@ -83,21 +83,26 @@ function setup() {
   // Extract the features from MobileNet
   featureExtractor = ml5.featureExtractor('MobileNet', modelReady);
   // Create a new regressor using those features and give the video we want to use
-  regressor = featureExtractor.regression(video);
+  regressor = featureExtractor.regression(video, videoReady);
   // Create the UI buttons
-  createButtons();
-  noStroke();
-  fill(255, 0, 0);
+  setupButtons();
 }
 
 function draw() {
   image(video, 0, 0, 340, 280);
+  noStroke();
+  fill(255, 0, 0);
   rect(positionX, 120, 50, 50);
 }
 
 // A function to be called when the model has been loaded
 function modelReady() {
-  select('#loading').html('Model loaded!');
+  select('#modelStatus').html('Model loaded!');
+}
+
+// A function to be called when the video has loaded
+function videoReady() {
+  select('#videoStatus').html('Video ready!');
 }
 
 // Classify the current frame.
@@ -106,19 +111,17 @@ function predict() {
 }
 
 // A util function to create UI buttons
-function createButtons() {
+function setupButtons() {
   slider = select('#slider');
   // When the Dog button is pressed, add the current frame
   // from the video with a label of "dog" to the classifier
-  addSample = select('#addSample');
-  addSample.mousePressed(function() {
+  select('#addSample').mousePressed(function() {
     regressor.addImage(slider.value());
     select('#amountOfSamples').html(samples++);
   });
 
   // Train Button
-  train = select('#train');
-  train.mousePressed(function() {
+  select('#train').mousePressed(function() {
     regressor.train(function(lossValue) {
       if (lossValue) {
         loss = lossValue;
@@ -130,12 +133,14 @@ function createButtons() {
   });
 
   // Predict Button
-  buttonPredict = select('#buttonPredict');
-  buttonPredict.mousePressed(predict);
+  select('#buttonPredict').mousePressed(predict);
 }
 
 // Show the results
-function gotResults(result) {
+function gotResults(err, result) {
+  if (err) {
+    console.error(err);
+  }
   positionX = map(result, 0, 1, 0, width);
   slider.value(result);
   predict();

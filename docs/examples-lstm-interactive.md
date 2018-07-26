@@ -28,54 +28,48 @@ You can train your own models following [this tutorial](https://github.com/ml5js
 ## Code
 
 ```javascript
-// Create the LSTM Generator passing it the model directory
-const lstm = ml5.LSTMGenerator('models/hemingway/', modelReady);
-
+let lstm;
 let textInput;
-let lengthSlider;
 let tempSlider;
-let button;
-
-function modelReady() {
-  select('#status').html('Model Loaded');
-}
+let lengthSlider;
 
 function setup() {
   noCanvas();
+
+  // Create the LSTM Generator passing it the model directory
+  lstm = ml5.LSTMGenerator('models/woolf/', modelReady);
 
   // Grab the DOM elements
   textInput = select('#textInput');
   lengthSlider = select('#lenSlider');
   tempSlider = select('#tempSlider');
-  button = select('#generate');
 
-  // DOM element events
-  button.mousePressed(generate);
-  lengthSlider.input(updateSliders);
-  tempSlider.input(updateSliders);
-
-  // Update the slider values
-  function updateSliders() {
-    select('#length').html(lengthSlider.value());
-    select('#temperature').html(tempSlider.value());
-  }
+  // Run generate anytime something changes
+  textInput.input(generate);
+  lengthSlider.input(generate);
+  tempSlider.input(generate);
 }
 
-// Generate new text
+function modelReady() {
+  select('#status').html('Model Loaded');
+}
+
 function generate() {
   // Update the status log
   select('#status').html('Generating...');
+
+  // Update the length and temperature span elements
+  select('#length').html(lengthSlider.value());
+  select('#temperature').html(tempSlider.value());
 
   // Grab the original text
   let original = textInput.value();
   // Make it to lower case
   let txt = original.toLowerCase();
 
-  // Check if there's something to send
+  // Check if there's something
   if (txt.length > 0) {
-    // This is what the LSTM generator needs
-    // Seed text, temperature, length to outputs
-    // TODO: What are the defaults?
+    // Here is the data for the LSTM generator
     let data = {
       seed: txt,
       temperature: tempSlider.value(),
@@ -85,14 +79,19 @@ function generate() {
     // Generate text with the lstm
     lstm.generate(data, gotData);
 
-    // When it's done
-    function gotData(result) {
-      // Update the status log
+    // Update the DOM elements with typed and generated text
+    function gotData(err, result) {
       select('#status').html('Ready!');
-      select('#result').html(txt + result.generated);
+      select('#original').html(original);
+      select('#prediction').html(result);
     }
+  } else {
+    // Clear everything
+    select('#original').html('');
+    select('#prediction').html('');
   }
 }
+
 ```
 
 ## [Source](https://github.com/ml5js/ml5-examples/tree/master/p5js/LSTM_Interactive)

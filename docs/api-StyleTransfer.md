@@ -5,16 +5,20 @@ title: styleTransfer()
 
 Style Transfer is a machine learning technique that allows to transfer the style of one image into another one. This is a two step process, first you need to train a model on one particular style and then you can apply this style to another image.
 
-You can train your own images following [this tutorial](https://github.com/ml5js/ml5-data-and-training/tree/master/training). More on this soon!
+You can train your own images following [this tutorial](docs/training-styletransfer).
 
 ## Example
 
 ```javascript
 // Create a new Style Transfer Instance
-const style = ml5.styleTransfer('data/myModel/');
+const style = ml5.styleTransfer('data/myModel/', modelLoaded);
 
+// When the model is loaded
+function modelLoaded() {
+  console.log('Model Loaded!');
+}
 // Grab a img element and generate a new image. 
-style.transfer(document.getElementById('img'), function(resultImg) {
+style.transfer(document.getElementById('img'), function(err, resultImg) {
   img.src = resultImg.src;
 });
 ```
@@ -31,9 +35,11 @@ style.transfer(document.getElementById('img'), function(resultImg) {
 
 ### Parameters
 
-  - `model` - The path to Style Transfer model.
-  - `video` - Optional. A HTML video element or a p5 video element.
-  - `callback` - Optional. A function to be called once the model is loaded.
+  `model` - The path to Style Transfer model.
+  
+  `video` - Optional. A HTML video element or a p5 video element.
+  
+  `callback` - Optional. A function to be called once the model is loaded. If no callback is provided, it will return a promise that will be resolved once the model has loaded.
 
 ## Properties
 
@@ -52,7 +58,9 @@ style.transfer(document.getElementById('img'), function(resultImg) {
   ```
   > Apply style transfer to an input. Returns an HTML img element.
 
-  `input` -  A HTML video or image element or a p5 image or video element. If no input is provided, the default is to use the video element given in the constructor.
+  `input` -  A HTML video or image element or a p5 image or video element. If no input is provided, the default is to use the video element given in the constructor. 
+
+  `callback` - Optional. A function to run once the model has made the transfer. If no callback is provided, it will return a promise that will be resolved once the model has made the transfer.
 
 ## Source
 

@@ -32,7 +32,7 @@ This example is built with p5.js. You can also find the same example without p5.
 
 <div class="example">
   <div id="videoContainer"></div>
-  <h6 id="loading">Loading base model...</h6>
+  <h6><span id="modelStatus">Loading base model...</span> | <span id="videoStatus">Loading video...</span></h6>
   <h5>Instructions</h5>
   <p>1. Make a pose in front of your webcam and click the 'Add Cat Image' button. Try adding around 15 images.</p>
   <br>
@@ -81,20 +81,21 @@ function setup() {
   // Extract the already learned features from MobileNet
   featureExtractor = ml5.featureExtractor('MobileNet', modelReady);
   // Create a new classifier using those features and give the video we want to use
-  classifier = featureExtractor.classification(video);
+  classifier = featureExtractor.classification(video, videoReady);
   // Create the UI buttons
-  createButtons();
+  setupButtons();
 }
 
 // A function to be called when the model has been loaded
 function modelReady() {
-  select('#loading').html('Base Model (MobileNet) loaded!');
+  select('#modelStatus').html('Base Model (MobileNet) loaded!');
 }
 
-// Add the current frame from the video to the classifier
-function addImage(label) {
-  classifier.addImage(label);
+// A function to be called when the video has loaded
+function videoReady () {
+  select('#videoStatus').html('Video ready!');
 }
+
 
 // Classify the current frame.
 function classify() {
@@ -102,12 +103,12 @@ function classify() {
 }
 
 // A util function to create UI buttons
-function createButtons() {
+function setupButtons() {
   // When the Cat button is pressed, add the current frame
   // from the video with a label of "cat" to the classifier
   buttonA = select('#catButton');
   buttonA.mousePressed(function() {
-    addImage('cat');
+    classifier.addImage('cat');
     select('#amountOfCatImages').html(catImages++);
   });
 
@@ -115,7 +116,7 @@ function createButtons() {
   // from the video with a label of "dog" to the classifier
   buttonB = select('#dogButton');
   buttonB.mousePressed(function() {
-    addImage('dog');
+    classifier.addImage('dog');
     select('#amountOfDogImages').html(dogImages++);
   });
 
@@ -138,7 +139,10 @@ function createButtons() {
 }
 
 // Show the results
-function gotResults(result) {
+function gotResults(err, result) {
+  if (err) {
+    console.error(err);
+  }
   select('#result').html(result);
   classify();
 }
