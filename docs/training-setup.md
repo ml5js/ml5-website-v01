@@ -33,10 +33,10 @@ bash /path/to/the/file/you/just/downloaded
 ### 2) Create an environment
 
 ```
-conda create -n tensor python=3.5.2
+conda create -n ml5 python=3.5.2
 ```
 
-You can name it something other than 'tensor' if you prefer. Type: `y` (and press Enter). This will create a conda environment with the name 'tensor' and python version 3.5.2
+You can name it something other than 'ml5' if you prefer. Type: `y` (and press Enter). This will create a conda environment with the name 'ml5' and python version 3.5.2
 
 ### 3) Turn off conda by default
 The above instructions will set conda to be your "default" python on your machine (rather than the usual python 2 that comes pre-installed on a mac.) If you would prefer to turn this off, you have to edit your `bash_profile` (a configuration file for terminal.) Use these steps.
@@ -64,10 +64,10 @@ Restart terminal. Now terminal will not use your conda python installation unles
 ### 4) Activate environment
 
 ```
-$ source activate tensor
+$ source activate ml5
 ```
 
-You should see (tensor) prepended before your terminal prompt
+You should see (ml5) prepended before your terminal prompt
 
 ### 5) Install python packages
 
@@ -79,6 +79,12 @@ scipy==0.17.0
 tensorflow==1.0.0
 ```
 
-Make sure you `tensor` environment is activated (you should see (tensor) prepended before your terminal prompt).
+Then run 
+
+```
+pip install -r requirements.txt
+```
+
+Make sure you `ml5` environment is activated (you should see (ml5) prepended before your terminal prompt).
 
 All set! 🌈

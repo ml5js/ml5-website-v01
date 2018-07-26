@@ -7,58 +7,82 @@ This short tutorial will go over how to train a custom LSTM on your own dataset 
 
 The code for this tutorial is based on [Sherjil Ozair](https://github.com/sherjilozair/char-rnn-tensorflow) version of [Andrej Karpathy's](https://karpathy.github.io/) [char-rnn code](https://github.com/karpathy/char-rnn).
 
+
+**This are the same instructions you can find in [this repository](https://github.com/ml5js/training-lstm)**
+
 ## Requirements
 
-Please setup the require python environment. [More detailed instructions here](/docs/training-setup)
+- Set up a python environment with tensorflow installed. [More detailed instructions here](../)
 
-## 1) Get the code
+- If you are familiar with Docker, you can also use this  ~~[container]()~~ (soon!)
 
-Start by [downloading](https://github.com/ml5js/ml5-data-and-training/archive/master.zip) or cloning the [ml5-data-and-training]() repository:
+## Usage
 
-```bash
-git clone https://github.com/ml5js/ml5-data-and-training.git
-```
+### 1) Download the repository
 
-Once download change directory into the lstm training code:
+Start by [downloading](https://github.com/ml5js/training-lstm) or cloning the training repository:
 
 ```bash
-cd training/lstm
+git clone https://github.com/ml5js/training-lstm.git
+cd training-lstm
 ```
 
-## 2) Train
+### 2) Collect data
 
-Inside the `training/lstm/data` folder, create a new folder with the name of your data. Inside that folder there should be just one file called `input.txt`
+LSTMs work well when you want predict sequences or patterns from your inputs. Try to gather as much input data as you can. The more the better. 
 
+Once your data is ready, create a new folder in the `root` of this project and inside that folder you should have one file called `input.txt` that contains all your training data.
 
-(A quick tip to concatenate many small disparate `.txt` files into one large training file: `ls *.txt | xargs -L 1 cat >> input.txt`)
+_(A quick tip to concatenate many small disparate `.txt` files into one large training file: `ls *.txt | xargs -L 1 cat >> input.txt`)_
 
-Once inside that folder run:
+### 2) Train
+
+Run the training script with the default settings: 
 
 ```bash
-python train.py --data_dir=./data/my_own_data/
+python train.py --data_dir=./folder_with_my_custom_data
 ```
 
-You can also specify the hyperparameters:
+Or you can specify the hyperparameters you want depending on the training set, size of your data, etc:
 
 ```bash
-python train.py --data_dir=./data/my_own_data/ --rnn_size 128 --num_layers 2 --seq_length 64 --batch_size 32 --num_epochs 1000
+python train.py --data_dir=./folder_with_my_custom_data --rnn_size 128 --num_layers 2 --seq_length 64 --batch_size 32 --num_epochs 1000 --save_model ./models --save_checkpoints ./checkpoints
 ```
 
-This will train your model and save the model, **in the globals `./models` folder**, in a format usable in ml5. ✨
+This will train your model and save a JavaScript version **in a folder called `./models`**, if you don't specify a different path.
 
-## 3) Use!
+You can also run the script called `run.sh`:
 
-To use model in ml5, you'll just need to point to the new folder in your sketch:
+```bash
+bash run.sh
+```
+
+This file contains the same parameters as the one's described before:
+```bash
+# This are the hyperparameters you can change to fit your data
+python train.py --data_dir=./bronte \
+--rnn_size 128 \
+--num_layers 2 \
+--seq_length 50 \
+--batch_size 50 \
+--num_epochs 50 \
+--save_checkpoints ./checkpoints \
+--save_model ./models
+```
+
+### 3) Use it!
+
+Once the model is ready, you'll just need to point to it in your ml5 sketch:
 
 ```javascript
-const lstm = ml5.LSTMGenerator('./models/your_new_model');
+const lstm = new ml5.LSTMGenerator('./models/your_new_model');
 ```
 
 That's it!
 
 ## Hyperparameters
 
-Given the size of the training dataset, you can use:
+Given the size of the training dataset, here are some hyperparameters that might work:
 
 * 2 MB: 
    - rnn_size 256 (or 128) 
@@ -84,18 +108,3 @@ Given the size of the training dataset, you can use:
   - seq_length 256 (or 128) 
   - batch_size 128 
   - dropout 0.25
-
-_Thanks to Ross Goodwin!_
-
-## Tensorboard
-
-Tensorflow comes with [Tensorboard](https://github.com/tensorflow/tensorboard): "a suite of web applications for inspecting and understanding your TensorFlow runs and graphs.".
-
-To visualize training progress, model graphs, and internal state histograms: fire up Tensorboard and point it at your `log_dir`:
-
-```bash
-$ tensorboard --logdir=./logs/
-```
-
-Then open a browser to [http://localhost:6006](http://localhost:6006) or the correct IP/Port specified.
-

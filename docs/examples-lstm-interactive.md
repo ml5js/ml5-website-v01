@@ -7,7 +7,7 @@ In this interactive demo you ask the LSTM: "Starting with the seed text, predict
 
 This example is built with p5.js.
 
-You can train your own models following [this tutorial](https://github.com/ml5js/ml5-data-and-training/tree/master/training/lstm). More on this soon!
+You can train your own models following [this tutorial](/docs/training-lstm).
 
 ## Demo
 
