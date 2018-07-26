@@ -5,13 +5,23 @@ title: pitchDetection()
 
 A pitch detection algorithm is a way of estimating the pitch or fundamental frequency of an audio signal. This method allows to use a pre-trained machine learning pitch detection model to estimate the pitch of sound file.
 
-Right now ml5.js only support the CREPE model. This model is a direct port of [github.com/marl/crepe](https://github.com/marl/crepe) and only support direct input from the browser microphone.
+Right now ml5.js only support the CREPE model. This model is a direct port of [github.com/marl/crepe](https://github.com/marl/crepe) and only supports direct input from the browser microphone.
 
 ### Example
 
 ```javascript
-const crepe = ml5.pitchDetection('Crepe', context, stream); 
-let results = crepe.getResults();
+const audioContext = new AudioContext();
+// const MicStream = MicStream
+const pitch = ml5.pitchDetection('./model/', audioContext , MicStream, modelLoaded); 
+
+// When the model is loaded
+function modelLoaded() {
+  console.log('Model Loaded!');
+}
+
+pitch.getPitch(function(err, frequency){
+  console.log(frequency)
+});
 ```
 
 [Here](https://github.com/ml5js/ml5-examples/blob/master/p5js/PitchDetection_Game/sketch.js) is a complete example.
@@ -19,13 +29,14 @@ let results = crepe.getResults();
 ## Constructor
 
 ```javascript
-ml5.pitchDetection(model, audioContext, stream)
+ml5.pitchDetection(model, audioContext, stream, callback)
 ```
 
 ### Parameters
-  - `model` - A String value of a valid model. Only [CREPE](https://github.com/marl/crepe) is available for now. Case insensitive.
+  - `model` - The path to the trained model. Only [CREPE](https://github.com/marl/crepe) is available for now. Case insensitive.
   - `audioContext` - The browser audioContext to use.
-  - `stream MediaStream` - The media stream
+  - `stream MediaStream` - The media stream to use.
+  - `callback` - Optional. A callback to be called once the model has loaded. If no callback is provided, it will return a promise that will be resolved once the model has loaded.
 
 ## Properties
 
@@ -43,13 +54,11 @@ ml5.pitchDetection(model, audioContext, stream)
 ## Methods
 
 ```
-.getResults()
+.getPitch(?callback)
 ```
-> Returns the results from the model attempting to predict the pitch.
+> Returns the pitch from the model attempting to predict the pitch.
 
-`result` -  The pitch prediction, if available, or a string 'no voice' if a voice is not detected.
-
-`confidence` -  How confident the model is about its prediction.
+`callback` -  Optional. A function to be called when the model has generated content. If no callback is provided, it will return a promise that will be resolved once the model has predicted the pitch.
 
 ## Source
 

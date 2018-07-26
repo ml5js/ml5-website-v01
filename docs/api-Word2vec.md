@@ -11,22 +11,28 @@ You can use the word models [we provide](https://github.com/ml5js/ml5-examples/t
 
 ```javascript
 // Create a new word2vec method
-const wordVectors = ml5.word2vec('data/wordvecs.json');
+const wordVectors = ml5.word2vec('data/wordvecs.json', modelLoaded);
+
+// When the model is loaded
+function modelLoaded() {
+  console.log('Model Loaded!');
+}
+
 // Find the closest word to 'rainbow'
-const nearest = wordVectors.nearest('rainbow', 1);
-// Find the average of two words
-const average = wordVectors.average(['red', 'green'], 1); // Should output yellow
+wordVectors.nearest('rainbow', function(err, results) {
+  console.log(results);
+});
 ```
 
 [Here](https://github.com/ml5js/ml5-examples/blob/master/p5js/Word2Vec/sketch.js) is a complete example.
 
 ## Constructor
   ```javascript
-  Word2Vec(vectors, ?callback)
+  Word2Vec(model, ?callback)
   ```
-### Parameters 
-  - `vectors` - A string to the path of the JSON model.
-  - `callback` - Optional. A callback function that is called once the model has loaded.
+### Parameters
+  - `model` - A string to the path of the JSON model.
+  - `callback` - Optional. A callback function that is called once the model has loaded. If no callback is provided, it will return a promise that will be resolved once the model has loaded.
 
 ## Properties
 
@@ -43,16 +49,18 @@ const average = wordVectors.average(['red', 'green'], 1); // Should output yello
 ## Methods
 
   ```javascript
-  .add(inputs, ?max)
+  .add(inputs, ?max, ?callback)
   ```
-  > Add a series of vectors. Returns the closest vector of that sum.
+  > Add a series of word vectors. Returns the closest vector of that sum.
 
   `inputs` - An array of strings containing the inputs to be added
 
   `max` - Optional. The maximum results to return. Defaults to 1.
 
+  `callback` - Optional. A callback function that is called once the model has made the operation. If no callback is provided, it will return a promise that will be resolved once operation is completed.
+
   ```javascript
-  .subtract(inputs, ?max)
+  .subtract(inputs, ?max, ?callback)
   ```
   > Subtract a series of vectors. Returns the closest vector of that sum.
 
@@ -60,9 +68,10 @@ const average = wordVectors.average(['red', 'green'], 1); // Should output yello
 
   `max` - Optional. The maximum results to return. Defaults to 1.
 
+  `callback` - Optional. A callback function that is called once the model has made the operation. If no callback is provided, it will return a promise that will be resolved once operation is completed.
 
   ```javascript
-  .average(inputs, ?max)
+  .average(inputs, ?max, ?callback)
   ```
   > Average a series of vectors. Returns the closest vector of that average.
 
@@ -70,8 +79,10 @@ const average = wordVectors.average(['red', 'green'], 1); // Should output yello
 
   `max` - Optional. The maximum results to return. Defaults to 1.
 
+  `callback` - Optional. A callback function that is called once the model has made the operation. If no callback is provided, it will return a promise that will be resolved once operation is completed.
+
   ```javascript
-  .nearest(input, ?max)
+  .nearest(input, ?max, ?callback)
   ```
   > Find the nearest vector. Returns `max` array of values.
 
@@ -79,10 +90,14 @@ const average = wordVectors.average(['red', 'green'], 1); // Should output yello
 
   `max` - Optional. The maximum results to return. Defaults to 10.
 
+  `callback` - Optional. A callback function that is called once the model has made the operation. If no callback is provided, it will return a promise that will be resolved once operation is completed.
+
   ```javascript
-  .getRandomWord()
+  .getRandomWord(?callback)
   ```
   > Find a random vector in the loaded model. Returns a string.
+
+  `callback` - Optional. A callback function that is called once the model has made the operation. If no callback is provided, it will return a promise that will be resolved once operation is completed.
 
 ## Source
 

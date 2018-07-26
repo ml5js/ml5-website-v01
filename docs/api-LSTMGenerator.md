@@ -5,17 +5,22 @@ title: LSTMGenerator()
 
 [LSTMs](https://colah.github.io/posts/2015-08-Understanding-LSTMs/) (Long Short Term Memory networks) are a type of Neural Network architecture useful for working with sequential data (like characters in text or the musical notes of a song) where the order of the that sequence matters. This class allows you run a model pre-trained on a body of text to generate new text.
 
-You can train your own models [using this tutorial](/docs/training-lstm) or use [this set of pretrained models](https://github.com/ml5js/ml5-data-and-training/tree/master/models/lstm). More on this soon!
+You can train your own models [using this tutorial](/docs/training-lstm) or use [this set of pre trained models](https://github.com/ml5js/ml5-data-and-training/tree/master/models/lstm).
 
 ## Example
 
 ```javascript
 // Create the LSTM Generator with a pre trained model
-const lstm = ml5.LSTMGenerator('models/bolaño/');
+const lstm = ml5.LSTMGenerator('models/bolaño/', modelLoaded);
+
+// When the model is loaded
+function modelLoaded() {
+  console.log('Model Loaded!');
+}
 
 // Generete content
-lstm.generate({ seed: 'the meaning of pizza is' }, function(output){
-  console.log(output);
+lstm.generate({ seed: 'the meaning of pizza is' }, function(err, results){
+  console.log(results);
 });
 ```
 
@@ -30,7 +35,7 @@ lstm.generate({ seed: 'the meaning of pizza is' }, function(output){
 ### Parameters
   - `model` - The path to the trained LSTM model.
 
-  - `callback` - Optional. A callback to be called once the model has loaded.
+  - `callback` - Optional. A callback to be called once the model has loaded. If no callback is provided, it will return a promise that will be resolved once the model has loaded.
 
 ## Properties
 
@@ -65,7 +70,7 @@ lstm.generate({ seed: 'the meaning of pizza is' }, function(output){
   }
   ```
 
-  `callback` - Optional. A function to be called when the model has generated content.
+  `callback` - Optional. A function to be called when the model has generated content. If no callback is provided, it will return a promise that will be resolved once the model has generated new content.
 
 ## Source
 

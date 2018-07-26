@@ -2,10 +2,12 @@
   "docs": {
     "Documentation": [
       "getting-started",
+      "promises-callback",
       "ImageClassifier",
       "FeatureExtractor",
       "LSTMGenerator",
       "PitchDetection",
+      "Pix2Pix",
       "PoseNet",
       "StyleTransfer",
       "Word2vec",
@@ -21,6 +23,7 @@
       "lstm-interactive-example",
       "style-transfer-image-example",
       "style-transfer-webcam-example",
+      "pix2pix-example",
       "posenet-webcam",
       "yolo-webcam",
       "word2vec-example"

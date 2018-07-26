@@ -3,7 +3,7 @@ id: FeatureExtractor
 title: featureExtractor()
 ---
 
-You can use neural networks to recognize the content of images. Most of the times you will be using a model trained on a large dataset for this. But you can also use part of a pre-trained model that has already learned some [features]() about the dataset and 'retrain' or 'reuse' it for a new custom task. This is known as [Transfer Learning]().
+You can use neural networks to recognize the content of images. Most of the times you will be using a model trained on a large dataset for this. But you can also use part of a pre-trained model that has already learned some [features](https://en.wikipedia.org/wiki/Feature_extraction) about the dataset and 'retrain' or 'reuse' it for a new custom task. This is known as [Transfer Learning](https://en.wikipedia.org/wiki/Transfer_learning).
 
 This class allows you to extract features from pre-trained models and retrain them with new types of data.
 
@@ -11,19 +11,31 @@ This class allows you to extract features from pre-trained models and retrain th
 
 ```javascript
 // Extract the already learned features from MobileNet
-const featureExtractor = ml5.featureExtractor('MobileNet');
+const featureExtractor = ml5.featureExtractor('MobileNet', modelLoaded);
 
-// Create a new classifier using those features
-const classifier = featureExtractor.asClassifier(video);
+// When the model is loaded
+function modelLoaded() {
+  console.log('Model Loaded!');
+}
+
+// Create a new classifier using those features and with a video element
+const classifier = featureExtractor.classification(video, videoReady);
+
+// Triggers when the video is ready
+function videoReady() {
+  console.log('The video is ready!');
+}
 
 // Add a new image with a label
 classifier.addImage(document.getElementById('dogA') , 'dog');
 
 // Retrain the network
-classifier.train();
+classifier.train(function(lossValue) {
+  console.log('Loss is', lossValue)
+});
 
 // Get a prediction for that image
-classifier.predict(document.getElementById('dogB'), function(results) {
+classifier.predict(document.getElementById('dogB'), function(err, results) {
   console.log(results) // Should output ['dog']
 });
 ```
@@ -42,7 +54,7 @@ classifier.predict(document.getElementById('dogB'), function(results) {
   ```
 ### Parameters
   - `model` - The model from which extract the learned features. Case-insensitive
-  - `callback` - Optional. A function to be executed once the model has been loaded.
+  - `callback` - Optional. A function to be executed once the model has been loaded. If no callback is provided, it will return a promise that will be resolved once the model has loaded.
   - `options` - Optional. An object containing custom options. For the MobileNet model these are the custom options you can reset:
 
   ```javascript
@@ -92,22 +104,22 @@ ml5.featureExtractor('MobileNet')
 ### Methods
 
   ```javascript
-  .classifier(video, callback)
+  .classification(?video, ?callback)
   ```
   > Use the features of MobileNet as a classifier
 
-  `video` - An HTML video element or a p5.js video element.
+  `video` - Optional. An HTML video element or a p5.js video element.
 
-  `callback` - A function to be called once the video is ready.
+  `callback` - Optional. A function to be called once the video is ready. If no callback is provided, it will return a promise that will be resolved once the video element has loaded.
 
   ```javascript
-  .regression(video, callback)
+  .regression(?video, ?callback)
   ```
   > Use the features of MobileNet as a regressor
 
-  `video` - An HTML video element or a p5.js video element.
+  `video` - Optional. An HTML video element or a p5.js video element.
 
-  `callback` - A function to be called once the video is ready.
+  `callback` - Optional. A function to be called once the video is ready. If no callback is provided, it will return a promise that will be resolved once the video element has loaded.
 
   ```javascript
   .addImage(label, ?callback)
@@ -117,11 +129,11 @@ ml5.featureExtractor('MobileNet')
   ```
   > Adds a new image element to 
 
-  `input` -  An HTML image or video element or a p5 image or video element. If not input is provided, the video element provided in the method-type will be used.
+  `input` -  Optional. An HTML image or video element or a p5 image or video element. If not input is provided, the video element provided in the method-type will be used.
 
   `label` -  The label to associate the new image with. When using the classifier this can be strings or numbers. For a regressor, this needs to be a number.
 
-  `callback` - A function to be called once the new image has been added to the model.
+  `callback` - Optional. A function to be called once the new image has been added to the model. If no callback is provided, it will return a promise that will be resolved once the image has been added.
 
 
   ```javascript
@@ -139,9 +151,9 @@ ml5.featureExtractor('MobileNet')
   ```
   > Classifies an an image based on a new retrained model. `.classification()` needs to be used with this.
 
-  `input` - An HTML image or video element or a p5 image or video element. If not input is provided, the video element provided in the method-type will be used.
+  `input` - Optional. An HTML image or video element or a p5 image or video element. If not input is provided, the video element provided in the method-type will be used.
 
-  `callback` - A function to be called once the input has been classified.
+  `callback` - Optional. A function to be called once the input has been classified. If no callback is provided, it will return a promise that will be resolved once the model has classified the image.
 
   ```javascript
   .predict(?callback)
@@ -151,9 +163,9 @@ ml5.featureExtractor('MobileNet')
   ```
   > Predicts a continues values based on a new retrained model. `.regression()` needs to be used with this. 
 
-  `input` - An HTML image or video element or a p5 image or video element. If not input is provided, the video element provided when creating the regression will be used.
+  `input` - Optional. An HTML image or video element or a p5 image or video element. If not input is provided, the video element provided when creating the regression will be used.
 
-  `callback` - A function to be called once the input has been predicted.
+  `callback` - Optional. A function to be called once the input has been predicted. If no callback is provided, it will return a promise that will be resolved once the model has predicted the image.
 
 ## Source
 

@@ -12,14 +12,20 @@ this model from the cloud. What the algorithm labels an image is entirely depend
 
 ```javascript
 // Initialize the Image Classifier method with MobileNet
-const classifier = ml5.imageClassifier('MobileNet');
+const classifier = ml5.imageClassifier('MobileNet', modelLoaded);
+
+// When the model is loaded
+function modelLoaded() {
+  console.log('Model Loaded!');
+}
+
 // Make a prediction with a selected image
-classifier.predict(document.getElementById('image'), function(results) {
+classifier.predict(document.getElementById('image'), function(err, results) {
   console.log(results);
 });
 ```
 
-[Here](https://github.com/ml5js/ml5-examples/blob/master/p5js/ImageClassification/sketch.js) is a complete example with the [p5.js](https://p5js.org/) library for loading and displaying the image.
+[Here](https://github.com/ml5js/ml5-examples/blob/master/p5js/ImageClassification/sketch.js) is a complete example using the [p5.js](https://p5js.org/) library for loading and displaying the image.
 
 ## Syntax
   ```javascript
@@ -41,7 +47,7 @@ classifier.predict(document.getElementById('image'), function(results) {
 ### Parameters
 
   - `model` - A String value of a valid model. Only [MobileNet](https://github.com/tensorflow/tfjs-models/tree/master/MobileNet) is available for now. Case insensitive.
-  - `callback` - Optional. A function to run once the model has been loaded.
+  - `callback` - Optional. A function to run once the model has been loaded. If no callback is provided, it will return a promise that will be resolved once the model has loaded.
   - `options` - Optional. An object describing a model accuracy and performance. For MobileNet the defaults are: `{ version: 1,
     alpha: 1.0, topk: 3, }`
   - `video` - Optional. A HTML video element or a p5 video element.
@@ -87,7 +93,7 @@ classifier.predict(document.getElementById('image'), function(results) {
 
   `numberOfClasses` -  The number of results to return.
 
-  `callback` - A function to run once the model has made the prediction.
+  `callback` - Optional. A function to run once the model has made the prediction. If no callback is provided, it will return a promise that will be resolved once the model has made a prediction.
 
 ## Source
 
