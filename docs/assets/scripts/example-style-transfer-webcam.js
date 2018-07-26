@@ -48,7 +48,7 @@ function startStop() {
 }
 
 // When we get the results, update the result image src
-function gotResult(img) {
+function gotResult(err, img) {
   resultImg.attribute('src', img.src);
   if (isTransfering) {
     style.transfer(gotResult); 

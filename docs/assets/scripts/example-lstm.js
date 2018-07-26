@@ -56,10 +56,10 @@ function generate() {
     lstm.generate(data, gotData);
 
     // When it's done
-    function gotData(result) {
+    function gotData(err, result) {
       // Update the status log
       select('#status').html('Ready!');
-      select('#result').html(txt + result.generated);
+      select('#result').html(txt + result);
     }
   }
 }

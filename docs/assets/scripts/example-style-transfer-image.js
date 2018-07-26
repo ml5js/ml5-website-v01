@@ -25,7 +25,6 @@ function setup() {
 // A function to be called when the models have loaded
 function modelLoaded() {
   // Check if both models are loaded
-  console.log(statusMsg);
   if(style1.ready && style2.ready){
     statusMsg.html('Ready!')
   }
@@ -35,11 +34,11 @@ function modelLoaded() {
 function transferImages() {
   statusMsg.html('Applying Style Transfer...!');
 
-  style1.transfer(inputImg, function(result) {
+  style1.transfer(inputImg, function(err, result) {
     createImg(result.src).parent('styleA');
   });
 
-  style2.transfer(inputImg, function(result) {
+  style2.transfer(inputImg, function(err, result) {
     createImg(result.src).parent('styleB');
   });
 

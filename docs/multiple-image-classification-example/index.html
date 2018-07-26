@@ -28,14 +28,8 @@
 <pre><code class="hljs css languages- shell">mv data.json ../assets/data.json
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="code"></a><a href="#code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Code</h2>
-<pre><code class="hljs css languages- javascript"><span class="hljs-comment">/* ===
-ML5 Example
-ImageNet_Multiple
-Multiple Image Classification using p5.js
-=== */</span>
-
-<span class="hljs-comment">// Initialize the ImageNet method with the MobileNet model.</span>
-<span class="hljs-keyword">const</span> classifier = <span class="hljs-keyword">new</span> ml5.ImageClassifier(<span class="hljs-string">'MobileNet'</span>);
+<pre><code class="hljs css languages- javascript"><span class="hljs-comment">// Initialize the Image Classifier method using MobileNet</span>
+<span class="hljs-keyword">const</span> classifier = ml5.imageClassifier(<span class="hljs-string">'MobileNet'</span>, modelReady);
 
 <span class="hljs-keyword">let</span> img;
 <span class="hljs-keyword">let</span> currentIndex = <span class="hljs-number">0</span>;
@@ -44,25 +38,8 @@ Multiple Image Classification using p5.js
 <span class="hljs-keyword">let</span> displayTime = <span class="hljs-number">750</span>;
 <span class="hljs-keyword">let</span> predictions = [];
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">appendImages</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; data.images.length; i++) {
-    imgPath = data.images[i];
-    allImages.push(getImagePath(imgPath));
-  }
-}
-
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">preload</span>(<span class="hljs-params"></span>) </span>{
-  data = loadJSON(<span class="hljs-string">'/assets/data.json'</span>);
-}
-
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getImagePath</span>(<span class="hljs-params">imgPath</span>) </span>{
-  fullPath = <span class="hljs-string">'images/dataset/'</span>;
-  fullPath = fullPath + imgPath;
-  <span class="hljs-keyword">return</span> fullPath
-}
-
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">drawNextImage</span>(<span class="hljs-params"></span>) </span>{
-  img.attribute(<span class="hljs-string">'src'</span>, allImages[currentIndex], imageReady);
+  data = loadJSON(<span class="hljs-string">'assets/data.json'</span>);
 }
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setup</span>(<span class="hljs-params"></span>) </span>{
@@ -71,11 +48,25 @@ Multiple Image Classification using p5.js
   img = createImg(allImages[<span class="hljs-number">0</span>], imageReady);
 }
 
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">modelReady</span>(<span class="hljs-params"></span>) </span>{
+  select(<span class="hljs-string">'#status'</span>).html(<span class="hljs-string">'Model Loaded'</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">appendImages</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; data.images.length; i++) {
+    imgPath = data.images[i];
+    allImages.push(<span class="hljs-string">'images/dataset/'</span> + imgPath);
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">drawNextImage</span>(<span class="hljs-params"></span>) </span>{
+  img.attribute(<span class="hljs-string">'src'</span>, allImages[currentIndex], imageReady);
+}
 
 <span class="hljs-comment">// When the image has been loaded,</span>
 <span class="hljs-comment">// get a prediction for that image</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">imageReady</span>(<span class="hljs-params"></span>) </span>{
-  classifier.predict(img.elt, <span class="hljs-number">10</span>, gotResult);
+  classifier.predict(img, gotResult);
 }
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">savePredictions</span>(<span class="hljs-params"></span>) </span>{
@@ -95,16 +86,16 @@ Multiple Image Classification using p5.js
 }
 
 <span class="hljs-comment">// When we get the results</span>
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">gotResult</span>(<span class="hljs-params">results</span>) </span>{
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">gotResult</span>(<span class="hljs-params">err, results</span>) </span>{
   information = {
     <span class="hljs-string">"name"</span>: allImages[currentIndex],
     <span class="hljs-string">"result"</span>: results,
   }
   predictions.push(information);
-
+  <span class="hljs-built_in">console</span>.log(results);
   <span class="hljs-keyword">if</span> (display) {
     <span class="hljs-comment">// The results are in an array ordered by probability.</span>
-    select(<span class="hljs-string">'#result'</span>).html(results[<span class="hljs-number">0</span>].label);
+    select(<span class="hljs-string">'#result'</span>).html(results[<span class="hljs-number">0</span>].className);
     select(<span class="hljs-string">'#probability'</span>).html(nf(results[<span class="hljs-number">0</span>].probability, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>));
     <span class="hljs-comment">// Can be changed with the displayTime variable.</span>
     setTimeout(removeImage, displayTime);
