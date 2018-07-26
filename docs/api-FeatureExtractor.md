@@ -3,9 +3,9 @@ id: FeatureExtractor
 title: featureExtractor()
 ---
 
-You can use neural networks to recognize the content of images. Most of the times you will be using a model trained on a large dataset for this. But you can also use part of a pre-trained model that has already learned some [features](https://en.wikipedia.org/wiki/Feature_extraction) about the dataset and 'retrain' or 'reuse' it for a new custom task. This is known as [Transfer Learning](https://en.wikipedia.org/wiki/Transfer_learning).
+You can use neural networks to recognize the content of images. Most of the time you will be using a "pre-trained" model trained on a large dataset to classify an image into a fixed set of categories. However you can also use a part of the pre-trained model: the [features](https://en.wikipedia.org/wiki/Feature_extraction). Those features allow you to  'retrain' or 'reuse' the model for a new custom task. This is known as [Transfer Learning](https://en.wikipedia.org/wiki/Transfer_learning).
 
-This class allows you to extract features from pre-trained models and retrain them with new types of data.
+This class allows you to extract features of an image via a pre-trained model and re-train that model with new data.
 
 ## Example
 
