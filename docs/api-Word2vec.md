@@ -7,6 +7,7 @@ Word2vec is a group of related models that are used to produce [word embeddings]
 
 You can use the word models [we provide](https://github.com/ml5js/ml5-examples/tree/master/p5js/Word2Vec/data), trained on a corpus of english words (watch out for bias data!), or you can train your own vector models following [this tutorial](https://github.com/ml5js/ml5-data-and-training/tree/master/training). More of this soon!
 
+
 ### Example
 
 ```javascript
