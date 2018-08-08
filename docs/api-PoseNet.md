@@ -7,6 +7,8 @@ PoseNet is a machine learning model that allows for [Real-time Human Pose Estima
 
 PoseNet can be used to estimate either a single pose or multiple poses, meaning there is a version of the algorithm that can detect only one person in an image/video and one version that can detect multiple persons in an image/video.
 
+The original PoseNet model was ported to Tensorflow.js by Dan Oved. Check out his [blog post](https://medium.com/tensorflow/real-time-human-pose-estimation-in-the-browser-with-tensorflow-js-7dd0bc881cd5).
+
 ## Example
 
 ```javascript

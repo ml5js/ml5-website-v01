@@ -7,6 +7,9 @@ Style Transfer is a machine learning technique that allows to transfer the style
 
 You can train your own images following [this tutorial](docs/training-styletransfer).
 
+This implementation is heavily based on [fast-style-transfer-deeplearnjs](https://github.com/reiinakano/fast-style-transfer-deeplearnjs) by [Reiichiro Nakano](https://github.com/reiinakano).
+The [original Tensorflow implementation](https://github.com/lengstrom/fast-style-transfer) was developed by [Logan Engstrom](https://github.com/lengstrom)
+
 ## Example
 
 ```javascript

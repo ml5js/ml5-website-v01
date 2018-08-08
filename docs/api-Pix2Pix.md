@@ -8,6 +8,9 @@ Image-to-image translation with conditional adversarial nets, or pix2pix, is a m
 
 > The pix2pix model works by training on pairs of images such as building facade labels to building facades, and then attempts to generate the corresponding output image from any input image you give it. [Source](https://affinelayer.com/pixsrv/)
 
+The original pix2pix Tensorflow implementation was made by [affinelayer](https://github.com/affinelayer/pix2pix-tensorflow).
+This version is heavily based on [Christopher Hesse Tensorflow.js implementation](https://github.com/affinelayer/pix2pix-tensorflow/tree/master/server)
+
 ## Example
 
 ```javascript
