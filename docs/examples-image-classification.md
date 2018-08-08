@@ -5,7 +5,7 @@ title: Image Classification
 
 Image classification example using [MobileNet](https://github.com/tensorflow/tfjs-models/tree/master/mobilenet). MobileNet is a machine learning model trained to recognize the content of certain images.
 
-This example is built with p5.js. You can also find the same example without p5.js [here](https://github.com/ml5js/ml5-examples/tree/master/javascript/ImageClassification).
+This example is built with p5.js. You can also find the same example without p5.js [here](https://github.com/ml5js/ml5-examples/tree/master/javascript/ImageClassification/ImageClassification).
 
 ## Demo
 
@@ -57,4 +57,4 @@ function gotResult(err, results) {
 }
 ```
 
-## [Source](https://github.com/ml5js/ml5-examples/tree/master/p5js/ImageClassification)
+## [Source](https://github.com/ml5js/ml5-examples/tree/master/p5js/ImageClassification/ImageClassification)

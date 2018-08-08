@@ -5,9 +5,9 @@ title: Style Transfer with Webcam
 
 Style Transfer is a machine learning technique that allows to transfer the style of one image into another one. This is a two step process, first you need to train a model on one particular style and then you can apply this style to another image. In this example we are using two pre-trained models.
 
-You can train your own images following [this tutorial](https://github.com/ml5js/ml5-data-and-training/tree/master/training). 
+You can train your own images following [this tutorial](https://github.com/ml5js/ml5-data-and-training/tree/master/training).
 
-This example is using [p5.js](https://p5js.org/). 
+This example is using [p5.js](https://p5js.org/).
 
 *Please enable your webcam*
 
@@ -36,7 +36,7 @@ This example is using [p5.js](https://p5js.org/).
   <br/>
 </div>
 
-<script src="assets/scripts/example-style-transfer-webcam.js"></script>
+<script src="assets/scripts/example-style-transfer-video.js"></script>
 
 ## Code
 
@@ -85,7 +85,7 @@ function startStop() {
   } else {
     select('#startStop').html('Stop');
     // Make a transfer using the video
-    style.transfer(gotResult); 
+    style.transfer(gotResult);
   }
   isTransferring = !isTransferring;
 }
@@ -94,10 +94,9 @@ function startStop() {
 function gotResult(err, img) {
   resultImg.attribute('src', img.src);
   if (isTransferring) {
-    style.transfer(gotResult); 
+    style.transfer(gotResult);
   }
 }
 ```
 
-## [Source](https://github.com/ITPNYU/ml5/tree/master/examples/fast_style_transfer_mirror)
-
+## [Source](https://github.com/ml5js/ml5-examples/tree/master/p5js/StyleTransfer/StyleTransfer_Video/)

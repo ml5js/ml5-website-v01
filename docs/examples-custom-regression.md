@@ -3,7 +3,7 @@ id: custom-regression
 title: Regression with Feature Extractor
 ---
 
-This example uses the feature extraction method over the MobileNet model to create a regression and output continuos values. This will allow you to control a slider after training the model between just three categories of images.
+This example uses the feature extraction method over the MobileNet model to create a regression and output continous values. This will allow you to control a slider after training the model between just three categories of images.
 
 *Please enable your webcam*
 
@@ -43,7 +43,7 @@ This example uses the feature extraction method over the MobileNet model to crea
   <p>4. Click 'Start predicting!' and move your face left and right!</p>
   <br>
   <br>
-  
+
   <p>
     <input type="range" name="slider" id="slider" min="0.01" max="1.0" step="0.01" value="0.5">
   </p>
@@ -147,5 +147,4 @@ function gotResults(err, result) {
 }
 ```
 
-## [Source](https://github.com/ml5js/ml5-examples/tree/master/p5js/FeatureExtractor_Image_Classification)
-
+## [Source](https://github.com/ml5js/ml5-examples/tree/master/p5js/FeatureExtractor/FeatureExtractor_Image_Classification)

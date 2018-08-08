@@ -5,9 +5,9 @@ title: Style Transfer
 
 Style Transfer is a machine learning technique that allows to transfer the style of one image into another one. This is a two step process, first you need to train a model on one particular style and then you can apply this style to another image. In this example we are using two pre-trained models.
 
-You can train your own images following [this tutorial](https://github.com/ml5js/ml5-data-and-training/tree/master/training). 
+You can train your own images following [this tutorial](https://github.com/ml5js/ml5-data-and-training/tree/master/training).
 
-This example is using [p5.js](https://p5js.org/). 
+This example is using [p5.js](https://p5js.org/).
 
 ## Demo
 
@@ -40,13 +40,11 @@ This example is using [p5.js](https://p5js.org/).
   <script src="assets/scripts/example-style-transfer-image.js"></script>
 </div>
 
-
-
 ## Code
 
 ```javascript
 // Copyright (c) 2018 ml5
-// 
+//
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
@@ -90,7 +88,7 @@ function modelLoaded() {
 // Apply the transfer to both images!
 function transferImages() {
   statusMsg.html('Applying Style Transfer...!');
-  
+
   style1.transfer(inputImg, function(err, result) {
     createImg(result.src).parent('styleA');
   });
@@ -103,4 +101,4 @@ function transferImages() {
 }
 ```
 
-## [Source](https://github.com/ITPNYU/ml5/tree/master/examples/fast_style_transfer)
+## [Source](https://github.com/ml5js/ml5-examples/tree/master/p5js/StyleTransfer/StyleTransfer_Image/)
