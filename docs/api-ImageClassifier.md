@@ -25,7 +25,7 @@ classifier.predict(document.getElementById('image'), function(err, results) {
 });
 ```
 
-[Here](https://github.com/ml5js/ml5-examples/blob/master/p5js/ImageClassification/sketch.js) is a complete example using the [p5.js](https://p5js.org/) library for loading and displaying the image.
+[Here](https://github.com/ml5js/ml5-examples/blob/master/p5js/ImageClassification/ImageClassification/sketch.js) is a complete example using the [p5.js](https://p5js.org/) library for loading and displaying the image.
 
 ## Syntax
   ```javascript

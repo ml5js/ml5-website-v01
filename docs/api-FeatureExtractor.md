@@ -40,9 +40,9 @@ classifier.predict(document.getElementById('dogB'), function(err, results) {
 });
 ```
 
-[Here](https://github.com/ml5js/ml5-examples/blob/master/p5js/FeatureExtractor_Image_Regression/sketch.js) is a complete example to create a custom regression.
+[Here](https://github.com/ml5js/ml5-examples/blob/master/p5js/FeatureExtractor/FeatureExtractor_Image_Regression/sketch.js) is a complete example to create a custom regression.
 
-[Here](https://github.com/ml5js/ml5-examples/blob/master/p5js/FeatureExtractor_Image_Classification/sketch.js) is a complete example to create a custom classifier.
+[Here](https://github.com/ml5js/ml5-examples/blob/master/p5js/FeatureExtractor/FeatureExtractor_Image_Classification/sketch.js) is a complete example to create a custom classifier.
 
 ## Syntax
   ```javascript
@@ -66,11 +66,11 @@ classifier.predict(document.getElementById('dogB'), function(err, results) {
     hiddenUnits: 100,
     epochs: 20,
     numClasses: 2,
-    batchSize: 0.4, 
+    batchSize: 0.4,
   }
   ```
 ### MobileNet Features
---- 
+---
 
 The following are the Properties and Methods when MobileNet is selected as the model from which to extract the Features:
 
@@ -88,7 +88,7 @@ ml5.featureExtractor('MobileNet')
   ```javascript
   .hasAnyTrainedClass
   ```
-  > Boolean value that specifies if new data has been added to the model 
+  > Boolean value that specifies if new data has been added to the model
 
   ```javascript
   .usageType
@@ -127,7 +127,7 @@ ml5.featureExtractor('MobileNet')
   ```javascript
   .addImage(input, label, ?callback)
   ```
-  > Adds a new image element to 
+  > Adds a new image element to
 
   `input` -  Optional. An HTML image or video element or a p5 image or video element. If not input is provided, the video element provided in the method-type will be used.
 
@@ -161,7 +161,7 @@ ml5.featureExtractor('MobileNet')
   ```javascript
   .predict(input, ?callback)
   ```
-  > Predicts a continues values based on a new retrained model. `.regression()` needs to be used with this. 
+  > Predicts a continues values based on a new retrained model. `.regression()` needs to be used with this.
 
   `input` - Optional. An HTML image or video element or a p5 image or video element. If not input is provided, the video element provided when creating the regression will be used.
 

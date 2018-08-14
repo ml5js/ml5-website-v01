@@ -12,7 +12,7 @@ At present ml5.js only supports the CREPE model. This model is a direct port of 
 ```javascript
 const audioContext = new AudioContext();
 // const MicStream = MicStream
-const pitch = ml5.pitchDetection('./model/', audioContext , MicStream, modelLoaded); 
+const pitch = ml5.pitchDetection('./model/', audioContext , MicStream, modelLoaded);
 
 // When the model is loaded
 function modelLoaded() {
@@ -24,7 +24,7 @@ pitch.getPitch(function(err, frequency){
 });
 ```
 
-[Here](https://github.com/ml5js/ml5-examples/blob/master/p5js/PitchDetection_Game/sketch.js) is a complete example.
+[Here](https://github.com/ml5js/ml5-examples/blob/master/p5js/PitchDetection/PitchDetection_Game/sketch.js) is a complete example.
 
 ## Constructor
 
@@ -42,7 +42,7 @@ ml5.pitchDetection(model, audioContext, stream, callback)
 
 `.audioContext` - the AudioContext instance. Contains sampleRate, currentTime, state, baseLatency.
 
-`.model` - the pitch detection model. 
+`.model` - the pitch detection model.
 
 `.results` - the current pitch prediction results from the classification model.
 
