@@ -59,4 +59,4 @@ function gotResult(err, results) {
 
 ```
 
-## [Source](https://github.com/ml5js/ml5-examples/tree/master/p5js/ImageClassification_Video)
+## [Source](https://github.com/ml5js/ml5-examples/tree/master/p5js/ImageClassification/ImageClassification_Video)
