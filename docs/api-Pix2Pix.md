@@ -3,7 +3,7 @@ id: Pix2Pix
 title: pix2pix()
 ---
 
-Image-to-image translation with conditional adversarial nets, or pix2pix, is a machine learning technique developed by 
+Image-to-image translation with conditional adversarial nets, or pix2pix, is a machine learning technique developed by
 [Isola et al](https://github.com/phillipi/pix2pix) that learns how to map input images to output images.
 
 > The pix2pix model works by training on pairs of images such as building facade labels to building facades, and then attempts to generate the corresponding output image from any input image you give it. [Source](https://affinelayer.com/pixsrv/)
@@ -28,7 +28,7 @@ pix2pix.transfer(canvas, function(err, result) {
 });
 ```
 
-[Here](https://github.com/ml5js/ml5-examples/blob/master/p5js/Pix2Pix_callback/sketch.js) is a complete example.
+[Here](https://github.com/ml5js/ml5-examples/blob/master/p5js/Pix2Pix/Pix2Pix_callback/sketch.js) is a complete example.
 
 ## Syntax
   ```javascript

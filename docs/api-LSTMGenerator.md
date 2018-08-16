@@ -24,7 +24,7 @@ lstm.generate({ seed: 'the meaning of pizza is' }, function(err, results){
 });
 ```
 
-[Here](https://github.com/ml5js/ml5-examples/blob/master/p5js/LSTM_Text/sketch.js) is a complete example using the [p5.js](https://p5js.org) library.
+[Here](https://github.com/ml5js/ml5-examples/blob/master/p5js/LSTM/LSTM_Text/sketch.js) is a complete example using the [p5.js](https://p5js.org) library.
 
 ## Syntax
 

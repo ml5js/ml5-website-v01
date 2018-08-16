@@ -12,7 +12,7 @@ You can train your own models following [this tutorial](/docs/training-lstm).
 ## Demo
 
 <div class="example">
-  <p>seed text: <input id="textInput" value="The meaning of life is" /></p> 
+  <p>seed text: <input id="textInput" value="The meaning of life is" /></p>
   <p>length: <input id="lenSlider" type="range" min="10" max="500" value="100"> <span id="length">100</span></p>
   <p>temperature:<input id="tempSlider" type="range" min="0" max="1" step="0.01"><span id="temperature">0.5</span></p>
   <p id="status">Loading Model</p>
@@ -93,5 +93,4 @@ function generate() {
 }
 ```
 
-## [Source](https://github.com/ml5js/ml5-examples/tree/master/p5js/LSTM_Text)
-
+## [Source](https://github.com/ml5js/ml5-examples/tree/master/p5js/LSTM/LSTM_Text)

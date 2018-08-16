@@ -148,5 +148,4 @@ function gotResults(err, result) {
 }
 ```
 
-## [Source](https://github.com/ml5js/ml5-examples/tree/master/p5js/FeatureExtractor_Image_Classification)
-
+## [Source](https://github.com/ml5js/ml5-examples/tree/master/p5js/FeatureExtractor/FeatureExtractor_Image_Classification)

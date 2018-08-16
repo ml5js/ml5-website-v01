@@ -94,5 +94,4 @@ function generate() {
 
 ```
 
-## [Source](https://github.com/ml5js/ml5-examples/tree/master/p5js/LSTM_Interactive)
-
+## [Source](https://github.com/ml5js/ml5-examples/tree/master/p5js/LSTM/LSTM_Interactive)

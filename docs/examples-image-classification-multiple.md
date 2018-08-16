@@ -25,7 +25,7 @@ cd images/dataset
 
 If you type 'ls', you can see many folders, each containing images. The images that you want to make predictions on can be in any format.
 
-Once in the folder, type 'tree'. You can see a printout of the structure of the data folder. 
+Once in the folder, type 'tree'. You can see a printout of the structure of the data folder.
 
 <img src="assets/img/tree.png" style="margin:0px" />
 
@@ -138,4 +138,4 @@ function gotResult(err, results) {
 }
 ```
 
-## [Source](https://github.com/ml5js/ml5-examples/tree/master/p5js/ImageClassification_MultipleImages)
+## [Source](https://github.com/ml5js/ml5-examples/tree/master/p5js/ImageClassification/ImageClassification_MultipleImages)

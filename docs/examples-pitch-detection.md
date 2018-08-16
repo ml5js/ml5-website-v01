@@ -5,7 +5,7 @@ title: Pitch Detection
 
 A pitch detection algorithm is a way of estimating the pitch or fundamental frequency of an audio signal. This method allows to use a pre-trained machine learning pitch detection model to estimate the pitch of sound file.
 
-Right now ml5.js only support the CREPE model. This model is a direct port of github.com/marl/crepe and only support direct input from the browser microphone.
+Right now ml5.js only support the CREPE model. This model is a direct port of [github.com/marl/crepe](https://github.com/marl/crepe) and only support direct input from the browser microphone.
 
 This example is built with p5.js.
 
@@ -49,5 +49,4 @@ function draw() {
 }
 ```
 
-## [Source](https://github.com/ml5js/ml5-examples/tree/master/p5js/LSTM_Text)
-
+## [Source](https://github.com/ml5js/ml5-examples/tree/master/p5js/LSTM/LSTM_Text)
