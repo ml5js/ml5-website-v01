@@ -36,7 +36,7 @@ This example is using [p5.js](https://p5js.org/).
   <br/>
 </div>
 
-<script src="assets/scripts/example-style-transfer-video.js"></script>
+<script src="assets/scripts/example-style-transfer-webcam.js"></script>
 
 ## Code
 
