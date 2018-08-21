@@ -35,8 +35,8 @@ classifier.train(function(lossValue) {
 });
 
 // Get a prediction for that image
-classifier.predict(document.getElementById('dogB'), function(err, results) {
-  console.log(results) // Should output ['dog']
+classifier.classify(document.getElementById('dogB'), function(err, result) {
+  console.log(result) // Should output 'dog'
 });
 ```
 
