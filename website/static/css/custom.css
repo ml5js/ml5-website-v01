@@ -89,7 +89,7 @@ a:hover {
   line-height: 1.2;
   font-weight: 600;
   width: 92%;
-  font-family: Apercu;
+  font-family: 'Apercu';
   color: #a256ff;
 }
 
@@ -173,7 +173,7 @@ button.btn-blue {
   border-radius: 25px;
   border: none;
   padding: 1.3em 3em;
-  font-family: Menlo;
+  font-family: Apercu;
   color: white;
   font-size: 15px;
   border: .2rem solid #ffffff;
@@ -243,7 +243,7 @@ footer .sitemap a {
 }
 
 footer .sitemap h5 {
-  color: #1abcfe;
+  color: #a257ff;
 }
 
 footer iframe {
@@ -294,6 +294,8 @@ nav.toc .toggleNav .navGroup.navGroupActive h3 {
 .exampleBlock {
   background: #FFF;
   background-image: url(/img/dot.png);
+  justify-content: center;
+  align-items: center;
 }
 
 .flex {
@@ -318,7 +320,7 @@ nav.toc .toggleNav .navGroup.navGroupActive h3 {
 
 .wrapper {
   margin: 0px auto;
-  max-width: 1250px !important;
+  max-width: 1480px !important;
   padding: 0 20px;
 }
 
@@ -336,7 +338,7 @@ nav.toc .toggleNav .navGroup.navGroupActive h3 {
   font-weight: 500;
   border-radius: 24px;
   /* height: 18em; */
-  padding: 5em 2em 4em 3em;
+  padding: 4em 5em 3em 5em;
 }
 
 p.code.bold {
@@ -345,7 +347,7 @@ p.code.bold {
 }
 
 p.code {
-  font-size: 1.5vw;
+  font-size: 1.2em;
   color: #000000;
 }
 
@@ -402,12 +404,22 @@ nav.toc .toggleNav .navGroup.navGroupActive h3 {
   /* margin: 30px auto; */
 }
 
-@media only screen and (max-width: 800px) and (min-width: 500px){
+@media only screen and (max-width: 900px) and (min-width: 500px){
   .flex {
     flex-direction: column;
   }
   .p5 {
     padding: 3em;
+  }
+
+  .navPusher {
+    padding-top: 70px;
+  }
+  
+
+
+  .pl8 {
+    padding: 2em;
   }
   .subtitle h1 {
     font-size: 3em;
@@ -418,6 +430,33 @@ nav.toc .toggleNav .navGroup.navGroupActive h3 {
   .mb20 {
     margin-bottom: 10px;
   }
+
+  .codeBox{
+    margin-top: 1em;
+  }
+
+  .codeContainer {
+    height: 40em;
+  }
+  .codeContainer h1 {
+    font-size: 30px;
+    line-height: 33px;
+    margin: 1em 1em;
+  }
+
+  .codeExample {
+    padding: 2em;
+    margin: 2em;
+  }
+
+  .ExamplesLinkBlock {
+    padding: 2em 0 4em;
+    text-align: center;
+  }
+  .br {
+    border-right: none;
+    margin: 2em 0em;
+  }
 }
 
 @media only screen and (min-width: 800px) {
@@ -427,12 +466,15 @@ nav.toc .toggleNav .navGroup.navGroupActive h3 {
   .p5 {
     padding: 5em;
   }
-  .codeContainer h1 {
-    font-size: 42px;
+
+  .p105{
+    padding: 10em 5em;
   }
+
   .mb20 {
     margin-bottom: 20px;
   }
+
 }
 
 @media only screen and (max-width: 500px) {
@@ -442,18 +484,55 @@ nav.toc .toggleNav .navGroup.navGroupActive h3 {
   button.btn-blue.mt40.ex {
     font-size: 0.8em;
   }
+  .navPusher {
+    padding-top: 70px;
+  }
+  
+  .navigationSlider .slidingNav ul li a {
+    font-size: 0.5em;
+  }
+
+  .pl8 {
+    padding: 2.5em;
+
+  }
 
   .p5 {
     padding: 2.5em;
   }
   .subtitle h1 {
-    font-size: 3em;
+    font-size: 2em;
+  }
+
+  .br {
+    border-right: none;
+    margin: 2em 0em;
+  }
+
+  .codeBox{
+    margin-top: 1em;
+  }
+
+  .codeContainer {
+    height: 40em;
   }
   .codeContainer h1 {
-    font-size: 20px;
+    font-size: 30px;
+    line-height: 33px;
+    margin: 1em 1em;
   }
   .mb20 {
     margin-bottom: 0px;
+  }
+
+  .codeExample {
+    padding: 2em;
+    margin: 2em;
+  }
+
+  .ExamplesLinkBlock {
+    padding: 2em 0 4em;
+    text-align: center;
   }
 }
 
