@@ -49,8 +49,8 @@ classifier.train(<span class="hljs-function"><span class="hljs-keyword">function
 });
 
 <span class="hljs-comment">// Get a prediction for that image</span>
-classifier.predict(<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'dogB'</span>), <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, results</span>) </span>{
-  <span class="hljs-built_in">console</span>.log(results) <span class="hljs-comment">// Should output ['dog']</span>
+classifier.classify(<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'dogB'</span>), <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, result</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(result) <span class="hljs-comment">// Should output 'dog'</span>
 });
 </code></pre>
 <p><a href="https://github.com/ml5js/ml5-examples/blob/master/p5js/FeatureExtractor/FeatureExtractor_Image_Regression/sketch.js">Here</a> is a complete example to create a custom regression.</p>
