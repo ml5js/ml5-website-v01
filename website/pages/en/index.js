@@ -87,7 +87,7 @@ class Why extends React.Component {
   render() {
     return (
       <div className="flex exampleBlock ">
-        <div className="f1 p5 pl8 subtitle getStartedSection">
+        <div className="f1 pHero pl8 subtitle getStartedSection">
           <h1> Friendly Machine Learning for the Web. </h1>
           <p className="mt40 pa">
           ml5.js aims to make machine learning approachable for a broad audience of artists, creative coders, and students. The library provides access to machine learning algorithms and models in the browser, building on top of <code> <a href="https://js.tensorflow.org/">TensorFlow.js</a></code> with no other external dependencies.
@@ -152,14 +152,14 @@ class Texts extends React.Component {
   render() {
     return (
       <div className="flex texts ">
-        <div className="f1 p5 subtitle br ">
+        <div className="f1 p105 subtitle br ">
           <h1 className='mb40 tt'>A Wrapper Around TensorFlow.js</h1>
           <p className="description">
           ml5.js is a friendly high level interface to TensorFlow.js, a library for handling GPU-accelerated mathematical operations and memory management for machine learning algorithms.
           </p>
 
         </div>
-        <div className="f1 p5 subtitle">
+        <div className="f1 p105 subtitle">
           <h1 className='mb40 tt'>Models and Training</h1>
           <p className="description mb40">
           ml5.js provides immediate access in the browser to pre-trained models for detecting human poses, generating text,
@@ -178,7 +178,7 @@ class Texts extends React.Component {
 class Examples extends React.Component {
   render() {
     return (
-      <div className="ExamplesLinkBlock p5">
+      <div className="ExamplesLinkBlock ">
         <button className="btn-blue mt40 ex">
           <a href="/docs/quick-start"> 🌟 See Examples 🌟 </a> 
         </button>
