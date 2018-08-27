@@ -26,11 +26,11 @@ This example is using [p5.js](https://p5js.org/).
       justify-content: space-between;
     }
   </style>
-  <h1>Pix2Pix Edges2Pichaku Example</h1>
-  <p>1. Press your mouse to draw a Pikachu on the canvas below.</p>
-  <p>2. Click 'Transfer' button.</p>
-  <p>3. A colored Pikachu image will appear in ~5s.</p>
-  <p>4. Click 'Clear' button to clear the canvas and draw again.</p>
+  <h1>Pix2Pix Edges2Pikachu Example</h1>
+  <p>1. Wait until the model is loaded</p>
+  <p>2. Press your mouse to draw a Pikachu on the left side of the canvas.</p>
+  <p>3. A colored Pikachu image will automatically appear on the right side of the canvas in ~2 seconds. You could also click the "Transfer" button to generate an new image.</p>
+  <p>4. You could click the "Clear" button to clear the canvas and draw again.</p>
   <p id="status">Loading Model... Please wait...</p>
   <div class="flex">
     <div>
@@ -55,7 +55,7 @@ This example is using [p5.js](https://p5js.org/).
 // The pre-trained Edges2Pikachu model is trained on 256x256 images
 // So the input images can only be 256x256 or 512x512, or multiple of 256
 const SIZE = 256;
-let inputImg, inputCanvas, outputContainer, statusMsg, pix2pix, clearBtn, transferBtn;
+let inputImg, inputCanvas, outputContainer, statusMsg, pix2pix, clearBtn, transferBtn, modelReady = false, isTransfering = false;
 
 function setup() {
   // Create a canvas
@@ -94,10 +94,20 @@ function draw() {
   }
 }
 
+// When mouse is released, transfer the current image if the model is loaded and it's not in the process of another transformation
+function mouseReleased() {
+  if (modelReady && !isTransfering) {
+    transfer()
+  }
+}
+
 // A function to be called when the models have loaded
 function modelLoaded() {
   // Show 'Model Loaded!' message
   statusMsg.html('Model Loaded!');
+
+  // Set modelReady to true
+  modelReady = true;
 
   // Call transfer function after the model is loaded
   transfer();
@@ -119,6 +129,9 @@ function clearCanvas() {
 }
 
 function transfer() {
+  // Set isTransfering to true
+  isTransfering = true;
+
   // Update status message
   statusMsg.html('Applying Style Transfer...!');
 
@@ -131,6 +144,8 @@ function transfer() {
       console.log(err);
     }
     if (result && result.src) {
+      // Set isTransfering back to false
+      isTransfering = false;
       // Clear output container
       outputContainer.html('');
       // Create an image based result
