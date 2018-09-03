@@ -40,11 +40,11 @@
 }
 </code></pre>
   </style>
-  <h1>Pix2Pix Edges2Pichaku Example</h1>
-  <p>1. Press your mouse to draw a Pikachu on the canvas below.</p>
-  <p>2. Click 'Transfer' button.</p>
-  <p>3. A colored Pikachu image will appear in ~5s.</p>
-  <p>4. Click 'Clear' button to clear the canvas and draw again.</p>
+  <h1>Pix2Pix Edges2Pikachu Example</h1>
+  <p>1. Wait until the model is loaded</p>
+  <p>2. Press your mouse to draw a Pikachu on the left side of the canvas.</p>
+  <p>3. A colored Pikachu image will automatically appear on the right side of the canvas in ~2 seconds. You could also click the "Transfer" button to generate an new image.</p>
+  <p>4. You could click the "Clear" button to clear the canvas and draw again.</p>
   <p id="status">Loading Model... Please wait...</p>
   <div class="flex">
     <div>
@@ -64,7 +64,7 @@
 <pre><code class="hljs css languages- javascript"><span class="hljs-comment">// The pre-trained Edges2Pikachu model is trained on 256x256 images</span>
 <span class="hljs-comment">// So the input images can only be 256x256 or 512x512, or multiple of 256</span>
 <span class="hljs-keyword">const</span> SIZE = <span class="hljs-number">256</span>;
-<span class="hljs-keyword">let</span> inputImg, inputCanvas, outputContainer, statusMsg, pix2pix, clearBtn, transferBtn;
+<span class="hljs-keyword">let</span> inputImg, inputCanvas, outputContainer, statusMsg, pix2pix, clearBtn, transferBtn, modelReady = <span class="hljs-literal">false</span>, isTransfering = <span class="hljs-literal">false</span>;
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setup</span>(<span class="hljs-params"></span>) </span>{
   <span class="hljs-comment">// Create a canvas</span>
@@ -103,10 +103,20 @@
   }
 }
 
+<span class="hljs-comment">// When mouse is released, transfer the current image if the model is loaded and it's not in the process of another transformation</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mouseReleased</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">if</span> (modelReady &amp;&amp; !isTransfering) {
+    transfer()
+  }
+}
+
 <span class="hljs-comment">// A function to be called when the models have loaded</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">modelLoaded</span>(<span class="hljs-params"></span>) </span>{
   <span class="hljs-comment">// Show 'Model Loaded!' message</span>
   statusMsg.html(<span class="hljs-string">'Model Loaded!'</span>);
+
+  <span class="hljs-comment">// Set modelReady to true</span>
+  modelReady = <span class="hljs-literal">true</span>;
 
   <span class="hljs-comment">// Call transfer function after the model is loaded</span>
   transfer();
@@ -128,6 +138,9 @@
 }
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">transfer</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// Set isTransfering to true</span>
+  isTransfering = <span class="hljs-literal">true</span>;
+
   <span class="hljs-comment">// Update status message</span>
   statusMsg.html(<span class="hljs-string">'Applying Style Transfer...!'</span>);
 
@@ -140,6 +153,8 @@
       <span class="hljs-built_in">console</span>.log(err);
     }
     <span class="hljs-keyword">if</span> (result &amp;&amp; result.src) {
+      <span class="hljs-comment">// Set isTransfering back to false</span>
+      isTransfering = <span class="hljs-literal">false</span>;
       <span class="hljs-comment">// Clear output container</span>
       outputContainer.html(<span class="hljs-string">''</span>);
       <span class="hljs-comment">// Create an image based result</span>
