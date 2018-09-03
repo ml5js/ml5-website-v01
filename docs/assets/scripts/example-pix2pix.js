@@ -1,7 +1,7 @@
 // The pre-trained Edges2Pikachu model is trained on 256x256 images
 // So the input images can only be 256x256 or 512x512, or multiple of 256
 const SIZE = 256;
-let inputImg, inputCanvas, outputContainer, statusMsg, pix2pix, clearBtn, transferBtn;
+let inputImg, inputCanvas, outputContainer, statusMsg, pix2pix, clearBtn, transferBtn, modelReady = false, isTransfering = false;
 
 function setup() {
   // Create a canvas
@@ -40,10 +40,20 @@ function draw() {
   }
 }
 
+// When mouse is released, transfer the current image if the model is loaded and it's not in the process of another transformation
+function mouseReleased() {
+  if (modelReady && !isTransfering) {
+    transfer()
+  }
+}
+
 // A function to be called when the models have loaded
 function modelLoaded() {
   // Show 'Model Loaded!' message
   statusMsg.html('Model Loaded!');
+
+  // Set modelReady to true
+  modelReady = true;
 
   // Call transfer function after the model is loaded
   transfer();
@@ -65,6 +75,9 @@ function clearCanvas() {
 }
 
 function transfer() {
+  // Set isTransfering to true
+  isTransfering = true;
+
   // Update status message
   statusMsg.html('Applying Style Transfer...!');
 
@@ -77,6 +90,8 @@ function transfer() {
       console.log(err);
     }
     if (result && result.src) {
+      // Set isTransfering back to false
+      isTransfering = false;
       // Clear output container
       outputContainer.html('');
       // Create an image based result
