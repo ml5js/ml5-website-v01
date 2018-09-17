@@ -121,8 +121,7 @@
 <span class="hljs-comment">// A util function to create UI buttons</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setupButtons</span>(<span class="hljs-params"></span>) </span>{
   slider = select(<span class="hljs-string">'#slider'</span>);
-  <span class="hljs-comment">// When the Dog button is pressed, add the current frame</span>
-  <span class="hljs-comment">// from the video with a label of "dog" to the classifier</span>
+  <span class="hljs-comment">// Add sample button</span>
   select(<span class="hljs-string">'#addSample'</span>).mousePressed(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
     regressor.addImage(slider.value());
     select(<span class="hljs-string">'#amountOfSamples'</span>).html(samples++);
