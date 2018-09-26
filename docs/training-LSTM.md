@@ -3,7 +3,7 @@ id: training-lstm
 title: Training a LSTM 
 ---
 
-This short tutorial will go over how to train a custom LSTM on your own dataset and then use the results in ml5.js [LSTMGenerator()](/docs/LSTMGenerator) method. For this, you will need a dataset of text you would like to use. Take a look at some of the ones we are using [here](https://github.com/ml5js/ml5-data-and-training/tree/master/training/lstm/data).
+This short tutorial will go over how to train a custom LSTM on your own dataset and then use the results in ml5.js [LSTMGenerator()](/docs/LSTMGenerator) method. For this, you will need a dataset of text you would like to use. Take a look at some of the ones we are using [here](https://github.com/ml5js/ml5-data-and-models/tree/master/datasets/text).
 
 The code for this tutorial is based on [Sherjil Ozair](https://github.com/sherjilozair/char-rnn-tensorflow) version of [Andrej Karpathy's](https://karpathy.github.io/) [char-rnn code](https://github.com/karpathy/char-rnn).
 
