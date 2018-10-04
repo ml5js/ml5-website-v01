@@ -3,6 +3,9 @@ id: glossary-statistics
 title: Statistics
 ---
 
+## Some new thing here
+A description...
+
 ## Population
 The entire group which we want to study. Usually, we do not have access to the data for the entirety of this group.
 
