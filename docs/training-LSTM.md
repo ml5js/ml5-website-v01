@@ -16,6 +16,8 @@ The code for this tutorial is based on [Sherjil Ozair](https://github.com/sherji
 
 - If you are familiar with Docker, you can also use this  ~~[container]()~~ (soon!)
 
+- You can also train your model in [Paperspace](https://www.paperspace.com/), using [this tutorial](https://blog.paperspace.com/training-an-lstm-and-using-the-model-in-ml5-js/).
+
 ## Usage
 
 ### 1) Download the repository
