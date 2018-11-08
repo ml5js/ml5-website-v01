@@ -3,12 +3,14 @@
     "Documentation": [
       "getting-started",
       "promises-callback",
-      "ImageClassifier",
+      "charRNN",
       "FeatureExtractor",
-      "LSTMGenerator",
+      "ImageClassifier",
+      "KNNClassifier",
       "PitchDetection",
       "Pix2Pix",
       "PoseNet",
+      "SketchRNN",
       "StyleTransfer",
       "Word2vec",
       "YOLO"
