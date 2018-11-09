@@ -28,6 +28,7 @@
     "custom-regression": "Regression with Feature Extractor",
     "multiple-image-classification-example": "Multiple Image Classification",
     "image-classification-example": "Image Classification",
+    "knnclassifier": "KNN Classifier with Feature Extractor",
     "lstm-interactive-example": "Interactive Text Generation LSTM",
     "lstm-example": "Text Generation with LSTM",
     "pitch-detection-example": "Pitch Detection",

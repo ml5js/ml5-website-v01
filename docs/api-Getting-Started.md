@@ -12,14 +12,14 @@ ml5.js is heavily inspired by [Processing](https://processing.org/) and [p5.js](
 
 ## Setup
 
-Reference the [latest version](https://unpkg.com/ml5@0.1.1/dist/ml5.min.js) of ml5.js using a script tag in an HTML file as below:
+Reference the [latest version](https://unpkg.com/ml5@latest/dist/ml5.min.js) of ml5.js using a script tag in an HTML file as below:
 
 ```html
 <!DOCTYPE html>
   <html>
     <head>
       <title>Getting Started with ml5.js</title>
-      <script src="https://unpkg.com/ml5@0.1.1/dist/ml5.min.js"></script>
+      <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
     </head>
 
     <body>
@@ -44,7 +44,7 @@ Let's add something more to classify an image using the pre-trained MobileNet mo
   <head>
     <head>
       <title>Getting Started with ml5.js</title>
-      <script src="https://unpkg.com/ml5@0.1.1/dist/ml5.min.js"></script>
+      <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
     </head>
 
   <body>

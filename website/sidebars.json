@@ -21,6 +21,7 @@
       "video-classification-example",
       "custom-classifier",
       "custom-regression",
+      "knnclassifier",
       "lstm-example",
       "lstm-interactive-example",
       "style-transfer-image-example",
