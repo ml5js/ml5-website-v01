@@ -285,10 +285,11 @@ code {
   color: #a257ff;
 }
 
-nav.toc .toggleNav .navGroup.navGroupActive h3 {
+.toc .toggleNav .navGroup .navGroupCategoryTitle h3 {
   background: #4A90E2;
   color: white;
   padding-left: 1rem;
+  line-height: 1.7em;
 }
 
 .exampleBlock {
@@ -378,10 +379,6 @@ p.code {
 
 .container .wrapper h3 {
   color: #4A90E2;
-}
-
-nav.toc .toggleNav .navGroup.navGroupActive h3 {
-  line-height: 1.7em;
 }
 
 .flex-grid {

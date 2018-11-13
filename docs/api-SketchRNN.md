@@ -3,41 +3,42 @@ id: SketchRNN
 title: SketchRNN()
 ---
 
-SketchRNN is model 
+SketchRNN is a recurrent neural network that was trained on millions of doodles collected from the [Quick, Draw! game](https://quickdraw.withgoogle.com/). With SketchRNN you can have a network continue drawing a figure based on initial strokes.
 
-This original paper and implementation of SketchRNN is TensorFlow and [Magenta.js](https://magenta.tensorflow.org/get-started/#magenta-js) was made by [David Ha](https://twitter.com/hardmaru). The ml5.js implementation was ported by [Reiichiro Nakano](https://github.com/reiinakano).
+This original paper and implementation of SketchRNN was made in TensorFlow and ported to [Magenta.js](https://magenta.tensorflow.org/get-started/#magenta-js) by [David Ha](https://twitter.com/hardmaru). The ml5.js implementation was ported by [Reiichiro Nakano](https://github.com/reiinakano).
+
+A list of completes models that you can with SketchRNN can be found [here]()
 
 ## Example
 
 ```javascript
-// Create a new Style Transfer Instance
-const style = ml5.styleTransfer('data/myModel/', modelLoaded);
+// Create a new SketchRNN Instance
+const model = ml5.SketchRNN('cat', modelReady);
 
 // When the model is loaded
-function modelLoaded() {
-  console.log('Model Loaded!');
+function modelReady() {
+  console.log('SketchRNN Model Loaded!');
 }
-// Grab a img element and generate a new image.
-style.transfer(document.getElementById('img'), function(err, resultImg) {
-  img.src = resultImg.src;
-});
+// Reset the model's current stat
+model.reset();
+// Generate a new stroke
+model.generate(gotSketch);
+
+function gotSketch(err, result) {
+  // Do something with the result
+}
 ```
 
-[Here](https://github.com/ml5js/ml5-examples/blob/master/p5js/StyleTransfer/StyleTransfer_Image/sketch.js) is a complete example.
+[Here](https://github.com/ml5js/ml5-examples/blob/master/p5js/SketchRNN/sketch.js) is a complete example.
 
 ## Syntax
   ```javascript
-  ml5.styleTransfer(model, ?callback)
-  ```
-  ```javascript
-  ml5.styleTransfer(model, ?video, ?callback)
+  ml5.SketchRNN(model, ?callback)
   ```
 
 ### Parameters
 
-  `model` - The path to Style Transfer model.
-
-  `video` - Optional. A HTML video element or a p5 video element.
+  `model` - The name of the model to use.
 
   `callback` - Optional. A function to be called once the model is loaded. If no callback is provided, it will return a promise that will be resolved once the model has loaded.
 
@@ -51,17 +52,22 @@ style.transfer(document.getElementById('img'), function(err, resultImg) {
 ## Methods
 
   ```javascript
-  .transfer(?callback)
+  .reset()
   ```
+  > Reset the model's current RNN state
+
   ```javascript
-  .transfer(input, ?callback)
+  .generate(?seed, ?options, ?callback)
   ```
-  > Apply style transfer to an input. Returns an HTML img element.
+  
+  > Generates a new sample with the current state.
 
-  `input` -  A HTML video or image element or a p5 image or video element. If no input is provided, the default is to use the video element given in the constructor.
+  `seed` - Optional. A seed to be passed to the model before generating a new stroke.
 
-  `callback` - Optional. A function to run once the model has made the transfer. If no callback is provided, it will return a promise that will be resolved once the model has made the transfer.
+  `options` - Optional. An object describing the options of the model.
+
+  `callback` - Optional. A function that will return a generated stroke. If no callback is provided, it will return a promise that will be resolved with a generated stroke.
 
 ## Source
 
-[/src/StyleTransfer/](https://github.com/ml5js/ml5-library/tree/master/src/StyleTransfer)
+[/src/SketchRNN/](https://github.com/ml5js/ml5-library/tree/master/src/SketchRNN)
