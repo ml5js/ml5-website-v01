@@ -190,16 +190,16 @@ function gotResults(err, result) {
   }
 
   if (result.confidencesByLabel) {
-    const confideces = result.confidencesByLabel;
+    const confidences = result.confidencesByLabel;
     // result.label is the label that has the highest confidence
     if (result.label) {
       select('#result').html(result.label);
-      select('#confidence').html(`${confideces[result.label] * 100} %`);
+      select('#confidence').html(`${confidences[result.label] * 100} %`);
     }
 
-    select('#confidenceRock').html(`${confideces['Rock'] ? confideces['Rock'] * 100 : 0} %`);
-    select('#confidencePaper').html(`${confideces['Paper'] ? confideces['Paper'] * 100 : 0} %`);
-    select('#confidenceScissor').html(`${confideces['Scissor'] ? confideces['Scissor'] * 100 : 0} %`);
+    select('#confidenceRock').html(`${confidences['Rock'] ? confidences['Rock'] * 100 : 0} %`);
+    select('#confidencePaper').html(`${confidences['Paper'] ? confidences['Paper'] * 100 : 0} %`);
+    select('#confidenceScissor').html(`${confidences['Scissor'] ? confidences['Scissor'] * 100 : 0} %`);
   }
 
   classify();
