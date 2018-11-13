@@ -194,7 +194,7 @@ function gotResults(err, result) {
   }
 
   if (result.confidencesByLabel) {
-    const confideces = result.confidencesByLabel;
+    const confidences = result.confidencesByLabel;
     // result.label is the label that has the highest confidence
     if (result.label) {
       select('#result').html(result.label);
