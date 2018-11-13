@@ -1,5 +1,5 @@
 ---
-id: charRNN
+id: CharRNN
 title: charRNN()
 ---
 
