@@ -198,7 +198,7 @@ function gotResults(err, result) {
     // result.label is the label that has the highest confidence
     if (result.label) {
       select('#result').html(result.label);
-      select('#confidence').html(`${confideces[result.label] * 100} %`);
+      select('#confidence').html(`${confidences[result.label] * 100} %`);
     }
 
     select('#confidenceRock').html(`${confideces['Rock'] ? confideces['Rock'] * 100 : 0} %`);
