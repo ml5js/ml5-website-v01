@@ -18,6 +18,7 @@ function setup() {
   featureExtractor = ml5.featureExtractor('MobileNet', modelReady);
   // Create a video element
   video = createCapture(VIDEO);
+  video.size(300, 300);
   // Append it to the videoContainer DOM element
   video.parent('videoContainer');
   // Create the UI buttons

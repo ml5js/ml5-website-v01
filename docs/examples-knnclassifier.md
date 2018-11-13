@@ -17,10 +17,6 @@ This example is using [p5.js](https://p5js.org/).
     padding: 4px;
     font-size: 14px;
   }
-  video {
-    width: 300;
-    height: 300;
-  }
   p {
     display: inline;
     font-size: 16px;
