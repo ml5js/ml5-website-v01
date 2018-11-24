@@ -3,7 +3,7 @@ id: SketchRNN
 title: SketchRNN()
 ---
 
-SketchRNN is a recurrent neural network that was trained on millions of doodles collected from the [Quick, Draw! game](https://quickdraw.withgoogle.com/). With SketchRNN you can have a network continue drawing a figure based on initial strokes.
+SketchRNN is a recurrent neural network model trained on millions of doodles collected from the [Quick, Draw! game](https://quickdraw.withgoogle.com/). The SketchRNN model can create new drawings (from a list of categories) based on an initial path.
 
 This original paper and implementation of SketchRNN was made in TensorFlow and ported to [Magenta.js](https://magenta.tensorflow.org/get-started/#magenta-js) by [David Ha](https://twitter.com/hardmaru). The ml5.js implementation was ported by [Reiichiro Nakano](https://github.com/reiinakano).
 
