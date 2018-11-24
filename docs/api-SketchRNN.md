@@ -29,7 +29,7 @@ function gotSketch(err, result) {
 }
 ```
 
-[Here](https://github.com/ml5js/ml5-examples/blob/master/p5js/SketchRNN/sketch.js) is a complete example.
+Here is [a complete example](https://github.com/ml5js/ml5-examples/blob/master/p5js/SketchRNN/sketch.js).
 
 ## Syntax
   ```javascript
