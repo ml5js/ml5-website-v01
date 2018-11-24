@@ -7,7 +7,7 @@ SketchRNN is a recurrent neural network model trained on millions of doodles col
 
 This original paper and implementation of SketchRNN was made in TensorFlow and ported to [Magenta.js](https://magenta.tensorflow.org/get-started/#magenta-js) by [David Ha](https://twitter.com/hardmaru). The ml5.js implementation was ported by [Reiichiro Nakano](https://github.com/reiinakano).
 
-A list of completes models that you can with SketchRNN can be found [here]()
+The ml5 library includes [a list of supported SketchRNN models](https://github.com/ml5js/ml5-library/blob/master/src/SketchRNN/models.js).
 
 ## Example
 
