@@ -54,7 +54,7 @@ Here is [a complete example](https://github.com/ml5js/ml5-examples/blob/master/p
   ```javascript
   .reset()
   ```
-  > Reset the model's current RNN state
+  > Reset the model's current state
 
   ```javascript
   .generate(?seed, ?options, ?callback)
