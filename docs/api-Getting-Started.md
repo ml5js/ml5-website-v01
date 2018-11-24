@@ -19,7 +19,7 @@ Reference the [latest version](https://unpkg.com/ml5@0.1.3/dist/ml5.min.js) of m
   <html>
     <head>
       <title>Getting Started with ml5.js</title>
-      <script src="https://unpkg.com/ml5@00.1.3/dist/ml5.min.js"></script>
+      <script src="https://unpkg.com/ml5@0.1.3/dist/ml5.min.js"></script>
     </head>
 
     <body>
