@@ -46,7 +46,7 @@ classifier.predict(document.getElementById('image'), function(err, results) {
 
 ### Parameters
 
-  - `model` - A String value of a valid model. Case insensitive. Models available are: 'MobileNet', 'Darknet' and 'Darknet-tiny'
+  - `model` - A String value of a valid model. Case insensitive. Models available are: ['MobileNet'](https://arxiv.org/abs/1704.04861), ['Darknet'](https://pjreddie.com/darknet/imagenet/) and ['Darknet-tiny'](https://pjreddie.com/darknet/tiny-darknet/)
   - `callback` - Optional. A function to run once the model has been loaded. If no callback is provided, it will return a promise that will be resolved once the model has loaded.
   - `options` - Optional. An object describing a model accuracy and performance. For MobileNet the defaults are: `{ version: 1,
     alpha: 1.0, topk: 3, }`
