@@ -24,6 +24,7 @@
       "knnclassifier",
       "lstm-example",
       "lstm-interactive-example",
+      "sketchrnn-example",
       "style-transfer-image-example",
       "style-transfer-webcam-example",
       "pix2pix-example",
