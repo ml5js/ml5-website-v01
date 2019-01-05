@@ -3,7 +3,9 @@ id: knnclassifier
 title: KNN Classifier with Feature Extractor
 ---
 
-This example allows people to train a "Rock Paper Scissor" classifier on webcam images by using the KNN Classifier. First, click on the "Add an Example" button to add some examples to each class, then click "Start predicting!" to see the results. You can also load or save a dataset.
+This example allows people to train a "Rock Paper Scissor" classifier on webcam images by using the KNN Classifier.
+
+You can click on the "Add an Example" button to add some examples to each class, then click "Start predicting!" to see the results. You can also load or save a dataset.
 
 This example is using [p5.js](https://p5js.org/).
 
@@ -12,16 +14,16 @@ This example is using [p5.js](https://p5js.org/).
 ## Demo
 
 <style>
-  button {
+  .example button {
     margin: 6px 6px 6px 0;
     padding: 4px;
     font-size: 14px;
   }
-  p {
+  .example p {
     display: inline;
     font-size: 16px;
   }
-  .emoji {
+  .example .emoji {
     font-size: 24px;
   }
 </style>
@@ -72,10 +74,12 @@ This example is using [p5.js](https://p5js.org/).
 let video;
 // Create a KNN classifier
 const knnClassifier = ml5.KNNClassifier();
-// Create a featureExtractor that can extract the already learned features from MobileNet
-const featureExtractor = ml5.featureExtractor('MobileNet', modelReady);
+let featureExtractor;
 
 function setup() {
+  // Create a featureExtractor that can extract the already learned features from MobileNet
+  featureExtractor = ml5.featureExtractor('MobileNet', modelReady);
+
   noCanvas();
   // Create a video element
   video = createCapture(VIDEO);
@@ -100,21 +104,21 @@ function addExample(label) {
 
   // Add an example with a label to the classifier
   knnClassifier.addExample(features, label);
-  updateExampleCounts();
+  updateCounts();
 }
 
 // Predict the current frame.
 function classify() {
-  // Get the total number of classes from knnClassifier
-  const numClasses = knnClassifier.getNumClasses();
-  if (numClasses <= 0) {
-    console.error('There is no examples in any class');
+  // Get the total number of labels from knnClassifier
+  const numLabels = knnClassifier.getNumLabels();
+  if (numLabels <= 0) {
+    console.error('There is no examples in any label');
     return;
   }
   // Get the features of the input video
   const features = featureExtractor.infer(video);
 
-  // Use knnClassifier to classify which class do these features belong to
+  // Use knnClassifier to classify which label do these features belong to
   // You can pass in a callback function `gotResults` to knnClassifier.classify function
   knnClassifier.classify(features, gotResults);
   // You can also pass in an optional K value, K default to 3
@@ -152,17 +156,17 @@ function createButtons() {
   // Reset buttons
   resetBtnA = select('#resetRock');
   resetBtnA.mousePressed(function() {
-    clearClass('Rock');
+    clearLabel('Rock');
   });
 	
   resetBtnB = select('#resetPaper');
   resetBtnB.mousePressed(function() {
-    clearClass('Paper');
+    clearLabel('Paper');
   });
 	
   resetBtnC = select('#resetScissor');
   resetBtnC.mousePressed(function() {
-    clearClass('Scissor');
+    clearLabel('Scissor');
   });
 
   // Predict button
@@ -171,15 +175,15 @@ function createButtons() {
 
   // Clear all classes button
   buttonClearAll = select('#clearAll');
-  buttonClearAll.mousePressed(clearAllClasses);
+  buttonClearAll.mousePressed(clearAllLabels);
 
   // Load saved classifier dataset
   buttonSetData = select('#load');
-  buttonSetData.mousePressed(loadDataset);
+  buttonSetData.mousePressed(loadMyKNN);
 
   // Get classifier dataset
   buttonGetData = select('#save');
-  buttonGetData.mousePressed(saveDataset);
+  buttonGetData.mousePressed(saveMyKNN);
 }
 
 // Show the results
@@ -205,35 +209,35 @@ function gotResults(err, result) {
   classify();
 }
 
-// Update the example count for each class	
-function updateExampleCounts() {
-  const counts = knnClassifier.getClassExampleCountByLabel();
+// Update the example count for each label	
+function updateCounts() {
+  const counts = knnClassifier.getCountByLabel();
 
   select('#exampleRock').html(counts['Rock'] || 0);
   select('#examplePaper').html(counts['Paper'] || 0);
   select('#exampleScissor').html(counts['Scissor'] || 0);
 }
 
-// Clear the examples in one class
-function clearClass(classLabel) {
-  knnClassifier.clearClass(classLabel);
-  updateExampleCounts();
+// Clear the examples in one label
+function clearLabel(label) {
+  knnClassifier.clearLabel(label);
+  updateCounts();
 }
 
-// Clear all the examples in all classes
-function clearAllClasses() {
-  knnClassifier.clearAllClasses();
-  updateExampleCounts();
+// Clear all the examples in all labels
+function clearAllLabels() {
+  knnClassifier.clearAllLabels();
+  updateCounts();
 }
 
 // Save dataset as myKNNDataset.json
-function saveDataset() {
-  knnClassifier.saveDataset('myKNNDataset');
+function saveMyKNN() {
+  knnClassifier.save('myKNNDataset');
 }
 
 // Load dataset to the classifier
-function loadDataset() {
-  knnClassifier.loadDataset('./myKNNDataset.json', updateExampleCounts);
+function loadMyKNN() {
+  knnClassifier.load('./myKNNDataset.json', updateCounts);
 }
 ```
 

@@ -73,6 +73,9 @@
       "image-classification-example": {
         "title": "Image Classification"
       },
+      "knnclassifier-posenet": {
+        "title": "KNN Classifier with PoseNet"
+      },
       "knnclassifier": {
         "title": "KNN Classifier with Feature Extractor"
       },
@@ -94,6 +97,9 @@
       "quick-start": {
         "title": "Examples Quick Start",
         "sidebar_label": "Quick Start"
+      },
+      "sketchrnn-example": {
+        "title": "SketchRNN"
       },
       "style-transfer-image-example": {
         "title": "Style Transfer"

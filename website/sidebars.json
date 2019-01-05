@@ -22,6 +22,7 @@
       "custom-classifier",
       "custom-regression",
       "knnclassifier",
+      "knnclassifier-posenet",
       "lstm-example",
       "lstm-interactive-example",
       "sketchrnn-example",
