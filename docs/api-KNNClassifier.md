@@ -83,11 +83,11 @@ knnClassifier.classify(features, function(err, result) {
   > Get the example count for each class. It returns an object that maps class index to example count for each class.
 
   ```javascript
-  .save(fileName)
+  .save(fileName?)
   ```
   > Download the whole dataset as a JSON file. It's useful for saving state.
   
-  `fileName` - The name of the JSON file that will be downloaded.
+  `fileName` - Optional. The name of the JSON file that will be downloaded. e.g. "myKNN" or "myKNN.json". If no fileName is provided, the default file name is "myKNN.json".
 
   ```javascript
   .load(path, callback?)
