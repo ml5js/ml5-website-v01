@@ -179,9 +179,11 @@ class Examples extends React.Component {
   render() {
     return (
       <div className="ExamplesLinkBlock ">
-        <button className="btn-blue mt40 ex">
-          <a href="/docs/quick-start"> 🌟 See Examples 🌟 </a> 
-        </button>
+        <a href="/docs/quick-start">
+          <button className="btn-blue mt40 ex">
+            🌟 See Examples 🌟
+          </button>
+        </a>
       </div>
     );
   }
