@@ -37,7 +37,7 @@ pix2pix.transfer(canvas, function(err, result) {
 
 ### Parameters
 
-  - `model` - Optional. The path for a valid model.
+  - `model` - The path for a valid model.
   - `callback` - Optional. A function to run once the model has been loaded. If no callback is provided, it will return a promise that will be resolved once the model has loaded.
 
 ## Properties

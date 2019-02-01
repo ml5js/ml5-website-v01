@@ -4,61 +4,167 @@
     "next": "Next",
     "previous": "Previous",
     "tagline": "Friendly Machine Learning For The Web.",
-    "FeatureExtractor": "featureExtractor()",
-    "getting-started": "Getting Started",
-    "Getting Started": "Getting Started",
-    "ImageClassifier": "imageClassifier()",
-    "LSTMGenerator": "LSTMGenerator()",
-    "PitchDetection": "pitchDetection()",
-    "Pix2Pix": "pix2pix()",
-    "PoseNet": "poseNet()",
-    "promises-callback": "A note on using Promises and Callbacks",
-    "Promises and Callbacks": "Promises and Callbacks",
-    "StyleTransfer": "styleTransfer()",
-    "Word2vec": "word2vec()",
-    "YOLO": "YOLO()",
-    "data-creating-your-own-data": "Creating your data",
-    "data-preparing-your-own-data": "Preparing your own data",
-    "data-types-of-datasets": "Types of Data",
-    "data-collection": "Data Collection",
-    "data-overview": "Overview",
-    "custom-classifier": "Classifier with Feature Extractor",
-    "custom-regression": "Regression with Feature Extractor",
-    "multiple-image-classification-example": "Multiple Image Classification",
-    "image-classification-example": "Image Classification",
-    "lstm-interactive-example": "Interactive Text Generation LSTM",
-    "lstm-example": "Text Generation with LSTM",
-    "pitch-detection-example": "Pitch Detection",
-    "pix2pix-example": "Pix2Pix",
-    "posenet-webcam": "PoseNet with Webcam",
-    "quick-start": "Examples Quick Start",
-    "Quick Start": "Quick Start",
-    "style-transfer-image-example": "Style Transfer",
-    "style-transfer-webcam-example": "Style Transfer with Webcam",
-    "video-classification-example": "Video Classification",
-    "word2vec-example": "Word2Vec",
-    "yolo-webcam": "YOLO with Webcam",
-    "glossary-machine-learning": "Machine Learning",
-    "glossary-mathematics": "Mathematics",
-    "glossary-statistics": "Statistics",
-    "resources": "Resources",
-    "training-introduction": "Introduction",
-    "training-lstm": "Training a LSTM",
-    "training-pix2pix": "Training Pix2Pix",
-    "training-setup": "Setting up",
-    "training-styletransfer": "Training Style Transfer",
-    "tutorials": "Tutorials",
-    "Reference": "Reference",
-    "Examples": "Examples",
-    "Data": "Data",
-    "Training": "Training",
-    "Experiments": "Experiments",
-    "Learn": "Learn",
-    "Code": "Code",
-    "Documentation": "Documentation",
-    "Glossary": "Glossary",
-    "Tutorials": "Tutorials",
-    "Resources": "Resources"
+    "docs": {
+      "CharRNN": {
+        "title": "charRNN()"
+      },
+      "FeatureExtractor": {
+        "title": "featureExtractor()"
+      },
+      "getting-started": {
+        "title": "Getting Started",
+        "sidebar_label": "Getting Started"
+      },
+      "ImageClassifier": {
+        "title": "imageClassifier()"
+      },
+      "KNNClassifier": {
+        "title": "KNNClassifier()"
+      },
+      "PitchDetection": {
+        "title": "pitchDetection()"
+      },
+      "Pix2Pix": {
+        "title": "pix2pix()"
+      },
+      "PoseNet": {
+        "title": "poseNet()"
+      },
+      "promises-callback": {
+        "title": "A note on using Promises and Callbacks",
+        "sidebar_label": "Promises and Callbacks"
+      },
+      "SketchRNN": {
+        "title": "SketchRNN()"
+      },
+      "StyleTransfer": {
+        "title": "styleTransfer()"
+      },
+      "Word2vec": {
+        "title": "word2vec()"
+      },
+      "YOLO": {
+        "title": "YOLO()"
+      },
+      "data-creating-your-own-data": {
+        "title": "Creating your data"
+      },
+      "data-preparing-your-own-data": {
+        "title": "Preparing your own data"
+      },
+      "data-types-of-datasets": {
+        "title": "Types of Data"
+      },
+      "data-collection": {
+        "title": "Data Collection"
+      },
+      "data-overview": {
+        "title": "Overview"
+      },
+      "custom-classifier": {
+        "title": "Classifier with Feature Extractor"
+      },
+      "custom-regression": {
+        "title": "Regression with Feature Extractor"
+      },
+      "multiple-image-classification-example": {
+        "title": "Multiple Image Classification"
+      },
+      "image-classification-example": {
+        "title": "Image Classification"
+      },
+      "knnclassifier-posenet": {
+        "title": "KNN Classifier with PoseNet"
+      },
+      "knnclassifier": {
+        "title": "KNN Classifier with Feature Extractor"
+      },
+      "lstm-interactive-example": {
+        "title": "Interactive Text Generation LSTM"
+      },
+      "lstm-example": {
+        "title": "Text Generation with LSTM"
+      },
+      "pitch-detection-example": {
+        "title": "Pitch Detection"
+      },
+      "pix2pix-example": {
+        "title": "Pix2Pix"
+      },
+      "posenet-webcam": {
+        "title": "PoseNet with Webcam"
+      },
+      "quick-start": {
+        "title": "Examples Quick Start",
+        "sidebar_label": "Quick Start"
+      },
+      "sketchrnn-example": {
+        "title": "SketchRNN"
+      },
+      "style-transfer-image-example": {
+        "title": "Style Transfer"
+      },
+      "style-transfer-webcam-example": {
+        "title": "Style Transfer with Webcam"
+      },
+      "video-classification-example": {
+        "title": "Video Classification"
+      },
+      "word2vec-example": {
+        "title": "Word2Vec"
+      },
+      "yolo-webcam": {
+        "title": "YOLO with Webcam"
+      },
+      "glossary-machine-learning": {
+        "title": "Machine Learning"
+      },
+      "glossary-mathematics": {
+        "title": "Mathematics"
+      },
+      "glossary-statistics": {
+        "title": "Statistics"
+      },
+      "resources": {
+        "title": "Resources"
+      },
+      "training-introduction": {
+        "title": "Introduction"
+      },
+      "training-lstm": {
+        "title": "Training a LSTM"
+      },
+      "training-pix2pix": {
+        "title": "Training Pix2Pix"
+      },
+      "training-setup": {
+        "title": "Setting up"
+      },
+      "training-styletransfer": {
+        "title": "Training Style Transfer"
+      },
+      "tutorials": {
+        "title": "Tutorials"
+      }
+    },
+    "links": {
+      "Reference": "Reference",
+      "Examples": "Examples",
+      "Data": "Data",
+      "Training": "Training",
+      "Experiments": "Experiments",
+      "Learn": "Learn",
+      "Code": "Code"
+    },
+    "categories": {
+      "Documentation": "Documentation",
+      "Examples": "Examples",
+      "Data": "Data",
+      "Training": "Training",
+      "Glossary": "Glossary",
+      "Tutorials": "Tutorials",
+      "Resources": "Resources"
+    }
   },
   "pages-strings": {
     "Help Translate|recruit community translators for your project": "Help Translate",
