@@ -1,5 +1,5 @@
 ---
-id: knnclassifier
+id: knnclassifier-featureextractor
 title: KNN Classifier with Feature Extractor
 ---
 

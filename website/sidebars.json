@@ -21,7 +21,7 @@
       "video-classification-example",
       "custom-classifier",
       "custom-regression",
-      "knnclassifier",
+      "knnclassifier-featureextractor",
       "knnclassifier-posenet",
       "lstm-example",
       "lstm-interactive-example",

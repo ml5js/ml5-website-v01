@@ -73,11 +73,11 @@
       "image-classification-example": {
         "title": "Image Classification"
       },
+      "knnclassifier-featureextractor": {
+        "title": "KNN Classifier with Feature Extractor"
+      },
       "knnclassifier-posenet": {
         "title": "KNN Classifier with PoseNet"
-      },
-      "knnclassifier": {
-        "title": "KNN Classifier with Feature Extractor"
       },
       "lstm-interactive-example": {
         "title": "Interactive Text Generation LSTM"
