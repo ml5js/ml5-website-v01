@@ -74,7 +74,7 @@ You should see (ml5) prepended before your terminal prompt
 Create a file called `requirements.txt` and paste the following into it.
 
 ```
-numpy==1.10.4
+numpy==1.11.0
 scipy==0.17.0
 tensorflow==1.0.0
 ```
