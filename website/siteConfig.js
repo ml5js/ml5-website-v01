@@ -67,6 +67,8 @@ const siteConfig = {
     indexName: 'ml5js',
   },
   repoUrl: 'https://github.com/ml5js/ml5-library',
+  gaTrackingId: 'UA-120901334-1',
+  gaGtag: true
 };
 
 module.exports = siteConfig;
