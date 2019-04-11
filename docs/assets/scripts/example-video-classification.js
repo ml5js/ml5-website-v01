@@ -7,7 +7,7 @@ function setup() {
   video = createCapture(VIDEO).parent('videoContainer');
   video.size(400, 400);
   // Initialize the Image Classifier method with MobileNet and the video as the second argument
-  classifier = ml5.imageClassifier('MobileNet', video, modelReady);  
+  classifier = ml5.imageClassifier('MobileNet', video, modelReady);
   // Call the classifyFrame function to start classifying the video
   classifyVideo();
 }
