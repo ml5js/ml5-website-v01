@@ -4,7 +4,7 @@ let video;
 function setup() {
   noCanvas();
   // Create a camera input
-  video = createVideo('assets/img/stork.mp4').parent('videoContainer').loop();
+  video = createCapture(VIDEO).parent('videoContainer');
   video.size(400, 400);
   // Initialize the Image Classifier method with MobileNet and the video as the second argument
   classifier = ml5.imageClassifier('MobileNet', video, modelReady);
