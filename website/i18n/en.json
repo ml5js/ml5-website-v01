@@ -98,6 +98,12 @@
         "title": "Examples Quick Start",
         "sidebar_label": "Quick Start"
       },
+      "sketchrnn-example-basic": {
+        "title": "SketchRNN Basic"
+      },
+      "sketchrnn-example-interactive": {
+        "title": "SketchRNN Interactive"
+      },
       "sketchrnn-example": {
         "title": "SketchRNN"
       },
