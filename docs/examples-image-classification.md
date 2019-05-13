@@ -35,7 +35,7 @@ function setup() {
 
 // Change the status when the model loads.
 function modelReady(){
-  document.getElementById('status').html('Model Loaded')
+  select('#status').html('Model Loaded')
 }
 
 // When the image has been loaded,
